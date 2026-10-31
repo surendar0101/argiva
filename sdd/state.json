@@ -19,8 +19,7 @@
   "currentPhase": "phase-2-foundations",
   "currentStep": "2.HANDOFF owner actions (docs/setup.md)",
   "awaitingOwner": [
-    "Review the Phase 2 changes, then commit and push to main yourself (docs/setup.md section 2.5)",
-    "GitHub plan: owner chose GitHub Free (2026-10-31). Still to choose: (a) public repo, recommended: everything works as written; (b) private repo: workflows need changes first (STAGING_/PROD_ repo vars, tag push as the production gate, no branch protection). See docs/setup.md section 2.2",
+    "Create 'main' from develop, push it, and make it the GitHub default branch (docs/setup.md section 2.5); then commit the repo-organization fixes to main",
     "Create the Google Cloud project, link billing and set the Rs 500 budget (docs/setup.md sections 2.3 and 3)",
     "Create the Neon project with main and staging branches, and add their URLs to Secret Manager (docs/setup.md sections 4 and 3.8)",
     "Set the GitHub variables, environments and branch protection (docs/setup.md section 5)",
@@ -86,7 +85,9 @@
   "nextActions": [
     "[done] docs/setup.md created (runbook sections 3-5 moved into it; runbook stubs and links updated); README links it; docs rule added to prompt, AGENTS.md, state rules and plans README",
     "[done] Phase 2 Task 11 (docs backfill): docs/README.md index plus READMEs for apps/web, apps/ui-preview, packages/ui, packages/config; link check 0 broken; lint exit 0",
-    "Wait for owner answers in awaitingOwner (GitHub Free: public or private); help with setup steps if asked",
+    "[done] Owner decision 2026-10-31: public repo on GitHub Free (workflows work as written)",
+    "[done] Repo organization fixes applied (owner said 'do all the fixes'): .gitignore un-ignores docs/plans and ignores test output and the Impeccable binary; binary untracked (git rm --cached); logo moved to docs/assets with proper alt text; setup.md 2.5 explains creating main. Link check 0 broken, lint exit 0",
+    "Wait for owner answers in awaitingOwner; help with setup steps if asked",
     "When CI is green and staging is deployed: set phase-2 done and start Phase 3 planning (writing-plans skill)"
   ],
   "phases": [
