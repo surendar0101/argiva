@@ -1,0 +1,54 @@
+name: Deploy (reusable)
+on:
+  workflow_call:
+    inputs:
+      environment: { type: string, required: true }
+      sha: { type: string, required: true }
+      build: { type: boolean, required: true }
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    env:
+      REGION: ${{ vars.GCP_REGION }}
+      IMAGE: ${{ vars.GCP_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GCP_AR_REPOSITORY }}/web:${{ inputs.sha }}
+      SHA: ${{ inputs.sha }}
+      SERVICE: ${{ vars.CLOUD_RUN_SERVICE }}
+      RUNTIME_SA: ${{ vars.GCP_RUNTIME_SA }}
+      APP_ENV: ${{ vars.APP_ENV }}
+      APP_BASE_URL: ${{ vars.APP_BASE_URL }}
+      DATABASE_URL_SECRET: ${{ vars.DATABASE_URL_SECRET }}
+      MAX_INSTANCES: ${{ vars.CLOUD_RUN_MAX_INSTANCES }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.sha }}
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SA }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build and push image
+        if: inputs.build
+        run: |
+          gcloud auth configure-docker "$REGION-docker.pkg.dev" --quiet
+          docker build --build-arg APP_VERSION="$SHA" -t "$IMAGE" .
+          docker push "$IMAGE"
+      - name: Deploy to Cloud Run
+        # STORAGE_DRIVER=local is temporary: nothing stores files until Phase 3/4, which switches to R2.
+        run: |
+          gcloud run deploy "$SERVICE" --image "$IMAGE" --region "$REGION" \
+            --service-account "$RUNTIME_SA" --allow-unauthenticated --port 8080 \
+            --cpu 1 --memory 512Mi --min-instances 0 --max-instances "$MAX_INSTANCES" --concurrency 80 \
+            --set-env-vars "APP_ENV=$APP_ENV,APP_BASE_URL=$APP_BASE_URL,APP_VERSION=$SHA,STORAGE_DRIVER=local,STORAGE_LOCAL_DIR=/tmp/uploads" \
+            --set-secrets "DATABASE_URL=$DATABASE_URL_SECRET:latest"
+      - name: Smoke test
+        run: |
+          URL="$(gcloud run services describe "$SERVICE" --region "$REGION" --format='value(status.url)')"
+          if [ "$APP_ENV" = "production" ]; then node scripts/smoke.mjs "$URL"; else node scripts/smoke.mjs "$URL" --noindex; fi

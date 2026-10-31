@@ -1,0 +1,33 @@
+name: Design tokens
+
+on:
+  pull_request:
+    paths:
+      - "packages/design-tokens/**"
+      - ".github/workflows/design-tokens.yml"
+  push:
+    branches: [main]
+    paths:
+      - "packages/design-tokens/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Fails on missing tokens, broken references or WCAG AA contrast failures in any theme.
+      - run: pnpm tokens:build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: design-tokens-preview
+          path: packages/design-tokens/dist
+          retention-days: 14

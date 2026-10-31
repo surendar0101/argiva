@@ -1,0 +1,31 @@
+.rule {
+  border: 0;
+  border-top: 1px solid var(--argiva-color-border-default);
+  margin: var(--argiva-space-7) 0;
+}
+
+.ghungroo {
+  display: flex;
+  justify-content: center;
+  margin: var(--argiva-space-7) 0;
+  color: var(--argiva-component-divider-ornament);
+}
+
+.onDark {
+  color: var(--argiva-component-divider-ornament-on-dark);
+  border-top-color: var(--argiva-color-border-strong);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ghungroo svg>path:first-child {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw var(--argiva-motion-duration-slow) var(--argiva-motion-easing-out) forwards;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

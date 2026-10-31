@@ -1,0 +1,100 @@
+{
+  "component": {
+    "button": {
+      "primary": {
+        "bg": {
+          "$value": "{color.action.bg}"
+        },
+        "bg-hover": {
+          "$value": "{color.action.bg-hover}"
+        },
+        "fg": {
+          "$value": "{color.action.fg}"
+        },
+        "radius": {
+          "$value": "{radius.control}"
+        }
+      },
+      "on-dark": {
+        "bg": {
+          "$value": "{color.action-inverse.bg}"
+        },
+        "bg-hover": {
+          "$value": "{color.action-inverse.bg-hover}"
+        },
+        "fg": {
+          "$value": "{color.action-inverse.fg}"
+        },
+        "radius": {
+          "$value": "{radius.control}"
+        }
+      }
+    },
+    "badge": {
+      "purity": {
+        "fg": {
+          "$value": "{color.badge.fg}"
+        },
+        "border": {
+          "$value": "{color.badge.border}"
+        },
+        "radius": {
+          "$value": "{radius.badge}"
+        }
+      }
+    },
+    "card": {
+      "media-bg": {
+        "$value": "{color.surface.muted}"
+      },
+      "media-radius": {
+        "$value": "{radius.media}"
+      },
+      "title": {
+        "$value": "{color.text.primary}"
+      },
+      "meta": {
+        "$value": "{color.text.muted}"
+      }
+    },
+    "input": {
+      "bg": {
+        "$value": "{color.surface.raised}"
+      },
+      "border": {
+        "$value": "{color.border.strong}"
+      },
+      "radius": {
+        "$value": "{radius.control}"
+      },
+      "selected-bg": {
+        "$value": "{color.action.bg}"
+      },
+      "selected-fg": {
+        "$value": "{color.action.fg}"
+      }
+    },
+    "hero": {
+      "bg": {
+        "$value": "{color.surface.inverse}"
+      },
+      "fg": {
+        "$value": "{color.text.inverse}"
+      },
+      "muted": {
+        "$value": "{color.text.inverse-muted}"
+      },
+      "media-radius": {
+        "$value": "{radius.hero-media}"
+      }
+    },
+    "divider": {
+      "ornament": {
+        "$value": "{color.ornament.default}"
+      },
+      "ornament-on-dark": {
+        "$value": "{color.ornament.inverse}"
+      }
+    }
+  }
+}

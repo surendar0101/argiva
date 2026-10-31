@@ -1,0 +1,62 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--argiva-size-tap-min);
+  padding: 0.9rem 1.6rem;
+  border: 1px solid currentColor;
+  border-radius: var(--argiva-component-button-primary-radius);
+  font: inherit;
+  font-size: var(--argiva-font-size-md);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--argiva-component-button-primary-bg);
+  color: var(--argiva-component-button-primary-fg);
+  border-color: var(--argiva-component-button-primary-bg);
+}
+
+.primary:hover {
+  background: var(--argiva-component-button-primary-bg-hover);
+  border-color: var(--argiva-component-button-primary-bg-hover);
+}
+
+.on-dark {
+  background: var(--argiva-component-button-on-dark-bg);
+  color: var(--argiva-component-button-on-dark-fg);
+  border-color: var(--argiva-component-button-on-dark-bg);
+  border-radius: var(--argiva-component-button-on-dark-radius);
+}
+
+.on-dark:hover {
+  background: var(--argiva-component-button-on-dark-bg-hover);
+}
+
+.on-dark:focus-visible {
+  outline-color: var(--argiva-color-focus-inverse);
+}
+
+.outline {
+  background: transparent;
+  color: inherit;
+}
+
+.outline:hover {
+  background: var(--argiva-component-button-primary-bg);
+  color: var(--argiva-component-button-primary-fg);
+  border-color: var(--argiva-component-button-primary-bg);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button {
+    transition: background-color var(--argiva-motion-duration-fast) var(--argiva-motion-easing-standard);
+  }
+}

@@ -1,0 +1,107 @@
+.hero {
+  background: var(--argiva-component-hero-bg);
+  color: var(--argiva-component-hero-fg);
+}
+
+.inner {
+  display: grid;
+  gap: var(--argiva-space-6);
+  max-width: var(--argiva-size-content-max);
+  margin: 0 auto;
+  padding: var(--argiva-space-section) var(--argiva-space-gutter);
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--argiva-component-hero-media-radius);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Display-case frame: an inset hairline inside the photo. */
+.media::after {
+  content: '';
+  position: absolute;
+  inset: var(--argiva-space-3);
+  border: 1px solid var(--argiva-component-hero-muted);
+  pointer-events: none;
+}
+
+.media[data-media='arch'] {
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+}
+
+.media[data-media='arch']::after {
+  border-radius: inherit;
+}
+
+.copy {
+  display: grid;
+  gap: var(--argiva-space-4);
+  align-content: center;
+  justify-items: start;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--argiva-component-hero-muted);
+  font-size: var(--argiva-font-size-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--argiva-font-size-display);
+  line-height: var(--argiva-font-line-height-tight);
+}
+
+.body {
+  margin: 0;
+  max-width: var(--argiva-size-prose-max);
+}
+
+.copy :focus-visible {
+  outline-color: var(--argiva-color-focus-inverse);
+}
+
+@media (min-width: 54rem) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .media {
+    order: 2;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .copy>* {
+    animation: rise var(--argiva-motion-duration-slow) var(--argiva-motion-easing-out) both;
+  }
+
+  .copy> :nth-child(2) {
+    animation-delay: 80ms;
+  }
+
+  .copy> :nth-child(3) {
+    animation-delay: 160ms;
+  }
+
+  .copy> :nth-child(4) {
+    animation-delay: 240ms;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+}

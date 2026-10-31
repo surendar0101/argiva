@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T00:00:00Z",
+  "title": "Design System: ARGIVA Silvers",
+  "extensions": {
+    "colorMeta": {
+      "indigo": {
+        "role": "primary",
+        "displayName": "Temple Indigo",
+        "canonical": "#2F3B5E"
+      },
+      "oxide": {
+        "role": "neutral",
+        "displayName": "Oxidised Silver",
+        "canonical": "#1D2422"
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#EEF0EE"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#F8F9F8"
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Colour and border state changes."
+      },
+      {
+        "name": "duration-base",
+        "value": "250ms",
+        "purpose": "Button and chip transitions."
+      },
+      {
+        "name": "duration-slow",
+        "value": "600ms",
+        "purpose": "Card image zoom; ghungroo draw-in."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrances and image zoom."
+      },
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.2, 0, 0, 1)",
+        "purpose": "State transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "hero-stack",
+        "value": "860px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Hallmark Purity Badge",
+      "kind": "custom",
+      "refersTo": "purity-badge",
+      "description": "Purity stamp on product media; dashed border marks 80%/60% alloys.",
+      "html": "<span class=\"ds-hallmark\">92.5%</span> <span class=\"ds-hallmark alloy\">80%</span>",
+      "css": ".ds-hallmark { display:inline-block; font:400 0.8rem Marcellus, Georgia, serif; letter-spacing:0.06em; color:#2F3B5E; padding:0.3rem 0.55rem 0.25rem; border:1px solid #2F3B5E; border-radius:0 0 0.8rem 0.8rem; background:rgba(248,249,248,0.85); } .ds-hallmark.alloy { border-style:dashed; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action on light pages.",
+      "html": "<button class=\"ds-btn\">Explore Collections</button>",
+      "css": ".ds-btn { min-height:2.75rem; padding:0.9rem 1.6rem; font:500 0.95rem 'Hanken Grotesk', system-ui, sans-serif; background:#2F3B5E; color:#F8F9F8; border:1px solid #2F3B5E; border-radius:2px; transition:background 250ms cubic-bezier(0.2,0,0,1); } .ds-btn:hover { background:#24304D; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Silversmith's Ledger",
+    "overview": "Exact and unhurried, like a jeweller's record book: purity, finish, weight and price set down plainly. Warmth comes from the family story and the silver, not decoration. Dark story/hero sections, light shopping pages.",
+    "keyCharacteristics": [
+      "Facts first on every product",
+      "Single indigo accent",
+      "Flat, hairline borders, square photos",
+      "Restrained motion"
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Indigo is reserved for actions, focus and purity facts.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Gate Rule",
+        "body": "Colour pairs ship only if tokens:build passes WCAG AA.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ledger Numerals Rule",
+        "body": "Prices, weights and percentages use tabular numerals at 600.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "No box-shadow; state shown by tone or border.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do read values only from --argiva-* variables",
+      "Do show purity, finish, weight and price on every card and PDP",
+      "Do guard all motion with prefers-reduced-motion"
+    ],
+    "donts": [
+      "Don't hard-code hex values in components",
+      "Don't spread the ghungroo divider beyond Our Story and Anklets",
+      "Don't describe 80%/60% items as sterling"
+    ]
+  }
+}

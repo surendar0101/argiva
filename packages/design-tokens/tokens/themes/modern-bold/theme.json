@@ -1,0 +1,36 @@
+{
+  "id": "modern-bold",
+  "label": "Modern bold",
+  "description": "Black and white with rose gold as the only accent. Poster-scale condensed type.",
+  "default": false,
+  "fonts": [
+    {
+      "family": "Anybody",
+      "weights": [
+        300,
+        900
+      ],
+      "axes": {
+        "wdth": [
+          50,
+          150
+        ]
+      },
+      "source": "google"
+    },
+    {
+      "family": "Atkinson Hyperlegible",
+      "weights": [
+        400,
+        700
+      ],
+      "source": "google"
+    }
+  ],
+  "ornaments": {
+    "purityBadge": "text",
+    "divider": "rule",
+    "dividerScope": [],
+    "heroMedia": "rect"
+  }
+}

@@ -1,0 +1,13 @@
+.price {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--argiva-font-weight-strong);
+  white-space: nowrap;
+}
+
+.md {
+  font-size: var(--argiva-font-size-md);
+}
+
+.lg {
+  font-size: var(--argiva-font-size-xl);
+}

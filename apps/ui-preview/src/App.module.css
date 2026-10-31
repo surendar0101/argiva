@@ -1,0 +1,26 @@
+.toolbar {
+  padding: var(--argiva-space-2) var(--argiva-space-gutter);
+  border-bottom: 1px solid var(--argiva-color-border-default);
+  font-size: var(--argiva-font-size-sm);
+}
+
+.toolbar select {
+  min-height: var(--argiva-size-tap-min);
+  font: inherit;
+}
+
+.section {
+  max-width: var(--argiva-size-content-max);
+  margin: 0 auto;
+  padding: var(--argiva-space-section) var(--argiva-space-gutter);
+}
+
+.sectionTitle {
+  font-size: var(--argiva-font-size-2xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 2.5rem 1.5rem;
+}

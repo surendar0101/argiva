@@ -1,0 +1,28 @@
+{
+  "name": "@argiva/design-tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ARGIVA design language: themeable design tokens compiled to CSS custom properties and a typed theme registry.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./css": "./dist/css/argiva.css",
+    "./css/*": "./dist/css/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/validate.mjs && node scripts/build.mjs",
+    "new-theme": "node scripts/new-theme.mjs"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.0.0"
+  }
+}

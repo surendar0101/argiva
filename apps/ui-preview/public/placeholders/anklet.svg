@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Placeholder image: anklet">
+  <rect width="800" height="1000" fill="#b5b5b5"/>
+  <g fill="none" stroke="#4a4a4a" stroke-width="4">
+    <circle cx="140" cy="460" r="14"/>
+    <circle cx="180" cy="460" r="14"/>
+    <circle cx="220" cy="460" r="14"/>
+    <circle cx="260" cy="460" r="14"/>
+    <circle cx="300" cy="460" r="14"/>
+    <circle cx="340" cy="460" r="14"/>
+    <circle cx="380" cy="460" r="14"/>
+    <circle cx="420" cy="460" r="14"/>
+    <circle cx="460" cy="460" r="14"/>
+    <circle cx="500" cy="460" r="14"/>
+    <circle cx="540" cy="460" r="14"/>
+    <circle cx="580" cy="460" r="14"/>
+    <circle cx="620" cy="460" r="14"/>
+    <circle cx="660" cy="460" r="14"/>
+    <path d="M180 474v26M260 474v26M340 474v26M420 474v26M500 474v26M580 474v26M660 474v26"/>
+    <circle cx="180" cy="516" r="16"/>
+    <circle cx="260" cy="516" r="16"/>
+    <circle cx="340" cy="516" r="16"/>
+    <circle cx="420" cy="516" r="16"/>
+    <circle cx="500" cy="516" r="16"/>
+    <circle cx="580" cy="516" r="16"/>
+    <circle cx="660" cy="516" r="16"/>
+  </g>
+  <text x="400" y="920" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" letter-spacing="2" fill="#303030">Placeholder</text>
+</svg>

@@ -1,0 +1,138 @@
+{
+  "space": {
+    "1": {
+      "$value": "0.25rem",
+      "$type": "dimension"
+    },
+    "2": {
+      "$value": "0.5rem",
+      "$type": "dimension"
+    },
+    "3": {
+      "$value": "0.75rem",
+      "$type": "dimension"
+    },
+    "4": {
+      "$value": "1rem",
+      "$type": "dimension"
+    },
+    "5": {
+      "$value": "1.5rem",
+      "$type": "dimension"
+    },
+    "6": {
+      "$value": "2rem",
+      "$type": "dimension"
+    },
+    "7": {
+      "$value": "3rem",
+      "$type": "dimension"
+    },
+    "8": {
+      "$value": "4rem",
+      "$type": "dimension"
+    },
+    "9": {
+      "$value": "6rem",
+      "$type": "dimension"
+    },
+    "section": {
+      "$value": "clamp(2.5rem, 7vw, 5rem)",
+      "$type": "dimension"
+    },
+    "gutter": {
+      "$value": "clamp(1rem, 5vw, 4rem)",
+      "$type": "dimension"
+    }
+  },
+  "size": {
+    "content-max": {
+      "$value": "80rem",
+      "$type": "dimension"
+    },
+    "prose-max": {
+      "$value": "38rem",
+      "$type": "dimension"
+    },
+    "tap-min": {
+      "$value": "2.75rem",
+      "$type": "dimension"
+    }
+  },
+  "font": {
+    "size": {
+      "xs": {
+        "$value": "0.8125rem",
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": "0.9rem",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "1rem",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "1.125rem",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "1.5rem",
+        "$type": "dimension"
+      },
+      "2xl": {
+        "$value": "clamp(1.8rem, 3.5vw, 2.6rem)",
+        "$type": "dimension"
+      },
+      "3xl": {
+        "$value": "clamp(2rem, 4vw, 3.2rem)",
+        "$type": "dimension"
+      },
+      "display": {
+        "$value": "clamp(2.4rem, 6vw, 5rem)",
+        "$type": "dimension"
+      }
+    },
+    "line-height": {
+      "tight": {
+        "$value": "1.05",
+        "$type": "number"
+      },
+      "snug": {
+        "$value": "1.3",
+        "$type": "number"
+      },
+      "body": {
+        "$value": "1.6",
+        "$type": "number"
+      }
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": {
+        "$value": "150ms",
+        "$type": "duration"
+      },
+      "base": {
+        "$value": "250ms",
+        "$type": "duration"
+      },
+      "slow": {
+        "$value": "600ms",
+        "$type": "duration"
+      }
+    },
+    "easing": {
+      "out": {
+        "$value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "$type": "cubicBezier"
+      },
+      "standard": {
+        "$value": "cubic-bezier(0.2, 0, 0, 1)",
+        "$type": "cubicBezier"
+      }
+    }
+  }
+}

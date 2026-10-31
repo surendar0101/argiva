@@ -1,0 +1,26 @@
+.badge {
+  display: inline-block;
+  color: var(--argiva-component-badge-purity-fg);
+  font-size: var(--argiva-font-size-xs);
+  font-weight: 500;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.hallmark {
+  padding: 0.3rem 0.55rem 0.25rem;
+  font-family: var(--argiva-font-family-display);
+  letter-spacing: 0.06em;
+  border: 1px solid var(--argiva-component-badge-purity-border);
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: color-mix(in srgb, var(--argiva-color-surface-page) 85%, transparent);
+}
+
+.text {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hallmark.alloy {
+  border-style: dashed;
+}

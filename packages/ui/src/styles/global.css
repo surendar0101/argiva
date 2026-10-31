@@ -1,0 +1,71 @@
+@import '@argiva/design-tokens/css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--argiva-color-surface-page);
+  color: var(--argiva-color-text-primary);
+  font-family: var(--argiva-font-family-body);
+  font-weight: var(--argiva-font-weight-body);
+  line-height: var(--argiva-font-line-height-body);
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--argiva-font-family-display);
+  font-weight: var(--argiva-font-weight-display);
+  font-stretch: var(--argiva-font-stretch-display);
+  letter-spacing: var(--argiva-font-tracking-display);
+  line-height: var(--argiva-font-line-height-snug);
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--argiva-color-focus-default);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--argiva-color-selection-bg);
+  color: var(--argiva-color-selection-fg);
+}
+
+.argiva-ledger {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--argiva-font-weight-strong);
+}
+
+.argiva-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

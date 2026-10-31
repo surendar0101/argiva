@@ -1,0 +1,451 @@
+{
+  "$comment": "Single source of truth for resuming ARGIVA work in any agentic editor. Update after every decision or completed task.",
+  "project": "ARGIVA Silvers e-commerce platform",
+  "updated": "2026-10-31",
+  "sources": {
+    "prompt": ".github/prompts/scaffold-argiva.prompt.md",
+    "brandContent": "docs/brand-content.md",
+    "decisionLog": "sdd/phase-0-discovery.md"
+  },
+  "rules": [
+    "Never git commit or git push; leave changes uncommitted for owner review.",
+    "Never change product code without explicit owner consent once it exists; report defects and wait.",
+    "Never invent policies, prices, certifications, legal or contact details; use docs/brand-content.md or mark TODO(owner).",
+    "Config-driven: no hardcoded URLs/domains/business constants; use centralised typed config.",
+    "Never ask for or store secrets in this repo; .env.example only.",
+    "Ask one topic at a time with options and a recommendation; record each decision here and in sdd/phase-0-discovery.md.",
+    "Docs every phase: the last task of each phase plan updates README.md, docs/setup.md (owner accounts/services), docs/runbook.md (operations), a README per new app/package, ADRs and the docs/README.md index; the phase isn't done without it."
+  ],
+  "currentPhase": "phase-2-foundations",
+  "currentStep": "2.HANDOFF owner actions (docs/setup.md)",
+  "awaitingOwner": [
+    "Review the Phase 2 changes, then commit and push to main yourself (docs/setup.md section 2.5)",
+    "GitHub plan: owner chose GitHub Free (2026-10-31). Still to choose: (a) public repo, recommended: everything works as written; (b) private repo: workflows need changes first (STAGING_/PROD_ repo vars, tag push as the production gate, no branch protection). See docs/setup.md section 2.2",
+    "Create the Google Cloud project, link billing and set the Rs 500 budget (docs/setup.md sections 2.3 and 3)",
+    "Create the Neon project with main and staging branches, and add their URLs to Secret Manager (docs/setup.md sections 4 and 3.8)",
+    "Set the GitHub variables, environments and branch protection (docs/setup.md section 5)",
+    "Confirm database secrets are stored in Mumbai only (asia-south1), recommended for DPDP"
+  ],
+  "phase1": {
+    "plan": "docs/plans/2026-10-31-phase-1-design-system.md",
+    "log": "sdd/phase-1-design-system.md",
+    "execution": "subagent per task, controller verifies tests after each; no worktree, no commits (owner rule)",
+    "tasksDone": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "review": "Owner said 'Proceed with phase 2' (2026-10-31): design approved. Defaults applied: Hero keeps the optional eyebrow prop (unused in preview); warm-craft keeps the mist page background. Both can be changed later.",
+    "lighthouse": "mobile 100/100/96 (LCP 1.6 s, CLS 0); desktop 100/100/96; only loss = preview favicon 404",
+    "installedVersions": "react 19.3.1, vitest 5.0.5, typescript 7.0.2, jsdom 30.1.3, axe-core 4.14.0, @testing-library/react 16.3.3",
+    "notes": [
+      "zsh needs quotes around 'pkg@workspace:*' in pnpm add",
+      "quiet npm logs: npx --loglevel=error pnpm@12.16.1 ..."
+    ]
+  },
+  "phase2": {
+    "plan": "docs/plans/2026-10-31-phase-2-foundations.md",
+    "log": "sdd/phase-2-foundations.md",
+    "execution": "subagent per task, controller verifies after each; no worktree, no commits (owner rule)",
+    "tasksDone": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "doneWhen": "CI green on GitHub and staging deploys from main",
+    "notes": [
+      "TypeScript pinned to 6.0.x (TS 7 has no JS API; Next.js and typescript-eslint need it)",
+      "ESLint 9 (eslint-plugin-react does not support 10); no Prettier yet",
+      "Docker Desktop must be running for Tasks 6-10 (open -a Docker)",
+      "Phase 3: Neon pooled connections (PgBouncer transaction mode) need postgres.js prepare:false",
+      "Phase 4: @argiva/ui has no 'use client'; decide how storefront composes hook-using components",
+      "Phase 8: bump google-github-actions/auth+setup-gcloud to v3 and SHA-pin actions; consider narrowing WIF condition to deploy workflow refs; full nonce CSP",
+      "Secret Manager secrets use user-managed replication in asia-south1 (DPDP-friendly)",
+      "Docs review findings, not fixed (product code, needs owner consent): apps/web 'start' script uses next start, which doesn't work with standalone output (Docker uses node server.js); lint:hardcoded skips apps/ui-preview/src; ui-preview App.tsx hard-codes the 'quiet-luxury' fallback instead of defaultThemeId; apps/web has no own lint script; Price test lacks an axe check"
+    ]
+  },
+  "nextActions": [
+    "[done] docs/setup.md created (runbook sections 3-5 moved into it; runbook stubs and links updated); README links it; docs rule added to prompt, AGENTS.md, state rules and plans README",
+    "[done] Phase 2 Task 11 (docs backfill): docs/README.md index plus READMEs for apps/web, apps/ui-preview, packages/ui, packages/config; link check 0 broken; lint exit 0",
+    "Wait for owner answers in awaitingOwner (GitHub Free: public or private); help with setup steps if asked",
+    "When CI is green and staging is deployed: set phase-2 done and start Phase 3 planning (writing-plans skill)"
+  ],
+  "phases": [
+    {
+      "id": "phase-0-discovery",
+      "status": "done"
+    },
+    {
+      "id": "phase-1-design-system",
+      "status": "done"
+    },
+    {
+      "id": "phase-2-foundations",
+      "status": "awaiting-owner"
+    },
+    {
+      "id": "phase-3-domain-core",
+      "status": "not-started"
+    },
+    {
+      "id": "phase-4-storefront",
+      "status": "not-started"
+    },
+    {
+      "id": "phase-5-checkout-payments",
+      "status": "not-started"
+    },
+    {
+      "id": "phase-6-admin-rbac",
+      "status": "not-started"
+    },
+    {
+      "id": "phase-7-analytics-integrations",
+      "status": "not-started"
+    },
+    {
+      "id": "phase-8-hardening-launch",
+      "status": "not-started"
+    }
+  ],
+  "todos": [
+    {
+      "id": "0.1",
+      "title": "Business scope & constraints",
+      "status": "done"
+    },
+    {
+      "id": "0.2",
+      "title": "Domain, email & brand presence",
+      "status": "done"
+    },
+    {
+      "id": "0.3",
+      "title": "Cloud & deployment environment",
+      "status": "done"
+    },
+    {
+      "id": "0.4",
+      "title": "Tech stack",
+      "status": "done"
+    },
+    {
+      "id": "0.5",
+      "title": "Product catalog & imagery",
+      "status": "done"
+    },
+    {
+      "id": "0.6",
+      "title": "Admin dashboard & RBAC permission matrix",
+      "status": "done"
+    },
+    {
+      "id": "0.7",
+      "title": "About, legal & policy pages",
+      "status": "done"
+    },
+    {
+      "id": "0.8",
+      "title": "Design tooling selection",
+      "status": "done"
+    },
+    {
+      "id": "0.8a",
+      "title": "Install approved design tools",
+      "status": "done"
+    },
+    {
+      "id": "0.9",
+      "title": "Design direction (2-3 mood pages)",
+      "status": "done"
+    },
+    {
+      "id": "0.9a",
+      "title": "Themeable design-token package (3 themes, validate/build/new-theme, CI)",
+      "status": "done"
+    },
+    {
+      "id": "0.9b",
+      "title": "Write PRODUCT.md and DESIGN.md",
+      "status": "done"
+    },
+    {
+      "id": "0.10",
+      "title": "Write ADRs in docs/adr/ from decisions",
+      "status": "done"
+    },
+    {
+      "id": "0.11",
+      "title": "Write implementation plan in docs/plans/ (writing-plans skill)",
+      "status": "done"
+    },
+    {
+      "id": "0.12",
+      "title": "Owner approval of Phase 0 exit criteria",
+      "status": "done"
+    }
+  ],
+  "decisions": {
+    "scope": {
+      "launch": "Full v1 (everything in the brief)",
+      "markets": "India at launch; international built now behind a feature flag until GST + IEC + LUT + international card gateway are approved",
+      "skus": {
+        "now": "100-500",
+        "in2Years": "500-2000"
+      },
+      "ordersPerMonth": "100-1000",
+      "infraBudgetInrPerMonth": {
+        "target": 1000,
+        "ceiling": 2000
+      },
+      "maintainer": "Owner (developer) + AI agents",
+      "gst": "Not registered yet; plans proprietorship + GST soon",
+      "launchDate": "Flexible"
+    },
+    "domainEmail": {
+      "domains": [
+        "argivasilvers.com (primary)",
+        "argivasilvers.in (redirect)"
+      ],
+      "registrar": "GoDaddy or BigRock (owner choice); watch renewal prices",
+      "dns": "Cloudflare free (nameservers moved from registrar)",
+      "email": "Zoho Mail free/Lite with SPF/DKIM/DMARC",
+      "trademark": "TODO(owner): IP India search, class 14"
+    },
+    "cloud": {
+      "principle": "Free when idle, pay-per-use, portable (Docker + vanilla Postgres + S3 API); migrate to bigger infra later without rewrites",
+      "app": "Google Cloud Run asia-south1 (Mumbai), scale-to-zero",
+      "database": "Neon Postgres free tier (autosuspend)",
+      "media": "Cloudflare R2 (S3 API, zero egress)",
+      "dnsCdn": "Cloudflare free",
+      "email": "Resend free",
+      "analytics": "PostHog free",
+      "errors": "Sentry free",
+      "cron": "GitHub Actions / Cloud Scheduler",
+      "cache": "None (no Redis) for now",
+      "environments": [
+        "local: docker compose",
+        "staging: second Cloud Run service + Neon branch, auto from main",
+        "production: on release tag"
+      ],
+      "backups": "Provider backups + weekly pg_dump GitHub Action to R2",
+      "budgetAlert": "INR 500 on Google Cloud",
+      "iac": "None now; Dockerfile + compose + service config + runbook in repo; Terraform later",
+      "dataResidency": "India region where offered; region in config; DPDP via policy + consent",
+      "tradeoffs": [
+        "1-3 s cold start after idle (mitigated by Cloudflare-cached catalog pages)",
+        "Google Cloud needs a card on file"
+      ]
+    },
+    "stack": {
+      "bundle": "A - custom modular monolith",
+      "language": "TypeScript (strict)",
+      "repo": "pnpm workspaces + Turborepo",
+      "web": "Next.js, standalone Docker output; storefront + /admin in one app",
+      "db": "PostgreSQL + Drizzle ORM",
+      "auth": "Better Auth + custom role/permission matrix",
+      "validation": "Zod",
+      "payments": "Razorpay (domestic + international) behind a PaymentProvider interface; PayPal later",
+      "currency": "Display converted prices (daily cached FX rates, configurable); always charge INR; revisit if international > ~20% of sales (owner confirmed)"
+    },
+    "catalog": {
+      "variantAxes": [
+        "length (anklet/chain)",
+        "ring size",
+        "bangle/bracelet size",
+        "weight",
+        "purity (92.5/80/60)",
+        "finish (plain/oxidised/rose-gold)"
+      ],
+      "variantRule": "Purity, finish, weight and price live on the variant; composition labelling and pricing mode evaluated per variant",
+      "productCard": [
+        "price",
+        "purity badge",
+        "weight",
+        "finish"
+      ],
+      "priceDisplay": "Single price, no breakdown. 'Inclusive of GST' wording is config-driven and only shown once GST-registered",
+      "photography": [
+        "plain background studio",
+        "on-model",
+        "lifestyle",
+        "short video per product",
+        "scale reference",
+        "phone photos now, professional later"
+      ],
+      "v1Extras": [
+        "wishlist",
+        "reviews & ratings",
+        "size guide"
+      ],
+      "ankletUnit": "Always sold as a pair",
+      "media": "Min 1, max 5 images per product; video optional",
+      "reviews": "Anyone can submit; admin approves before publishing; email verification + rate limit + bot protection to limit spam",
+      "notInV1": [
+        "gift wrap/message",
+        "engraving",
+        "made-to-order/pre-order",
+        "hallmark/HUID image",
+        "bulk CSV import"
+      ]
+    },
+    "admin": {
+      "users": "Owner + family + a few staff (4-10)",
+      "roles": [
+        "Owner",
+        "Manager",
+        "Catalog Editor",
+        "Fulfilment",
+        "Support"
+      ],
+      "priceApproval": "Maker-checker: silver-rate and price changes need approval by a different Owner/Manager; Owner may self-approve with a mandatory reason, flagged in audit log",
+      "permissionMatrix": "Approved as drafted in sdd/phase-0-discovery.md section 0.6",
+      "publishing": "Draft -> Publish for products and policy pages",
+      "security": [
+        "2FA for Owner/Manager",
+        "30 min idle sign-out",
+        "email alert on new-device login",
+        "audit log of all admin actions"
+      ],
+      "device": "Mobile and desktop equally (responsive admin)",
+      "notifications": [
+        "browser/phone push on new order",
+        "email on new order",
+        "WhatsApp Business API alerts deferred (per-message cost)"
+      ],
+      "finance": [
+        "auto invoices, GST-ready once registered",
+        "CSV export of orders/sales"
+      ]
+    },
+    "legal": {
+      "entity": "Sole proprietorship; TODO(owner): legal name",
+      "address": "Family shop/workshop; TODO(owner): full address",
+      "grievanceOfficer": "Owner; TODO(owner): name, email, phone",
+      "jurisdiction": "Bengaluru (Bangalore), Karnataka",
+      "cancellation": "Free before dispatch; not possible after dispatch",
+      "cancellationRefund": "Full refund to original payment method within 5-7 business days (also for failed/duplicate payments); separate from damage-claim policy, which offers no cash refunds",
+      "shipping": {
+        "carrier": "Aggregator (Shiprocket or Delhivery One) with tracking",
+        "charge": "Flat fee on all domestic orders; TODO(owner): amount",
+        "dispatchTime": "Per product, shown on product page"
+      },
+      "pages": [
+        "Terms & Conditions",
+        "Privacy Policy (DPDP Act 2023)",
+        "Cookie notice",
+        "Shipping & Delivery",
+        "Returns & Damaged Products",
+        "Cancellation & Refunds",
+        "Care & Re-polishing",
+        "Contact + seller/grievance details"
+      ],
+      "status": "All policy pages ship as draft until owner approves; legal review recommended",
+      "ourStoryAssets": "None yet; typographic/editorial layout with slots for photos later",
+      "contactChannels": [
+        "Phone",
+        "Email",
+        "WhatsApp chat button (click-to-chat)",
+        "Instagram link"
+      ]
+    },
+    "designTooling": {
+      "approved": [
+        "Impeccable (telemetry left on by owner choice; review installed hooks)",
+        "Anthropic frontend-design skill",
+        "Playwright / browser screenshots",
+        "shadcn MCP (primitives restyled to brand)",
+        "Anthropic theme-factory / brand-guidelines skills"
+      ],
+      "rejected": [
+        "21st.dev MCP",
+        "Figma MCP",
+        "brand-guidelines skill (applies Anthropic's own brand, not ARGIVA's)"
+      ],
+      "installed": {
+        "impeccable": ".github/skills/impeccable, .github/agents/impeccable-*.agent.md, .github/hooks/impeccable.json (postToolUse local detector, 5 s timeout); run '/impeccable init' to create PRODUCT.md",
+        "frontendDesign": ".github/skills/frontend-design (anthropics/skills, Apache-2.0)",
+        "themeFactory": ".github/skills/theme-factory (anthropics/skills, Apache-2.0)",
+        "shadcnMcp": ".vscode/mcp.json (start the server from VS Code)",
+        "browser": "VS Code built-in browser tools (no install)"
+      }
+    },
+    "designDirection": {
+      "moodsToExplore": [
+        "Quiet luxury",
+        "Warm Indian craft",
+        "Modern bold"
+      ],
+      "audience": [
+        "Young women 18-30 (everyday/college/work)",
+        "Women 30-50 (occasions, family, gifting)",
+        "NRI / international customers"
+      ],
+      "theme": "Mixed: dark hero/story sections, light shopping pages",
+      "languages": [
+        "English only"
+      ],
+      "references": "None given",
+      "chosen": "A quiet luxury as the default theme; B's ghungroo chain divider used only on Our Story and the Anklets collection (owner accepted recommendation 2026-10-31)",
+      "primaryAudience": "All women; no single primary group (owner 2026-10-31)",
+      "accessibility": "WCAG 2.2 AA (owner 2026-10-31)",
+      "northStar": "The Silversmith's Ledger (owner 2026-10-31)",
+      "questionStyle": "Owner prefers plain-language questions that explain why the answer is needed and define jargon",
+      "theming": {
+        "decision": "All three moods ship as standalone, switchable themes: quiet-luxury (default), warm-craft, modern-bold",
+        "package": "packages/design-tokens (@argiva/design-tokens), modelled on linode/design-language-system: DTCG JSON tokens -> Style Dictionary -> CSS custom properties + JS theme registry",
+        "tiers": "base (shared scales) -> theme palette + semantic tokens (per theme) -> component tokens (shared, reference semantic tokens only)",
+        "runtimeSwitch": "All themes compiled into one CSS file scoped by [data-theme]; app sets <html data-theme> from a site setting; no rebuild or redeploy to switch",
+        "adminControl": "Owner-only 'Appearance' setting chooses among registered (built and validated) themes; preview before publish; audit logged. Admins cannot upload raw CSS (prevents CSS injection)",
+        "rebrandPipeline": "pnpm tokens:new <id> --from <theme> -> edit tokens.json/theme.json -> pnpm tokens:build (validates contract + WCAG contrast, then builds) -> CI workflow design-tokens.yml",
+        "ornaments": "Theme manifest flags (purityBadge, divider, dividerScope, heroMedia) select signature component variants in the UI package",
+        "status": "Built and verified 2026-10-31: validate passes for 3 themes (40 semantic tokens, 22 contrast checks each); broken-contrast theme correctly rejected; preview switching verified in browser",
+        "commands": "npx pnpm@12.16.1 tokens:build | tokens:check | tokens:new <id> --from <theme> (corepack cannot fetch pnpm through the Akamai mirror)",
+        "futureAppWork": [
+          "site_settings.active_theme_id validated with isThemeId()",
+          "<html data-theme> set in root layout",
+          "Admin > Appearance page: Owner-only permission 'settings.appearance', preview via admin-only ?previewTheme=, publish + audit log",
+          "Load only the active theme's fonts (manifest.fonts) via self-hosting",
+          "UI components read only --argiva-* variables; lint rule against hex literals in components"
+        ],
+        "moodPageLessons": [
+          "Visible label must match the accessible name (Cart link)",
+          "Placeholder text on hero media needs contrast",
+          "Guard smooth scrolling with prefers-reduced-motion"
+        ]
+      },
+      "moodPages": {
+        "a-quiet-luxury": "sdd/design/moods/a-quiet-luxury.html (built): oxidised #1D2422 / mist #EEF0EE / indigo #2F3B5E; Marcellus + Hanken Grotesk; signature = hallmark-stamp purity badge",
+        "b-warm-indian-craft": "sdd/design/moods/b-warm-indian-craft.html (built): indigo cloth #22365A / khadi #E6E3DA / kattha #4E3326 / marigold #D99A1E / brass #B08D57; Rozha One + Mukta; signature = SVG ghungroo chain divider drawn on load, arched hero photo",
+        "c-modern-bold": "sdd/design/moods/c-modern-bold.html (built): ink #0E0E0E / white #FAFAFA / rose gold #B76E79 only accent; Anybody (variable width) + Atkinson Hyperlegible; signature = poster-scale condensed collection names over a snap-scrolling product rail"
+      }
+    }
+  },
+  "openItems": [
+    "Legal name, address, grievance officer contact, flat shipping fee amount",
+    "Shipping aggregator choice: Shiprocket vs Delhivery One",
+    "Silver-rate pricing formula per purity grade, GST treatment, rounding",
+    "Payment gateway account status",
+    "Support email/phone, WhatsApp Business number, grievance officer",
+    "Trademark search result"
+  ]
+}

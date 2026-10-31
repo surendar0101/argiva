@@ -1,0 +1,18 @@
+name: Deploy production
+on:
+  push:
+    tags: ['v*.*.*']
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: vars.GCP_PROJECT_ID != ''
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: production
+      sha: ${{ github.sha }}
+      build: false

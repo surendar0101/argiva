@@ -1,0 +1,33 @@
+{
+  "id": "quiet-luxury",
+  "label": "Quiet luxury",
+  "description": "Oxidised silver, mist and indigo. Restrained premium look with a hallmark-stamp purity badge.",
+  "default": true,
+  "fonts": [
+    {
+      "family": "Marcellus",
+      "weights": [
+        400
+      ],
+      "source": "google"
+    },
+    {
+      "family": "Hanken Grotesk",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "source": "google"
+    }
+  ],
+  "ornaments": {
+    "purityBadge": "hallmark",
+    "divider": "ghungroo",
+    "dividerScope": [
+      "page:our-story",
+      "collection:anklets"
+    ],
+    "heroMedia": "rect"
+  }
+}

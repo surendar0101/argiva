@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Placeholder image: pendant">
+  <rect width="800" height="1000" fill="#b5b5b5"/>
+  <g fill="none" stroke="#4a4a4a" stroke-width="4">
+    <path d="M180 0Q400 760 620 0" stroke-width="2"/>
+    <circle cx="400" cy="394" r="14"/>
+    <path d="M400 410C350 490 340 570 400 610C460 570 450 490 400 410Z"/>
+  </g>
+  <text x="400" y="920" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" letter-spacing="2" fill="#303030">Placeholder</text>
+</svg>

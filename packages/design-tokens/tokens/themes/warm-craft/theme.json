@@ -1,0 +1,32 @@
+{
+  "id": "warm-craft",
+  "label": "Warm Indian craft",
+  "description": "Indigo cloth, khadi and marigold with Indian-foundry type. Ghungroo chain dividers on every page.",
+  "default": false,
+  "fonts": [
+    {
+      "family": "Rozha One",
+      "weights": [
+        400
+      ],
+      "source": "google"
+    },
+    {
+      "family": "Mukta",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "source": "google"
+    }
+  ],
+  "ornaments": {
+    "purityBadge": "text",
+    "divider": "ghungroo",
+    "dividerScope": [
+      "all"
+    ],
+    "heroMedia": "arch"
+  }
+}

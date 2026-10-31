@@ -1,0 +1,24 @@
+.main {
+  min-block-size: 100dvh;
+  display: grid;
+  place-content: center;
+  gap: var(--argiva-space-4);
+  padding: var(--argiva-space-gutter);
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--argiva-font-family-display);
+  font-size: var(--argiva-font-size-display);
+  font-weight: var(--argiva-font-weight-display);
+  font-stretch: var(--argiva-font-stretch-display);
+  letter-spacing: var(--argiva-font-tracking-wordmark);
+  line-height: var(--argiva-font-line-height-tight);
+}
+
+.tagline {
+  margin: 0;
+  color: var(--argiva-color-text-muted);
+  font-size: var(--argiva-font-size-lg);
+}
