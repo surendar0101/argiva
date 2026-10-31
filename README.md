@@ -1,4 +1,6 @@
-# argiva
+# ARGIVA Silvers
+
+![ARGIVA Silvers logo](docs/assets/argiva.jpeg)
 
 The official website and online store for ARGIVA Silvers.
 

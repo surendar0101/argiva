@@ -137,3 +137,26 @@ Plan: [docs/plans/2026-10-31-phase-2-foundations.md](../docs/plans/2026-10-31-ph
   - `ui-preview` hard-codes its fallback theme;
   - `apps/web` has no lint script of its own;
   - the `Price` test has no axe check.
+
+## Owner decision: public repo (2026-10-31)
+
+The owner chose a public repo on GitHub Free. The workflows work as written.
+
+## Repo organization review (2026-10-31)
+
+Owner committed Phase 1-2 as `aff4a8c` on `develop` and pushed. Findings (nothing fixed yet; waiting for owner choices):
+
+1. No `main` branch. GitHub default is `develop`; `master` has only the initial commit. CI push, staging deploy, design-tokens workflow, branch protection and docs all expect `main`, so staging will never deploy.
+2. `docs/plans/` is not on GitHub: the owner's global ignore (`~/.gitignore_global`) has a `plans` rule. Links from README, docs index and state point to missing files.
+3. `argiva.jpeg` (README logo) is untracked, so the README image is broken on GitHub. It sits at the repo root, and its alt text is "alt text".
+4. A 17 MB macOS binary is committed: `.github/skills/impeccable/scripts/bin/darwin-arm64/impeccable`.
+5. `.gitignore` lacks `coverage/`, `playwright-report/` and `test-results/` (minor).
+6. Fine: app/package layout, root configs, no secrets tracked, `.env*` ignored.
+
+Owner said "do all the fixes now". Applied:
+
+- Branch: kept `main` as the convention (recommended option). [docs/setup.md section 2.5](../docs/setup.md#25-push-the-code) now tells the owner how to create `main` from `develop` and make it the default. The owner does the git and GitHub steps.
+- `.gitignore`: `!docs/plans/` overrides the global `plans` rule; added `coverage/`, `playwright-report/`, `test-results/` and `.github/skills/impeccable/scripts/bin/`.
+- Impeccable binary: untracked with `git rm --cached`. The local file stays. Its launcher downloads a checksum-verified binary when the sibling is missing. The 17 MB stays in the history of commit `aff4a8c`; removing it would need a history rewrite, which isn't worth it.
+- Logo: moved to `docs/assets/argiva.jpeg`. The README has a plain heading and real alt text.
+- Checked: link check 0 broken, lint exit 0.

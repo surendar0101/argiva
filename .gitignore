@@ -8,3 +8,10 @@ dist/
 !.env.example
 .DS_Store
 next-env.d.ts
+coverage/
+playwright-report/
+test-results/
+# Impeccable's launcher downloads the platform binary on first use (checksum-verified)
+.github/skills/impeccable/scripts/bin/
+# Override global ignores that would hide project files
+!docs/plans/

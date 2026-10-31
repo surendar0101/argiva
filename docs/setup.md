@@ -109,12 +109,25 @@ Why Neon: see [ADR 0004](adr/0004-tech-stack.md).
 
 ### 2.5 Push the code
 
-Review the changes, then commit and push them to `main` yourself:
+All workflows, deploys and branch protection use a branch called `main`. It must exist on GitHub and be the **default branch**.
+
+If you haven't got `main` yet (for example, the work is on `develop`), create it once:
+
+```sh
+git switch develop
+git pull
+git switch -c main
+git push -u origin main
+```
+
+Then on GitHub go to **Settings → General → Default branch**, switch it to `main` and confirm. You can delete leftover branches such as `master` from the **Branches** page afterwards.
+
+From then on, review the changes, then commit and push them to `main` yourself:
 
 ```sh
 git status
 git add -A
-git commit -m "Phase 1–2: design system and foundations"
+git commit -m "Describe the change"
 git push origin main
 ```
 
