@@ -15,3 +15,4 @@ test-results/
 .github/skills/impeccable/scripts/bin/
 # Override global ignores that would hide project files
 !docs/plans/
+neon.env
