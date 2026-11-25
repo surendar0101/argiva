@@ -49,8 +49,15 @@ describe('Task 6 storefront pages', () => {
       'href',
       'https://www.instagram.com/argiva_silvers/',
     );
-    expect(screen.getByText(/TODO\(owner\): official WhatsApp click-to-chat URL/)).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /WhatsApp/ })).not.toBeInTheDocument();
+  });
+
+  test('shows missing business facts as coming soon, without internal notes or unconfirmed claims', () => {
+    const { container } = render(<ContactPage />);
+
+    expect(container.textContent).not.toContain('TODO(owner)');
+    expect(container.textContent).not.toMatch(/sole proprietorship|Bengaluru/i);
+    expect(screen.getAllByText('Details coming soon.').length).toBeGreaterThanOrEqual(5);
   });
 
   test('renders policy content from storage with the required draft banner', async () => {

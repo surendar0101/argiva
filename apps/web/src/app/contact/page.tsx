@@ -1,7 +1,10 @@
 import { getConfig } from '@argiva/config';
 import Link from 'next/link';
+import { DETAILS_COMING_SOON } from '../../lib/placeholders';
 import styles from './page.module.css';
 
+// TODO(owner): confirm the support phone, email and WhatsApp link, the seller entity (once
+// registered), legal name, business address, grievance officer and jurisdiction.
 export default function ContactPage() {
   const instagramUrl = getConfig().instagramUrl;
 
@@ -17,15 +20,15 @@ export default function ContactPage() {
         <dl className={styles.ledger}>
           <div className={styles.entry}>
             <dt>Phone</dt>
-            <dd>TODO(owner): official customer support phone number.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>Email</dt>
-            <dd>TODO(owner): official customer support email.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>WhatsApp</dt>
-            <dd>TODO(owner): official WhatsApp click-to-chat URL.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>Instagram</dt>
@@ -47,23 +50,23 @@ export default function ContactPage() {
         <dl className={styles.ledger}>
           <div className={styles.entry}>
             <dt>Seller entity</dt>
-            <dd>Sole proprietorship.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>Legal name</dt>
-            <dd>TODO(owner): add the proprietor’s legal name.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>Business address</dt>
-            <dd>TODO(owner): add the full business address.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>Grievance officer</dt>
-            <dd>The proprietor is the grievance officer. TODO(owner): add the name, email and phone.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
           <div className={styles.entry}>
             <dt>Jurisdiction</dt>
-            <dd>Bengaluru (Bangalore), Karnataka.</dd>
+            <dd>{DETAILS_COMING_SOON}</dd>
           </div>
         </dl>
         <Link className={styles.policyLink} href="/policies/contact-disclosures">

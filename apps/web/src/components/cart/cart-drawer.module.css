@@ -1,21 +1,26 @@
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
 .drawer {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0 0 0 auto;
   width: min(400px, 90vw);
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
   background-color: var(--argiva-color-surface-page);
-  z-index: 1000;
+  color: var(--argiva-color-text-primary);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.drawer::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.panel {
   display: flex;
   flex-direction: column;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
 .header {

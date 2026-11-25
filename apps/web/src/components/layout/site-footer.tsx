@@ -1,6 +1,7 @@
 import { getConfig } from '@argiva/config';
 import Link from 'next/link';
 import { getCategories } from '../../lib/catalog';
+import { DETAILS_COMING_SOON } from '../../lib/placeholders';
 import styles from './site-footer.module.css';
 
 const POLICY_LINKS = [
@@ -102,16 +103,14 @@ export async function SiteFooter() {
               ) : (
                 <span className={styles.socialLink}>Instagram: @argiva_silvers</span>
               )}
-              <span className={styles.socialLink}>WhatsApp: TODO(owner): official WhatsApp click-to-chat URL.</span>
+              {/* TODO(owner): official WhatsApp click-to-chat URL. */}
+              <span className={styles.socialLink}>WhatsApp: {DETAILS_COMING_SOON}</span>
             </div>
+            {/* TODO(owner): grievance officer name, email and phone. */}
             <p className={styles.grievance}>
               <strong>Consumer Grievance Officer:</strong>
               <br />
-              TODO(owner): Name
-              <br />
-              TODO(owner): Email
-              <br />
-              TODO(owner): Phone
+              {DETAILS_COMING_SOON}
             </p>
           </div>
         </div>

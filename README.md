@@ -58,14 +58,23 @@ To work on the site locally, you only need the tools below.
    docker compose up -d --wait db
    ```
 
-3. Apply the database migrations as described in the [runbook's storefront schema section](docs/runbook.md#storefront-schema-and-content-readiness). Compose does not apply migrations or seed data automatically.
+3. Create your settings file, then the tables and reference data. Compose does not do this for you.
+
+   ```sh
+   cp .env.example apps/web/.env.local
+   npx --loglevel=error pnpm@12.16.1 install
+   set -a; . apps/web/.env.local; set +a
+   npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate
+   npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:seed
+   ```
+
 4. Build and start the site:
 
    ```sh
    docker compose up -d --build --wait
    ```
 
-5. Open <http://localhost:3000>. The database-backed catalog needs its schema and data. After applying migrations, use the target-safe `db:seed` steps in the [runbook](docs/runbook.md#storefront-schema-and-content-readiness) to add local catalog and draft policy rows.
+5. Open <http://localhost:3000>. The shop has categories and draft policies but no products yet. See the [runbook](docs/runbook.md#storefront-schema-and-content-readiness).
 6. Optional: run the same checks CI does:
 
    ```sh
@@ -94,7 +103,13 @@ To work on the site locally, you only need the tools below.
    docker compose up -d --wait db
    ```
 
-4. Apply the database migrations as described in the [runbook](docs/runbook.md#storefront-schema-and-content-readiness). Migrations are not applied automatically. Policy routes also need seeded policy rows; follow the runbook's target-safe `db:seed` steps.
+4. Create the tables and reference data:
+
+   ```sh
+   set -a; . apps/web/.env.local; set +a
+   npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate
+   npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:seed
+   ```
 
 5. Start the dev server and open <http://localhost:3000>:
 
@@ -120,12 +135,13 @@ npx --loglevel=error pnpm@12.16.1 ui:preview
 | Lint (ESLint, no-hex-colours, no-hard-coded-values, style-variable names) | `npx --loglevel=error pnpm@12.16.1 lint` |
 | Check types | `npx --loglevel=error pnpm@12.16.1 typecheck` |
 | Run all tests | `npx --loglevel=error pnpm@12.16.1 test` |
+| Browser tests (after a build; needs the local database) | `npx --loglevel=error pnpm@12.16.1 e2e` |
 
-CI runs these four in this order, then builds the Docker image and runs the smoke test. If they pass on your computer, CI should pass too.
+CI runs the first four in this order, then builds the Docker image and runs the smoke test, and separately runs the [browser tests](docs/runbook.md#browser-tests).
 
 ## Deploying
 
-- Merging to `main` deploys to **staging** on Google Cloud Run (Mumbai), once CI passes.
+- Merging to `main` deploys to **staging** on Google Cloud Run (Mumbai), once CI passes. The deploy prepares the database first.
 - Pushing a version tag such as `v1.0.0` promotes the same image to **production**, after the owner approves it.
 - The deploy workflows do nothing until the one-time cloud setup is finished. See the [setup guide](docs/setup.md), sections 3–5.
 

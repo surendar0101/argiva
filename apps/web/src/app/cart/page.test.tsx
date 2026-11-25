@@ -44,6 +44,13 @@ describe('CartPage', () => {
     expect(summary).toHaveTextContent('₹2,500');
   });
 
+  test('says checkout is unavailable instead of linking to a missing page', () => {
+    renderCart([item]);
+
+    expect(document.querySelector('a[href="/checkout"]')).toBeNull();
+    expect(screen.getByText('Online checkout is not available yet.')).toBeInTheDocument();
+  });
+
   test('reserves space for cart item photography', () => {
     renderCart([{ ...item, imageUrl: '/test.jpg' }]);
 

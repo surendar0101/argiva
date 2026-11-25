@@ -28,8 +28,8 @@ The storefront needs server-rendered catalog data and page metadata without intr
 
 ## Consequences
 
-- The relevant database migrations and content rows must exist before database-backed routes can serve them. The storefront does not apply migrations or seed data at startup.
-- The `@argiva/db` package provides a `db:seed` command for the initial catalog and draft policy rows. It uses the configured database and does not apply migrations; operators must verify the database target first.
+- The relevant database migrations and content rows must exist before database-backed routes can serve them. The storefront does not do this at startup; deploys do it first ([ADR 0015](0015-migrations-and-browser-tests.md)).
+- The `db:seed` command holds reference data only (categories and draft policies), with no sample products or silver rate.
 - There is no policy administration UI in this phase. Publishing remains an owner-controlled follow-up, and the policy content must stay draft until approved.
 - Draft policy URLs are public and included in the sitemap, so search engines may discover draft copy before sign-off. Revisit this choice if public discovery is not acceptable.
 - Cart state is limited to the browser and does not reserve stock, create orders or initiate payments. Checkout and payment behavior belongs to a later phase.

@@ -5,6 +5,8 @@ A check of everything built in Phases 1 to 4, including the uncommitted work. No
 > **Update, same day:** fault 1 (styling) is fixed and a `lint:css-vars` check now guards it. See the [new screenshots](../../sdd/audit-2026-11-25/after-css-fix/). Everything else below still applies.
 >
 > **Update, 26 November:** fault 2 (search crash) is fixed, and lint now skips the skill folders.
+>
+> **Stabilisation, 26 November** ([design](../superpowers/specs/2026-11-26-stabilisation-design.md)): faults 3, 4 and 5 are fixed; the invented seed products and rate are removed; deploys run database migrations; real-browser tests and a style-variable check exist. Still open: the data model, pricing formula, filters, homepage sections, stock reservation, photography and the public `config.env`. Fault 6 is about the owner's computer.
 
 ## Verdict
 

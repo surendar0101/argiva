@@ -203,7 +203,8 @@
 }
 
 .checkout {
-  width: 100%;
+  margin: 0;
+  font-weight: var(--argiva-font-weight-strong);
 }
 
 @media (min-width: 48rem) {

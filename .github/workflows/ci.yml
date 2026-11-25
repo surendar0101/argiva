@@ -28,12 +28,59 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
       - run: docker compose up -d --build --wait
+      - run: pnpm install --frozen-lockfile --filter "@argiva/db..."
+      # The seed loads settings that import a built package.
+      - run: pnpm --filter "@argiva/db^..." run build
+      - name: Create tables and reference data
+        env:
+          APP_ENV: local
+          APP_BASE_URL: http://localhost:3000
+          DATABASE_URL: postgres://argiva:argiva_local_only@localhost:5432/argiva
+          STORAGE_DRIVER: local
+          STORAGE_LOCAL_DIR: ./.data/uploads
+        run: |
+          pnpm --filter @argiva/db db:migrate
+          pnpm --filter @argiva/db db:seed
       - run: node scripts/smoke.mjs http://127.0.0.1:3000 --noindex
       - if: failure()
         run: docker compose logs
       - if: always()
         run: docker compose down -v
+  e2e:
+    needs: verify
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: argiva
+          # A throwaway database that exists only for this job.
+          POSTGRES_PASSWORD: argiva_ci_only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U argiva" --health-interval 5s --health-timeout 3s --health-retries 10
+    env:
+      E2E_POSTGRES_URL: postgres://argiva:argiva_ci_only@127.0.0.1:5432
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @argiva/web exec playwright install --with-deps chromium
+      - run: pnpm build
+      - run: pnpm e2e
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: apps/web/playwright-report
+          retention-days: 7

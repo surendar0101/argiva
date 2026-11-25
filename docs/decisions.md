@@ -18,6 +18,7 @@ Short index of decisions. Details, options and consequences are in [docs/adr/](a
 | [0012](adr/0012-config-driven.md) | Config | Typed, Zod-validated config + admin site settings; no hard-coded business values |
 | [0013](adr/0013-domain-core-architecture.md) | Domain Core | Decoupled `@argiva/domain` pure business logic and `@argiva/db` Drizzle schema with `prepare: false` for Neon pooling |
 | [0014](adr/0014-storefront-architecture.md) | Storefront | Proposed: server-rendered catalog and SEO with small client interactions; database-backed draft policies |
+| [0015](adr/0015-migrations-and-browser-tests.md) | Deploy and testing | Deploys migrate and load reference data first; Playwright browser and accessibility tests |
 
 ## Tooling notes
 - TypeScript pinned to 6.0.x because Next.js and typescript-eslint need the TypeScript JavaScript API, which 7.0 lacks; revisit when both support 7.

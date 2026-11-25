@@ -14,12 +14,16 @@
     "Config-driven: no hardcoded URLs/domains/business constants; use centralised typed config.",
     "Never ask for or store secrets in this repo; .env.example only.",
     "Ask one topic at a time with options and a recommendation; record each decision here and in sdd/phase-0-discovery.md.",
-    "Docs every phase: the last task of each phase plan updates README.md, docs/setup.md (owner accounts/services), docs/runbook.md (operations), a README per new app/package, ADRs and the docs/README.md index; the phase isn't done without it."
+    "Docs every phase: the last task of each phase plan updates README.md, docs/setup.md (owner accounts/services), docs/runbook.md (operations), a README per new app/package, ADRs and the docs/README.md index; the phase isn't done without it.",
+    "With every code change, update the docs and the Understand-Anything graph in .ua/ (owner, 2026-11-26)."
   ],
   "currentPhase": "phase-4-storefront",
-  "currentStep": "Lint ignore, search 500 fix and .ua ignore rule done and verified (2026-11-26). Waiting for the owner to run the checkpoint commit. Next: plan the functionality work (data model and storefront function), design polish deferred.",
+  "currentStep": "App running locally on http://localhost:3100 (temporary database, container argiva-demo-db). Codebase map update waits: the incremental tool refuses uncommitted changes. Stabilisation still uncommitted.",
   "awaitingOwner": [
-    "Run the checkpoint commit (commands given in chat; use a new branch and do not push to main, which deploys to staging without database migrations)."
+    "Codebase map: commit first, then incremental update (recommended, cheaper), or a full rebuild now on the uncommitted code (about 7 agent runs).",
+    "Commit and push the stabilisation work on a branch (the agent never commits).",
+    "Before merging to main: grant the deployer read access to both database secrets (docs/setup.md section 3.8).",
+    "Open a pull request, merge when CI passes, then check staging."
   ],
   "phase1": {
     "plan": "docs/plans/2026-10-31-phase-1-design-system.md",
@@ -146,7 +150,18 @@
       "Full-workspace test attempts failed only in `packages/db/seed-runner.test.ts`: the synchronous tsx child took 8.7 seconds with concurrent root lint and 5.2 seconds with lint stopped, both exceeding Vitest's 5-second default while Turbo ran parallel package tasks. The isolated DB suite passed 12/12 in 1.4 seconds. This confirms the outer test timeout is too short under Turbo load, not a seed/database failure. Ruling: set only this test's timeout to 20 seconds, above its 15-second child bound plus margin. Cost if wrong: a stuck child may delay feedback up to 15 seconds. No database was changed.",
       "2026-11-25 audit: 172 undefined CSS variables, search 500, /checkout 404, missing hero; see docs/audit. Phase 3 data model also incomplete.",
       "2026-11-25: 172 undefined CSS variables fixed; new lint:css-vars check; tests/typecheck/build pass; homepage verified in browser at both widths."
-    ]
+    ],
+    "stabilisationPlan": "docs/superpowers/plans/2026-11-26-stabilisation.md",
+    "stabilisation": {
+      "status": "implemented, uncommitted; CI and staging unverified",
+      "verification": "clean copy: build, lint, typecheck, unit 217, script 24, browser 94 pass",
+      "deferredMinors": [
+        "cart quantity has no upper bound",
+        "Safari drawer focus return unverified",
+        "fixed price missing is not logged",
+        "no cleanup step for sample data in cloud databases if ever seeded"
+      ]
+    }
   },
   "nextActions": [
     "[done] Phase 2 complete: CI green on GitHub, staging deployed from main, owner setup actions verified",
@@ -192,7 +207,22 @@
     "[done] 2026-11-26: excluded .claude/**, .agents/** and .ua/** from ESLint; lint passes",
     "[done] 2026-11-26: search 500 fixed (use client on PurityBadge, boundary test); verified in a built server",
     "[done] 2026-11-26: .ua/.trash-*/ ignored; secret scan clean; checks pass (web 90, UI 45, db 12, domain 27, config 11, scripts 15; typecheck, lint, build)",
-    "[todo] After the checkpoint commit: brainstorm and spec the functionality work (data model gaps, broken or missing storefront functions from the audit), get approval, then writing-plans. Design polish comes after functionality works."
+    "[done] 2026-11-26: confirmed checkpoint commit and baseline checks; re-checked open audit faults in source",
+    "[done] 2026-11-26: stabilisation design written and self-checked (no subagent)",
+    "[done] 2026-11-26: stabilisation plan written and self-reviewed",
+    "[todo] Execute stabilisation tasks 1-7 after owner review: seed/facts, hero/checkout, prices, cart, migrations/deploy, browser tests, docs/verification",
+    "[done] Stabilisation Task 1 (reference-only seed, 'Details coming soon.')",
+    "[done] Stabilisation Task 2 (hero placeholder, checkout boundary)",
+    "[done] Stabilisation Task 3 (unavailable prices)",
+    "[done] Stabilisation Task 4 (cart validation, modal drawer)",
+    "[done] Stabilisation Task 5 (migrations, deploy, CI, smoke)",
+    "[done] Stabilisation Task 6 (browser tests: 94 pass; confirmed they fail on two re-introduced bugs)",
+    "[done] Stabilisation Task 7 documentation and verification (tests 216 + 21 script, 94 browser, image smoke on empty database)",
+    "[done] Stabilisation Task 7 (documentation, verification, documented-commands run)",
+    "[done] Final review: 1 critical (seed failed on fresh checkout) and 1 important (wrong price message) fixed; 4 minors deferred",
+    "[todo] After staging is verified: brainstorm the data model and storefront function work",
+    "[done] Started the app locally on port 3100 with a temporary database",
+    "[todo] Update .ua/ with /understand after the owner's choice"
   ],
   "phases": [
     {
@@ -574,7 +604,10 @@
       "useAny": "Ignore the unfinished 'Use any' message.",
       "stateKeeping": "Owner asks that state and sdd logs are updated continuously as work happens.",
       "order": "Functionality first; design polish later. Supersedes the \"agree design\" step in recoveryApproach."
-    }
+    },
+    "stabilisationOrder": "Owner chose option A on 2026-11-26: stabilise the current storefront and deploy path first, then complete the data model.",
+    "stabilisationDesign": "Approved 2026-11-26 as written: hide proprietorship/grievance/jurisdiction behind 'Details coming soon.', keep Phase 0 cancellation terms as draft; deploy runs migrations and insert-only reference data on staging and production; deploy account may read the database secrets; invented seed products/rates removed; Playwright browser tests.",
+    "stabilisationExecution": "Owner approved the plan and chose Native on 2026-11-26: implement in this session, then one fresh reviewer for the whole change. No commits."
   },
   "openItems": [
     "Legal name, address, grievance officer contact, flat shipping fee amount",
@@ -582,6 +615,7 @@
     "Silver-rate pricing formula per purity grade, GST treatment, rounding",
     "Payment gateway account status",
     "Support email/phone, WhatsApp Business number, grievance officer",
-    "Trademark search result"
+    "Trademark search result",
+    "Remove config.env from the public repository (audit risk, not part of stabilisation)"
   ]
 }

@@ -31,14 +31,18 @@ pnpm --filter @argiva/db typecheck
 # Run unit and integration tests
 pnpm --filter @argiva/db test
 
-# Seed the configured database after confirming the target and applying migrations
+# Add missing reference data to the configured database (after migrating)
 pnpm --filter @argiva/db db:seed
 
 # Generate Drizzle migration files
 pnpm --filter @argiva/db db:generate
 
-# Apply migrations
+# Apply pending migrations to DATABASE_URL (required; no fallback)
 pnpm --filter @argiva/db db:migrate
 ```
 
-`src/seed.ts` exports `seedDatabase(db)` and includes the initial catalog and draft policy rows. The `db:seed` CLI creates a configured database connection, passes it to the seed function, and closes the pool on success or failure. It does not apply migrations. See the [runbook's storefront schema and content readiness section](../../docs/runbook.md#storefront-schema-and-content-readiness) for the local environment setup and target-safety steps.
+`src/seed.ts` exports `seedDatabase(db)`. It holds reference data only: the six categories and eight draft policy pages. It adds missing rows and never changes or deletes existing ones. There are no sample products, users or silver rates. The `db:seed` command uses the full app configuration, passes a database to the function and closes the pool on success or failure.
+
+`migrate-runner.ts` exports `runMigrations(connectionString)`, also available as `@argiva/db/migrate`. It applies the files in `drizzle/` with `prepare: false`, so it works through a pooled connection. It is safe to repeat. Deploys run both commands before releasing ([ADR 0015](../../docs/adr/0015-migrations-and-browser-tests.md)).
+
+See the [runbook's storefront schema and content readiness section](../../docs/runbook.md#storefront-schema-and-content-readiness) for the local environment setup and target-safety steps.

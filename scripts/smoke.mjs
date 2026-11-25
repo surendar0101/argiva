@@ -48,6 +48,20 @@ const results = [
     expect(res.headers.get('x-content-type-options') === 'nosniff', 'nosniff missing');
     if (flag === '--noindex') expect(/<meta name="robots" content="noindex/.test(html), 'robots noindex missing');
   }),
+  await check('GET /collections (reads the database)', async () => {
+    const res = await fetch(url('/collections'));
+    expect(res.status === 200, `status ${res.status}`);
+    expect((await res.text()).includes('<h1'), 'no h1');
+  }),
+  await check('GET /policies/shipping (reference data loaded)', async () => {
+    const res = await fetch(url('/policies/shipping'));
+    expect(res.status === 200, `status ${res.status}`);
+    expect((await res.text()).includes('Shipping'), 'no policy text');
+  }),
+  await check('GET /search?q=silver', async () => {
+    const res = await fetch(url('/search?q=silver'));
+    expect(res.status === 200, `status ${res.status}`);
+  }),
   await check('GET / stylesheets ship web fonts', async () => {
     const html = await (await fetch(url('/'))).text();
     const hrefs = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g)].map((m) => m[1]);

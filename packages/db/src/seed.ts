@@ -1,32 +1,14 @@
 import type { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 import * as schema from './schema';
-import {
-  categories,
-  policies,
-  products,
-  productVariants,
-  silverRates,
-  users,
-  type NewCategory,
-  type NewPolicy,
-  type NewProduct,
-  type NewProductVariant,
-  type NewSilverRate,
-  type NewUser,
-} from './schema';
+import { categories, policies, type NewCategory, type NewPolicy } from './schema';
 
-export const OWNER_USER_ID = '00000000-0000-0000-0000-000000000001';
+const COMING_SOON = 'Details coming soon.';
 
-const sampleUsers: NewUser[] = [
-  {
-    id: OWNER_USER_ID,
-    email: 'owner@argivasilvers.com',
-    name: 'ARGIVA Owner',
-    role: 'owner',
-  },
-];
+function comingSoon(): NewPolicy['content'] {
+  return [{ type: 'paragraph', text: COMING_SOON }];
+}
 
-const sampleCategories: NewCategory[] = [
+const referenceCategories: NewCategory[] = [
   {
     id: '10000000-0000-0000-0000-000000000001',
     name: 'Chains & Pendants',
@@ -83,172 +65,13 @@ const sampleCategories: NewCategory[] = [
   },
 ];
 
-const sampleProducts: NewProduct[] = [
-  {
-    id: '20000000-0000-0000-0000-000000000001',
-    categoryId: '10000000-0000-0000-0000-000000000004', // Anklets
-    name: 'Ghungroo Heritage Silver Anklets',
-    slug: 'ghungroo-heritage-silver-anklets',
-    description:
-      'Artisanal handcrafted silver anklets with delicate ghungroo bells inspired by traditional Indian silversmithing.',
-    careInstructions: 'Store in airtight packaging; avoid contact with perfume and direct moisture.',
-    returnEligibility: 'Replacement only for reported transit damage within 2 days with unboxing video.',
-    status: 'published',
-  },
-  {
-    id: '20000000-0000-0000-0000-000000000002',
-    categoryId: '10000000-0000-0000-0000-000000000001', // Chains
-    name: 'Classic Curb Silver Chain',
-    slug: 'classic-curb-silver-chain',
-    description: 'Precision-crafted sterling silver curb chain with secure lobster clasp.',
-    careInstructions: 'Clean gently with a soft microfibre cloth.',
-    returnEligibility: 'Replacement only for reported transit damage within 2 days with unboxing video.',
-    status: 'published',
-  },
-  {
-    id: '20000000-0000-0000-0000-000000000003',
-    categoryId: '10000000-0000-0000-0000-000000000002', // Earrings
-    name: 'Marcellus Silver Studs',
-    slug: 'marcellus-silver-studs',
-    description: 'Understated geometric sterling silver studs for everyday luxury.',
-    careInstructions: 'Wipe dry after wear.',
-    returnEligibility: 'Replacement only for reported transit damage within 2 days with unboxing video.',
-    status: 'published',
-  },
-  {
-    id: '20000000-0000-0000-0000-000000000004',
-    categoryId: '10000000-0000-0000-0000-000000000003', // Bangles
-    name: 'Traditional Filigree Silver Bangle',
-    slug: 'traditional-filigree-silver-bangle',
-    description: 'Intricate filigree wirework handcrafted in 80% silver composition.',
-    careInstructions: 'Handle with care; avoid bending or excess pressure.',
-    returnEligibility: 'Replacement only for reported transit damage within 2 days with unboxing video.',
-    status: 'published',
-  },
-  {
-    id: '20000000-0000-0000-0000-000000000005',
-    categoryId: '10000000-0000-0000-0000-000000000005', // Rings
-    name: 'Minimalist Silver Band',
-    slug: 'minimalist-silver-band',
-    description: 'Sleek silver band finished with a delicate rose-gold electroplated accent.',
-    careInstructions: 'Avoid harsh abrasives or chemical polish on plated surfaces.',
-    returnEligibility: 'Replacement only for reported transit damage within 2 days with unboxing video.',
-    status: 'published',
-  },
-];
-
-const sampleVariants: NewProductVariant[] = [
-  {
-    id: '30000000-0000-0000-0000-000000000001',
-    productId: '20000000-0000-0000-0000-000000000001',
-    sku: 'ANK-GHU-925',
-    name: 'Pair 10.5 inch',
-    purity: '92.5',
-    purityVerified: true,
-    finish: 'oxidised',
-    weightGrams: '38.50',
-    pricingMode: 'silver_rate',
-    makingChargesPaise: 75000,
-    stockQuantity: 12,
-    isPair: true, // Brand Content §5: Anklets are always sold as a pair
-    isActive: true,
-  },
-  {
-    id: '30000000-0000-0000-0000-000000000002',
-    productId: '20000000-0000-0000-0000-000000000002',
-    sku: 'CHN-CRB-925',
-    name: '20 inch Chain',
-    purity: '92.5',
-    purityVerified: true,
-    finish: 'plain',
-    weightGrams: '18.20',
-    pricingMode: 'silver_rate',
-    makingChargesPaise: 45000,
-    stockQuantity: 20,
-    isPair: false,
-    isActive: true,
-  },
-  {
-    id: '30000000-0000-0000-0000-000000000003',
-    productId: '20000000-0000-0000-0000-000000000003',
-    sku: 'ERR-MRC-925',
-    name: 'Classic Stud Pair',
-    purity: '92.5',
-    purityVerified: true,
-    finish: 'plain',
-    weightGrams: '4.80',
-    pricingMode: 'fixed',
-    fixedPricePaise: 179900, // ₹1,799.00
-    makingChargesPaise: 0,
-    stockQuantity: 35,
-    isPair: true,
-    isActive: true,
-  },
-  {
-    id: '30000000-0000-0000-0000-000000000004',
-    productId: '20000000-0000-0000-0000-000000000004',
-    sku: 'BNG-FLG-800',
-    name: 'Size 2.4',
-    purity: '80',
-    purityVerified: true,
-    finish: 'plain',
-    weightGrams: '28.00',
-    pricingMode: 'silver_rate',
-    makingChargesPaise: 60000,
-    stockQuantity: 8,
-    isPair: false,
-    isActive: true,
-  },
-  {
-    id: '30000000-0000-0000-0000-000000000005',
-    productId: '20000000-0000-0000-0000-000000000005',
-    sku: 'RNG-MNM-925',
-    name: 'Size 14',
-    purity: '92.5',
-    purityVerified: true,
-    finish: 'rose_gold',
-    weightGrams: '3.50',
-    pricingMode: 'fixed',
-    fixedPricePaise: 129900, // ₹1,299.00
-    makingChargesPaise: 0,
-    stockQuantity: 15,
-    isPair: false,
-    isActive: true,
-  },
-];
-
-const sampleSilverRate: NewSilverRate = {
-  id: '40000000-0000-0000-0000-000000000001',
-  ratePerGramPaise: 9850, // ₹98.50 per gram for 999 fine silver
-  createdBy: OWNER_USER_ID,
-  approvedBy: OWNER_USER_ID,
-  status: 'approved',
-  approvalReason: 'Initial verified benchmark silver rate',
-};
-
-const samplePolicies: NewPolicy[] = [
-  {
-    slug: 'terms',
-    title: 'Terms & Conditions',
-    status: 'draft',
-    content: [
-      {
-        type: 'paragraph',
-        text: 'TODO(owner): Provide Terms & Conditions content and obtain legal review before publication.',
-      },
-    ],
-  },
-  {
-    slug: 'privacy',
-    title: 'Privacy Policy',
-    status: 'draft',
-    content: [
-      {
-        type: 'paragraph',
-        text: 'TODO(owner): Provide the privacy notice and confirm the personal information ARGIVA processes, purposes, retention, sharing and customer rights under the DPDP Act 2023 before publication.',
-      },
-    ],
-  },
+const referencePolicies: NewPolicy[] = [
+  // TODO(owner): terms need your text and a legal review before publication.
+  { slug: 'terms', title: 'Terms & Conditions', status: 'draft', content: comingSoon() },
+  // TODO(owner): confirm the personal information processed, purposes, retention, sharing and
+  // customer rights under the DPDP Act 2023.
+  { slug: 'privacy', title: 'Privacy Policy', status: 'draft', content: comingSoon() },
+  // TODO(owner): confirm the flat domestic shipping fee and the shipping aggregator.
   {
     slug: 'shipping',
     title: 'Shipping & Delivery',
@@ -279,10 +102,7 @@ const samplePolicies: NewPolicy[] = [
         type: 'paragraph',
         text: 'For shipping-related assistance, contact ARGIVA through our official customer support channel.',
       },
-      {
-        type: 'paragraph',
-        text: 'TODO(owner): Confirm the approved flat domestic shipping fee and selected shipping aggregator before publication.',
-      },
+      { type: 'paragraph', text: COMING_SOON },
     ],
   },
   {
@@ -377,68 +197,38 @@ const samplePolicies: NewPolicy[] = [
       },
     ],
   },
-  {
-    slug: 'cookies',
-    title: 'Cookie Notice',
-    status: 'draft',
-    content: [
-      {
-        type: 'paragraph',
-        text: 'TODO(owner): Confirm whether ARGIVA uses cookies or similar technologies, what they are used for, and any consent choices before publishing this notice.',
-      },
-    ],
-  },
+  // TODO(owner): confirm which cookies are used, why, and any consent choices.
+  { slug: 'cookies', title: 'Cookie Notice', status: 'draft', content: comingSoon() },
+  // TODO(owner): confirm the seller entity (once registered), proprietor's legal name, business
+  // address, grievance officer name, email and phone, and jurisdiction.
   {
     slug: 'contact-disclosures',
     title: 'Seller & Grievance Details',
     status: 'draft',
     content: [
-      { type: 'paragraph', text: 'Seller entity: Sole proprietorship.' },
-      { type: 'paragraph', text: 'Legal name: TODO(owner): add the proprietor’s legal name.' },
-      { type: 'paragraph', text: 'Business address: TODO(owner): add the full business address.' },
-      { type: 'paragraph', text: 'Grievance officer: The proprietor is the grievance officer.' },
-      { type: 'paragraph', text: 'Grievance officer name: TODO(owner): add the full name.' },
-      { type: 'paragraph', text: 'Email: TODO(owner): add a monitored contact email.' },
-      { type: 'paragraph', text: 'Phone: TODO(owner): add a contact phone number.' },
-      { type: 'paragraph', text: 'Jurisdiction: Bengaluru (Bangalore), Karnataka.' },
-    ],
+      'Seller entity',
+      'Legal name',
+      'Business address',
+      'Grievance officer',
+      'Email',
+      'Phone',
+      'Jurisdiction',
+    ].map((label) => ({ type: 'paragraph' as const, text: `${label}: ${COMING_SOON}` })),
   },
 ];
 
 export const initialSeedData = {
-  users: sampleUsers,
-  categories: sampleCategories,
-  products: sampleProducts,
-  variants: sampleVariants,
-  silverRate: sampleSilverRate,
-  policies: samplePolicies,
+  categories: referenceCategories,
+  policies: referencePolicies,
 };
 
 /**
- * Seeds the database with essential brand categories, products, variants, and silver rate.
+ * Seeds the reference data: brand categories and draft policies.
+ * Only adds missing rows; it never changes or deletes existing ones.
  */
 export async function seedDatabase(db: PostgresJsDatabase<typeof schema>): Promise<void> {
-  // Insert Users
-  for (const u of initialSeedData.users) {
-    await db.insert(users).values(u).onConflictDoNothing();
-  }
-
-  // Insert Silver Rate
-  await db.insert(silverRates).values(initialSeedData.silverRate).onConflictDoNothing();
-
-  // Insert Categories
   for (const c of initialSeedData.categories) {
     await db.insert(categories).values(c).onConflictDoNothing();
-  }
-
-  // Insert Products
-  for (const p of initialSeedData.products) {
-    await db.insert(products).values(p).onConflictDoNothing();
-  }
-
-  // Insert Variants
-  for (const v of initialSeedData.variants) {
-    await db.insert(productVariants).values(v).onConflictDoNothing();
   }
 
   for (const policy of initialSeedData.policies) {

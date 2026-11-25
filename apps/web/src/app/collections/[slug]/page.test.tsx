@@ -91,4 +91,25 @@ describe('CollectionPage', () => {
 
     expect(screen.getByText('There are no products in this collection yet.')).toBeInTheDocument();
   });
+
+  test('hides the price filter when no price is known', async () => {
+    vi.mocked(getCategoryBySlug).mockResolvedValue(category);
+    vi.mocked(getProductsByCategory).mockResolvedValue(products.map((p) => ({ ...p, pricePaise: null })));
+
+    render(await CollectionPage({ params: Promise.resolve({ slug: category.slug }) }));
+
+    expect(screen.queryByRole('group', { name: 'Price range in rupees' })).not.toBeInTheDocument();
+    expect(screen.getAllByText('Price unavailable')).toHaveLength(2);
+  });
+
+  test('hides an unpriced product once a maximum price is set', async () => {
+    vi.mocked(getCategoryBySlug).mockResolvedValue(category);
+    vi.mocked(getProductsByCategory).mockResolvedValue([products[0]!, { ...products[1]!, pricePaise: null }]);
+
+    render(await CollectionPage({ params: Promise.resolve({ slug: category.slug }) }));
+    fireEvent.change(screen.getByRole('spinbutton', { name: /Maximum price/ }), { target: { value: '999999' } });
+
+    expect(screen.getByRole('link', { name: 'Plain Chain' })).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Oxidised Band' })).not.toBeInTheDocument();
+  });
 });

@@ -184,6 +184,20 @@ describe('ProductPage', () => {
     expect(screen.getByRole('button', { name: 'Add to Cart' })).toBeDisabled();
   });
 
+  test('does not blame the silver rate when a fixed price is missing', async () => {
+    vi.mocked(getProductBySlug).mockResolvedValueOnce({
+      ...product,
+      pricingUnavailable: true,
+      variants: [{ ...firstVariant, pricingMode: 'fixed', pricePaise: null }],
+    });
+
+    await renderProductPage();
+
+    expect(screen.getByRole('status')).toHaveTextContent('Price unavailable');
+    expect(screen.queryByText(/silver rate/i)).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Add to Cart' })).toBeDisabled();
+  });
+
   test('shows product availability instead of a silver-rate message when there are no active variants', async () => {
     vi.mocked(getProductBySlug).mockResolvedValueOnce({
       ...product,

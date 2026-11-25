@@ -46,3 +46,10 @@ test('is accessible', async () => {
   const { container } = render(<ProductCard {...props} />);
   await expectNoAxeViolations(container);
 });
+
+test('says the price is unavailable instead of showing an amount', async () => {
+  const { container } = render(<ProductCard {...props} pricePaise={null} />);
+  expect(screen.getByText('Price unavailable')).toBeInTheDocument();
+  expect(container.textContent).not.toContain('₹');
+  await expectNoAxeViolations(container);
+});

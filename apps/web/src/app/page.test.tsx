@@ -50,6 +50,11 @@ describe('HomePage', () => {
     );
   });
 
+  test('requests no hero image while photography is unavailable', async () => {
+    const { container } = render(await HomePage());
+    expect(container.querySelector('img')).toBeNull();
+  });
+
   test('renders heritage section', async () => {
     render(await HomePage());
     expect(screen.getByText(/A Legacy That Deserves to Shine/i)).toBeInTheDocument();

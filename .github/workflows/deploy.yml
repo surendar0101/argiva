@@ -27,20 +27,39 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ inputs.sha }}
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Installed before signing in to Google, so package install scripts never see cloud credentials.
+      - name: Install database tools
+        run: |
+          pnpm install --frozen-lockfile --filter "@argiva/db..."
+          pnpm --filter "@argiva/db^..." run build
       - uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
           service_account: ${{ vars.GCP_DEPLOY_SA }}
       - uses: google-github-actions/setup-gcloud@v2
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
       - name: Build and push image
         if: inputs.build
         run: |
           gcloud auth configure-docker "$REGION-docker.pkg.dev" --quiet
           docker build --build-arg APP_VERSION="$SHA" -t "$IMAGE" .
           docker push "$IMAGE"
+      # Runs before the new version goes live. A failure here stops the deploy.
+      # The database address stays inside this step and is masked in the log.
+      - name: Migrate database and load reference data
+        env:
+          STORAGE_DRIVER: local
+          STORAGE_LOCAL_DIR: /tmp/uploads
+        run: |
+          set -euo pipefail
+          DATABASE_URL="$(gcloud secrets versions access latest --secret="$DATABASE_URL_SECRET")"
+          echo "::add-mask::$DATABASE_URL"
+          export DATABASE_URL
+          pnpm --filter @argiva/db db:migrate
+          pnpm --filter @argiva/db db:seed
       - name: Deploy to Cloud Run
         # STORAGE_DRIVER=local is temporary: nothing stores files until Phase 3/4, which switches to R2.
         run: |

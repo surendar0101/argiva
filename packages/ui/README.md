@@ -19,10 +19,10 @@ The package ships TypeScript source (no build step). Apps compile it themselves.
 | `Button` | A `<button>`. `variant`: `primary` (default), `on-dark`, `outline`. Defaults to `type="button"`. |
 | `ButtonLink` | A link styled as a button. Needs `href`; same variants. |
 | `Divider` | Section divider. Draws the ghungroo (anklet bells) ornament when the theme turns it on for this page or collection (`context={{ page, collection }}`); otherwise a plain rule. `onDark` for dark backgrounds. |
-| `Hero` | Large banner: optional eyebrow, title, body, a call-to-action link and an image. The image frame follows the theme's `heroMedia` setting. |
+| `Hero` | Large banner: optional eyebrow, title, body, a call-to-action link and an optional image. Without an image it draws a decorative placeholder. The frame follows the theme's `heroMedia` setting. |
 | `Price` | A price in rupees. Takes `paise` (whole number). `size`: `md` or `lg`. |
 | `PurityBadge` | Silver purity label, `tone` `sterling` or `alloy`. The style follows the theme's `purityBadge` setting. |
-| `ProductCard` | Product tile: image, purity badge, linked name, weight, finish and price. |
+| `ProductCard` | Product tile: image, purity badge, linked name, weight, finish and price. `pricePaise={null}` shows "Price unavailable". |
 | `ProductHeader` | Top of a product page: image gallery with thumbnails, badge, name, price, weight, finish and an add-to-cart button. Client component. |
 | `SiteHeader` | Wordmark, main navigation with a mobile "Menu" toggle, and a cart link with item count. Client component. |
 

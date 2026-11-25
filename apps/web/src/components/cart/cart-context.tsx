@@ -50,12 +50,13 @@ function isCartItem(value: unknown): value is CartItem {
     value.variantName.length > 0 &&
     'pricePaise' in value &&
     typeof value.pricePaise === 'number' &&
-    Number.isFinite(value.pricePaise) &&
+    Number.isSafeInteger(value.pricePaise) &&
     value.pricePaise >= 0 &&
     'quantity' in value &&
     typeof value.quantity === 'number' &&
     Number.isSafeInteger(value.quantity) &&
     value.quantity > 0 &&
+    Number.isSafeInteger(value.pricePaise * value.quantity) &&
     'imageUrl' in value &&
     typeof value.imageUrl === 'string'
   );

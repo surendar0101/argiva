@@ -3,21 +3,55 @@
 import { formatInr } from '@argiva/ui';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useId, useRef } from 'react';
 import { useCart } from './cart-context';
 import styles from './cart-drawer.module.css';
 
 export function CartDrawer() {
   const { items, isDrawerOpen, closeDrawer, updateQuantity, removeItem, totalPaise } = useCart();
 
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!isDrawerOpen || !dialog) return;
+
+    const opener = document.activeElement;
+    dialog.showModal();
+    closeRef.current?.focus();
+
+    return () => {
+      if (dialog.open) dialog.close();
+      if (opener instanceof HTMLElement && opener.isConnected) opener.focus();
+    };
+  }, [isDrawerOpen]);
+
   if (!isDrawerOpen) return null;
 
   return (
-    <>
-      <div className={styles.overlay} onClick={closeDrawer} />
-      <aside className={styles.drawer} role="dialog" aria-label="Shopping cart">
+    // The click handler only serves pointer users on the backdrop; Escape and the close button serve keyboards.
+    <dialog
+      ref={dialogRef}
+      className={styles.drawer}
+      aria-labelledby={titleId}
+      onCancel={(event) => {
+        event.preventDefault();
+        closeDrawer();
+      }}
+      onClose={(event) => {
+        // A close event queued by an effect re-run must not close a reopened drawer.
+        if (!event.currentTarget.open) closeDrawer();
+      }}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) closeDrawer();
+      }}
+    >
+      <div className={styles.panel}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Your Cart</h2>
-          <button className={styles.closeButton} onClick={closeDrawer} aria-label="Close cart">
+          <h2 id={titleId} className={styles.title}>Your Cart</h2>
+          <button ref={closeRef} className={styles.closeButton} onClick={closeDrawer} aria-label="Close cart">
             ×
           </button>
         </div>
@@ -92,14 +126,16 @@ export function CartDrawer() {
                 <span>Subtotal</span>
                 <span className={styles.subtotalAmount}>{formatInr(totalPaise)}</span>
               </div>
-              <p className={styles.shippingNote}>Shipping calculated at checkout</p>
+              <p className={styles.shippingNote}>
+                Applicable shipping charges will be communicated or displayed before the order is confirmed.
+              </p>
               <Link href="/cart" className={styles.viewCartButton} onClick={closeDrawer}>
                 View Cart
               </Link>
             </div>
           </>
         )}
-      </aside>
-    </>
+      </div>
+    </dialog>
   );
 }

@@ -36,6 +36,8 @@ Start here to find any document in the project. When a new document is added, li
 | [Phase 2 plan: foundations](plans/2026-10-31-phase-2-foundations.md) | Task-by-task plan for Phase 2 |
 | [Phase 3 plan: domain core](plans/2026-11-02-phase-3-domain-core.md) | Task-by-task plan for Phase 3 |
 | [Phase 4 plan: storefront](plans/2026-11-12-phase-4-storefront.md) | Task-by-task plan for Phase 4 |
+| [Storefront stabilisation design](superpowers/specs/2026-11-26-stabilisation-design.md) | What the 26 November stabilisation work changes, and why |
+| [Storefront stabilisation plan](superpowers/plans/2026-11-26-stabilisation.md) | Task-by-task plan for that work |
 
 ### Architecture Decision Records
 
@@ -55,6 +57,7 @@ Start here to find any document in the project. When a new document is added, li
 | [0012](adr/0012-config-driven.md) | Config-driven code (no hard-coded values) |
 | [0013](adr/0013-domain-core-architecture.md) | Domain core architecture and pure business logic |
 | [0014](adr/0014-storefront-architecture.md) | Proposed storefront architecture and draft policy rendering |
+| [0015](adr/0015-migrations-and-browser-tests.md) | Database migrations on deploy and real-browser tests |
 
 ## Apps and packages
 

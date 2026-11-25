@@ -8,7 +8,8 @@ export type ProductCardProps = {
   href: string;
   name: string;
   image?: ImageData;
-  pricePaise: number;
+  /** null when no price can be shown, for example while the silver rate is unconfirmed. */
+  pricePaise: number | null;
   weightGrams: number;
   finish: string;
   purity: { label: string; tone: PurityTone };
@@ -39,7 +40,7 @@ export function ProductCard({ href, name, image, pricePaise, weightGrams, finish
       </h3>
       <p className={styles.meta}>
         <span>{`${formatWeight(weightGrams)} · ${finish}`}</span>
-        <Price paise={pricePaise} />
+        {pricePaise === null ? <span>Price unavailable</span> : <Price paise={pricePaise} />}
       </p>
     </article>
   );

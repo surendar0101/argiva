@@ -11,7 +11,7 @@ The ARGIVA Silvers storefront, built with Next.js 16 and React 19. It reads sett
 | `/collections/[slug]` | A collection with available filters and products |
 | `/products/[slug]` | Published product details, variant selection and add-to-cart |
 | `/search?q=…` | Search across published products and variants |
-| `/cart` | Browser-persisted cart; checkout is not implemented yet |
+| `/cart` | Browser-persisted cart; says online checkout is not available yet |
 | `/our-story`, `/faq`, `/contact` | Brand and customer information |
 | `/policies/[slug]` | Database-backed policy content with a draft notice when its status is `draft` |
 | `/sitemap.xml` | Sitemap generated from active categories, published products and stored policy rows |
@@ -23,7 +23,14 @@ Both API routes send `Cache-Control: no-store`. When the database check fails, t
 
 The Docker image uses `/api/health` for its health check.
 
-Policy routes only resolve for policy records present in the database. Their source seed records are drafts; a draft banner is shown, and legal content must not be treated as owner-approved. No admin publishing interface exists yet. Apply migrations and verify the database target before running the `db:seed` command documented in the [runbook](../../docs/runbook.md#storefront-schema-and-content-readiness).
+Policy routes only resolve for policy records present in the database. Their seed records are drafts; a draft banner is shown, and legal content must not be treated as owner-approved. No admin publishing interface exists yet. Create the tables and reference data as described in the [runbook](../../docs/runbook.md#storefront-schema-and-content-readiness).
+
+Two rules keep the shop honest:
+
+- A product with no confirmed price (no approved silver rate, or no fixed price) is listed as **Price unavailable**, can't be added to the cart and never matches a price filter.
+- A business fact the owner hasn't confirmed shows as **Details coming soon.** (`src/lib/placeholders.ts`).
+
+The cart drawer is a native modal dialog: Escape or the backdrop closes it, and focus returns to where it was.
 
 ## How it works
 
@@ -78,7 +85,7 @@ Run every command from the repo root. We run pnpm through npx; the [runbook](../
    docker compose up -d --wait db
    ```
 
-4. Apply migrations to the intended local database. To add catalog and draft policy rows, follow the target-safe `db:seed` steps in the [runbook](../../docs/runbook.md#storefront-schema-and-content-readiness).
+4. [Create the tables and reference data](../../docs/runbook.md#storefront-schema-and-content-readiness).
 
 5. Start the dev server on <http://localhost:3000>:
 
@@ -94,11 +101,14 @@ To run the production-like Docker build instead, see the [runbook, section 1](..
 | --- | --- |
 | Dev server (port 3000) | `npx --loglevel=error pnpm@12.16.1 dev` |
 | Build | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/web build` |
-| Unit tests (vitest, `src/**/*.test.ts`) | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/web test` |
+| Unit tests (vitest, `src/` and `e2e/`) | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/web test` |
+| Browser tests ([how](../../docs/runbook.md#browser-tests)) | `npx --loglevel=error pnpm@12.16.1 e2e` |
 | Type check (`next typegen` then `tsc`) | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/web typecheck` |
 | Lint (whole repo; this app has no own lint script) | `npx --loglevel=error pnpm@12.16.1 lint` |
 
 The web tests cover the storefront routes and interactions, catalog and policy query behavior, SEO output, security headers, and health/readiness responses. They use fixtures/mocks and do not require a running database.
+
+The browser tests in `e2e/` run the production build against throwaway databases: every page and internal link, filters, search, the cart by keyboard, an empty shop and accessibility checks.
 
 ## How it fits with other packages
 
@@ -127,3 +137,4 @@ No other package depends on this app. The Dockerfile builds it with `turbo run b
 - [ADR 0011: Design direction and switchable themes](../../docs/adr/0011-design-direction-themes.md)
 - [ADR 0012: Configuration-driven](../../docs/adr/0012-config-driven.md)
 - [ADR 0014: Storefront architecture and draft policy rendering](../../docs/adr/0014-storefront-architecture.md)
+- [ADR 0015: Migrations on deploy and browser tests](../../docs/adr/0015-migrations-and-browser-tests.md)

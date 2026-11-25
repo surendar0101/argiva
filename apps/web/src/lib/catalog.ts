@@ -21,7 +21,7 @@ export interface CatalogProduct {
   variantId: string;
   name: string;
   slug: string;
-  pricePaise: number;
+  pricePaise: number | null;
   purity: PurityGrade;
   purityVerified: boolean;
   finish: FinishType;
@@ -69,6 +69,34 @@ interface CatalogVariantRow {
   makingChargesPaise: number;
 }
 
+/** The selling price in paise, or null when it cannot be known. Never an invented amount. */
+function priceOrNull(
+  variant: Pick<
+    CatalogVariantRow,
+    'pricingMode' | 'fixedPricePaise' | 'makingChargesPaise' | 'weightGrams' | 'purity' | 'purityVerified'
+  >,
+  currentRatePaise: number | undefined,
+): number | null {
+  if (variant.pricingMode === 'silver_rate') {
+    if (currentRatePaise === undefined || currentRatePaise <= 0) return null;
+  } else {
+    const fixed = variant.fixedPricePaise;
+    if (fixed === null || !Number.isInteger(fixed) || fixed <= 0) return null;
+  }
+
+  return calculateVariantPrice(
+    {
+      pricingMode: variant.pricingMode,
+      fixedPricePaise: variant.fixedPricePaise,
+      makingChargesPaise: variant.makingChargesPaise,
+      weightGrams: Number(variant.weightGrams),
+      purity: variant.purity,
+      purityVerified: variant.purityVerified,
+    },
+    currentRatePaise === undefined ? undefined : { ratePerGramPaise: currentRatePaise },
+  ).finalPricePaise;
+}
+
 function toCatalogProducts(
   variants: CatalogVariantRow[],
   currentRatePaise: number | undefined,
@@ -77,26 +105,16 @@ function toCatalogProducts(
   const productMap = new Map<string, CatalogProduct>();
 
   for (const variant of variants) {
-    if (variant.pricingMode === 'silver_rate' && currentRatePaise === undefined) {
-      continue;
-    }
-
-    const pricePaise = calculateVariantPrice(
-      {
-        pricingMode: variant.pricingMode,
-        fixedPricePaise: variant.fixedPricePaise,
-        makingChargesPaise: variant.makingChargesPaise,
-        weightGrams: Number(variant.weightGrams),
-        purity: variant.purity,
-        purityVerified: variant.purityVerified,
-      },
-      currentRatePaise === undefined ? undefined : { ratePerGramPaise: currentRatePaise },
-    ).finalPricePaise;
+    const pricePaise = priceOrNull(variant, currentRatePaise);
 
     if (filters?.purity && variant.purity !== filters.purity) continue;
     if (filters?.finish && variant.finish !== filters.finish) continue;
-    if (filters?.minPricePaise !== undefined && pricePaise < filters.minPricePaise) continue;
-    if (filters?.maxPricePaise !== undefined && pricePaise > filters.maxPricePaise) continue;
+    if (filters?.minPricePaise !== undefined && (pricePaise === null || pricePaise < filters.minPricePaise)) {
+      continue;
+    }
+    if (filters?.maxPricePaise !== undefined && (pricePaise === null || pricePaise > filters.maxPricePaise)) {
+      continue;
+    }
 
     const product: CatalogProduct = {
       id: variant.productId,
@@ -110,7 +128,10 @@ function toCatalogProducts(
       weightGrams: Number(variant.weightGrams),
     };
     const existing = productMap.get(product.id);
-    if (!existing || product.pricePaise < existing.pricePaise) {
+    const isCheaper =
+      product.pricePaise !== null &&
+      (existing === undefined || existing.pricePaise === null || product.pricePaise < existing.pricePaise);
+    if (!existing || isCheaper) {
       productMap.set(product.id, product);
     }
   }
@@ -214,20 +235,7 @@ export async function getProductBySlug(slug: string): Promise<ProductDetail | nu
 
   const currentRatePaise = latestRate?.ratePerGramPaise;
   const pricedVariants = variants.map((variant) => {
-    const pricePaise =
-      variant.pricingMode === 'silver_rate' && currentRatePaise === undefined
-        ? null
-        : calculateVariantPrice(
-            {
-              pricingMode: variant.pricingMode,
-              fixedPricePaise: variant.fixedPricePaise,
-              makingChargesPaise: variant.makingChargesPaise,
-              weightGrams: Number(variant.weightGrams),
-              purity: variant.purity,
-              purityVerified: variant.purityVerified,
-            },
-            currentRatePaise === undefined ? undefined : { ratePerGramPaise: currentRatePaise },
-          ).finalPricePaise;
+    const pricePaise = priceOrNull(variant, currentRatePaise);
 
     return {
       id: variant.id,

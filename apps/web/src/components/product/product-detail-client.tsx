@@ -56,7 +56,9 @@ export function ProductDetailClient({ product }: { product: ProductDetail }) {
         <p className={styles.price}><Price paise={selectedVariant.pricePaise} size="lg" /></p>
       ) : selectedVariant ? (
         <p className={styles.priceUnavailable} role="status">
-          The current silver rate could not be confirmed. Please check back soon.
+          {selectedVariant.pricingMode === 'silver_rate'
+            ? 'The current silver rate could not be confirmed. Please check back soon.'
+            : 'Price unavailable'}
         </p>
       ) : null}
 

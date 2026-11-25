@@ -29,3 +29,11 @@ test('is accessible', async () => {
   const { container } = render(<Hero {...props} />);
   await expectNoAxeViolations(container);
 });
+
+test('without a photograph it shows a decorative frame and no image', async () => {
+  const withoutImage = { eyebrow: props.eyebrow, title: props.title, body: props.body, action: props.action };
+  const { container } = render(<Hero {...withoutImage} />);
+  expect(screen.queryByRole('img')).toBeNull();
+  expect(container.querySelector('[data-media] [aria-hidden="true"]')).not.toBeNull();
+  await expectNoAxeViolations(container);
+});

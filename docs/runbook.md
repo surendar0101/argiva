@@ -53,6 +53,8 @@ docker compose up -d --build --wait
 - `--build` rebuilds the image from your current code.
 - `--wait` returns only once both the database and the website report healthy.
 
+The first time, and after pulling changes that touch the database, [create the tables and reference data](#storefront-schema-and-content-readiness). Until then pages that read the database show an error.
+
 Then open <http://localhost:3000>. To check it the same way CI does:
 
 ```sh
@@ -83,7 +85,7 @@ To stop it, run `docker compose down`. Add `-v` to also delete the local databas
    docker compose up -d --wait db
    ```
 
-4. Apply the migrations required by the app version and review the [storefront schema and content readiness](#storefront-schema-and-content-readiness) notes below.
+4. [Create the tables and reference data](#storefront-schema-and-content-readiness).
 
 5. Start the dev server:
 
@@ -95,30 +97,64 @@ To stop it, run `docker compose down`. Add `-v` to also delete the local databas
 
 ### Storefront schema and content readiness
 
-The storefront reads categories, products and policy pages from Postgres. Starting Docker or the Next.js server does **not** apply migrations or seed rows. Apply each generated migration to the intended database before releasing code that depends on it.
+The storefront reads categories, products and policy pages from Postgres. Starting Docker or the dev server does **not** create tables or rows. Deploys do it automatically ([section 6](#6-deploying)); on your own computer you run two commands.
 
-The migration command is:
-
-```sh
-npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate
-```
-
-Before running it, load `DATABASE_URL` into the command's environment through a trusted local environment manager or the deployment secret manager, and verify that it points to the intended database. The Drizzle config reads `DATABASE_URL` from the process environment; it does not read `apps/web/.env.local`. Its fallback points at a local `argiva_dev` database, while Docker Compose creates a database named `argiva`, so do not rely on that fallback. Migration commands are not run automatically by app startup or the deploy workflows.
-
-The `@argiva/db` package provides a `db:seed` command for the initial catalog and draft policy rows. It uses the database URL in the process configuration, so verify the target before running it. For the local database, load the local app settings and run:
+With the local database running, and `apps/web/.env.local` created from `.env.example`:
 
 ```sh
 set -a
 . apps/web/.env.local
 set +a
+npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate
 npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:seed
 ```
 
-Run this only after applying migrations to the intended local database. The seed uses conflict-safe inserts; it does not apply migrations. Do not point it at staging or production unless the owner explicitly approves that operation. No seed command was run during this verification.
+- `db:migrate` applies pending database changes. It uses only `DATABASE_URL`, and stops if that is not set. Check that it names the database you mean.
+- `db:seed` adds the **reference data**: the six categories and eight draft policy pages. It adds only missing rows and never changes or deletes existing ones.
+- Both are safe to run again.
 
-All current policy seed rows have `draft` status. The public route shows a draft notice, and draft policy slugs are included in the sitemap. Do not publish policy content until the owner has confirmed the facts and completed the appropriate legal review; publishing controls are not yet available in the storefront.
+There are **no sample products**. Collections show "There are no products in this collection yet." until real products are entered.
 
-The SEO routes use the existing `APP_BASE_URL`: `/sitemap.xml` is built from active categories, published products and stored policy slugs, while `/robots.txt` permits indexing only in production. Check `APP_BASE_URL` when configuring each environment.
+**If you seeded your local database before 26 November 2026**, it still holds invented products, a made-up silver rate and old policy text, because the seed never changes existing rows. To start clean, run the following. It **permanently deletes your local database and uploaded files**:
+
+```sh
+docker compose down -v
+docker compose up -d --wait db
+```
+
+Then run the migrate and seed commands again.
+
+All policy rows are `draft`. The public page shows a draft notice, and draft policy addresses are in the sitemap. Publishing controls don't exist yet.
+
+The SEO routes use `APP_BASE_URL`: `/sitemap.xml` is built from active categories, published products and stored policy pages, and `/robots.txt` permits indexing only in production.
+
+### Business details still needed from the owner
+
+The site shows **"Details coming soon."** in their place. They must be filled in before launch:
+
+- Support phone number, support email and WhatsApp link.
+- Seller entity (once registered), proprietor's legal name and business address.
+- Grievance officer name, email and phone, and the jurisdiction.
+- Terms & Conditions, Privacy Policy and Cookie Notice text, with legal review.
+- Flat domestic shipping fee and shipping partner.
+
+Policy text lives in the database. Changing the seed file does not update rows that already exist.
+
+### Browser tests
+
+These open the built site in a real browser at phone and desktop widths. They need the local database server running; they create and **drop** their own databases, `argiva_e2e` and `argiva_empty_e2e`, and refuse any database that isn't local or doesn't end in `_e2e`.
+
+```sh
+docker compose up -d --wait db
+npx --loglevel=error pnpm@12.16.1 --filter @argiva/web exec playwright install chromium   # once
+npx --loglevel=error pnpm@12.16.1 build
+npx --loglevel=error pnpm@12.16.1 e2e
+```
+
+- They use ports 3200 and 3201.
+- To use another local Postgres server, set `E2E_POSTGRES_URL=postgres://<USER>:<PASSWORD>@127.0.0.1:<PORT>` (no database name).
+- Run `build` again after changing code; the tests run the last build.
+- On failure, the output names the page and fault.
 
 ### Other everyday commands
 
@@ -128,10 +164,11 @@ The SEO routes use the existing `APP_BASE_URL`: `/sitemap.xml` is built from act
 | Run lint checks (ESLint, no-hex-colours, no-hard-coded-values, and the check that every `--argiva-*` style variable exists) | `npx --loglevel=error pnpm@12.16.1 lint` |
 | Check TypeScript types | `npx --loglevel=error pnpm@12.16.1 typecheck` |
 | Run unit tests | `npx --loglevel=error pnpm@12.16.1 test` |
+| Run browser tests (after a build) | `npx --loglevel=error pnpm@12.16.1 e2e` |
 | Generate database migrations | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:generate` |
 | Apply database migrations | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate` |
 
-ESLint skips third-party and generated folders, including `.claude/`, `.agents/` (agent skills) and `.ua/` (codebase map). CI runs build, lint, typecheck and test in that order. If all four pass on your computer, the `verify` job in CI should pass too.
+ESLint skips third-party and generated folders, including `.claude/`, `.agents/` (agent skills) and `.ua/` (codebase map). CI runs build, lint, typecheck and test in that order (the `verify` job). Two more jobs follow: `container` builds the Docker image, creates the tables and reference data and runs the smoke test; `e2e` runs the browser tests.
 
 ### Note on the npm registry used by the Docker build
 
@@ -206,20 +243,25 @@ Moved to the [setup guide, section 5](setup.md#5-github-settings): variables, en
 
 ```mermaid
 flowchart LR
-  PR[Pull request] --> CI1[CI: verify + container]
+  PR[Pull request] --> CI1[CI: verify, container, e2e]
   CI1 -->|merge| Main[main]
   Main --> CI2[CI on main]
-  CI2 -->|success| Stg[Deploy staging: build image, push, deploy, smoke test]
+  CI2 -->|success| Stg[Deploy staging: build, migrate, load reference data, deploy, smoke test]
   Stg --> Tag[Owner tags vX.Y.Z]
   Tag --> Approve[Owner approves in GitHub]
-  Approve --> Prod[Deploy production: same image, deploy, smoke test]
+  Approve --> Prod[Deploy production: migrate, load reference data, deploy same image, smoke test]
 ```
 
 - **Staging is automatic.** When CI passes on `main`, the "Deploy staging" workflow:
   1. builds the image `asia-south1-docker.pkg.dev/<PROJECT_ID>/argiva/web:<commit SHA>`;
   2. pushes it to Artifact Registry;
-  3. deploys it to `argiva-web-staging`;
-  4. runs `scripts/smoke.mjs` against the live URL.
+  3. applies database migrations and loads missing reference data;
+  4. deploys the image to `argiva-web-staging`;
+  5. runs `scripts/smoke.mjs` against the live URL.
+
+  If step 3 fails, nothing is deployed and the old version keeps serving. Steps 3–5 are the same for production.
+
+> **Before the first merge of this change to `main`:** give the deployer access to the database secrets ([setup guide section 3.8](setup.md#38-store-the-database-connection-strings-in-secret-manager)). Without it the deploy stops at the migration step.
 - **Production is manual.** It deploys the **same image** that staging built and tested. It never rebuilds.
 
 Every deploy sets:
@@ -292,7 +334,7 @@ Until you do that, the smoke test in the deploy workflow checks the pinned old r
 
 Another option: on the GitHub Actions tab, re-run the "Deploy production" run of an earlier tag. That creates a new revision from the older image. It only works while that image is among the last 10 kept ([setup guide section 3.6](setup.md#36-create-the-image-repository-and-keep-only-the-last-10-images)), and the same traffic note applies if traffic is pinned.
 
-Database changes aren't rolled back by any of this. From Phase 3 on, each database migration will say how to undo it.
+**Database changes aren't rolled back by any of this.** So every migration must keep the previous app version working: add new tables or columns first, and remove or rename old ones only in a later release, once no version that uses them can be rolled back to. Neon's point-in-time restore is the fallback for damaged data.
 
 ---
 
@@ -307,11 +349,18 @@ The app couldn't reach the database within 2 seconds.
 - **Cloud:** Neon's free plan pauses an idle database and takes a moment to wake. Wait a few seconds and try again. The smoke test already retries each check 5 times, 2 seconds apart. If it keeps failing, check the Neon dashboard and the secret's value.
 - **Local:** check that the database container is running, with `docker compose ps`.
 
+**The deploy fails at "Migrate database and load reference data"**
+Nothing was deployed. Read the step's log:
+- `PERMISSION_DENIED` on the secret: run the deployer command in [setup guide section 3.8](setup.md#38-store-the-database-connection-strings-in-secret-manager).
+- `ERR_MODULE_NOT_FOUND`: the packages the seed depends on weren't built; the "Install database tools" step does that.
+- A connection error: check the Neon dashboard and the secret's value, then re-run the workflow.
+- A migration error: fix the migration in a new commit. Don't edit one that has already been applied anywhere.
+
 **A policy route returns 404, or policy URLs are missing from `/sitemap.xml`**
-The route and sitemap use rows from the `policies` table. Confirm that the policies migration has been applied to the intended database and that the required policy row exists. After verifying the target database, use the `db:seed` procedure in [Storefront schema and content readiness](#storefront-schema-and-content-readiness) for local seed rows.
+The route and sitemap use rows from the `policies` table. Run [the migrate and seed commands](#storefront-schema-and-content-readiness) against the intended database; deploys do this automatically.
 
 **A storefront page fails while catalog or policy data is being read**
-Check that migrations for the deployed app version have been applied to the database selected by `DATABASE_URL`. The `/api/ready` endpoint checks connectivity only; it does not check the full application schema.
+Run [the migrate command](#storefront-schema-and-content-readiness) for the database named by `DATABASE_URL`. The `/api/ready` endpoint checks connectivity only; it does not check the full application schema.
 
 **The first request after a quiet period is slow**
 That's a **cold start**: Cloud Run is starting an instance from zero, which typically takes a second or a few seconds. It's the trade-off for scaling to zero and paying nothing while idle.

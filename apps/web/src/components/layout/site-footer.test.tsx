@@ -67,6 +67,7 @@ describe('SiteFooter', () => {
     }
 
     expect(screen.queryByRole('link', { name: 'Contact us on WhatsApp' })).not.toBeInTheDocument();
-    expect(screen.getByText(/TODO\(owner\): official WhatsApp click-to-chat URL/)).toBeInTheDocument();
+    expect(document.body).toHaveTextContent('WhatsApp: Details coming soon.');
+    expect(document.body.textContent).not.toContain('TODO(owner)');
   });
 });

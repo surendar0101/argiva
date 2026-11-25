@@ -523,12 +523,41 @@ describe('catalog', () => {
     ).resolves.toEqual([]);
   });
 
-  test('omits silver-rate products if there is no approved rate', async () => {
+  test('lists a rate-priced product with a null price when no rate is approved', async () => {
     fixtures.silverRates.length = 0;
 
     const result = await getProductsByCategory('category-chains');
 
-    expect(result.map((product) => product.id)).toEqual(['product-fixed']);
+    expect(result.map((product) => [product.id, product.pricePaise])).toEqual([
+      ['product-silver-rate', null],
+      ['product-fixed', 179900],
+    ]);
+  });
+
+  test('excludes unknown prices when a minimum or maximum price is set', async () => {
+    fixtures.silverRates.length = 0;
+
+    const withMinimum = await getProductsByCategory('category-chains', { minPricePaise: 0 });
+    const withMaximum = await getProductsByCategory('category-chains', { maxPricePaise: 999999 });
+
+    expect(withMinimum.map((product) => product.id)).toEqual(['product-fixed']);
+    expect(withMaximum.map((product) => product.id)).toEqual(['product-fixed']);
+  });
+
+  test('prefers the lowest priced variant over an unpriced one', async () => {
+    fixtures.silverRates.length = 0;
+    const fixedVariant = fixtures.variants.find((variant) => variant.id === 'variant-fixed')!;
+    fixtures.variants.splice(
+      0,
+      fixtures.variants.length,
+      { ...fixedVariant, id: 'unpriced', pricingMode: 'silver_rate', fixedPricePaise: null },
+      { ...fixedVariant, id: 'priced-high', fixedPricePaise: 199900 },
+      { ...fixedVariant, id: 'priced-low' },
+    );
+
+    const result = await getProductsByCategory('category-chains');
+
+    expect(result).toMatchObject([{ variantId: 'priced-low', pricePaise: 179900 }]);
   });
 
   test('searches published active products by name, SKU, finish, purity, and category', async () => {
@@ -556,27 +585,25 @@ describe('catalog', () => {
     await expect(getSearchProducts('   ')).resolves.toEqual([]);
   });
 
-  test('omits search results with unavailable silver-rate prices', async () => {
+  test('includes search results whose silver-rate price is unavailable', async () => {
     fixtures.silverRates.length = 0;
 
     const result = await getSearchProducts('silver');
 
-    expect(result.map((product) => product.id)).toEqual(['product-fixed']);
+    expect(result.map((product) => [product.id, product.pricePaise])).toEqual([
+      ['product-silver-rate', null],
+      ['product-fixed', 179900],
+    ]);
   });
 
-  test('surfaces invalid fixed-price data instead of silently dropping it', async () => {
-    const fixedVariant = variants.find((variant) => variant.id === 'variant-fixed');
-    if (!fixedVariant) {
-      throw new Error('Missing fixed-price test fixture');
-    }
+  test.each([null, 0])('treats a fixed variant priced %s as unavailable instead of failing', async (price) => {
+    const fixedVariant = fixtures.variants.find((variant) => variant.id === 'variant-fixed')!;
+    fixtures.variants.splice(0, fixtures.variants.length, { ...fixedVariant, fixedPricePaise: price });
 
-    fixtures.variants.splice(0, fixtures.variants.length, {
-      ...fixedVariant,
-      fixedPricePaise: 0,
+    await expect(getProductsByCategory('category-chains')).resolves.toMatchObject([{ pricePaise: null }]);
+    await expect(getProductBySlug('oxidised-silver-chain')).resolves.toMatchObject({
+      pricingUnavailable: true,
+      variants: [{ pricePaise: null }],
     });
-
-    await expect(getProductsByCategory('category-chains')).rejects.toThrow(
-      'A valid positive integer fixed price in paise is required for fixed pricing mode',
-    );
   });
 });

@@ -97,9 +97,7 @@ export default function CartPage() {
             <p className={styles.shippingNote}>
               Applicable shipping charges will be communicated or displayed before the order is confirmed.
             </p>
-            <ButtonLink className={styles.checkout} href="/checkout">
-              Continue to Checkout
-            </ButtonLink>
+            <p className={styles.checkout}>Online checkout is not available yet.</p>
           </section>
         </div>
       )}

@@ -24,6 +24,13 @@
   object-fit: cover;
 }
 
+/* Stands in until ARGIVA photography is available. */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--argiva-component-hero-muted), var(--argiva-component-hero-bg) 75%);
+}
+
 /* Display-case frame: an inset hairline inside the photo. */
 .media::after {
   content: '';

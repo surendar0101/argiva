@@ -20,21 +20,21 @@ export function CollectionResults({ products }: { products: CatalogProduct[] }) 
 
   const purities = [...new Set(products.map((product) => product.purity))];
   const finishes = [...new Set(products.map((product) => product.finish))];
-  const prices = products.map((product) => product.pricePaise);
+  const prices = products.flatMap((product) => (product.pricePaise === null ? [] : [product.pricePaise]));
   const availableFilters = {
     purities,
     finishes,
-    priceRange: { minPaise: Math.min(...prices), maxPaise: Math.max(...prices) },
+    ...(prices.length > 0
+      ? { priceRange: { minPaise: Math.min(...prices), maxPaise: Math.max(...prices) } }
+      : {}),
   };
   const visibleProducts = products.filter((product) => {
     if (activeFilters.purity && product.purity !== activeFilters.purity) return false;
     if (activeFilters.finish && product.finish !== activeFilters.finish) return false;
-    if (activeFilters.minPricePaise !== undefined && product.pricePaise < activeFilters.minPricePaise) {
-      return false;
-    }
-    if (activeFilters.maxPricePaise !== undefined && product.pricePaise > activeFilters.maxPricePaise) {
-      return false;
-    }
+    const { minPricePaise, maxPricePaise } = activeFilters;
+    const price = product.pricePaise;
+    if (minPricePaise !== undefined && (price === null || price < minPricePaise)) return false;
+    if (maxPricePaise !== undefined && (price === null || price > maxPricePaise)) return false;
     return true;
   });
 

@@ -206,6 +206,31 @@ describe('CartContext', () => {
     expect(result.current.totalCount).toBe(2);
   });
 
+  test.each([
+    ['a fractional price', { pricePaise: 10.5 }],
+    ['a negative price', { pricePaise: -1 }],
+    ['an unsafe price', { pricePaise: Number.MAX_SAFE_INTEGER + 1 }],
+    ['an unsafe line total', { pricePaise: Number.MAX_SAFE_INTEGER, quantity: 2 }],
+  ])('ignores a saved entry with %s', (_label, change) => {
+    const warning = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const free = {
+      variantId: 'free',
+      productName: 'Silver Chain',
+      variantName: '925 Sterling',
+      pricePaise: 0,
+      quantity: 1,
+      imageUrl: '',
+    };
+    localStorage.setItem('argiva-cart', JSON.stringify([free, { ...free, variantId: 'bad', ...change }]));
+
+    const { result } = renderHook(() => useCart(), {
+      wrapper: ({ children }) => <CartProvider>{children}</CartProvider>,
+    });
+
+    expect(result.current.items).toEqual([free]);
+    expect(warning).toHaveBeenCalled();
+  });
+
   test('warns and starts with an empty cart when saved JSON is malformed', () => {
     const warning = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
     localStorage.setItem('argiva-cart', '{');

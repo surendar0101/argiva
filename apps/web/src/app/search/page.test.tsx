@@ -57,4 +57,12 @@ describe('SearchPage', () => {
 
     expect(screen.getByRole('status')).toHaveTextContent('No products match your search.');
   });
+
+  test('shows a result whose price is unavailable', async () => {
+    vi.mocked(getSearchProducts).mockResolvedValueOnce([{ ...searchResult, pricePaise: null }]);
+
+    await renderSearch('curb');
+
+    expect(screen.getByText('Price unavailable')).toBeInTheDocument();
+  });
 });

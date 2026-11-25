@@ -146,3 +146,40 @@
 - Fresh checks: web 90, UI 45, database 12, domain 27, config 11, scripts 15; typecheck, lint and build pass; `git diff --check` clean. UI README, runbook and audit report updated.
 - Ignored `.ua/.trash-*/`. Pattern scan of the files to be committed found no keys and no personal paths. Throwaway database and preview server stopped; the owner's containers were not touched.
 - Owner commits the checkpoint (agent never commits). Design polish deferred until functionality works.
+
+## 2026-11-26: stabilisation brainstorm
+
+- Checkpoint commit `0fa48b1` confirmed on `phase-3-4-storefront` and on origin. Tests, typecheck and lint pass (some Turbo results cached); build and browser checks not rerun.
+- Still open in source: `/checkout` link on the cart page, missing hero image, `TODO(owner)` text in the footer and contact page, invented seed products and silver rate, rate-priced products hidden without a rate, fractional cart prices accepted, cart drawer is not a modal, deploy workflow runs no migrations.
+- Asked the owner to pick the order: A stabilise first (recommended), B data model first, C one combined plan.
+- Owner chose option A. Wrote [the stabilisation design](../docs/superpowers/specs/2026-11-26-stabilisation-design.md): honest storefront states, price and cart fixes, migrations and reference data in the deploy workflow, Playwright browser tests, documentation. It supersedes the 24 November design and plans. Builder check done inline. Awaiting approval; no product code changed.
+- Found in source, not yet run: the CI container check applies no migrations before smoke-testing the homepage, which reads the database, so it is expected to fail on this branch.
+- 2026-11-26: owner approved the stabilisation design. Writing the implementation plan.
+- 2026-11-26: wrote [the stabilisation plan](../docs/superpowers/plans/2026-11-26-stabilisation.md), seven tasks. Awaiting owner review and execution choice.
+- 2026-11-26: owner approved the plan, Native execution. Starting Task 1.
+- Stabilisation Task 1 (reference-only seed, 'Details coming soon.') done; checks pass. Next: Task 2 (hero placeholder, checkout boundary).
+- Stabilisation Task 2 (hero placeholder, checkout boundary) done; checks pass. Next: Task 3 (unavailable prices).
+- Stabilisation Task 3 (unavailable prices) done; checks pass. Next: Task 4 (cart validation, modal drawer).
+- Stabilisation Task 4 (cart validation, modal drawer) done; checks pass. Next: Task 5 (migrations, deploy, CI, smoke).
+- Stabilisation Task 5 (migrations, deploy, CI, smoke) done; checks pass. Next: Task 6 (browser tests).
+- Stabilisation Task 6 (browser tests: 94 pass; confirmed they fail on two re-introduced bugs) done; checks pass. Next: Task 7 (documentation and final verification).
+- Stabilisation Task 7 documentation and verification (tests 216 + 21 script, 94 browser, image smoke on empty database) done; checks pass. Next: final whole-change review.
+
+## 2026-11-26: stabilisation finished
+
+Verified on a clean copy: build, lint, typecheck, unit tests 217 (web 116, UI 47, database 16, domain 27, config 11), script tests 24, browser tests 94. Earlier the built image passed the smoke test on an empty database; it was not rebuilt after the two review fixes. GitHub has not run the workflows. No database of the owner's was touched; nothing committed.
+
+Decisions and review outcomes:
+- Task 3: Ruling: a fixed variant without a positive price now shows 'Price unavailable' (Review Focus 1); the old test that expected an error was replaced and nothing logs the bad data — cost if wrong: a data entry mistake is visible only on the page.
+- Task 3: Ruling: ui-preview fixtures narrowed to a numeric price because ProductHeader requires one — cost if wrong: preview cannot show the unavailable state.
+- Final: Ruling: reviewer runs on opus — a strong model at lower cost than the largest — cost if wrong: a subtle fault is missed.
+- Task 6: Ruling: built with the owner's `next dev` still running, because Next 16 keeps dev output in .next/dev — cost if wrong: the owner restarts the dev server.
+- Task 6: Ruling: static files are copied in prepare-database.ts, not start-server.mjs, so two servers don't copy at once — cost if wrong: none beyond file layout.
+- Final: fixed seed failed on a fresh checkout (design-tokens unbuilt) — workflows.test.mjs 3 tests RED→GREEN; clean-copy replay passes; suite green.
+- Final: fixed fixed-price product blamed the silver rate — 'does not blame the silver rate when a fixed price is missing' RED→GREEN, web 116/116.
+- Final: minor (deferred): cart quantity has no upper bound; very large saved carts can total beyond the safe range or drop a line on reload.
+- Final: minor (deferred): Safari mouse users may not get focus back when the drawer closes (unverified).
+- Final: minor (deferred): a fixed-price item with no price is not logged.
+- Final: minor (deferred): no runbook step for old sample data in staging or production, if either was ever seeded by hand.
+- Final: Ruling: reviewer's declined items (showing unpriced items, hidden legal claims, page scroll behind the drawer, concurrent migrations, rollback rule, browser-held cart prices, dev-server build, preview fixtures, reviewer model) stand: spec-requested, covered, or checkout-phase concerns — cost if wrong: revisit at checkout.
+- 2026-11-26: app started locally on port 3100 (production build, temporary database `argiva-demo-db` on 55432); smoke test passes. New owner rule: update docs and the `.ua/` graph with every code change. The incremental graph update refused the uncommitted changes; `.ua/` unchanged, awaiting the owner's choice.

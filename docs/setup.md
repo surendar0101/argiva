@@ -31,7 +31,7 @@ Do the steps in this order. Each one depends on the ones before it.
 
 Only steps 1, 2 and 5 are needed to work on the site locally. Steps 3–10 are only for putting it on the internet.
 
-The Phase 4 storefront uses the existing accounts and configuration; it adds no external service or secret. It does add database-backed policy routes. Before using those routes in an environment, follow the database readiness notes in [runbook section 1](runbook.md#storefront-schema-and-content-readiness). The policies are drafts and require owner/legal review before publication.
+The storefront uses the existing accounts and adds no new service or secret. It does need one extra permission so that deploys can prepare the database: see [section 3.8](#38-store-the-database-connection-strings-in-secret-manager). If you set up Google Cloud before 26 November 2026, run that last command block once **before** merging to `main`. The policies are drafts and require owner and legal review before publication.
 
 ---
 
@@ -287,7 +287,7 @@ gcloud iam service-accounts add-iam-policy-binding "$RUNTIME_SA" \
 
 Why `run.admin` and not the smaller `run.developer`: the deploy uses `--allow-unauthenticated` so that the public can visit the site. That flag changes who may call the service, and only `run.admin` includes that permission. The role applies to this project only.
 
-The runtime account gets no project-wide roles. Section 3.8 lets it read the two database secrets and nothing else.
+The runtime account gets no project-wide roles. Section 3.8 lets it read the two database secrets and nothing else, and lets the deployer read those same two secrets so that it can prepare the database.
 
 ### 3.8 Store the database connection strings in Secret Manager
 
@@ -318,6 +318,20 @@ for SECRET in argiva-staging-database-url argiva-production-database-url; do
     --member="serviceAccount:$RUNTIME_SA" --role="roles/secretmanager.secretAccessor"
 done
 ```
+
+Let the **deployer** read the same two secrets. Each deploy creates or updates the database tables and adds missing reference data before the new version goes live, so it needs the connection string:
+
+```sh
+DEPLOYER_SA="argiva-deployer@${PROJECT_ID}.iam.gserviceaccount.com"
+for SECRET in argiva-staging-database-url argiva-production-database-url; do
+  gcloud secrets add-iam-policy-binding "$SECRET" \
+    --member="serviceAccount:$DEPLOYER_SA" --role="roles/secretmanager.secretAccessor"
+done
+```
+
+If you are running this in a new terminal, set `PROJECT_ID` first (`PROJECT_ID=<PROJECT_ID>`).
+
+The trade-off: a GitHub workflow from this repository can now read the database connection strings, including production's. Production deploys still wait for your approval, and the workload identity rule in [section 3.9](#39-let-github-actions-log-in-workload-identity-federation) limits sign-in to this repository. Protect `main` ([section 5.3](#53-protect-the-main-branch)), and don't add collaborators you wouldn't trust with the data. [ADR 0015](adr/0015-migrations-and-browser-tests.md) records the alternative.
 
 To change a value later, run the `read` / `printf` lines again. That adds a new version. Cloud Run reads `latest` whenever an instance starts, so redeploy (or wait for instances to restart) to use the new value.
 
