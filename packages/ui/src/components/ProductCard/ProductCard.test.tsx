@@ -29,9 +29,17 @@ test('one link, named by the product', () => {
 
 test('image keeps its intrinsic size and lazy-loads', () => {
   render(<ProductCard {...props} />);
-  const img = screen.getByRole('img', { name: props.image.alt });
+  const img = screen.getByRole('img', { name: 'Pair of silver anklets with small bells' });
   expect(img).toHaveAttribute('width', '800');
   expect(img).toHaveAttribute('loading', 'lazy');
+});
+
+test('shows an accessible placeholder when product photography is unavailable', () => {
+  const productWithoutImage: ProductCardProps = { ...props };
+  delete productWithoutImage.image;
+  render(<ProductCard {...productWithoutImage} />);
+
+  expect(screen.getByRole('img', { name: 'Ghungroo Payal photograph coming soon' })).toBeInTheDocument();
 });
 
 test('is accessible', async () => {

@@ -83,7 +83,9 @@ To stop it, run `docker compose down`. Add `-v` to also delete the local databas
    docker compose up -d --wait db
    ```
 
-4. Start the dev server:
+4. Apply the migrations required by the app version and review the [storefront schema and content readiness](#storefront-schema-and-content-readiness) notes below.
+
+5. Start the dev server:
 
    ```sh
    npx --loglevel=error pnpm@12.16.1 dev
@@ -91,16 +93,45 @@ To stop it, run `docker compose down`. Add `-v` to also delete the local databas
 
    Open <http://localhost:3000>. The page reloads when you save a file.
 
+### Storefront schema and content readiness
+
+The storefront reads categories, products and policy pages from Postgres. Starting Docker or the Next.js server does **not** apply migrations or seed rows. Apply each generated migration to the intended database before releasing code that depends on it.
+
+The migration command is:
+
+```sh
+npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate
+```
+
+Before running it, load `DATABASE_URL` into the command's environment through a trusted local environment manager or the deployment secret manager, and verify that it points to the intended database. The Drizzle config reads `DATABASE_URL` from the process environment; it does not read `apps/web/.env.local`. Its fallback points at a local `argiva_dev` database, while Docker Compose creates a database named `argiva`, so do not rely on that fallback. Migration commands are not run automatically by app startup or the deploy workflows.
+
+The `@argiva/db` package provides a `db:seed` command for the initial catalog and draft policy rows. It uses the database URL in the process configuration, so verify the target before running it. For the local database, load the local app settings and run:
+
+```sh
+set -a
+. apps/web/.env.local
+set +a
+npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:seed
+```
+
+Run this only after applying migrations to the intended local database. The seed uses conflict-safe inserts; it does not apply migrations. Do not point it at staging or production unless the owner explicitly approves that operation. No seed command was run during this verification.
+
+All current policy seed rows have `draft` status. The public route shows a draft notice, and draft policy slugs are included in the sitemap. Do not publish policy content until the owner has confirmed the facts and completed the appropriate legal review; publishing controls are not yet available in the storefront.
+
+The SEO routes use the existing `APP_BASE_URL`: `/sitemap.xml` is built from active categories, published products and stored policy slugs, while `/robots.txt` permits indexing only in production. Check `APP_BASE_URL` when configuring each environment.
+
 ### Other everyday commands
 
 | What it does | Command |
 | --- | --- |
 | Build every package | `npx --loglevel=error pnpm@12.16.1 build` |
-| Run lint checks (ESLint, the no-hex-colours check, and the no-hard-coded-values check) | `npx --loglevel=error pnpm@12.16.1 lint` |
+| Run lint checks (ESLint, no-hex-colours, no-hard-coded-values, and the check that every `--argiva-*` style variable exists) | `npx --loglevel=error pnpm@12.16.1 lint` |
 | Check TypeScript types | `npx --loglevel=error pnpm@12.16.1 typecheck` |
 | Run unit tests | `npx --loglevel=error pnpm@12.16.1 test` |
+| Generate database migrations | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:generate` |
+| Apply database migrations | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/db db:migrate` |
 
-CI runs build, lint, typecheck and test in that order. If all four pass on your computer, the `verify` job in CI should pass too.
+ESLint skips third-party and generated folders, including `.claude/`, `.agents/` (agent skills) and `.ua/` (codebase map). CI runs build, lint, typecheck and test in that order. If all four pass on your computer, the `verify` job in CI should pass too.
 
 ### Note on the npm registry used by the Docker build
 
@@ -119,7 +150,7 @@ A company mirror that needs a client certificate on your laptop can't be used th
 
 ## 2. Configuration reference
 
-All settings come from environment variables. Only one package, `@argiva/config`, may read them. A lint rule blocks `process.env` everywhere else, and another lint check blocks hard-coded domains, URLs, emails, phone numbers and prices in code (see [ADR 0012](adr/0012-config-driven.md)).
+All settings come from environment variables. Only one package, `@argiva/config`, may read them. A lint rule blocks `process.env` everywhere else, and another lint check blocks hard-coded business domains, URLs, emails, phone numbers and prices in code. The URL check permits standard HTTPS Schema.org vocabulary identifiers used by JSON-LD (see [ADR 0012](adr/0012-config-driven.md)).
 
 **Fail fast:** the app checks every setting when it starts. If anything is missing or wrong, it prints `Invalid configuration:` followed by one line per problem (for example `APP_BASE_URL: ...`) and exits. It never runs with a half-valid configuration. An empty value counts as "not set".
 
@@ -133,6 +164,7 @@ Where each value comes from:
 | --- | --- | --- | --- | --- |
 | `APP_ENV` | Which environment this is. Only `production` lets search engines index the site. | Required. One of `local`, `staging`, `production`. | `local` | GitHub environment variable `APP_ENV` |
 | `APP_BASE_URL` | The public address of the site. | Required. Must be a full URL. Must start with `https://` unless `APP_ENV=local`. | `http://localhost:3000` | GitHub environment variable `APP_BASE_URL` |
+| `INSTAGRAM_URL` | Approved public Instagram profile used by contact/footer links and Organization JSON-LD. | Optional. When set, must be a URL. | `https://www.instagram.com/argiva_silvers/` | GitHub environment variable `INSTAGRAM_URL` |
 | `APP_VERSION` | Which build is running. Shown in health checks. | Optional. Defaults to `dev`. | `dev` | Set to the git commit SHA by the deploy workflow |
 | `LOG_LEVEL` | How much the app logs. | Optional. One of `debug`, `info`, `warn`, `error`. Defaults to `info`. | `info` | Not set (uses the default) |
 | `DATABASE_URL` | Postgres connection string. | Required. Must start with `postgres://` or `postgresql://`. | `postgres://argiva:argiva_local_only@localhost:5432/argiva` | Secret Manager secret named in `DATABASE_URL_SECRET` |
@@ -274,6 +306,12 @@ The app couldn't reach the database within 2 seconds.
 
 - **Cloud:** Neon's free plan pauses an idle database and takes a moment to wake. Wait a few seconds and try again. The smoke test already retries each check 5 times, 2 seconds apart. If it keeps failing, check the Neon dashboard and the secret's value.
 - **Local:** check that the database container is running, with `docker compose ps`.
+
+**A policy route returns 404, or policy URLs are missing from `/sitemap.xml`**
+The route and sitemap use rows from the `policies` table. Confirm that the policies migration has been applied to the intended database and that the required policy row exists. After verifying the target database, use the `db:seed` procedure in [Storefront schema and content readiness](#storefront-schema-and-content-readiness) for local seed rows.
+
+**A storefront page fails while catalog or policy data is being read**
+Check that migrations for the deployed app version have been applied to the database selected by `DATABASE_URL`. The `/api/ready` endpoint checks connectivity only; it does not check the full application schema.
 
 **The first request after a quiet period is slow**
 That's a **cold start**: Cloud Run is starting an instance from zero, which typically takes a second or a few seconds. It's the trade-off for scaling to zero and paying nothing while idle.

@@ -4,17 +4,19 @@
 
 The official website and online store for ARGIVA Silvers.
 
-Right now it's a holding page with the design system, health checks, Docker setup, CI and deploy pipelines in place. The store features come in later phases.
+The current build includes the storefront: home and collection pages, product details, search, a browser-persisted cart, brand information, draft policy routes, and SEO metadata. Checkout, payments and the admin dashboard are later phases.
 
 ## What's in the repo
 
 | Path | What it is |
 | --- | --- |
-| `apps/web` | The website (Next.js 16): holding page, `/api/health` and `/api/ready` |
+| `apps/web` | The Next.js 16 storefront: collections, products, cart, search, brand and policy pages, SEO, `/api/health` and `/api/ready` |
 | `apps/ui-preview` | A preview page for the design system's components and themes |
 | `packages/ui` | Shared React components, themes and fonts |
 | `packages/design-tokens` | Colours, type and spacing for each theme |
 | `packages/config` | Typed settings. It's the only code that reads environment variables. |
+| `packages/db` | Database schema (Drizzle ORM), migrations and connection pooling |
+| `packages/domain` | Pure business logic: composition labelling, pricing engine, stock reservations |
 | `scripts/` | Lint checks and the smoke test |
 | `docs/` | [Docs index](docs/README.md): [setup guide](docs/setup.md), [runbook](docs/runbook.md), [decisions (ADRs)](docs/adr/README.md), [plans](docs/plans/README.md), [brand content](docs/brand-content.md) |
 | `sdd/` | Project state and progress logs |
@@ -50,20 +52,27 @@ To work on the site locally, you only need the tools below.
 ### Option A: run the whole site in Docker (closest to production)
 
 1. Start Docker Desktop. On macOS you can run `open -a Docker`.
-2. From the repo folder, build and start the website and a local Postgres database:
+2. Start the local Postgres database:
+
+   ```sh
+   docker compose up -d --wait db
+   ```
+
+3. Apply the database migrations as described in the [runbook's storefront schema section](docs/runbook.md#storefront-schema-and-content-readiness). Compose does not apply migrations or seed data automatically.
+4. Build and start the site:
 
    ```sh
    docker compose up -d --build --wait
    ```
 
-3. Open <http://localhost:3000>. You should see "ARGIVA Silvers" and the tagline.
-4. Optional: run the same checks CI does:
+5. Open <http://localhost:3000>. The database-backed catalog needs its schema and data. After applying migrations, use the target-safe `db:seed` steps in the [runbook](docs/runbook.md#storefront-schema-and-content-readiness) to add local catalog and draft policy rows.
+6. Optional: run the same checks CI does:
 
    ```sh
    node scripts/smoke.mjs http://127.0.0.1:3000 --noindex
    ```
 
-5. To stop, run `docker compose down`. Add `-v` to also delete the local database and uploaded files.
+7. To stop, run `docker compose down`. Add `-v` to also delete the local database and uploaded files.
 
 ### Option B: run the dev server (fast reload while you edit)
 
@@ -85,7 +94,9 @@ To work on the site locally, you only need the tools below.
    docker compose up -d --wait db
    ```
 
-4. Start the dev server and open <http://localhost:3000>:
+4. Apply the database migrations as described in the [runbook](docs/runbook.md#storefront-schema-and-content-readiness). Migrations are not applied automatically. Policy routes also need seeded policy rows; follow the runbook's target-safe `db:seed` steps.
+
+5. Start the dev server and open <http://localhost:3000>:
 
    ```sh
    npx --loglevel=error pnpm@12.16.1 dev
@@ -106,7 +117,7 @@ npx --loglevel=error pnpm@12.16.1 ui:preview
 | What it does | Command |
 | --- | --- |
 | Build everything | `npx --loglevel=error pnpm@12.16.1 build` |
-| Lint (ESLint, no-hex-colours, no-hard-coded-values) | `npx --loglevel=error pnpm@12.16.1 lint` |
+| Lint (ESLint, no-hex-colours, no-hard-coded-values, style-variable names) | `npx --loglevel=error pnpm@12.16.1 lint` |
 | Check types | `npx --loglevel=error pnpm@12.16.1 typecheck` |
 | Run all tests | `npx --loglevel=error pnpm@12.16.1 test` |
 

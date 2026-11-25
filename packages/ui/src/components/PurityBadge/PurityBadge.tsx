@@ -1,3 +1,5 @@
+'use client';
+
 import { useThemeManifest } from '../../theme/ThemeProvider';
 import styles from './PurityBadge.module.css';
 

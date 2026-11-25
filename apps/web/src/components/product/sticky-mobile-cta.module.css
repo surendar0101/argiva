@@ -1,0 +1,24 @@
+.purchase {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--argiva-space-4);
+  padding: var(--argiva-space-3) var(--argiva-space-gutter);
+  padding-bottom: max(var(--argiva-space-3), env(safe-area-inset-bottom));
+  border-top: 1px solid var(--argiva-color-border-default);
+  background: var(--argiva-color-surface-page);
+}
+
+@media (min-width: 54rem) {
+  .purchase {
+    position: static;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: var(--argiva-space-3) 0;
+    border-top: 0;
+  }
+}

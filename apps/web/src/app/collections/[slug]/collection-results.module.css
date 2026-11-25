@@ -1,0 +1,20 @@
+.results {
+  display: grid;
+  gap: var(--argiva-space-5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--argiva-space-6) var(--argiva-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.empty {
+  margin: 0;
+  padding-block: var(--argiva-space-6);
+  color: var(--argiva-color-text-muted);
+  line-height: var(--argiva-font-line-height-body);
+}

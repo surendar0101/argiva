@@ -63,9 +63,10 @@ Tests use vitest with jsdom and Testing Library. Every component test except `Pr
 
 - Write the test first, including the axe check, then the component.
 - Use only `--argiva-*` CSS variables for colour, font, radius and spacing. Hex colours in `src/` fail `lint:no-hex`.
-- No hard-coded URLs, domains, emails, phone numbers or prices in `src/`. `lint:hardcoded` checks this. Copy and links come in as props.
+- No hard-coded business URLs, domains, emails, phone numbers or prices in `src/`. `lint:hardcoded` allows standard HTTPS Schema.org vocabulary identifiers used by JSON-LD. Copy and links come in as props.
 - Don't read `process.env`. Components get everything through props or the theme ([ADR 0012](../../docs/adr/0012-config-driven.md)).
 - ESLint runs the accessibility (`jsx-a11y`) and React hooks rules on every `.tsx` file.
+- A component that calls `useThemeManifest()` must start with `'use client';`. Without it, a Next.js page rendered on the server fails with a 500 error. `src/client-boundaries.test.ts` checks this, because the other tests run in a simulated browser and can't see it.
 - Add new components to `src/index.ts` and to the preview app.
 
 ## Related docs

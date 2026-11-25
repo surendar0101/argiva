@@ -1,0 +1,127 @@
+.footer {
+  background-color: var(--argiva-color-surface-muted);
+  border-top: 1px solid var(--argiva-color-border-default);
+  padding: var(--argiva-space-7) 0 var(--argiva-space-5);
+}
+
+.container {
+  max-width: var(--argiva-size-content-max, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--argiva-space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--argiva-space-6);
+  margin-bottom: var(--argiva-space-6);
+}
+
+.brand {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .brand {
+    grid-column: span 2;
+  }
+}
+
+.brandName {
+  font-family: var(--argiva-font-family-display);
+  font-size: var(--argiva-font-size-2xl);
+  font-weight: var(--argiva-font-weight-strong);
+  color: var(--argiva-color-text-primary);
+  margin: 0 0 var(--argiva-space-2) 0;
+}
+
+.tagline {
+  font-size: var(--argiva-font-size-md);
+  font-weight: var(--argiva-font-weight-strong);
+  color: var(--argiva-color-text-muted);
+  margin: 0 0 var(--argiva-space-3) 0;
+}
+
+.heritage {
+  font-size: var(--argiva-font-size-sm);
+  color: var(--argiva-color-text-muted);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.linksTitle {
+  font-size: var(--argiva-font-size-sm);
+  font-weight: var(--argiva-font-weight-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--argiva-color-text-primary);
+  margin: 0 0 var(--argiva-space-3) 0;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--argiva-space-2);
+}
+
+.link {
+  font-size: var(--argiva-font-size-sm);
+  color: var(--argiva-color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--argiva-color-text-primary);
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: var(--argiva-space-2);
+  margin-bottom: var(--argiva-space-4);
+}
+
+.socialLink {
+  font-size: var(--argiva-font-size-sm);
+  color: var(--argiva-color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--argiva-color-text-primary);
+}
+
+.grievance {
+  font-size: var(--argiva-font-size-xs);
+  color: var(--argiva-color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bottom {
+  padding-top: var(--argiva-space-5);
+  border-top: 1px solid var(--argiva-color-border-default);
+}
+
+.copyright {
+  font-size: var(--argiva-font-size-sm);
+  color: var(--argiva-color-text-muted);
+  text-align: center;
+  margin: 0;
+}

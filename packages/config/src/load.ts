@@ -8,6 +8,7 @@ export type StorageConfig =
 export interface AppConfig {
   appEnv: AppEnv;
   baseUrl: string;
+  instagramUrl?: string;
   version: string;
   logLevel: Env['LOG_LEVEL'];
   databaseUrl: string;
@@ -45,6 +46,7 @@ export function loadConfig(source: Record<string, string | undefined> = process.
   return {
     appEnv: env.APP_ENV,
     baseUrl: env.APP_BASE_URL,
+    ...(env.INSTAGRAM_URL ? { instagramUrl: env.INSTAGRAM_URL } : {}),
     version: env.APP_VERSION,
     logLevel: env.LOG_LEVEL,
     databaseUrl: env.DATABASE_URL,

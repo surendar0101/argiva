@@ -12,6 +12,7 @@ Every setting is listed with an example in the root `.env.example`. Empty or bla
 | --- | --- | --- | --- |
 | `APP_ENV` | Yes | `local`, `staging`, `production` | |
 | `APP_BASE_URL` | Yes | A URL. Must start with `https://` unless `APP_ENV=local`. | |
+| `INSTAGRAM_URL` | No | A URL for the approved public Instagram profile. | |
 | `APP_VERSION` | No | Any text. The Docker build sets it. | `dev` |
 | `LOG_LEVEL` | No | `debug`, `info`, `warn`, `error` | `info` |
 | `DATABASE_URL` | Yes | Starts with `postgres://` or `postgresql://` | |
@@ -27,7 +28,7 @@ For what each setting means in each environment, see the [runbook's configuratio
 ```ts
 import { getConfig, ConfigError } from '@argiva/config';
 
-const { appEnv, baseUrl, databaseUrl, storage, defaultThemeId } = getConfig();
+const { appEnv, baseUrl, instagramUrl, databaseUrl, storage, defaultThemeId } = getConfig();
 ```
 
 | Export | What it does |
@@ -38,7 +39,7 @@ const { appEnv, baseUrl, databaseUrl, storage, defaultThemeId } = getConfig();
 | `envSchema` | The zod schema behind the check. |
 | `AppConfig`, `AppEnv`, `StorageConfig` | Types. |
 
-`AppConfig` has `appEnv`, `baseUrl`, `version`, `logLevel`, `databaseUrl`, `storage` and `defaultThemeId`. `storage` is either `{ driver: 'local', localDir }` or `{ driver: 'r2', accountId, bucket, accessKeyId, secretAccessKey }`.
+`AppConfig` has `appEnv`, `baseUrl`, optional `instagramUrl`, `version`, `logLevel`, `databaseUrl`, `storage` and `defaultThemeId`. `storage` is either `{ driver: 'local', localDir }` or `{ driver: 'r2', accountId, bucket, accessKeyId, secretAccessKey }`.
 
 ### Fail fast
 
@@ -68,7 +69,7 @@ There is no build step. The package ships TypeScript source and apps compile it.
 - Write the test first in `src/load.test.ts`, then change the schema.
 - To add a setting: add it to `src/schema.ts`, map it in `AppConfig` in `src/load.ts`, add it to the root `.env.example` and to the runbook's configuration reference.
 - Never put a real secret in `.env.example`, a test or an error message.
-- No hard-coded URLs, domains, emails, phone numbers or prices in `src/`. `lint:hardcoded` checks this; local addresses such as `localhost` are allowed.
+- No hard-coded business URLs, domains, emails, phone numbers or prices in `src/`. `lint:hardcoded` allows standard HTTPS Schema.org vocabulary identifiers used by JSON-LD and local addresses such as `localhost`.
 
 ## Related docs
 

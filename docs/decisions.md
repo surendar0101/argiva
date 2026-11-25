@@ -1,6 +1,6 @@
 # Decisions summary
 
-Short index of accepted decisions. Details, options and consequences are in [docs/adr/](adr/README.md). The full resumable state is in [sdd/state.json](../sdd/state.json).
+Short index of decisions. Details, options and consequences are in [docs/adr/](adr/README.md). ADR 0014 is proposed for owner review. The full resumable state is in [sdd/state.json](../sdd/state.json).
 
 | # | Decision | Summary |
 |---|---|---|
@@ -16,6 +16,8 @@ Short index of accepted decisions. Details, options and consequences are in [doc
 | [0010](adr/0010-design-tooling.md) | Design tooling | Impeccable, frontend-design, theme-factory, shadcn MCP, browser screenshots |
 | [0011](adr/0011-design-direction-themes.md) | Design & themes | Quiet luxury default; 3 switchable token themes; Owner-only switching |
 | [0012](adr/0012-config-driven.md) | Config | Typed, Zod-validated config + admin site settings; no hard-coded business values |
+| [0013](adr/0013-domain-core-architecture.md) | Domain Core | Decoupled `@argiva/domain` pure business logic and `@argiva/db` Drizzle schema with `prepare: false` for Neon pooling |
+| [0014](adr/0014-storefront-architecture.md) | Storefront | Proposed: server-rendered catalog and SEO with small client interactions; database-backed draft policies |
 
 ## Tooling notes
 - TypeScript pinned to 6.0.x because Next.js and typescript-eslint need the TypeScript JavaScript API, which 7.0 lacks; revisit when both support 7.

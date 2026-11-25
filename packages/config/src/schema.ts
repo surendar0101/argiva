@@ -8,6 +8,7 @@ export const envSchema = z
   .object({
     APP_ENV: z.enum(['local', 'staging', 'production']),
     APP_BASE_URL: z.url(),
+    INSTAGRAM_URL: z.url().optional(),
     APP_VERSION: z.string().min(1).default('dev'),
     LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
     DATABASE_URL: z.string().regex(/^postgres(?:ql)?:\/\/.+/, 'must start with postgres:// or postgresql://'),

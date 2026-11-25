@@ -14,7 +14,7 @@ const nextVitals = existsSync('apps/web/package.json')
 export default defineConfig([
   globalIgnores([
     '**/node_modules/**', '**/dist/**', '**/.next/**', '**/.turbo/**',
-    '**/next-env.d.ts', 'sdd/**', '.github/skills/**',
+    '**/next-env.d.ts', 'sdd/**', '.github/skills/**', '.claude/**', '.agents/**', '.ua/**',
   ]),
   js.configs.recommended,
   tseslint.configs.recommendedTypeChecked,

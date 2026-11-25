@@ -31,6 +31,8 @@ Do the steps in this order. Each one depends on the ones before it.
 
 Only steps 1, 2 and 5 are needed to work on the site locally. Steps 3–10 are only for putting it on the internet.
 
+The Phase 4 storefront uses the existing accounts and configuration; it adds no external service or secret. It does add database-backed policy routes. Before using those routes in an environment, follow the database readiness notes in [runbook section 1](runbook.md#storefront-schema-and-content-readiness). The policies are drafts and require owner/legal review before publication.
+
 ---
 
 ## 2. Accounts and tools
@@ -368,7 +370,7 @@ New permissions can take up to 5 minutes to take effect. If the first deploy fai
    - The default branch (usually called `main`) is **production**.
    - Create a second branch named `staging` from it. Staging gets its own data, so testing can't touch production data.
 4. For each branch, copy the connection string:
-   - Use the **pooled** connection string (its host name contains `-pooler`). Pooling lets many short Cloud Run requests share a few database connections.
+   - Use the **pooled** connection string (its host name contains `-pooler`). Pooling lets many short Cloud Run requests share a few database connections. (The application code in `@argiva/db` is configured with `prepare: false` for full compatibility with Neon's PgBouncer transaction pooling).
    - Make sure it ends with `sslmode=require` so that traffic is encrypted.
    - It starts with `postgresql://`. The app accepts that.
 5. Put the two strings into Secret Manager as described in section 3.8. Don't paste them anywhere else: not into GitHub, not into a chat, not into a file in the repo.
@@ -405,10 +407,12 @@ Go to **Settings → Environments → New environment**. Create `staging` and `p
 | `GCP_RUNTIME_SA` | `argiva-runtime@<PROJECT_ID>.iam.gserviceaccount.com` | same |
 | `APP_ENV` | `staging` | `production` |
 | `APP_BASE_URL` | the staging URL (see [first deploy](runbook.md#first-deploy-of-staging-the-app_base_url-chicken-and-egg) in the runbook) | the production URL (`https://`) |
+| `INSTAGRAM_URL` | `https://www.instagram.com/argiva_silvers/` | `https://www.instagram.com/argiva_silvers/` |
 | `DATABASE_URL_SECRET` | `argiva-staging-database-url` | `argiva-production-database-url` |
 | `CLOUD_RUN_MAX_INSTANCES` | `2` | `2` |
 
 `CLOUD_RUN_MAX_INSTANCES` caps how many copies of the site can run at once. That limits the cost if something floods the site with traffic.
+`INSTAGRAM_URL` is optional, but setting the approved profile URL enables the contact/footer links and the Organization structured-data profile.
 
 On the **production** environment also set:
 

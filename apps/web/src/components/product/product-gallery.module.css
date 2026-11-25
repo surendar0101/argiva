@@ -1,0 +1,14 @@
+.gallery {
+  min-width: 0;
+}
+
+.placeholder {
+  display: grid;
+  aspect-ratio: 4 / 5;
+  place-items: center;
+  padding: var(--argiva-space-5);
+  background: var(--argiva-component-card-media-bg);
+  color: var(--argiva-component-card-meta);
+  font-size: var(--argiva-font-size-sm);
+  text-align: center;
+}

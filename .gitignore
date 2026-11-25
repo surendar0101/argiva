@@ -16,3 +16,5 @@ test-results/
 # Override global ignores that would hide project files
 !docs/plans/
 neon.env
+# Understand-Anything scratch files (the graph itself is committed)
+.ua/.trash-*/

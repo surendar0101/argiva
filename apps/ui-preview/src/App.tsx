@@ -1,5 +1,5 @@
 import { isThemeId, themeIds, type ThemeId } from '@argiva/design-tokens';
-import { Divider, Hero, ProductCard, ProductHeader, SiteHeader, ThemeProvider } from '@argiva/ui';
+import { Divider, Hero, ProductCard, ProductHeader, SiteHeader, ThemeProvider, type ImageData } from '@argiva/ui';
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import { products } from './fixtures';
@@ -15,7 +15,12 @@ export function App() {
     document.documentElement.dataset.theme = theme;
     history.replaceState(null, '', `#${theme}`);
   }, [theme]);
-  const first = products[0]!;
+  const first = products[0];
+  if (!first?.image) return null;
+  const gallery: [ImageData, ...ImageData[]] = [
+    first.image,
+    ...(products[1]?.image ? [products[1].image] : []),
+  ];
 
   return (
     <ThemeProvider themeId={theme}>
@@ -44,7 +49,7 @@ export function App() {
         </section>
         <ProductHeader
           name={first.name}
-          images={[first.image, products[1]!.image]}
+          images={gallery}
           pricePaise={first.pricePaise}
           weightGrams={first.weightGrams}
           finish={first.finish}

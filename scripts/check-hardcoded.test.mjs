@@ -14,6 +14,12 @@ test('allows localhost and the SVG namespace', () => {
   assert.deepEqual(kinds('<svg xmlns="http://www.w3.org/2000/svg">'), []);
 });
 
+test('allows Schema.org vocabulary URLs used in structured data', () => {
+  assert.deepEqual(kinds("const context = 'https://schema.org';"), []);
+  assert.deepEqual(kinds("const stock = 'https://schema.org/InStock';"), []);
+  assert.deepEqual(kinds("const untrusted = 'https://schema.org.evil.test/path';"), ['url']);
+});
+
 test('flags emails and Indian phone numbers', () => {
   assert.deepEqual(kinds("const e = 'hello@example.com';"), ['email']);
   assert.deepEqual(kinds("const p = '+91 98765 43210';"), ['phone']);

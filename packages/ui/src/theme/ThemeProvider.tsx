@@ -1,3 +1,5 @@
+'use client';
+
 import { defaultThemeId, getTheme, type ThemeId, type ThemeManifest } from '@argiva/design-tokens';
 import { createContext, useContext, type ReactNode } from 'react';
 

@@ -1,0 +1,6393 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "8f5caeedc3720ba9d0a03c87baadd76cb7446823",
+  "generatedAt": "2026-11-25T18:37:14.425Z",
+  "files": {
+    ".dockerignore": {
+      "filePath": ".dockerignore",
+      "contentHash": "b0e412587ad0efa066a99dfc98c9117471a52c8d9438606b2aee0e569362836c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": false
+    },
+    ".env.example": {
+      "filePath": ".env.example",
+      "contentHash": "7b54e8d91cd97af90219f09157adbb9cdd9b1113f0e442f9a7fc267525e99feb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/ci.yml": {
+      "filePath": ".github/workflows/ci.yml",
+      "contentHash": "741b088b8b69acfd5b963038459d46c4c708a34fb237f420196fe222fd4cb6d5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 40,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/deploy-production.yml": {
+      "filePath": ".github/workflows/deploy-production.yml",
+      "contentHash": "7fb3f02ee2ae3fd5339e7791ea72ac965e1c026363a54d79ce82bce9ea2939fb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/deploy-staging.yml": {
+      "filePath": ".github/workflows/deploy-staging.yml",
+      "contentHash": "4ba782848ed63ee60ddf1c92dabd78bc4c51d437e6c4056af177dee14d43dd39",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/deploy.yml": {
+      "filePath": ".github/workflows/deploy.yml",
+      "contentHash": "70674f4b38763c20471ceee1feb45377a683925156227269e9f585d711ee5ea0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 56,
+      "hasStructuralAnalysis": false
+    },
+    ".github/workflows/design-tokens.yml": {
+      "filePath": ".github/workflows/design-tokens.yml",
+      "contentHash": "e1840b00434a1bfb61e9cbc32ad2634186dbec6146c21f31c2aa2d547a9be792",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 34,
+      "hasStructuralAnalysis": false
+    },
+    ".ua/config.json": {
+      "filePath": ".ua/config.json",
+      "contentHash": "4b66f98f8a815dfeb2d3a29eeb73418e07c40ed020a1498c07e908b2254f0c8c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "DESIGN.md": {
+      "filePath": "DESIGN.md",
+      "contentHash": "c0d324c27ad45d6c1cded819dd4273fb66045a51db35e542b285d4442390e105",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 241,
+      "hasStructuralAnalysis": false
+    },
+    "Dockerfile": {
+      "filePath": "Dockerfile",
+      "contentHash": "3a3ff63d3c1c03d1866c897ba1dc4701cb794ca6460adc4e60932c60da93b901",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": false
+    },
+    "PRODUCT.md": {
+      "filePath": "PRODUCT.md",
+      "contentHash": "62b5b608127afd2829d379e72834633ca071bf72a71d9388a34bc9ff550aaa50",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 71,
+      "hasStructuralAnalysis": false
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "6fccc78daecc2af30ef0873fcebc55a56701590add914c931913e75cc470de00",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 133,
+      "hasStructuralAnalysis": false
+    },
+    "apps/ui-preview/README.md": {
+      "filePath": "apps/ui-preview/README.md",
+      "contentHash": "83b10006ea285059b6c9923bb16d897826897bc72530bc2021671a3d87c5c675",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 62,
+      "hasStructuralAnalysis": false
+    },
+    "apps/ui-preview/index.html": {
+      "filePath": "apps/ui-preview/index.html",
+      "contentHash": "9a3f3c8c7e70b26a22309c7f4675a83b7a7cdab5ba93d13f0aff93a42f8bb6b9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": false
+    },
+    "apps/ui-preview/package.json": {
+      "filePath": "apps/ui-preview/package.json",
+      "contentHash": "696c5cc2ea9405a1acb8bff144ebb4b40cb6a201d503e249f6ec277d2e9be951",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": false
+    },
+    "apps/ui-preview/src/App.module.css": {
+      "filePath": "apps/ui-preview/src/App.module.css",
+      "contentHash": "b0c96690b378a27c362d11bb084ba966eb41b76151d5170034c2bc3b9aab12bf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "apps/ui-preview/src/App.tsx": {
+      "filePath": "apps/ui-preview/src/App.tsx",
+      "contentHash": "8f8ad3b97a0afc60f663463032b7ab1d11a36556206df949252bf6c26b3a2066",
+      "functions": [
+        {
+          "name": "fromHash",
+          "params": [],
+          "returnType": "ThemeId",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "App",
+          "params": [],
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/design-tokens",
+          "specifiers": [
+            "isThemeId",
+            "themeIds",
+            "ThemeId"
+          ]
+        },
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "Divider",
+            "Hero",
+            "ProductCard",
+            "ProductHeader",
+            "SiteHeader",
+            "ThemeProvider",
+            "ImageData"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "./App.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        },
+        {
+          "source": "./fixtures",
+          "specifiers": [
+            "products"
+          ]
+        }
+      ],
+      "exports": [
+        "App"
+      ],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    "apps/ui-preview/src/fixtures.ts": {
+      "filePath": "apps/ui-preview/src/fixtures.ts",
+      "contentHash": "67ac40d1660107bda9a857248b5a2ecbdb242b5dc42f82e5815997c4ba24e07e",
+      "functions": [
+        {
+          "name": "img",
+          "params": [
+            "name",
+            "alt"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "ProductCardProps"
+          ]
+        }
+      ],
+      "exports": [
+        "products"
+      ],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "apps/ui-preview/src/main.tsx": {
+      "filePath": "apps/ui-preview/src/main.tsx",
+      "contentHash": "2c169441fc87c1a65daa97f7a591f5954861cac032bd12d442f0de8d935a2922",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui/fonts",
+          "specifiers": []
+        },
+        {
+          "source": "@argiva/ui/global.css",
+          "specifiers": []
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "StrictMode"
+          ]
+        },
+        {
+          "source": "react-dom/client",
+          "specifiers": [
+            "createRoot"
+          ]
+        },
+        {
+          "source": "./App",
+          "specifiers": [
+            "App"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "apps/ui-preview/tsconfig.json": {
+      "filePath": "apps/ui-preview/tsconfig.json",
+      "contentHash": "86fdeaf8139e85ce8dd4eb826c4420ed685b1109dadd53575013139e5af5c15d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "apps/ui-preview/vite.config.ts": {
+      "filePath": "apps/ui-preview/vite.config.ts",
+      "contentHash": "072ef0422d3e4033ae783e213ca275349c652e81cc13ee65a67162de40c3cfd9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/README.md": {
+      "filePath": "apps/web/README.md",
+      "contentHash": "8faa89d07fae5c8f05045fffc62edfcb22648f4a7130a7819fe530b390d50b72",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 130,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/next.config.ts": {
+      "filePath": "apps/web/next.config.ts",
+      "contentHash": "1544c928e63fddf6b1142d066c1a969667137cf8cbaf11d4d6412e6acdb7b01f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "NextConfig"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "./src/security-headers",
+          "specifiers": [
+            "securityHeaders"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/package.json": {
+      "filePath": "apps/web/package.json",
+      "contentHash": "b681975c76b363b1bdf1609f85673c25029c9da074224de0a31840daf11a8c09",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/public/.gitkeep": {
+      "filePath": "apps/web/public/.gitkeep",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/api/health/route.ts": {
+      "filePath": "apps/web/src/app/api/health/route.ts",
+      "contentHash": "2b1758f2783fd5b48bfe868cae7eaac9f29af2f0e2641f0b5a74708e2b247c3a",
+      "functions": [
+        {
+          "name": "GET",
+          "params": [],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "../../../server/health",
+          "specifiers": [
+            "liveness"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "GET"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/api/ready/route.ts": {
+      "filePath": "apps/web/src/app/api/ready/route.ts",
+      "contentHash": "32913bfb8d5f2794eb73ac5bd68913e2fec62e081528c0216ad5a1ccae0a9c6e",
+      "functions": [
+        {
+          "name": "GET",
+          "params": [],
+          "returnType": "Promise<Response>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../../server/db",
+          "specifiers": [
+            "pingDatabase"
+          ]
+        },
+        {
+          "source": "../../../server/health",
+          "specifiers": [
+            "readiness"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "GET"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/cart/page.module.css": {
+      "filePath": "apps/web/src/app/cart/page.module.css",
+      "contentHash": "c5856b182920bd84b5da0a7decb823ad27d61a18e6bc6ad5e05837544acb975f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 231,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/cart/page.test.tsx": {
+      "filePath": "apps/web/src/app/cart/page.test.tsx",
+      "contentHash": "5ef908fe5dcd76a356c3ec1c3bfc6172f51cc006309afb0d1f28b9965b651bc5",
+      "functions": [
+        {
+          "name": "renderCart",
+          "params": [
+            "items"
+          ],
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@testing-library/user-event",
+          "specifiers": [
+            "userEvent"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "test"
+          ]
+        },
+        {
+          "source": "../../components/cart/cart-context",
+          "specifiers": [
+            "CartProvider",
+            "CartItem"
+          ]
+        },
+        {
+          "source": "./page",
+          "specifiers": [
+            "CartPage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/cart/page.tsx": {
+      "filePath": "apps/web/src/app/cart/page.tsx",
+      "contentHash": "0b456ed0e565e161e437b3c5e0b4c80994ca8c8ee7fcb92b7d002a66bb9bb6f0",
+      "functions": [
+        {
+          "name": "CartPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 101
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "ButtonLink",
+            "Price"
+          ]
+        },
+        {
+          "source": "next/image",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "../../components/cart/cart-context",
+          "specifiers": [
+            "useCart"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "CartPage"
+      ],
+      "totalLines": 109,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/collections/[slug]/collection-results.module.css": {
+      "filePath": "apps/web/src/app/collections/[slug]/collection-results.module.css",
+      "contentHash": "ab5ef05663cae004494d3891827e6f17ef9fd270f40d0e10c26bb7d1f421da53",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/collections/[slug]/collection-results.tsx": {
+      "filePath": "apps/web/src/app/collections/[slug]/collection-results.tsx",
+      "contentHash": "2069adaf677cbb225b4a210b5f1c897b427c50d225ce506ce68571d0e750e0f0",
+      "functions": [
+        {
+          "name": "getFinishLabel",
+          "params": [
+            "finish"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "CollectionResults",
+          "params": [
+            "{ products }"
+          ],
+          "exported": true,
+          "lineCount": 62
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@argiva/domain",
+          "specifiers": [
+            "generateCompositionLabel"
+          ]
+        },
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "ProductCard"
+          ]
+        },
+        {
+          "source": "../../../components/catalog/filter-bar",
+          "specifiers": [
+            "FilterBar"
+          ]
+        },
+        {
+          "source": "../../../lib/catalog",
+          "specifiers": [
+            "CatalogFilters",
+            "CatalogProduct"
+          ]
+        },
+        {
+          "source": "./collection-results.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "CollectionResults"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/collections/[slug]/page.module.css": {
+      "filePath": "apps/web/src/app/collections/[slug]/page.module.css",
+      "contentHash": "09e4d22d38340a9e235f2f25f6a2715d978a2e45734b2fe84c77ecb51c68060e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/collections/[slug]/page.test.tsx": {
+      "filePath": "apps/web/src/app/collections/[slug]/page.test.tsx",
+      "contentHash": "818ef3e65c6fb061f24b2c15703f0a3d6110825e21c53172d1a26ddac0342539",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "fireEvent",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../../../lib/catalog",
+          "specifiers": [
+            "getCategoryBySlug",
+            "getProductsByCategory"
+          ]
+        },
+        {
+          "source": "./page",
+          "specifiers": [
+            "CollectionPage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/collections/[slug]/page.tsx": {
+      "filePath": "apps/web/src/app/collections/[slug]/page.tsx",
+      "contentHash": "345f9b9b1be8b1e2d5cfe814b0813fa2eee4d4fe4f65af1595bc7e56ede5bd11",
+      "functions": [
+        {
+          "name": "CollectionPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "./collection-results",
+          "specifiers": [
+            "CollectionResults"
+          ]
+        },
+        {
+          "source": "../../../lib/collection-copy",
+          "specifiers": [
+            "getCollectionDescription"
+          ]
+        },
+        {
+          "source": "../../../lib/catalog",
+          "specifiers": [
+            "getCategoryBySlug",
+            "getProductsByCategory"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "CollectionPage"
+      ],
+      "totalLines": 40,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/collections/page.module.css": {
+      "filePath": "apps/web/src/app/collections/page.module.css",
+      "contentHash": "702ddc2af5eec6adb0acde839d1b96207818d30b3915983a692737d463b8383b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/collections/page.test.tsx": {
+      "filePath": "apps/web/src/app/collections/page.test.tsx",
+      "contentHash": "1d32ec2794fc19ab70f82060150695a9f687907bf20a6b67b5f814c92142d450",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "getCategories"
+          ]
+        },
+        {
+          "source": "./page",
+          "specifiers": [
+            "CollectionsPage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/collections/page.tsx": {
+      "filePath": "apps/web/src/app/collections/page.tsx",
+      "contentHash": "815785d343bd523032417b273a26414e25d10109f058cd8ecb1c04d0e7878a96",
+      "functions": [
+        {
+          "name": "CollectionsPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "../../lib/collection-copy",
+          "specifiers": [
+            "getCollectionDescription"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "getCategories"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "CollectionsPage"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/contact/page.module.css": {
+      "filePath": "apps/web/src/app/contact/page.module.css",
+      "contentHash": "9682dfa98647109ebe846e55bd22d88638d8128ae859da4edf00cd9b9dc776ec",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 83,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/contact/page.tsx": {
+      "filePath": "apps/web/src/app/contact/page.tsx",
+      "contentHash": "c876b405d04e128d4bad6e2b9ca0836fa31a99091b7b9ea4c42139467ec8296b",
+      "functions": [
+        {
+          "name": "ContactPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 71
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "ContactPage"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/faq/page.module.css": {
+      "filePath": "apps/web/src/app/faq/page.module.css",
+      "contentHash": "257fcbf06f15e82f0c7310f62bb341fe63c911952e664c92f7949e988a83e28d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/faq/page.tsx": {
+      "filePath": "apps/web/src/app/faq/page.tsx",
+      "contentHash": "d8971f4ce11cc97e56cbbfb094f1688ba9393c0a06884bb56839b63005f9a6a9",
+      "functions": [
+        {
+          "name": "FAQPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 74
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "FAQPage"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/layout.tsx": {
+      "filePath": "apps/web/src/app/layout.tsx",
+      "contentHash": "04b5046d429ccb26596f7543a4395e84b7c8d5a77c322f43b29f1983d224af48",
+      "functions": [
+        {
+          "name": "generateMetadata",
+          "params": [],
+          "returnType": "Promise<Metadata>",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "RootLayout",
+          "params": [
+            "{ children }"
+          ],
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "@argiva/ui/fonts",
+          "specifiers": []
+        },
+        {
+          "source": "@argiva/ui/global.css",
+          "specifiers": []
+        },
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "next/server",
+          "specifiers": [
+            "connection"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "../components/cart/cart-drawer",
+          "specifiers": [
+            "CartDrawer"
+          ]
+        },
+        {
+          "source": "../components/cart/cart-context",
+          "specifiers": [
+            "CartProvider"
+          ]
+        },
+        {
+          "source": "../components/layout/site-footer",
+          "specifiers": [
+            "SiteFooter"
+          ]
+        },
+        {
+          "source": "../components/layout/storefront-header",
+          "specifiers": [
+            "StorefrontHeader"
+          ]
+        },
+        {
+          "source": "../lib/seo",
+          "specifiers": [
+            "buildOrganizationJsonLd",
+            "buildSiteMetadata",
+            "serializeJsonLd"
+          ]
+        },
+        {
+          "source": "./theme-provider",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        }
+      ],
+      "exports": [
+        "generateMetadata",
+        "RootLayout"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/our-story/page.module.css": {
+      "filePath": "apps/web/src/app/our-story/page.module.css",
+      "contentHash": "bd0be05865d0411791f263a802390314388d6ed41ba6898c88f1e17038a9d364",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/our-story/page.tsx": {
+      "filePath": "apps/web/src/app/our-story/page.tsx",
+      "contentHash": "5a4fb8177db68c85b525ac775afca291b8afda7c75a99750172cc7bbbf4eaaa3",
+      "functions": [
+        {
+          "name": "OurStoryPage",
+          "params": [],
+          "exported": true,
+          "lineCount": 71
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "Divider"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "OurStoryPage"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/page.module.css": {
+      "filePath": "apps/web/src/app/page.module.css",
+      "contentHash": "eb391b27fe3ee3fb1789ecf7af715d84a2df7c0fd0bf5e16a73ebaa01ace46f3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/page.test.tsx": {
+      "filePath": "apps/web/src/app/page.test.tsx",
+      "contentHash": "8267ec2ec7540196c6b366d18e695cb0a2958303b277d299a4e578663190c576",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen",
+            "cleanup"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../lib/catalog",
+          "specifiers": [
+            "getCategories"
+          ]
+        },
+        {
+          "source": "./page",
+          "specifiers": [
+            "HomePage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 70,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/page.tsx": {
+      "filePath": "apps/web/src/app/page.tsx",
+      "contentHash": "af0dbefa0ee2d67c4e7fd5317a91f644047b96c539bf9839c7d896036d894596",
+      "functions": [
+        {
+          "name": "HomePage",
+          "params": [],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "Hero"
+          ]
+        },
+        {
+          "source": "../components/home/collection-grid",
+          "specifiers": [
+            "CollectionGrid"
+          ]
+        },
+        {
+          "source": "../components/home/heritage-section",
+          "specifiers": [
+            "HeritageSection"
+          ]
+        },
+        {
+          "source": "../components/home/promise-section",
+          "specifiers": [
+            "PromiseSection"
+          ]
+        },
+        {
+          "source": "../lib/catalog",
+          "specifiers": [
+            "getCategories"
+          ]
+        }
+      ],
+      "exports": [
+        "HomePage"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/policies/[slug]/page.tsx": {
+      "filePath": "apps/web/src/app/policies/[slug]/page.tsx",
+      "contentHash": "58bfdb01bf804b851ce5d58343fd521b2e50c4d5b5cfd2052cf815ffc58abca0",
+      "functions": [
+        {
+          "name": "renderBlock",
+          "params": [
+            "block",
+            "index"
+          ],
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "PolicyPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "@argiva/db",
+          "specifiers": [
+            "PolicyContentBlock"
+          ]
+        },
+        {
+          "source": "../../../components/policy/policy-layout",
+          "specifiers": [
+            "PolicyLayout"
+          ]
+        },
+        {
+          "source": "../../../lib/policies",
+          "specifiers": [
+            "getPolicyBySlug"
+          ]
+        }
+      ],
+      "exports": [
+        "PolicyPage"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/policies/policies.test.tsx": {
+      "filePath": "apps/web/src/app/policies/policies.test.tsx",
+      "contentHash": "76711596e23e2a3f52d89684d090531bf0c0bd09477b8a834327c01d3269b467",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../contact/page",
+          "specifiers": [
+            "ContactPage"
+          ]
+        },
+        {
+          "source": "../faq/page",
+          "specifiers": [
+            "FAQPage"
+          ]
+        },
+        {
+          "source": "../our-story/page",
+          "specifiers": [
+            "OurStoryPage"
+          ]
+        },
+        {
+          "source": "./[slug]/page",
+          "specifiers": [
+            "PolicyPage"
+          ]
+        },
+        {
+          "source": "../../lib/policies",
+          "specifiers": [
+            "getPolicyBySlug"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/products/[slug]/page.module.css": {
+      "filePath": "apps/web/src/app/products/[slug]/page.module.css",
+      "contentHash": "8ef0ee327801c74d4228d63dead71864b9ab166369a9fa17ac433c20af0eb8e7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 76,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/products/[slug]/page.test.tsx": {
+      "filePath": "apps/web/src/app/products/[slug]/page.test.tsx",
+      "contentHash": "6c45183d409244211d276a760a2cc373cc3ba95f195992cf866652b519b75762",
+      "functions": [
+        {
+          "name": "CartCount",
+          "params": [],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "isJsonRecord",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "parseStructuredData",
+          "params": [
+            "script"
+          ],
+          "returnType": "Record<string, unknown>",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "renderProductPage",
+          "params": [],
+          "exported": false,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@testing-library/user-event",
+          "specifiers": [
+            "userEvent"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../../../components/cart/cart-context",
+          "specifiers": [
+            "CartProvider",
+            "useCart"
+          ]
+        },
+        {
+          "source": "../../../lib/catalog",
+          "specifiers": [
+            "getProductBySlug"
+          ]
+        },
+        {
+          "source": "./page",
+          "specifiers": [
+            "ProductPage",
+            "generateMetadata"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 211,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/products/[slug]/page.tsx": {
+      "filePath": "apps/web/src/app/products/[slug]/page.tsx",
+      "contentHash": "b860c69886e24e91686809bff3ccc209e51f24b54ca1bb04df26789fe4882016",
+      "functions": [
+        {
+          "name": "generateMetadata",
+          "params": [
+            "{ params }"
+          ],
+          "returnType": "Promise<Metadata>",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "ProductPage",
+          "params": [
+            "{ params }"
+          ],
+          "exported": true,
+          "lineCount": 72
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "next/navigation",
+          "specifiers": [
+            "notFound"
+          ]
+        },
+        {
+          "source": "../../../components/product/product-detail-client",
+          "specifiers": [
+            "ProductDetailClient"
+          ]
+        },
+        {
+          "source": "../../../components/product/product-gallery",
+          "specifiers": [
+            "ProductGallery"
+          ]
+        },
+        {
+          "source": "../../../lib/catalog",
+          "specifiers": [
+            "getProductBySlug"
+          ]
+        },
+        {
+          "source": "../../../lib/seo",
+          "specifiers": [
+            "buildBreadcrumbJsonLd",
+            "buildProductJsonLd",
+            "buildProductMetadata",
+            "serializeJsonLd"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "generateMetadata",
+        "ProductPage"
+      ],
+      "totalLines": 103,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/robots.ts": {
+      "filePath": "apps/web/src/app/robots.ts",
+      "contentHash": "207501209540583136a23f0821fa93311c3e62a32df21ab7f56ebd2010a9e061",
+      "functions": [
+        {
+          "name": "robots",
+          "params": [],
+          "returnType": "MetadataRoute.Robots",
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "next",
+          "specifiers": [
+            "MetadataRoute"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "robots"
+      ],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/search/page.module.css": {
+      "filePath": "apps/web/src/app/search/page.module.css",
+      "contentHash": "d6e2a5a6f6fd1e1deb0af3c5a5b117b19e345e0aaf4136541012ad48a90d2c81",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 83,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/app/search/page.test.tsx": {
+      "filePath": "apps/web/src/app/search/page.test.tsx",
+      "contentHash": "a633219e48cf62685eba24d4f12f6f1ed2be53ffa261fc995c2379a10f1330ae",
+      "functions": [
+        {
+          "name": "renderSearch",
+          "params": [
+            "query"
+          ],
+          "exported": false,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "getSearchProducts"
+          ]
+        },
+        {
+          "source": "./page",
+          "specifiers": [
+            "SearchPage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 61,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/search/page.tsx": {
+      "filePath": "apps/web/src/app/search/page.tsx",
+      "contentHash": "b9e64072db1c1d76cde76e7c8fbd480353e3cbc014cbd6dae3ea0246151e8106",
+      "functions": [
+        {
+          "name": "getFinishLabel",
+          "params": [
+            "finish"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "SearchPage",
+          "params": [
+            "{ searchParams }"
+          ],
+          "exported": true,
+          "lineCount": 64
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/domain",
+          "specifiers": [
+            "generateCompositionLabel"
+          ]
+        },
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "Button",
+            "ProductCard"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "getSearchProducts"
+          ]
+        },
+        {
+          "source": "./page.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "SearchPage"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/sitemap.ts": {
+      "filePath": "apps/web/src/app/sitemap.ts",
+      "contentHash": "d200c0b930c9c6ed23ceb814ccaafd51f75036b10fda8298401776ccc6c055da",
+      "functions": [
+        {
+          "name": "entry",
+          "params": [
+            "path",
+            "baseUrl",
+            "changeFrequency",
+            "priority"
+          ],
+          "returnType": "MetadataRoute.Sitemap[number]",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "sitemap",
+          "params": [],
+          "returnType": "Promise<MetadataRoute.Sitemap>",
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "next",
+          "specifiers": [
+            "MetadataRoute"
+          ]
+        },
+        {
+          "source": "../lib/catalog",
+          "specifiers": [
+            "getCategories",
+            "getPublishedProductSlugs"
+          ]
+        },
+        {
+          "source": "../lib/policies",
+          "specifiers": [
+            "getPolicySlugs"
+          ]
+        }
+      ],
+      "exports": [
+        "dynamic",
+        "sitemap"
+      ],
+      "totalLines": 42,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/app/theme-provider.tsx": {
+      "filePath": "apps/web/src/app/theme-provider.tsx",
+      "contentHash": "a2b501b4570602efe086c553e0fb425c5a4c06f1f0fc9f6b1e81dc6cd2af3789",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "ThemeProvider"
+      ],
+      "totalLines": 3,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/cart/cart-context.test.tsx": {
+      "filePath": "apps/web/src/components/cart/cart-context.test.tsx",
+      "contentHash": "f8ffb396c7da05fe3029bf81c7bebc2849b266ffc3f5b01da7e38258f3069372",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "act",
+            "renderHook"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "./cart-context",
+          "specifiers": [
+            "CartProvider",
+            "useCart"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 267,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/cart/cart-context.tsx": {
+      "filePath": "apps/web/src/components/cart/cart-context.tsx",
+      "contentHash": "bf349af0367bccc1d1e95b9f55abfc20884d180285f6751b3442769851e38f0d",
+      "functions": [
+        {
+          "name": "isCartItem",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 24
+        },
+        {
+          "name": "parseCart",
+          "params": [
+            "serialized"
+          ],
+          "returnType": "CartItem[]",
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "warnStorageFailure",
+          "params": [
+            "error"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "getCartSnapshot",
+          "params": [],
+          "returnType": "CartItem[]",
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "getServerCartSnapshot",
+          "params": [],
+          "returnType": "CartItem[]",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "subscribeToCart",
+          "params": [
+            "listener"
+          ],
+          "returnType": "() => void",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "writeCart",
+          "params": [
+            "items"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "updateCart",
+          "params": [
+            "update"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "CartProvider",
+          "params": [
+            "{ children }"
+          ],
+          "exported": true,
+          "lineCount": 57
+        },
+        {
+          "name": "useCart",
+          "params": [],
+          "returnType": "CartContextValue",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "createContext",
+            "useContext",
+            "useState",
+            "useSyncExternalStore"
+          ]
+        }
+      ],
+      "exports": [
+        "CartProvider",
+        "useCart"
+      ],
+      "totalLines": 203,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/cart/cart-drawer.module.css": {
+      "filePath": "apps/web/src/components/cart/cart-drawer.module.css",
+      "contentHash": "d26e7a94502dd103e70955c1a1916f05fba79daeab8b207d3f30c439545e8ebf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 218,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/cart/cart-drawer.test.tsx": {
+      "filePath": "apps/web/src/components/cart/cart-drawer.test.tsx",
+      "contentHash": "ad32b1c3fd39a50f0908acc7bf4abeec633ff1814a580e461b29722626cab3f0",
+      "functions": [
+        {
+          "name": "CartDrawerHarness",
+          "params": [],
+          "exported": false,
+          "lineCount": 25
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@testing-library/user-event",
+          "specifiers": [
+            "userEvent"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "test"
+          ]
+        },
+        {
+          "source": "./cart-context",
+          "specifiers": [
+            "CartProvider",
+            "useCart"
+          ]
+        },
+        {
+          "source": "./cart-drawer",
+          "specifiers": [
+            "CartDrawer"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/cart/cart-drawer.tsx": {
+      "filePath": "apps/web/src/components/cart/cart-drawer.tsx",
+      "contentHash": "7a1378c573db35e95875fc521321353db2c67844e5777dcb7a2162e8f5debce0",
+      "functions": [
+        {
+          "name": "CartDrawer",
+          "params": [],
+          "exported": true,
+          "lineCount": 97
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "formatInr"
+          ]
+        },
+        {
+          "source": "next/image",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "./cart-context",
+          "specifiers": [
+            "useCart"
+          ]
+        },
+        {
+          "source": "./cart-drawer.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "CartDrawer"
+      ],
+      "totalLines": 106,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/catalog/filter-bar.module.css": {
+      "filePath": "apps/web/src/components/catalog/filter-bar.module.css",
+      "contentHash": "db6e0398194a924d4a0468a5daf333d6b8ed15de9bca4366962084b65235db65",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/catalog/filter-bar.test.tsx": {
+      "filePath": "apps/web/src/components/catalog/filter-bar.test.tsx",
+      "contentHash": "e2596a24f326c15706d00e796c7c679da318c174aa8a6f1fd62722a92cd49012",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen",
+            "fireEvent"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "./filter-bar",
+          "specifiers": [
+            "FilterBar"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/catalog/filter-bar.tsx": {
+      "filePath": "apps/web/src/components/catalog/filter-bar.tsx",
+      "contentHash": "192301c5e5e05feecf43536550301e3b4f3541b9a0519a130534137f582de4f9",
+      "functions": [
+        {
+          "name": "FilterBar",
+          "params": [
+            "{ filters, activeFilters, onFilterChange }"
+          ],
+          "exported": true,
+          "lineCount": 111
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./filter-bar.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "CatalogFilters"
+          ]
+        }
+      ],
+      "exports": [
+        "FilterBar"
+      ],
+      "totalLines": 133,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/home/collection-grid.module.css": {
+      "filePath": "apps/web/src/components/home/collection-grid.module.css",
+      "contentHash": "f1c50d1abb310100d73cbd7f5055e50b2c35f07498f466a5df95436578bbfb21",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/home/collection-grid.tsx": {
+      "filePath": "apps/web/src/components/home/collection-grid.tsx",
+      "contentHash": "2f9ba373985c6d1fe71b4a67656307a0229feb24ed44ac618e4040be445c204b",
+      "functions": [
+        {
+          "name": "CollectionGrid",
+          "params": [
+            "{ categories }"
+          ],
+          "exported": true,
+          "lineCount": 27
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "../../lib/collection-copy",
+          "specifiers": [
+            "getCollectionDescription"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "Category"
+          ]
+        },
+        {
+          "source": "./collection-grid.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "CollectionGrid"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/home/heritage-section.module.css": {
+      "filePath": "apps/web/src/components/home/heritage-section.module.css",
+      "contentHash": "97c422ef8fbb5b64afaa255d6201ee0f3a940241f3ed0da2d5771becf44ae3ce",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/home/heritage-section.tsx": {
+      "filePath": "apps/web/src/components/home/heritage-section.tsx",
+      "contentHash": "dc268ca9bfc354f9f0f6317e532136c395556c3da21ae3fcf7c7109d4124e3c3",
+      "functions": [
+        {
+          "name": "HeritageSection",
+          "params": [],
+          "exported": true,
+          "lineCount": 34
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "./heritage-section.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "HeritageSection"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/home/promise-section.module.css": {
+      "filePath": "apps/web/src/components/home/promise-section.module.css",
+      "contentHash": "4021d4deff727c685f02013a11f7124a3cd505218eb0bc15038b1a811dfb4928",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 42,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/home/promise-section.tsx": {
+      "filePath": "apps/web/src/components/home/promise-section.tsx",
+      "contentHash": "2d16a9ce7f6d4198867b278763795d5fa16fad1499aa448c18e8c759d9b2ad89",
+      "functions": [
+        {
+          "name": "PromiseSection",
+          "params": [],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./promise-section.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "PromiseSection"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/layout/site-footer.module.css": {
+      "filePath": "apps/web/src/components/layout/site-footer.module.css",
+      "contentHash": "3b2ea5979e4ca0166a729e857375972694fd4db8209fb68dc3e1097ad17c6e39",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 128,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/layout/site-footer.test.tsx": {
+      "filePath": "apps/web/src/components/layout/site-footer.test.tsx",
+      "contentHash": "ca39859a233ca2d1dbf4ec4b513b6a627395a6cdbf472eb0e8deaeeffb465c84",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "getCategories"
+          ]
+        },
+        {
+          "source": "./site-footer",
+          "specifiers": [
+            "SiteFooter"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 73,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/layout/site-footer.tsx": {
+      "filePath": "apps/web/src/components/layout/site-footer.tsx",
+      "contentHash": "9f1e60f57f43c9b812039c550192c10c329bb628fe19bb27eeaa35243c9bc97a",
+      "functions": [
+        {
+          "name": "SiteFooter",
+          "params": [],
+          "exported": true,
+          "lineCount": 111
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "next/link",
+          "specifiers": [
+            "Link"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "getCategories"
+          ]
+        },
+        {
+          "source": "./site-footer.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "SiteFooter"
+      ],
+      "totalLines": 128,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/layout/storefront-header.tsx": {
+      "filePath": "apps/web/src/components/layout/storefront-header.tsx",
+      "contentHash": "06959901d725b74f3864d21031007dac4e5307d2509ecb4644c90104f2c3be69",
+      "functions": [
+        {
+          "name": "StorefrontHeader",
+          "params": [],
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "SiteHeader",
+            "NavItem"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect"
+          ]
+        },
+        {
+          "source": "../cart/cart-context",
+          "specifiers": [
+            "useCart"
+          ]
+        }
+      ],
+      "exports": [
+        "StorefrontHeader"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/policy/policy-layout.module.css": {
+      "filePath": "apps/web/src/components/policy/policy-layout.module.css",
+      "contentHash": "0df45c375b41185e1164dfef4e0b49925babeaa1b75d233f5d7195bac8069be3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/policy/policy-layout.tsx": {
+      "filePath": "apps/web/src/components/policy/policy-layout.tsx",
+      "contentHash": "cf626af461931679249caa726e57bc0efdcddc34893b7b6771757eaae87c37c7",
+      "functions": [
+        {
+          "name": "PolicyLayout",
+          "params": [
+            "{\n  title,\n  status,\n  children,\n}"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "@argiva/db",
+          "specifiers": [
+            "PolicyStatus"
+          ]
+        },
+        {
+          "source": "./policy-layout.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "PolicyLayout"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/product/product-detail-client.module.css": {
+      "filePath": "apps/web/src/components/product/product-detail-client.module.css",
+      "contentHash": "fbad4ab39116c28b6eab3f31f80912886b96c07f505dbb52824d6a3b1ddbf72d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 55,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/product/product-detail-client.tsx": {
+      "filePath": "apps/web/src/components/product/product-detail-client.tsx",
+      "contentHash": "634e08a6142ed4b387554e155eefc8a9c95324be38fbda174a6c91b015fd8707",
+      "functions": [
+        {
+          "name": "ProductDetailClient",
+          "params": [
+            "{ product }"
+          ],
+          "exported": true,
+          "lineCount": 83
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/domain",
+          "specifiers": [
+            "generateCompositionLabel"
+          ]
+        },
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "formatWeight",
+            "Price",
+            "PurityBadge"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "../cart/cart-context",
+          "specifiers": [
+            "useCart"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "ProductDetail"
+          ]
+        },
+        {
+          "source": "./sticky-mobile-cta",
+          "specifiers": [
+            "StickyMobileCta"
+          ]
+        },
+        {
+          "source": "./variant-selector",
+          "specifiers": [
+            "VariantSelector"
+          ]
+        },
+        {
+          "source": "./product-detail-client.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "ProductDetailClient"
+      ],
+      "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/product/product-gallery.module.css": {
+      "filePath": "apps/web/src/components/product/product-gallery.module.css",
+      "contentHash": "880e3108d45ee77d825a85e2b59d432c6b6a2eb8e91b3f7c46f878a1564e0898",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/product/product-gallery.tsx": {
+      "filePath": "apps/web/src/components/product/product-gallery.tsx",
+      "contentHash": "10d8a41bbf21223d5cbb75d4c3b7de18b9ff095474443f5a06a4c8ed95a5b081",
+      "functions": [
+        {
+          "name": "ProductGallery",
+          "params": [
+            "{ name }"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./product-gallery.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "ProductGallery"
+      ],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/product/sticky-mobile-cta.module.css": {
+      "filePath": "apps/web/src/components/product/sticky-mobile-cta.module.css",
+      "contentHash": "b633a228a9def4602a8144b5dee3ded53f61c459a5019b0635565fe3208847fc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/product/sticky-mobile-cta.tsx": {
+      "filePath": "apps/web/src/components/product/sticky-mobile-cta.tsx",
+      "contentHash": "93d700becfb7e9f9288cd2a770f17ce139e9d201f01a810573112fffe69ffb1b",
+      "functions": [
+        {
+          "name": "StickyMobileCta",
+          "params": [
+            "{\n  pricePaise,\n  disabled,\n  label,\n  onAddToCart,\n}"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "Button",
+            "Price"
+          ]
+        },
+        {
+          "source": "./sticky-mobile-cta.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "StickyMobileCta"
+      ],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/components/product/variant-selector.module.css": {
+      "filePath": "apps/web/src/components/product/variant-selector.module.css",
+      "contentHash": "d6c58c3918e3d657b3a1c8272b558f111534542902bb1cd5fd9bcd13ab0a4f2e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 71,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/src/components/product/variant-selector.tsx": {
+      "filePath": "apps/web/src/components/product/variant-selector.tsx",
+      "contentHash": "d27c8e453ef1e4c12667efe22b91392c6e9d4870b16e256b4f594ad713167a9c",
+      "functions": [
+        {
+          "name": "finishLabel",
+          "params": [
+            "finish"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "VariantSelector",
+          "params": [
+            "{ variants, selectedVariantId, onChange }"
+          ],
+          "exported": true,
+          "lineCount": 51
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/ui",
+          "specifiers": [
+            "formatInr",
+            "formatWeight"
+          ]
+        },
+        {
+          "source": "@argiva/domain",
+          "specifiers": [
+            "generateCompositionLabel"
+          ]
+        },
+        {
+          "source": "../../lib/catalog",
+          "specifiers": [
+            "ProductDetail"
+          ]
+        },
+        {
+          "source": "./variant-selector.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "VariantSelector"
+      ],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/instrumentation-node.ts": {
+      "filePath": "apps/web/src/instrumentation-node.ts",
+      "contentHash": "481631c92accd5aed373f99387b0aa76fba5598b50d27ef17863b47b69d97500",
+      "functions": [
+        {
+          "name": "validateConfigOrExit",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "ConfigError",
+            "getConfig"
+          ]
+        }
+      ],
+      "exports": [
+        "validateConfigOrExit"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/instrumentation.ts": {
+      "filePath": "apps/web/src/instrumentation.ts",
+      "contentHash": "7ee9f3ec182e534b3daa86876cad8fcecaa1662e2a5b9df9388160e6aece8402",
+      "functions": [
+        {
+          "name": "register",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "register"
+      ],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/catalog.test.ts": {
+      "filePath": "apps/web/src/lib/catalog.test.ts",
+      "contentHash": "d6bb4a941684523460ef2d325ad1b4c3b434c5bf0db5a1bb71bc2ee8cc55c794",
+      "functions": [
+        {
+          "name": "matches",
+          "params": [
+            "row",
+            "conditions"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 43
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "./catalog",
+          "specifiers": [
+            "getCategories",
+            "getCategoryBySlug",
+            "getProductBySlug",
+            "getPublishedProductSlugs",
+            "getProductsByCategory",
+            "getSearchProducts"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 583,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/catalog.ts": {
+      "filePath": "apps/web/src/lib/catalog.ts",
+      "contentHash": "989ec2955e80c3f880813851838f6c76f2d1833eb40a346d4d2eabfd85b26b6b",
+      "functions": [
+        {
+          "name": "toCatalogProducts",
+          "params": [
+            "variants",
+            "currentRatePaise",
+            "filters"
+          ],
+          "returnType": "CatalogProduct[]",
+          "exported": false,
+          "lineCount": 48
+        },
+        {
+          "name": "makeSearchPattern",
+          "params": [
+            "value"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getCategories",
+          "params": [],
+          "returnType": "Promise<Category[]>",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "getCategoryBySlug",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<Category | null>",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "getProductBySlug",
+          "params": [
+            "slug"
+          ],
+          "returnType": "Promise<ProductDetail | null>",
+          "exported": true,
+          "lineCount": 105
+        },
+        {
+          "name": "getPublishedProductSlugs",
+          "params": [],
+          "returnType": "Promise<string[]>",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "getProductsByCategory",
+          "params": [
+            "categoryId",
+            "filters"
+          ],
+          "returnType": "Promise<CatalogProduct[]>",
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "getSearchProducts",
+          "params": [
+            "searchTerm"
+          ],
+          "returnType": "Promise<CatalogProduct[]>",
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/db",
+          "specifiers": [
+            "getDb",
+            "categories",
+            "products",
+            "productVariants",
+            "silverRates"
+          ]
+        },
+        {
+          "source": "@argiva/domain",
+          "specifiers": [
+            "calculateVariantPrice",
+            "FinishType",
+            "PurityGrade"
+          ]
+        },
+        {
+          "source": "drizzle-orm",
+          "specifiers": [
+            "eq",
+            "and",
+            "desc",
+            "ilike",
+            "or"
+          ]
+        }
+      ],
+      "exports": [
+        "getCategories",
+        "getCategoryBySlug",
+        "getProductBySlug",
+        "getPublishedProductSlugs",
+        "getProductsByCategory",
+        "getSearchProducts"
+      ],
+      "totalLines": 370,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/collection-copy.ts": {
+      "filePath": "apps/web/src/lib/collection-copy.ts",
+      "contentHash": "5d3314c461839ca5ff6b009ac7b289c19b1d84dc262a2e3225e56f96aa9e57ac",
+      "functions": [
+        {
+          "name": "getCollectionDescription",
+          "params": [
+            "category"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./catalog",
+          "specifiers": [
+            "Category"
+          ]
+        }
+      ],
+      "exports": [
+        "getCollectionDescription"
+      ],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/policies.test.ts": {
+      "filePath": "apps/web/src/lib/policies.test.ts",
+      "contentHash": "b1fa20c92c296a46c4f687291a31767d326dfa91b2bf7e5f4d10760ca583a442",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "./policies",
+          "specifiers": [
+            "getPolicyBySlug",
+            "getPolicySlugs"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/policies.ts": {
+      "filePath": "apps/web/src/lib/policies.ts",
+      "contentHash": "94d66fb08edf8f03006071085273196ebd2a7ea1c251441653ff7aa8bdfd15bf",
+      "functions": [
+        {
+          "name": "getPolicyBySlug",
+          "params": [
+            "slug"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "getPolicySlugs",
+          "params": [],
+          "returnType": "Promise<string[]>",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/db",
+          "specifiers": [
+            "getDb",
+            "policies"
+          ]
+        },
+        {
+          "source": "drizzle-orm",
+          "specifiers": [
+            "eq"
+          ]
+        }
+      ],
+      "exports": [
+        "getPolicyBySlug",
+        "getPolicySlugs"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/seo.test.ts": {
+      "filePath": "apps/web/src/lib/seo.test.ts",
+      "contentHash": "d26d0b212a876e2791a593bff7afbf524f08d667573b1fdef0ff8bceab25e5f1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "test",
+            "vi"
+          ]
+        },
+        {
+          "source": "../app/sitemap",
+          "specifiers": [
+            "sitemap"
+          ]
+        },
+        {
+          "source": "../app/robots",
+          "specifiers": [
+            "robots",
+            "robotsDynamic"
+          ]
+        },
+        {
+          "source": "./catalog",
+          "specifiers": [
+            "ProductDetail"
+          ]
+        },
+        {
+          "source": "./seo",
+          "specifiers": [
+            "buildBreadcrumbJsonLd",
+            "buildOrganizationJsonLd",
+            "buildProductJsonLd",
+            "buildProductMetadata",
+            "buildSiteMetadata",
+            "serializeJsonLd"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 258,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/seo.ts": {
+      "filePath": "apps/web/src/lib/seo.ts",
+      "contentHash": "9f3f063124a70510d24fcd0751e61f488f7db6f3304627e3973b6b6262f151e2",
+      "functions": [
+        {
+          "name": "productPath",
+          "params": [
+            "slug"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "absoluteUrl",
+          "params": [
+            "path",
+            "baseUrl"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "formatPaise",
+          "params": [
+            "paise"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "buildSiteMetadata",
+          "params": [
+            "baseUrl",
+            "isProduction"
+          ],
+          "returnType": "Metadata",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "buildProductMetadata",
+          "params": [
+            "product"
+          ],
+          "returnType": "Metadata",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "buildProductJsonLd",
+          "params": [
+            "product",
+            "baseUrl"
+          ],
+          "returnType": "Record<string, unknown>",
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "buildOrganizationJsonLd",
+          "params": [
+            "baseUrl",
+            "instagramUrl"
+          ],
+          "returnType": "Record<string, unknown>",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "buildBreadcrumbJsonLd",
+          "params": [
+            "items",
+            "baseUrl"
+          ],
+          "returnType": "Record<string, unknown>",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "serializeJsonLd",
+          "params": [
+            "data"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "next",
+          "specifiers": [
+            "Metadata"
+          ]
+        },
+        {
+          "source": "./catalog",
+          "specifiers": [
+            "ProductDetail"
+          ]
+        }
+      ],
+      "exports": [
+        "buildSiteMetadata",
+        "buildProductMetadata",
+        "buildProductJsonLd",
+        "buildOrganizationJsonLd",
+        "buildBreadcrumbJsonLd",
+        "serializeJsonLd"
+      ],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/security-headers.test.ts": {
+      "filePath": "apps/web/src/security-headers.test.ts",
+      "contentHash": "490f195539ebf784b5435cfbfa0d7ff71d1a4114f302c121f7b981f0cb0eba30",
+      "functions": [
+        {
+          "name": "get",
+          "params": [
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./security-headers",
+          "specifiers": [
+            "securityHeaders"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/security-headers.ts": {
+      "filePath": "apps/web/src/security-headers.ts",
+      "contentHash": "f7ee67e1dfafc45f855cf47250f045268564e8281c5e283b08e87050f47b2287",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "securityHeaders"
+      ],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/server/db.ts": {
+      "filePath": "apps/web/src/server/db.ts",
+      "contentHash": "b9509e10ef3d5949e09d893638f9347e9d197fc3ebcd4dba15d975689b6f993d",
+      "functions": [
+        {
+          "name": "getSql",
+          "params": [],
+          "returnType": "postgres.Sql",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "pingDatabase",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "postgres",
+          "specifiers": [
+            "postgres"
+          ]
+        }
+      ],
+      "exports": [
+        "getSql",
+        "pingDatabase"
+      ],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/server/health.test.ts": {
+      "filePath": "apps/web/src/server/health.test.ts",
+      "contentHash": "b086d1a408412e84d55997f09c4eae7289b8c741b7377dcbcc53004aec185b13",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./health",
+          "specifiers": [
+            "liveness",
+            "readiness"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/server/health.ts": {
+      "filePath": "apps/web/src/server/health.ts",
+      "contentHash": "c1f06e2c84ce2a6042716bf11ebb33ad74b4a2c5b1a61a902c8c26e1a34ac205",
+      "functions": [
+        {
+          "name": "liveness",
+          "params": [
+            "version"
+          ],
+          "returnType": "Response",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "withTimeout",
+          "params": [
+            "work",
+            "ms"
+          ],
+          "returnType": "Promise<T>",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "readiness",
+          "params": [
+            "ping",
+            "timeoutMs"
+          ],
+          "returnType": "Promise<Response>",
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "liveness",
+        "readiness"
+      ],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/tsconfig.json": {
+      "filePath": "apps/web/tsconfig.json",
+      "contentHash": "2afa38741be4ae01c6b4046fed152dfb5eaa72a09ae6405f10b1915efbb9d60e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/vitest.config.ts": {
+      "filePath": "apps/web/vitest.config.ts",
+      "contentHash": "d96433881674ca5b0cfef57bb1ac06abdc0872fac04aff51b6b013702a6a4d88",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "vitest/config",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/vitest.setup.ts": {
+      "filePath": "apps/web/vitest.setup.ts",
+      "contentHash": "e38ba3cf65e7f1969794227eee5b647f797c01355ed43c06f828cf07c6850bb7",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/jest-dom/vitest",
+          "specifiers": []
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "docker-compose.yml": {
+      "filePath": "docker-compose.yml",
+      "contentHash": "5fee3add5174ef64880413bd1750bab120e778075bb1f5a79092bcf579d58385",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": false
+    },
+    "docs/README.md": {
+      "filePath": "docs/README.md",
+      "contentHash": "fc06b805599409c9584cf94a5eb90a2f4835d6acbd848c037cdaebf858fbab00",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 78,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0001-domain-registrar-dns.md": {
+      "filePath": "docs/adr/0001-domain-registrar-dns.md",
+      "contentHash": "d63712de34785411b69beb42c6a69901dd8f760b21db3566d4becf8093e8d28e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0002-email.md": {
+      "filePath": "docs/adr/0002-email.md",
+      "contentHash": "f2221e3c217ba79c5e221bdce586a2c847dd93e99b0ef536b04df46db0dce97c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0003-cloud-hosting.md": {
+      "filePath": "docs/adr/0003-cloud-hosting.md",
+      "contentHash": "b83a4b4a84ff2cc54d3d7f1980705f2d81b2ce7b2c19420c931b9b538f3b085a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0004-tech-stack.md": {
+      "filePath": "docs/adr/0004-tech-stack.md",
+      "contentHash": "6d8495868fd7b649f23643fcdd5bed2abcde70f946577f1de41c9ba55706e0a0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0005-payments-currency.md": {
+      "filePath": "docs/adr/0005-payments-currency.md",
+      "contentHash": "49d553e65aadab0aae7cb7d9c629af9448c54a26f97809559e67bd1dfd504e9c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0006-catalog-variant-model.md": {
+      "filePath": "docs/adr/0006-catalog-variant-model.md",
+      "contentHash": "c0ae13fc43708883de22c12ca302412db4d0cb0605ed4b38bafa9e5651cc8e37",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0007-pricing-modes-order-snapshot.md": {
+      "filePath": "docs/adr/0007-pricing-modes-order-snapshot.md",
+      "contentHash": "c36b29feee5f79ae34c7e0f04979f8ad1fffc683185053eb2a10fd9ca7fb6490",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0008-admin-rbac-maker-checker.md": {
+      "filePath": "docs/adr/0008-admin-rbac-maker-checker.md",
+      "contentHash": "04e4fcb44e49d028ea400a726bc030930400c3d9dfdb542ab07cd367e9b39c17",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0009-legal-policy-pages.md": {
+      "filePath": "docs/adr/0009-legal-policy-pages.md",
+      "contentHash": "73d690a204fd3cba8560e7b70ce388db55a376f2e700f81982df2c02f8558468",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0010-design-tooling.md": {
+      "filePath": "docs/adr/0010-design-tooling.md",
+      "contentHash": "07db596ec88b123a4a79619ec8d4ef0b0a2aafb3598e34af196b30b2edc4e046",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0011-design-direction-themes.md": {
+      "filePath": "docs/adr/0011-design-direction-themes.md",
+      "contentHash": "465820a1547ef356ed9a1c24a96b8b48048592ce84632988d33733f0563f67f3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0012-config-driven.md": {
+      "filePath": "docs/adr/0012-config-driven.md",
+      "contentHash": "06b5082ebb0bddd0d5953abefb11e74301a86ad203e439b759735295fa3f3e43",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0013-domain-core-architecture.md": {
+      "filePath": "docs/adr/0013-domain-core-architecture.md",
+      "contentHash": "403bc8266feea05e87941ffb48fbd09a8798514512420106be60f4f748adafc7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0014-storefront-architecture.md": {
+      "filePath": "docs/adr/0014-storefront-architecture.md",
+      "contentHash": "a39ea548819337f3510e7ae5bbe5714e0fdb4a816c965e3cecbecaad4d03d96e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 37,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/README.md": {
+      "filePath": "docs/adr/README.md",
+      "contentHash": "9a90fd29c92cc7b4ae0f797bd2d1410b59591274d54504606adf56b4e124cde1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    "docs/audit/2026-11-25-project-audit.md": {
+      "filePath": "docs/audit/2026-11-25-project-audit.md",
+      "contentHash": "fbab2a077e03b37aae89c7a6c37514de32abcb44ff95669323a211e0d78231f1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 70,
+      "hasStructuralAnalysis": false
+    },
+    "docs/brand-content.md": {
+      "filePath": "docs/brand-content.md",
+      "contentHash": "071de4a73810a047830d1d8d9f796219c2cabe7d33bf577853f0cd46a1b439e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 271,
+      "hasStructuralAnalysis": false
+    },
+    "docs/decisions.md": {
+      "filePath": "docs/decisions.md",
+      "contentHash": "5df3c5a55526d484d97a17526b95bfa15cccfd5ce1d06be16dd4b028779fe74c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "docs/design/imagery.md": {
+      "filePath": "docs/design/imagery.md",
+      "contentHash": "879d850ba2247c3ccbf07cef0fcffba5114194e1a2bea55291ebdede495d5fa9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 34,
+      "hasStructuralAnalysis": false
+    },
+    "docs/plans/2026-10-31-phase-1-design-system.md": {
+      "filePath": "docs/plans/2026-10-31-phase-1-design-system.md",
+      "contentHash": "ca574682c4189165b11466cf47d5af65607c9156e3c586748dd848f8cdff8abc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1751,
+      "hasStructuralAnalysis": false
+    },
+    "docs/plans/2026-10-31-phase-2-foundations.md": {
+      "filePath": "docs/plans/2026-10-31-phase-2-foundations.md",
+      "contentHash": "8ecc9b8d0d1f331c654a9a5f714711ce5a1171f9062388fba0d769647be03a3f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1282,
+      "hasStructuralAnalysis": false
+    },
+    "docs/plans/2026-11-02-phase-3-domain-core.md": {
+      "filePath": "docs/plans/2026-11-02-phase-3-domain-core.md",
+      "contentHash": "77ba264c6f62a2b96d5d6910acb628133a2ea4c15ba77124e57dbb98e632adfb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 232,
+      "hasStructuralAnalysis": false
+    },
+    "docs/plans/2026-11-12-phase-4-storefront.md": {
+      "filePath": "docs/plans/2026-11-12-phase-4-storefront.md",
+      "contentHash": "959461eeb040031713f3be0f85e540db9513f3d7ba702692a6e984bb02fe5f37",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 288,
+      "hasStructuralAnalysis": false
+    },
+    "docs/plans/README.md": {
+      "filePath": "docs/plans/README.md",
+      "contentHash": "3afe6952f905561330768b8632d1f93450fab456800727550484c016498b08c3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 73,
+      "hasStructuralAnalysis": false
+    },
+    "docs/runbook.md": {
+      "filePath": "docs/runbook.md",
+      "contentHash": "5aefcdf89c508012b1df7a5d64eb52bc40c65628bc5bf766574ab85f674f3deb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 369,
+      "hasStructuralAnalysis": false
+    },
+    "docs/setup.md": {
+      "filePath": "docs/setup.md",
+      "contentHash": "e2a4cefd4686a16d420fbc83df9ed2918f30030f0292b45a40ad7f9a8c5d9d9e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 446,
+      "hasStructuralAnalysis": false
+    },
+    "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md": {
+      "filePath": "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md",
+      "contentHash": "1dcf46fbe60d78d0227e6c210a06bb8ca4c67b9e70483d70a04ccc9c0946f956",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 94,
+      "hasStructuralAnalysis": false
+    },
+    "docs/superpowers/plans/2026-11-24-catalog-price-availability.md": {
+      "filePath": "docs/superpowers/plans/2026-11-24-catalog-price-availability.md",
+      "contentHash": "f422aa0a27cf442945cda7e167b9221caf66d1d0eb200d772f5251473b4534cc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 87,
+      "hasStructuralAnalysis": false
+    },
+    "docs/superpowers/plans/2026-11-24-seed-and-policy-safety.md": {
+      "filePath": "docs/superpowers/plans/2026-11-24-seed-and-policy-safety.md",
+      "contentHash": "2d996011a7d7ac84631eac964a0672f8b8a090cdc73ad5ad888516f1ddcc92f7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": false
+    },
+    "docs/superpowers/plans/2026-11-24-storefront-safe-states-and-docs.md": {
+      "filePath": "docs/superpowers/plans/2026-11-24-storefront-safe-states-and-docs.md",
+      "contentHash": "19375f8cdf5489bc6debe320bc04b965abad828917377c9f795e281c896804fe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 154,
+      "hasStructuralAnalysis": false
+    },
+    "docs/superpowers/specs/2026-11-12-storefront-design.md": {
+      "filePath": "docs/superpowers/specs/2026-11-12-storefront-design.md",
+      "contentHash": "75ee487d8637638be920ec852f4fa75799dd6960a66cd5c1a170213591fb8af7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 74,
+      "hasStructuralAnalysis": false
+    },
+    "docs/superpowers/specs/2026-11-24-phase-4-review-followup-design.md": {
+      "filePath": "docs/superpowers/specs/2026-11-24-phase-4-review-followup-design.md",
+      "contentHash": "456165847909aff55757803e49e826606e4e0ce6105c96d7d6a59596176a136b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 86,
+      "hasStructuralAnalysis": false
+    },
+    "eslint.config.mjs": {
+      "filePath": "eslint.config.mjs",
+      "contentHash": "e41136296b5a4c864f5a9cc79aef99ffd6d9e8a6af39456acaa057d1022959cf",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@eslint/js",
+          "specifiers": [
+            "js"
+          ]
+        },
+        {
+          "source": "eslint-plugin-jsx-a11y",
+          "specifiers": [
+            "jsxA11y"
+          ]
+        },
+        {
+          "source": "eslint-plugin-react-hooks",
+          "specifiers": [
+            "reactHooks"
+          ]
+        },
+        {
+          "source": "eslint/config",
+          "specifiers": [
+            "defineConfig",
+            "globalIgnores"
+          ]
+        },
+        {
+          "source": "globals",
+          "specifiers": [
+            "globals"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync"
+          ]
+        },
+        {
+          "source": "typescript-eslint",
+          "specifiers": [
+            "tseslint"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "b93530702b03d2033cc7b246d263282e121810d01035d86cd60634be813e6a94",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": false
+    },
+    "packages/config/README.md": {
+      "filePath": "packages/config/README.md",
+      "contentHash": "6f9d1ac2ab66b424756d669cb7d892660076686dfc525572b98a4bc2af02e5f9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 80,
+      "hasStructuralAnalysis": false
+    },
+    "packages/config/package.json": {
+      "filePath": "packages/config/package.json",
+      "contentHash": "8bd54bd42e6b7034c3e7ae0dcfaf53fbf8af3d3bce930fdd7a1745d0c47c86b2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": false
+    },
+    "packages/config/src/index.ts": {
+      "filePath": "packages/config/src/index.ts",
+      "contentHash": "4c75b39e6a946c89f299533a13d0330dafdc86679eee8172c6756d88fb7ad57e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "ConfigError",
+        "getConfig",
+        "loadConfig",
+        "AppConfig",
+        "AppEnv",
+        "StorageConfig",
+        "envSchema"
+      ],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "packages/config/src/load.test.ts": {
+      "filePath": "packages/config/src/load.test.ts",
+      "contentHash": "63034329ee3e217714b5e6b48e3ea85f6ad2e5deb17eda0d709585ace4a29c12",
+      "functions": [
+        {
+          "name": "problemsOf",
+          "params": [
+            "env"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./index",
+          "specifiers": [
+            "ConfigError",
+            "loadConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 100,
+      "hasStructuralAnalysis": true
+    },
+    "packages/config/src/load.ts": {
+      "filePath": "packages/config/src/load.ts",
+      "contentHash": "3d5a447b7b89c5dd24d999254f8ec2b60efb082d6b98d4d3d8e061d9668cf035",
+      "functions": [
+        {
+          "name": "storageFrom",
+          "params": [
+            "env"
+          ],
+          "returnType": "StorageConfig",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "loadConfig",
+          "params": [
+            "source"
+          ],
+          "returnType": "AppConfig",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "getConfig",
+          "params": [],
+          "returnType": "AppConfig",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [
+        {
+          "name": "ConfigError",
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "problems"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "imports": [
+        {
+          "source": "@argiva/design-tokens",
+          "specifiers": [
+            "ThemeId"
+          ]
+        },
+        {
+          "source": "./schema",
+          "specifiers": [
+            "envSchema",
+            "Env"
+          ]
+        }
+      ],
+      "exports": [
+        "ConfigError",
+        "loadConfig",
+        "getConfig"
+      ],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "packages/config/src/schema.ts": {
+      "filePath": "packages/config/src/schema.ts",
+      "contentHash": "775ffa6e12d4a5b2a6ace26d2e5518c6aaa86a9348a2616d5b8bf6a364b1a465",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/design-tokens",
+          "specifiers": [
+            "defaultThemeId",
+            "isThemeId",
+            "ThemeId"
+          ]
+        },
+        {
+          "source": "zod",
+          "specifiers": [
+            "z"
+          ]
+        }
+      ],
+      "exports": [
+        "envSchema"
+      ],
+      "totalLines": 40,
+      "hasStructuralAnalysis": true
+    },
+    "packages/config/tsconfig.json": {
+      "filePath": "packages/config/tsconfig.json",
+      "contentHash": "7d44da218b2d9a3114fb24b37dfb43363c6cc7561f57a56bccd924e181c3f421",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "packages/config/vitest.config.ts": {
+      "filePath": "packages/config/vitest.config.ts",
+      "contentHash": "ce5f0ce2cb21fbce30571e81f4772ee82604e010464c88c59ac88220a11e54a0",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest/config",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/README.md": {
+      "filePath": "packages/db/README.md",
+      "contentHash": "7910a16eec4bfe256b84fc3829c88bb650cc4f44f7eba1386adb69fea16364c3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/drizzle.config.ts": {
+      "filePath": "packages/db/drizzle.config.ts",
+      "contentHash": "7461415ccaaecb38160c1cc4ea567c607780defba9463143cb2229a2d537e9b3",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "drizzle-kit",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/drizzle/0000_sudden_hemingway.sql": {
+      "filePath": "packages/db/drizzle/0000_sudden_hemingway.sql",
+      "contentHash": "bb32520b2ccb19543ec3df24b5281853adf646334d6dc3f1eea89f01c08744e9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 132,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/drizzle/0001_wooden_invaders.sql": {
+      "filePath": "packages/db/drizzle/0001_wooden_invaders.sql",
+      "contentHash": "af7380e6911a13e533116435a9eddea078c68d2e0b423498ef4b8d90a546f6ac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/drizzle/meta/0000_snapshot.json": {
+      "filePath": "packages/db/drizzle/meta/0000_snapshot.json",
+      "contentHash": "d16d696afa0e4478034769ff5e3372815d9f4874d5f79b3a880184b344aeccd2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 876,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/drizzle/meta/0001_snapshot.json": {
+      "filePath": "packages/db/drizzle/meta/0001_snapshot.json",
+      "contentHash": "f15156955b0ca5f9e31574c1ddf23fc27122cc55cd293634be5263c5f7163228",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 928,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/drizzle/meta/_journal.json": {
+      "filePath": "packages/db/drizzle/meta/_journal.json",
+      "contentHash": "1cfdcfb8b03d95061e4496c1a95901f72fcb59b40d9984def51e58633879dd09",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/package.json": {
+      "filePath": "packages/db/package.json",
+      "contentHash": "dacad98f13e19438b19ef0cf0d56c0f2a64a81c43d68d3840cbbdeefa0868459",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/seed-runner.test.ts": {
+      "filePath": "packages/db/seed-runner.test.ts",
+      "contentHash": "eb10498f3fb31ef81c3ef36fcc56a21c33abbd903f7f087d41e7b57fd4ebc236",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawnSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "test"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/seed-runner.ts": {
+      "filePath": "packages/db/seed-runner.ts",
+      "contentHash": "8d104c4e310046d135253fc26a070b99c1fd0286f1a15398b78fe6a37e6fc357",
+      "functions": [
+        {
+          "name": "runSeed",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:url",
+          "specifiers": [
+            "pathToFileURL"
+          ]
+        },
+        {
+          "source": "./src/index.js",
+          "specifiers": [
+            "closeDb",
+            "getDb",
+            "seedDatabase"
+          ]
+        }
+      ],
+      "exports": [
+        "runSeed"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/src/index.ts": {
+      "filePath": "packages/db/src/index.ts",
+      "contentHash": "94da40d25728c74fe2f208ca60c6a853773bee53ae98c1abb3ffc496bc00c175",
+      "functions": [
+        {
+          "name": "getDb",
+          "params": [
+            "connectionString"
+          ],
+          "returnType": "PostgresJsDatabase<typeof schema>",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "closeDb",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/config",
+          "specifiers": [
+            "getConfig"
+          ]
+        },
+        {
+          "source": "drizzle-orm/postgres-js",
+          "specifiers": [
+            "drizzle",
+            "PostgresJsDatabase"
+          ]
+        },
+        {
+          "source": "postgres",
+          "specifiers": [
+            "postgres"
+          ]
+        },
+        {
+          "source": "./schema",
+          "specifiers": [
+            "* as schema"
+          ]
+        }
+      ],
+      "exports": [
+        "getDb",
+        "closeDb"
+      ],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/src/schema.test.ts": {
+      "filePath": "packages/db/src/schema.test.ts",
+      "contentHash": "ac794b1a182e8ff1249db9be2ab8b71145c4615f70547845ca604ea99de845d6",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./schema",
+          "specifiers": [
+            "auditLogs",
+            "categories",
+            "orderItems",
+            "orders",
+            "products",
+            "productVariants",
+            "silverRates",
+            "stockReservations",
+            "users"
+          ]
+        },
+        {
+          "source": "./index",
+          "specifiers": [
+            "getDb"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/src/schema.ts": {
+      "filePath": "packages/db/src/schema.ts",
+      "contentHash": "2e54cd3dfdbf8dd431afa749c826969d65c4d9dfd7a4c3385e00eddcede45463",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "drizzle-orm/pg-core",
+          "specifiers": [
+            "bigint",
+            "boolean",
+            "integer",
+            "jsonb",
+            "numeric",
+            "pgTable",
+            "text",
+            "timestamp",
+            "uuid"
+          ]
+        }
+      ],
+      "exports": [
+        "userRoleEnum",
+        "users",
+        "categories",
+        "policyStatusEnum",
+        "policies",
+        "productStatusEnum",
+        "products",
+        "purityGradeEnum",
+        "finishTypeEnum",
+        "pricingModeEnum",
+        "productVariants",
+        "rateStatusEnum",
+        "silverRates",
+        "orderStatusEnum",
+        "orders",
+        "orderItems",
+        "reservationStatusEnum",
+        "stockReservations",
+        "auditLogs"
+      ],
+      "totalLines": 217,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/src/seed.test.ts": {
+      "filePath": "packages/db/src/seed.test.ts",
+      "contentHash": "a7b299de81c6de49a940ad15fd81e5ff2b456918e8f660e7af7946fe4addd016",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./seed",
+          "specifiers": [
+            "initialSeedData",
+            "seedDatabase"
+          ]
+        },
+        {
+          "source": "@argiva/domain",
+          "specifiers": [
+            "generateCompositionLabel",
+            "calculateVariantPrice"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 72,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/src/seed.ts": {
+      "filePath": "packages/db/src/seed.ts",
+      "contentHash": "55da05ed9843d47b9df474d607366d4dfd770356f6c1d63d01f33ec17cf51bd7",
+      "functions": [
+        {
+          "name": "seedDatabase",
+          "params": [
+            "db"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 28
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "drizzle-orm/postgres-js",
+          "specifiers": [
+            "PostgresJsDatabase"
+          ]
+        },
+        {
+          "source": "./schema",
+          "specifiers": [
+            "* as schema"
+          ]
+        },
+        {
+          "source": "./schema",
+          "specifiers": [
+            "categories",
+            "policies",
+            "products",
+            "productVariants",
+            "silverRates",
+            "users",
+            "NewCategory",
+            "NewPolicy",
+            "NewProduct",
+            "NewProductVariant",
+            "NewSilverRate",
+            "NewUser"
+          ]
+        }
+      ],
+      "exports": [
+        "OWNER_USER_ID",
+        "initialSeedData",
+        "seedDatabase"
+      ],
+      "totalLines": 448,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/tsconfig.json": {
+      "filePath": "packages/db/tsconfig.json",
+      "contentHash": "84fa144304f637ea215c3d3d3cf05834d3c805b4229c494bc1abd1f4ddfd9a0b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": false
+    },
+    "packages/db/vitest.config.ts": {
+      "filePath": "packages/db/vitest.config.ts",
+      "contentHash": "ce5f0ce2cb21fbce30571e81f4772ee82604e010464c88c59ac88220a11e54a0",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest/config",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "packages/design-tokens/README.md": {
+      "filePath": "packages/design-tokens/README.md",
+      "contentHash": "9776d88de59dd204424ea7b9d581e531d15a27c5b19b01c4e3abe0d2ef03cb90",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 54,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/package.json": {
+      "filePath": "packages/design-tokens/package.json",
+      "contentHash": "23c9e8f9ffde8cdcefb241e20d55a6f77ad31fffba0b35993f98d52549f5fbc8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/scripts/build.mjs": {
+      "filePath": "packages/design-tokens/scripts/build.mjs",
+      "contentHash": "cc6b33aeca89b584bc1ad77a728cbf03a99bbc3cd9ce0c029af61e9ff5215d37",
+      "functions": [
+        {
+          "name": "isThemeToken",
+          "params": [
+            "t"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "read",
+          "params": [
+            "f"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "previewPage",
+          "params": [],
+          "exported": false,
+          "lineCount": 102
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync",
+            "rmSync",
+            "writeFileSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "style-dictionary",
+          "specifiers": [
+            "StyleDictionary"
+          ]
+        },
+        {
+          "source": "./lib.mjs",
+          "specifiers": [
+            "ROOT",
+            "flatten",
+            "loadThemes"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 215,
+      "hasStructuralAnalysis": true
+    },
+    "packages/design-tokens/scripts/lib.mjs": {
+      "filePath": "packages/design-tokens/scripts/lib.mjs",
+      "contentHash": "69a763a298e1cbee820f8da7ebb8dab82228b9cf1ab2504013f7de7886b325cf",
+      "functions": [
+        {
+          "name": "readJson",
+          "params": [
+            "file"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "loadThemes",
+          "params": [],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "loadShared",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "flatten",
+          "params": [
+            "tree"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "resolve",
+          "params": [
+            "map",
+            "key"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "luminance",
+          "params": [
+            "hex"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "contrast",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readFileSync",
+            "readdirSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [
+        "ROOT",
+        "TOKENS",
+        "THEMES_DIR",
+        "THEME_ID",
+        "loadThemes",
+        "loadShared",
+        "flatten",
+        "resolve",
+        "contrast",
+        "HEX"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "packages/design-tokens/scripts/new-theme.mjs": {
+      "filePath": "packages/design-tokens/scripts/new-theme.mjs",
+      "contentHash": "3fb36f46482b6a8ff3e386a770f124813803cbf9e0306f8e9dd22ff11127327b",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "cpSync",
+            "existsSync",
+            "readFileSync",
+            "writeFileSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "./lib.mjs",
+          "specifiers": [
+            "THEMES_DIR",
+            "THEME_ID",
+            "loadThemes"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "packages/design-tokens/scripts/validate.mjs": {
+      "filePath": "packages/design-tokens/scripts/validate.mjs",
+      "contentHash": "9428b15f3029157f35054258e608af1d4896231adc4d93923c0fd42a57e17f05",
+      "functions": [
+        {
+          "name": "fail",
+          "params": [
+            "theme",
+            "msg"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "semanticKeys",
+          "params": [
+            "tokens"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./lib.mjs",
+          "specifiers": [
+            "contrast",
+            "flatten",
+            "HEX",
+            "loadShared",
+            "loadThemes",
+            "resolve",
+            "THEME_ID"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 110,
+      "hasStructuralAnalysis": true
+    },
+    "packages/design-tokens/tokens/base/base.json": {
+      "filePath": "packages/design-tokens/tokens/base/base.json",
+      "contentHash": "42286149f7cfc09ccb11c2a182dd007d852a782faa9375b0831fff239c251cbd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 139,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/components/components.json": {
+      "filePath": "packages/design-tokens/tokens/components/components.json",
+      "contentHash": "79c877f01ef6c99227a44c533c805707d96132e4a96d65ff6a22a3383768ef47",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 101,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/themes/modern-bold/theme.json": {
+      "filePath": "packages/design-tokens/tokens/themes/modern-bold/theme.json",
+      "contentHash": "3e0fd61e496d965080830e885c9f29abc4692c827dc2207342d243a85dd38c33",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 37,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/themes/modern-bold/tokens.json": {
+      "filePath": "packages/design-tokens/tokens/themes/modern-bold/tokens.json",
+      "contentHash": "83c877d219eaf72416580b8d942402fd4603089c8d0abf04d9c8a9c4130fc40e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 259,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/themes/quiet-luxury/theme.json": {
+      "filePath": "packages/design-tokens/tokens/themes/quiet-luxury/theme.json",
+      "contentHash": "2267ac781d9b8a904906054300d84fbd3c5a7b7efde25141b94b38f87bc2696e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 34,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/themes/quiet-luxury/tokens.json": {
+      "filePath": "packages/design-tokens/tokens/themes/quiet-luxury/tokens.json",
+      "contentHash": "fb3821ee357dee659e20737638211e812729bf29b8c041cc9e5b58802ada438d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 255,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/themes/warm-craft/theme.json": {
+      "filePath": "packages/design-tokens/tokens/themes/warm-craft/theme.json",
+      "contentHash": "0569208c4483cde81b23b7dab809a01f4a6e4d49a9bd60ea61cc369000d9bea0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "packages/design-tokens/tokens/themes/warm-craft/tokens.json": {
+      "filePath": "packages/design-tokens/tokens/themes/warm-craft/tokens.json",
+      "contentHash": "a45294a264d3b54c57be13e9b43ae7549e213fa319e1b49ab82113c3622c9663",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 255,
+      "hasStructuralAnalysis": false
+    },
+    "packages/domain/README.md": {
+      "filePath": "packages/domain/README.md",
+      "contentHash": "741fe95a4d0ceebc2e4b687fd0c990fc7f213d0f2845ae4096b29a77ca7e2bd6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": false
+    },
+    "packages/domain/package.json": {
+      "filePath": "packages/domain/package.json",
+      "contentHash": "e988d7fdc9ebf255c2a3e92e51b8b7e21bfde3291bbb7a009ff60b21ee60e9bf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    "packages/domain/src/composition.test.ts": {
+      "filePath": "packages/domain/src/composition.test.ts",
+      "contentHash": "2b7a1a1dcec07edc009d6c2b9a4e6e585de75d56ddb1459ef401d674cafa9471",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./composition",
+          "specifiers": [
+            "generateCompositionLabel",
+            "getPurityBadge"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 115,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/src/composition.ts": {
+      "filePath": "packages/domain/src/composition.ts",
+      "contentHash": "2dbded420a9e56d0be0a8242ce624bea8d0d5e8881cf00171eb7179880a4f233",
+      "functions": [
+        {
+          "name": "generateCompositionLabel",
+          "params": [
+            "params"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "getPurityBadge",
+          "params": [
+            "purity",
+            "purityVerified"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "generateCompositionLabel",
+        "getPurityBadge"
+      ],
+      "totalLines": 56,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/src/index.ts": {
+      "filePath": "packages/domain/src/index.ts",
+      "contentHash": "8131cbd4a71106904bb7ce64b21bbcb0d0fa013bf0a2874011504dfeaa9b2475",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/src/pricing.test.ts": {
+      "filePath": "packages/domain/src/pricing.test.ts",
+      "contentHash": "53fe328db67ba28f8065dd4be6e4dccf03ceb907413ad7bfc0799ed6c500d4c9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./pricing",
+          "specifiers": [
+            "calculateVariantPrice",
+            "createOrderPricingSnapshot",
+            "recalculateFromSnapshot"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 167,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/src/pricing.ts": {
+      "filePath": "packages/domain/src/pricing.ts",
+      "contentHash": "3a0c34ec943201c908ddc0d0d56808e0a71c814aee783fb168c5054ee9772fee",
+      "functions": [
+        {
+          "name": "calculateVariantPrice",
+          "params": [
+            "variant",
+            "silverRate",
+            "formulaVersion"
+          ],
+          "returnType": "VariantPriceResult",
+          "exported": true,
+          "lineCount": 41
+        },
+        {
+          "name": "createOrderPricingSnapshot",
+          "params": [
+            "variant",
+            "silverRate",
+            "formulaVersion"
+          ],
+          "returnType": "OrderPricingSnapshot",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "recalculateFromSnapshot",
+          "params": [
+            "snapshot"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./composition",
+          "specifiers": [
+            "PurityGrade"
+          ]
+        }
+      ],
+      "exports": [
+        "CURRENT_FORMULA_VERSION",
+        "calculateVariantPrice",
+        "createOrderPricingSnapshot",
+        "recalculateFromSnapshot"
+      ],
+      "totalLines": 139,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/src/reservation.test.ts": {
+      "filePath": "packages/domain/src/reservation.test.ts",
+      "contentHash": "b8ac5e847f4a3a26587173e133c620fdab7e4df765bd960692bdb647a43e0d1d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./reservation",
+          "specifiers": [
+            "calculateAvailableStock",
+            "createReservation",
+            "isReservationActive"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 121,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/src/reservation.ts": {
+      "filePath": "packages/domain/src/reservation.ts",
+      "contentHash": "d4c17bd2c96d0949d262fd40b627dac34e6c96f55eae8ddbbe2991d5f4137b40",
+      "functions": [
+        {
+          "name": "createReservation",
+          "params": [
+            "input"
+          ],
+          "returnType": "ReservationItem",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "isReservationActive",
+          "params": [
+            "reservation",
+            "currentTime"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "calculateAvailableStock",
+          "params": [
+            "totalStock",
+            "reservations",
+            "currentTime"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "createReservation",
+        "isReservationActive",
+        "calculateAvailableStock"
+      ],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    "packages/domain/tsconfig.json": {
+      "filePath": "packages/domain/tsconfig.json",
+      "contentHash": "093c66405e0aff264121c6ba2951ea31ea3080ac8db2e3d2ea0fe0c1cdcc20e7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": false
+    },
+    "packages/domain/vitest.config.ts": {
+      "filePath": "packages/domain/vitest.config.ts",
+      "contentHash": "ce5f0ce2cb21fbce30571e81f4772ee82604e010464c88c59ac88220a11e54a0",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest/config",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/README.md": {
+      "filePath": "packages/ui/README.md",
+      "contentHash": "d57f0f1bd4b023bf8c3e51514183e353676684228976152042758eef8358f37a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 78,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/package.json": {
+      "filePath": "packages/ui/package.json",
+      "contentHash": "c785f9b42f1ef46f3dc2f8e16e0a2ea5bb496d8ea5be882329cffe08d3c6576d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/Button/Button.module.css": {
+      "filePath": "packages/ui/src/components/Button/Button.module.css",
+      "contentHash": "43f169ab095261b4648a4bba904b492f6d272d5559477b76e413ed155b547724",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/Button/Button.test.tsx": {
+      "filePath": "packages/ui/src/components/Button/Button.test.tsx",
+      "contentHash": "426d0af80a61f990ed1f974dce8d089c6ca892ffde360872ea2713243d0d0189",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@testing-library/user-event",
+          "specifiers": [
+            "userEvent"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "./Button",
+          "specifiers": [
+            "Button",
+            "ButtonLink"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Button/Button.tsx": {
+      "filePath": "packages/ui/src/components/Button/Button.tsx",
+      "contentHash": "2757edbd69b16fcda4ef18d431a0d6227273bb793b13182d6bfc7f0a146909a8",
+      "functions": [
+        {
+          "name": "cls",
+          "params": [
+            "variant",
+            "extra"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "Button",
+          "params": [
+            "{ variant = 'primary', type = 'button', className, ...rest }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "ButtonLink",
+          "params": [
+            "{ variant = 'primary', className, ...rest }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "AnchorHTMLAttributes",
+            "ButtonHTMLAttributes"
+          ]
+        },
+        {
+          "source": "./Button.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "Button",
+        "ButtonLink"
+      ],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Divider/Divider.module.css": {
+      "filePath": "packages/ui/src/components/Divider/Divider.module.css",
+      "contentHash": "82d713fde5a4a50a4a0c6ae0b70e40010832d8751abddc813f6f7fffd8ac6db7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/Divider/Divider.test.tsx": {
+      "filePath": "packages/ui/src/components/Divider/Divider.test.tsx",
+      "contentHash": "692e7752be569fc7798ffcb23aea464b5b18aa346fb2f5440fe4ccce2c77783e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "../../theme/ThemeProvider",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        },
+        {
+          "source": "./Divider",
+          "specifiers": [
+            "Divider"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Divider/Divider.tsx": {
+      "filePath": "packages/ui/src/components/Divider/Divider.tsx",
+      "contentHash": "c6b21772aacb261e6be5f04fffaac831898a0316bb02ac6097f6246333652a0c",
+      "functions": [
+        {
+          "name": "Divider",
+          "params": [
+            "{ context = {}, onDark = false }"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../lib/ornament-scope",
+          "specifiers": [
+            "isInOrnamentScope",
+            "OrnamentContext"
+          ]
+        },
+        {
+          "source": "../../theme/ThemeProvider",
+          "specifiers": [
+            "useThemeManifest"
+          ]
+        },
+        {
+          "source": "./Divider.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        },
+        {
+          "source": "./Ghungroo",
+          "specifiers": [
+            "Ghungroo"
+          ]
+        }
+      ],
+      "exports": [
+        "Divider"
+      ],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Divider/Ghungroo.tsx": {
+      "filePath": "packages/ui/src/components/Divider/Ghungroo.tsx",
+      "contentHash": "5ca354bd4c873e9a2c08a84570df646e377aab28e76040ba8baf94025647d915",
+      "functions": [
+        {
+          "name": "Ghungroo",
+          "params": [],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "Ghungroo"
+      ],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Hero/Hero.module.css": {
+      "filePath": "packages/ui/src/components/Hero/Hero.module.css",
+      "contentHash": "fa2e37f10c588eec785cfd88befbe7734d2563263d8251b1b4970b230c5f3a75",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 108,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/Hero/Hero.test.tsx": {
+      "filePath": "packages/ui/src/components/Hero/Hero.test.tsx",
+      "contentHash": "f3b8f88fb496f07d7df1ea9122c5e24463ed7d9212e295d01f9db45f852b17fc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "../../theme/ThemeProvider",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        },
+        {
+          "source": "./Hero",
+          "specifiers": [
+            "Hero"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Hero/Hero.tsx": {
+      "filePath": "packages/ui/src/components/Hero/Hero.tsx",
+      "contentHash": "b0b70375144b22e2cefa4446735b75d3203ed75750c1741c380e0c203627341f",
+      "functions": [
+        {
+          "name": "Hero",
+          "params": [
+            "{ eyebrow, title, body, action, image }"
+          ],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../theme/ThemeProvider",
+          "specifiers": [
+            "useThemeManifest"
+          ]
+        },
+        {
+          "source": "../../types",
+          "specifiers": [
+            "ImageData"
+          ]
+        },
+        {
+          "source": "../Button/Button",
+          "specifiers": [
+            "ButtonLink"
+          ]
+        },
+        {
+          "source": "./Hero.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "Hero"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Price/Price.module.css": {
+      "filePath": "packages/ui/src/components/Price/Price.module.css",
+      "contentHash": "df7768c0e3b6f7d9eb5d2fbf1b608ae1cf90329619db5f45f1529658159fb6a8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/Price/Price.test.tsx": {
+      "filePath": "packages/ui/src/components/Price/Price.test.tsx",
+      "contentHash": "4fe09e2d842835046c73706e76a2b74754d506e832ad8b8ce90d5b602fe3bc2a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "./Price",
+          "specifiers": [
+            "Price"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/Price/Price.tsx": {
+      "filePath": "packages/ui/src/components/Price/Price.tsx",
+      "contentHash": "85445376cfb5d43ea14519309bf983f6806d4d147931b4e42bf157ee7469d4ce",
+      "functions": [
+        {
+          "name": "Price",
+          "params": [
+            "{ paise, size = 'md' }"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../lib/format",
+          "specifiers": [
+            "formatInr"
+          ]
+        },
+        {
+          "source": "./Price.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "Price"
+      ],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/ProductCard/ProductCard.module.css": {
+      "filePath": "packages/ui/src/components/ProductCard/ProductCard.module.css",
+      "contentHash": "b26f1547ed04cd4d89ad7702a6adcc8131e9ec9420906dad6759c7a94b748525",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 85,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/ProductCard/ProductCard.test.tsx": {
+      "filePath": "packages/ui/src/components/ProductCard/ProductCard.test.tsx",
+      "contentHash": "98fe75351a73097471326160fa86812c950c0fb1aa9bb632268e07f69bac3d85",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "./ProductCard",
+          "specifiers": [
+            "ProductCard",
+            "ProductCardProps"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/ProductCard/ProductCard.tsx": {
+      "filePath": "packages/ui/src/components/ProductCard/ProductCard.tsx",
+      "contentHash": "0fd2dd9ab14e00797829316eabea5a2cb2a7ed7924b87d7e5b07729fccde35b5",
+      "functions": [
+        {
+          "name": "ProductCard",
+          "params": [
+            "{ href, name, image, pricePaise, weightGrams, finish, purity }"
+          ],
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../lib/format",
+          "specifiers": [
+            "formatWeight"
+          ]
+        },
+        {
+          "source": "../../types",
+          "specifiers": [
+            "ImageData"
+          ]
+        },
+        {
+          "source": "../Price/Price",
+          "specifiers": [
+            "Price"
+          ]
+        },
+        {
+          "source": "../PurityBadge/PurityBadge",
+          "specifiers": [
+            "PurityBadge",
+            "PurityTone"
+          ]
+        },
+        {
+          "source": "./ProductCard.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "ProductCard"
+      ],
+      "totalLines": 47,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/ProductHeader/ProductHeader.module.css": {
+      "filePath": "packages/ui/src/components/ProductHeader/ProductHeader.module.css",
+      "contentHash": "331d6df616e3eff3d71309bf7def59f0a02f27786f313c8c414dc7c73d1d22a6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 109,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/ProductHeader/ProductHeader.test.tsx": {
+      "filePath": "packages/ui/src/components/ProductHeader/ProductHeader.test.tsx",
+      "contentHash": "e8e1a06b197c3474970a269d308963f7fdf4b001f7441fac9fd3f752c0592319",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@testing-library/user-event",
+          "specifiers": [
+            "userEvent"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "./ProductHeader",
+          "specifiers": [
+            "ProductHeader",
+            "ProductHeaderProps"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/ProductHeader/ProductHeader.tsx": {
+      "filePath": "packages/ui/src/components/ProductHeader/ProductHeader.tsx",
+      "contentHash": "3df470359bcccf27945857c5b4363815fb2e32b678939f2fd3dbf637c7a8c882",
+      "functions": [
+        {
+          "name": "ProductHeader",
+          "params": [
+            "{ name, images, pricePaise, weightGrams, finish, purity, addToCartLabel, onAddToCart }"
+          ],
+          "exported": true,
+          "lineCount": 36
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "../../lib/format",
+          "specifiers": [
+            "formatWeight"
+          ]
+        },
+        {
+          "source": "../../types",
+          "specifiers": [
+            "ImageData"
+          ]
+        },
+        {
+          "source": "../Button/Button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "../Price/Price",
+          "specifiers": [
+            "Price"
+          ]
+        },
+        {
+          "source": "../PurityBadge/PurityBadge",
+          "specifiers": [
+            "PurityBadge",
+            "PurityTone"
+          ]
+        },
+        {
+          "source": "./ProductHeader.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "ProductHeader"
+      ],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/PurityBadge/PurityBadge.module.css": {
+      "filePath": "packages/ui/src/components/PurityBadge/PurityBadge.module.css",
+      "contentHash": "a90376ef83711f9fda59a10d2b7779f5dc5e2fd8e8f50af9eb484de161220063",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/PurityBadge/PurityBadge.test.tsx": {
+      "filePath": "packages/ui/src/components/PurityBadge/PurityBadge.test.tsx",
+      "contentHash": "9b8cb327a353d30f086fb53e15d82302cc4d514b2a657f500f3f135e3670ef00",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "../../theme/ThemeProvider",
+          "specifiers": [
+            "ThemeProvider"
+          ]
+        },
+        {
+          "source": "./PurityBadge",
+          "specifiers": [
+            "PurityBadge"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/PurityBadge/PurityBadge.tsx": {
+      "filePath": "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
+      "contentHash": "b479b45d0dd179b53ea654408e6c9738e648d74911bc36fa950d81ca973712ff",
+      "functions": [
+        {
+          "name": "PurityBadge",
+          "params": [
+            "{ label, tone }"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../../theme/ThemeProvider",
+          "specifiers": [
+            "useThemeManifest"
+          ]
+        },
+        {
+          "source": "./PurityBadge.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "PurityBadge"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/SiteHeader/SiteHeader.module.css": {
+      "filePath": "packages/ui/src/components/SiteHeader/SiteHeader.module.css",
+      "contentHash": "f5db28c88cccdb5c3811fca695650c058f578c211c10268039fd022e87a6fad2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 75,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/components/SiteHeader/SiteHeader.test.tsx": {
+      "filePath": "packages/ui/src/components/SiteHeader/SiteHeader.test.tsx",
+      "contentHash": "fce333c912f6b3b49e236b890afbd556f562243af3b2f2c0f41b5e7ff0cf2fe3",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@testing-library/user-event",
+          "specifiers": [
+            "userEvent"
+          ]
+        },
+        {
+          "source": "../../test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        },
+        {
+          "source": "./SiteHeader",
+          "specifiers": [
+            "SiteHeader"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/components/SiteHeader/SiteHeader.tsx": {
+      "filePath": "packages/ui/src/components/SiteHeader/SiteHeader.tsx",
+      "contentHash": "dfa5e14519b409c1513ec5f5ef3326d6aedb10f5d06612a15231872b1db8daad",
+      "functions": [
+        {
+          "name": "SiteHeader",
+          "params": [
+            "{ homeHref, nav, cartHref, cartCount }"
+          ],
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useId",
+            "useState"
+          ]
+        },
+        {
+          "source": "./SiteHeader.module.css",
+          "specifiers": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        "SiteHeader"
+      ],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/css-modules.d.ts": {
+      "filePath": "packages/ui/src/css-modules.d.ts",
+      "contentHash": "812561776bba6d3bda919e6ef86e7d56cf6b97c16a47feadbdf45a252f23dd8b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/index.ts": {
+      "filePath": "packages/ui/src/index.ts",
+      "contentHash": "7dee9f6b4f837c5a6015efbf4c76de83569a4fe0a8d9091f73dc6314f30e9b88",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "Button",
+        "ButtonLink",
+        "ButtonVariant",
+        "Divider",
+        "Hero",
+        "Price",
+        "ProductCard",
+        "ProductCardProps",
+        "ProductHeader",
+        "ProductHeaderProps",
+        "PurityBadge",
+        "PurityTone",
+        "SiteHeader",
+        "NavItem",
+        "formatInr",
+        "formatWeight",
+        "isInOrnamentScope",
+        "OrnamentContext",
+        "ThemeProvider",
+        "useThemeManifest",
+        "ImageData"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/lib/format.test.ts": {
+      "filePath": "packages/ui/src/lib/format.test.ts",
+      "contentHash": "203705099e5c6ec8001767bb9a0e94a69b30fd672ea49bc214cd218f25f14f9a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format",
+          "specifiers": [
+            "formatInr",
+            "formatWeight"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/lib/format.ts": {
+      "filePath": "packages/ui/src/lib/format.ts",
+      "contentHash": "2247ea8900b0ceeb63f921214388a9d620a3788ec0c776a4bee7d3fed7cc6ab0",
+      "functions": [
+        {
+          "name": "formatInr",
+          "params": [
+            "paise"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "formatWeight",
+          "params": [
+            "g"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "formatInr",
+        "formatWeight"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/lib/ornament-scope.test.ts": {
+      "filePath": "packages/ui/src/lib/ornament-scope.test.ts",
+      "contentHash": "2be1320e27e22a562f3b796b6b4e627b8a4b34cb55ab2775d02d55738eeeb098",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./ornament-scope",
+          "specifiers": [
+            "isInOrnamentScope"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/lib/ornament-scope.ts": {
+      "filePath": "packages/ui/src/lib/ornament-scope.ts",
+      "contentHash": "187564c7c11c2efb9e1f9cc27d63dd9256cf61c4f4ec667d4983a116e9a0b377",
+      "functions": [
+        {
+          "name": "isInOrnamentScope",
+          "params": [
+            "scope",
+            "ctx"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "isInOrnamentScope"
+      ],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/smoke.test.tsx": {
+      "filePath": "packages/ui/src/smoke.test.tsx",
+      "contentHash": "344c82ea80344c10a9a5f29ac8ddae9d039e009e8c3bdb55daf8ca946dce1657",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "./test/axe",
+          "specifiers": [
+            "expectNoAxeViolations"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/styles/fonts.ts": {
+      "filePath": "packages/ui/src/styles/fonts.ts",
+      "contentHash": "5479f238f07d6210def7e51a3beee4d7c9f619097e4ab4192c6d69f2a7d52f80",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@fontsource-variable/anybody/wdth.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/atkinson-hyperlegible/400.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/atkinson-hyperlegible/700.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/hanken-grotesk/400.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/hanken-grotesk/500.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/hanken-grotesk/600.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/marcellus/400.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/mukta/400.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/mukta/500.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/mukta/700.css",
+          "specifiers": []
+        },
+        {
+          "source": "@fontsource/rozha-one/400.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/styles/global.css": {
+      "filePath": "packages/ui/src/styles/global.css",
+      "contentHash": "16b2359781290a96cadcd6175316e22a2884fc5c6f06976ab21931d4137defc0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 72,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/test/axe.ts": {
+      "filePath": "packages/ui/src/test/axe.ts",
+      "contentHash": "2ef38c52693ca8069fae8f3e7103e757072b6caf446d0a18b994e258ce262c53",
+      "functions": [
+        {
+          "name": "expectNoAxeViolations",
+          "params": [
+            "container"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "axe-core",
+          "specifiers": [
+            "axe"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "expect"
+          ]
+        }
+      ],
+      "exports": [
+        "expectNoAxeViolations"
+      ],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/test/setup.ts": {
+      "filePath": "packages/ui/src/test/setup.ts",
+      "contentHash": "675e473d1041326dc6e83dfb4e62391b025617f98522a56caa71cbcfbb601af5",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/jest-dom/vitest",
+          "specifiers": []
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/theme/ThemeProvider.test.tsx": {
+      "filePath": "packages/ui/src/theme/ThemeProvider.test.tsx",
+      "contentHash": "2ef01c1a3954f48f496b3c1a1b862117dd8a056e92b9862bfe3b4887f315aa07",
+      "functions": [
+        {
+          "name": "Probe",
+          "params": [],
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "./ThemeProvider",
+          "specifiers": [
+            "ThemeProvider",
+            "useThemeManifest"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/theme/ThemeProvider.tsx": {
+      "filePath": "packages/ui/src/theme/ThemeProvider.tsx",
+      "contentHash": "8b3845656e290a0ebe89b8a3324413b00d7cf7919cfe49f26cfc0f7dfceaa5c2",
+      "functions": [
+        {
+          "name": "ThemeProvider",
+          "params": [
+            "{ themeId = defaultThemeId, children }"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "useThemeManifest",
+          "params": [],
+          "returnType": "ThemeManifest",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@argiva/design-tokens",
+          "specifiers": [
+            "defaultThemeId",
+            "getTheme",
+            "ThemeId",
+            "ThemeManifest"
+          ]
+        },
+        {
+          "source": "react",
+          "specifiers": [
+            "createContext",
+            "useContext",
+            "ReactNode"
+          ]
+        }
+      ],
+      "exports": [
+        "ThemeProvider",
+        "useThemeManifest"
+      ],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/src/types.ts": {
+      "filePath": "packages/ui/src/types.ts",
+      "contentHash": "f4f406f4f95b55d644e784c744ad926de441ec52acbca492dd5cd0334276399f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "packages/ui/tsconfig.json": {
+      "filePath": "packages/ui/tsconfig.json",
+      "contentHash": "9af06f0f1880c65366df6b8289e0fa328b44c49ec97d9ce750761dbd1657dd10",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": false
+    },
+    "packages/ui/vitest.config.ts": {
+      "filePath": "packages/ui/vitest.config.ts",
+      "contentHash": "b0ce2dd1e4608d1a14cc5cbd9b4d938728587f1c93511407c27a89453153e180",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "vitest/config",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "pnpm-workspace.yaml": {
+      "filePath": "pnpm-workspace.yaml",
+      "contentHash": "7b33a939452954353aa42c8d562d83f8f50bd3ae98de519709b2ccb7a144761a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/check-css-vars.mjs": {
+      "filePath": "scripts/check-css-vars.mjs",
+      "contentHash": "6c1f11b4c76bbb3a28eea2d8de75c528631829e27dc5e85d3eb447a1357df4fc",
+      "functions": [
+        {
+          "name": "findUndefinedVars",
+          "params": [
+            "css",
+            "defined"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readdirSync",
+            "readFileSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "extname",
+            "join"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [
+        "findUndefinedVars"
+      ],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/check-css-vars.test.mjs": {
+      "filePath": "scripts/check-css-vars.test.mjs",
+      "contentHash": "a1ea5d667d966975e2f04eab7dcaefe3421bf4c27d9079040a3000e9f29dda1c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "./check-css-vars.mjs",
+          "specifiers": [
+            "findUndefinedVars"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/check-hardcoded.mjs": {
+      "filePath": "scripts/check-hardcoded.mjs",
+      "contentHash": "5de36c10999a193c80d4b9454bb9853b8844ef5a7a6a4f6474d2ba58831bcb58",
+      "functions": [
+        {
+          "name": "findHardcoded",
+          "params": [
+            "text"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "isScanned",
+          "params": [
+            "file"
+          ],
+          "exported": false,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readdirSync",
+            "readFileSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "extname",
+            "join"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [
+        "findHardcoded"
+      ],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/check-hardcoded.test.mjs": {
+      "filePath": "scripts/check-hardcoded.test.mjs",
+      "contentHash": "6b508b69ab3c6cf27a6d92a00633a2f2bf8cf6226a579f75dd3f3017bc3afec7",
+      "functions": [
+        {
+          "name": "kinds",
+          "params": [
+            "text"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "./check-hardcoded.mjs",
+          "specifiers": [
+            "findHardcoded"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/check-no-hex.mjs": {
+      "filePath": "scripts/check-no-hex.mjs",
+      "contentHash": "bb1eaec08d7f4e80aee22fd54098b5d9dffe55feb2db18e2cfefa34a9d53fe8b",
+      "functions": [
+        {
+          "name": "findHexLiterals",
+          "params": [
+            "text",
+            "kind"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readdirSync",
+            "readFileSync",
+            "statSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "extname",
+            "join"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [
+        "findHexLiterals"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/check-no-hex.test.mjs": {
+      "filePath": "scripts/check-no-hex.test.mjs",
+      "contentHash": "385f542133125c406217fe540a1499631d0a5af812f10f3535411e6f78e3737b",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "./check-no-hex.mjs",
+          "specifiers": [
+            "findHexLiterals"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/smoke.mjs": {
+      "filePath": "scripts/smoke.mjs",
+      "contentHash": "356b2de206a315fde4ca335823a75151e4d6c2f09b6e5afc174c711a289d6b2f",
+      "functions": [
+        {
+          "name": "url",
+          "params": [
+            "path"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "sleep",
+          "params": [
+            "ms"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "check",
+          "params": [
+            "name",
+            "fn"
+          ],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "expect",
+          "params": [
+            "condition",
+            "message"
+          ],
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.base.json": {
+      "filePath": "tsconfig.base.json",
+      "contentHash": "8945f7997eb3a7cd0d895ef473df1aa65a34b101407a88566de3ec9cd05692c1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": false
+    },
+    "turbo.json": {
+      "filePath": "turbo.json",
+      "contentHash": "231a4338349f78d2c3193e43c08b6301c2fe6fc62f7f3dd34d46964b0c7fc21c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    }
+  }
+}

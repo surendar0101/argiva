@@ -19,6 +19,12 @@ Start here to find any document in the project. When a new document is added, li
 | [Imagery rules](design/imagery.md) | How product photos are shot, cropped and shown |
 | [Brand content](brand-content.md) | All site copy and policies (the source of truth) |
 
+## Audits
+
+| Document | What it covers |
+| --- | --- |
+| [Project audit, 25 November 2026](audit/2026-11-25-project-audit.md) | State of Phases 1 to 4, defects found and ways forward |
+
 ## Decisions and plans
 
 | Document | What it covers |
@@ -28,6 +34,8 @@ Start here to find any document in the project. When a new document is added, li
 | [Build roadmap](plans/README.md) | All phases, what each delivers, and what each needs from the owner |
 | [Phase 1 plan: design system](plans/2026-10-31-phase-1-design-system.md) | Task-by-task plan for Phase 1 |
 | [Phase 2 plan: foundations](plans/2026-10-31-phase-2-foundations.md) | Task-by-task plan for Phase 2 |
+| [Phase 3 plan: domain core](plans/2026-11-02-phase-3-domain-core.md) | Task-by-task plan for Phase 3 |
+| [Phase 4 plan: storefront](plans/2026-11-12-phase-4-storefront.md) | Task-by-task plan for Phase 4 |
 
 ### Architecture Decision Records
 
@@ -45,6 +53,8 @@ Start here to find any document in the project. When a new document is added, li
 | [0010](adr/0010-design-tooling.md) | Design tooling |
 | [0011](adr/0011-design-direction-themes.md) | Design direction and themes |
 | [0012](adr/0012-config-driven.md) | Config-driven code (no hard-coded values) |
+| [0013](adr/0013-domain-core-architecture.md) | Domain core architecture and pure business logic |
+| [0014](adr/0014-storefront-architecture.md) | Proposed storefront architecture and draft policy rendering |
 
 ## Apps and packages
 
@@ -55,6 +65,8 @@ Start here to find any document in the project. When a new document is added, li
 | [packages/ui](../packages/ui/README.md) | Shared React components, themes and fonts |
 | [packages/design-tokens](../packages/design-tokens/README.md) | Colours, type and spacing for each theme |
 | [packages/config](../packages/config/README.md) | Typed settings (the only code that reads environment variables) |
+| [packages/db](../packages/db/README.md) | PostgreSQL schema, Drizzle ORM models and migrations |
+| [packages/domain](../packages/domain/README.md) | Pure business logic: composition labelling, pricing engine, stock reservations |
 
 ## Project state (for the build assistant)
 

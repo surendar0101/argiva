@@ -17,5 +17,5 @@ Domains, contact details, fees, tax wording, feature flags and providers will ch
 - Shared constants and domain types live in packages, never inline.
 
 ## Consequences
-- A lint rule and code review reject hard-coded domains, prices or contact details.
+- A lint rule and code review reject hard-coded business domains, prices or contact details. Standard HTTPS Schema.org vocabulary identifiers used by JSON-LD are not business settings and are exempt from the URL check.
 - Unknown facts stay as `TODO(owner)` placeholders in settings and are never guessed.

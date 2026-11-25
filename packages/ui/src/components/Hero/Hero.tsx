@@ -1,3 +1,5 @@
+'use client';
+
 import { useThemeManifest } from '../../theme/ThemeProvider';
 import type { ImageData } from '../../types';
 import { ButtonLink } from '../Button/Button';

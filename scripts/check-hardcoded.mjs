@@ -10,6 +10,7 @@ const RULES = [
   ['phone', /(?<![\w.])(?:\+91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}(?![\w.])/g],
   ['price', /(?:₹\s?\d|\bRs\.?\s?\d|\bINR\s?\d)/g],
 ];
+const SCHEMA_VOCABULARY_URL = /^https:\/\/schema\.org(?:\/|$)/i;
 
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.next']);
 const EXTENSIONS = new Set(['.ts', '.tsx', '.js', '.mjs']);
@@ -19,7 +20,10 @@ export function findHardcoded(text) {
   text.split('\n').forEach((content, index) => {
     if (content.includes('allow-hardcoded')) return;
     for (const [kind, pattern] of RULES) {
-      for (const m of content.matchAll(pattern)) findings.push({ line: index + 1, kind, match: m[0] });
+      for (const m of content.matchAll(pattern)) {
+        if (kind === 'url' && SCHEMA_VOCABULARY_URL.test(m[0])) continue;
+        findings.push({ line: index + 1, kind, match: m[0] });
+      }
     }
   });
   return findings;

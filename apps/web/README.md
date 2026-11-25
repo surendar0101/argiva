@@ -1,12 +1,21 @@
 # @argiva/web
 
-The ARGIVA Silvers website, built with Next.js 16 and React 19. Right now it serves a holding page and two health-check endpoints. It reads all its settings through [`@argiva/config`](../../packages/config/README.md) and draws all its visuals from [`@argiva/ui`](../../packages/ui/README.md). Store features come in later phases.
+The ARGIVA Silvers storefront, built with Next.js 16 and React 19. It reads settings through [`@argiva/config`](../../packages/config/README.md), data through [`@argiva/db`](../../packages/db/README.md), business rules through `@argiva/domain`, and visuals from [`@argiva/ui`](../../packages/ui/README.md). Checkout, payments and the admin dashboard are later phases.
 
 ## What it serves
 
 | Path | What it returns |
 | --- | --- |
-| `/` | Holding page: "ARGIVA Silvers" and the tagline "Modern Silver. Timeless Stories." |
+| `/` | Storefront home with active collections, brand story and promise sections |
+| `/collections` | Active collections |
+| `/collections/[slug]` | A collection with available filters and products |
+| `/products/[slug]` | Published product details, variant selection and add-to-cart |
+| `/search?q=…` | Search across published products and variants |
+| `/cart` | Browser-persisted cart; checkout is not implemented yet |
+| `/our-story`, `/faq`, `/contact` | Brand and customer information |
+| `/policies/[slug]` | Database-backed policy content with a draft notice when its status is `draft` |
+| `/sitemap.xml` | Sitemap generated from active categories, published products and stored policy rows |
+| `/robots.txt` | Production indexing rules; non-production environments are disallowed |
 | `/api/health` | Liveness check. Always `200` with `{"status":"ok","version":"<APP_VERSION>"}`. |
 | `/api/ready` | Readiness check. Runs `select 1` against Postgres. `200` with `{"status":"ok","db":"ok"}` if the database answers within 2 seconds, otherwise `503` with `{"status":"unavailable","db":"down"}`. |
 
@@ -14,13 +23,19 @@ Both API routes send `Cache-Control: no-store`. When the database check fails, t
 
 The Docker image uses `/api/health` for its health check.
 
+Policy routes only resolve for policy records present in the database. Their source seed records are drafts; a draft banner is shown, and legal content must not be treated as owner-approved. No admin publishing interface exists yet. Apply migrations and verify the database target before running the `db:seed` command documented in the [runbook](../../docs/runbook.md#storefront-schema-and-content-readiness).
+
 ## How it works
 
 | File | Job |
 | --- | --- |
-| `src/app/layout.tsx` | Loads fonts and global CSS from `@argiva/ui`. Sets `<html lang="en-IN" data-theme="…">` on the server from `DEFAULT_THEME_ID`, so the right theme shows on first paint. Search engines may index the site only when `APP_ENV=production`. |
+| `src/app/layout.tsx` | Loads fonts and global CSS from `@argiva/ui`, sets the server-rendered theme and site metadata, and includes Organization JSON-LD. |
 | `src/app/theme-provider.tsx` | Re-exports `ThemeProvider` from `@argiva/ui` as a client component. |
-| `src/app/page.tsx` | The holding page. |
+| `src/app/page.tsx` | The storefront home page. |
+| `src/lib/catalog.ts` | Server-side queries for active categories and published products, including search and product details. |
+| `src/lib/policies.ts` | Server-side queries for stored policy content and sitemap slugs. |
+| `src/lib/seo.ts` | Metadata and JSON-LD builders with safe script serialization. |
+| `src/components/cart/cart-context.tsx` | Validated client cart state synchronized to browser local storage through an external-store snapshot; not an order or payment system. |
 | `src/app/api/health/route.ts`, `src/app/api/ready/route.ts` | The two endpoints above. |
 | `src/server/health.ts` | The `liveness()` and `readiness()` response logic, kept separate so it can be unit-tested. |
 | `src/server/db.ts` | One shared Postgres connection pool (`postgres` package, at most 5 connections, 5 s connect timeout) and `pingDatabase()`. |
@@ -63,7 +78,9 @@ Run every command from the repo root. We run pnpm through npx; the [runbook](../
    docker compose up -d --wait db
    ```
 
-4. Start the dev server on <http://localhost:3000>:
+4. Apply migrations to the intended local database. To add catalog and draft policy rows, follow the target-safe `db:seed` steps in the [runbook](../../docs/runbook.md#storefront-schema-and-content-readiness).
+
+5. Start the dev server on <http://localhost:3000>:
 
    ```sh
    npx --loglevel=error pnpm@12.16.1 dev
@@ -81,13 +98,13 @@ To run the production-like Docker build instead, see the [runbook, section 1](..
 | Type check (`next typegen` then `tsc`) | `npx --loglevel=error pnpm@12.16.1 --filter @argiva/web typecheck` |
 | Lint (whole repo; this app has no own lint script) | `npx --loglevel=error pnpm@12.16.1 lint` |
 
-The tests cover the security headers and the health/readiness responses, including the database-down and timeout cases. They don't need a running database.
+The web tests cover the storefront routes and interactions, catalog and policy query behavior, SEO output, security headers, and health/readiness responses. They use fixtures/mocks and do not require a running database.
 
 ## How it fits with other packages
 
 | Depends on | Used for |
 | --- | --- |
-| `@argiva/config` | Every setting: version, environment, database URL, default theme. |
+| `@argiva/config` | Every setting: version, environment, database URL, optional Instagram profile URL, default theme. |
 | `@argiva/ui` | Components, `ThemeProvider`, fonts (`@argiva/ui/fonts`) and global CSS (`@argiva/ui/global.css`). |
 | `@argiva/design-tokens` | Theme CSS and the theme registry, through `@argiva/ui` and `@argiva/config`. |
 
@@ -97,7 +114,7 @@ No other package depends on this app. The Dockerfile builds it with `turbo run b
 
 - Write the test first, then the code.
 - Don't read `process.env` here. Get settings from `getConfig()` in `@argiva/config`. ESLint blocks `process.env` everywhere except `@argiva/config` and `src/instrumentation.ts` ([ADR 0012](../../docs/adr/0012-config-driven.md)).
-- No hard-coded URLs, domains, emails, phone numbers or prices in `src/`. `lint:hardcoded` fails the build if it finds one.
+- No hard-coded business URLs, domains, emails, phone numbers or prices in `src/`. The URL check allows standard HTTPS Schema.org vocabulary identifiers used by JSON-LD.
 - No hex colours in `src/`. Use the `--argiva-*` CSS variables. `lint:no-hex` checks this.
 - This is a newer Next.js than most guides describe. Read [AGENTS.md](AGENTS.md) before changing Next.js code.
 
@@ -109,3 +126,4 @@ No other package depends on this app. The Dockerfile builds it with `turbo run b
 - [ADR 0004: Tech stack](../../docs/adr/0004-tech-stack.md)
 - [ADR 0011: Design direction and switchable themes](../../docs/adr/0011-design-direction-themes.md)
 - [ADR 0012: Configuration-driven](../../docs/adr/0012-config-driven.md)
+- [ADR 0014: Storefront architecture and draft policy rendering](../../docs/adr/0014-storefront-architecture.md)

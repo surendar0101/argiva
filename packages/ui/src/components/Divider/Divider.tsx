@@ -1,3 +1,5 @@
+'use client';
+
 import { isInOrnamentScope, type OrnamentContext } from '../../lib/ornament-scope';
 import { useThemeManifest } from '../../theme/ThemeProvider';
 import styles from './Divider.module.css';

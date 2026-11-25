@@ -32,6 +32,18 @@ describe('loadConfig', () => {
     });
   });
 
+  it('includes an optional configured Instagram URL', () => {
+    expect(loadConfig({ ...valid, INSTAGRAM_URL: 'https://www.instagram.com/argiva_silvers/' }).instagramUrl).toBe(
+      'https://www.instagram.com/argiva_silvers/',
+    );
+  });
+
+  it('rejects an invalid optional Instagram URL', () => {
+    expect(problemsOf({ ...valid, INSTAGRAM_URL: 'not-a-url' })).toEqual([
+      'INSTAGRAM_URL: Invalid URL',
+    ]);
+  });
+
   it('lists every problem at once, by variable name', () => {
     const problems = problemsOf({});
     for (const name of ['APP_ENV', 'APP_BASE_URL', 'DATABASE_URL', 'STORAGE_DRIVER']) {
