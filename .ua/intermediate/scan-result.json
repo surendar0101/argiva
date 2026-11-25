@@ -1,1984 +1,2147 @@
 {
- "name": "argiva",
- "description": "Mobile-first e-commerce platform for ARGIVA Silvers, a family silver jewellery business, built as a TypeScript pnpm monorepo with a Next.js storefront and shared domain, database, config and design-system packages.",
- "languages": [
-  "config",
-  "css",
-  "dockerfile",
-  "html",
-  "javascript",
-  "json",
-  "markdown",
-  "sql",
-  "typescript",
-  "unknown",
-  "yaml"
- ],
- "frameworks": [
-  "Docker",
-  "Docker Compose",
-  "GitHub Actions",
-  "Next.js",
-  "React",
-  "Vite",
-  "Vitest",
-  "Drizzle"
- ],
- "files": [
-  {
-   "path": ".dockerignore",
-   "language": "unknown",
-   "sizeLines": 11,
-   "fileCategory": "infra"
-  },
-  {
-   "path": ".env.example",
-   "language": "config",
-   "sizeLines": 23,
-   "fileCategory": "config"
-  },
-  {
-   "path": ".github/workflows/ci.yml",
-   "language": "yaml",
-   "sizeLines": 39,
-   "fileCategory": "infra"
-  },
-  {
-   "path": ".github/workflows/deploy-production.yml",
-   "language": "yaml",
-   "sizeLines": 18,
-   "fileCategory": "infra"
-  },
-  {
-   "path": ".github/workflows/deploy-staging.yml",
-   "language": "yaml",
-   "sizeLines": 20,
-   "fileCategory": "infra"
-  },
-  {
-   "path": ".github/workflows/deploy.yml",
-   "language": "yaml",
-   "sizeLines": 55,
-   "fileCategory": "infra"
-  },
-  {
-   "path": ".github/workflows/design-tokens.yml",
-   "language": "yaml",
-   "sizeLines": 33,
-   "fileCategory": "infra"
-  },
-  {
-   "path": ".ua/config.json",
-   "language": "json",
-   "sizeLines": 1,
-   "fileCategory": "config"
-  },
-  {
-   "path": "DESIGN.md",
-   "language": "markdown",
-   "sizeLines": 240,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "Dockerfile",
-   "language": "dockerfile",
-   "sizeLines": 28,
-   "fileCategory": "infra"
-  },
-  {
-   "path": "PRODUCT.md",
-   "language": "markdown",
-   "sizeLines": 70,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "README.md",
-   "language": "markdown",
-   "sizeLines": 132,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "apps/ui-preview/README.md",
-   "language": "markdown",
-   "sizeLines": 61,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "apps/ui-preview/index.html",
-   "language": "html",
-   "sizeLines": 15,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/ui-preview/package.json",
-   "language": "json",
-   "sizeLines": 24,
-   "fileCategory": "config"
-  },
-  {
-   "path": "apps/ui-preview/src/App.module.css",
-   "language": "css",
-   "sizeLines": 26,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/ui-preview/src/App.tsx",
-   "language": "typescript",
-   "sizeLines": 63,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/ui-preview/src/fixtures.ts",
-   "language": "typescript",
-   "sizeLines": 10,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/ui-preview/src/main.tsx",
-   "language": "typescript",
-   "sizeLines": 7,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/ui-preview/tsconfig.json",
-   "language": "json",
-   "sizeLines": 12,
-   "fileCategory": "config"
-  },
-  {
-   "path": "apps/ui-preview/vite.config.ts",
-   "language": "typescript",
-   "sizeLines": 4,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/README.md",
-   "language": "markdown",
-   "sizeLines": 129,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "apps/web/next.config.ts",
-   "language": "typescript",
-   "sizeLines": 15,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/package.json",
-   "language": "json",
-   "sizeLines": 37,
-   "fileCategory": "config"
-  },
-  {
-   "path": "apps/web/public/.gitkeep",
-   "language": "unknown",
-   "sizeLines": 0,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/api/health/route.ts",
-   "language": "typescript",
-   "sizeLines": 8,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/api/ready/route.ts",
-   "language": "typescript",
-   "sizeLines": 8,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/cart/page.module.css",
-   "language": "css",
-   "sizeLines": 230,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/cart/page.test.tsx",
-   "language": "typescript",
-   "sizeLines": 63,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/cart/page.tsx",
-   "language": "typescript",
-   "sizeLines": 108,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/collections/[slug]/collection-results.module.css",
-   "language": "css",
-   "sizeLines": 20,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/collections/[slug]/collection-results.tsx",
-   "language": "typescript",
-   "sizeLines": 75,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/collections/[slug]/page.module.css",
-   "language": "css",
-   "sizeLines": 50,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/collections/[slug]/page.test.tsx",
-   "language": "typescript",
-   "sizeLines": 94,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/collections/[slug]/page.tsx",
-   "language": "typescript",
-   "sizeLines": 39,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/collections/page.module.css",
-   "language": "css",
-   "sizeLines": 64,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/collections/page.test.tsx",
-   "language": "typescript",
-   "sizeLines": 46,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/collections/page.tsx",
-   "language": "typescript",
-   "sizeLines": 33,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/contact/page.module.css",
-   "language": "css",
-   "sizeLines": 82,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/contact/page.tsx",
-   "language": "typescript",
-   "sizeLines": 75,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/faq/page.module.css",
-   "language": "css",
-   "sizeLines": 48,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/faq/page.tsx",
-   "language": "typescript",
-   "sizeLines": 77,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/layout.tsx",
-   "language": "typescript",
-   "sizeLines": 43,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/our-story/page.module.css",
-   "language": "css",
-   "sizeLines": 76,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/our-story/page.tsx",
-   "language": "typescript",
-   "sizeLines": 75,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/page.module.css",
-   "language": "css",
-   "sizeLines": 24,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/page.test.tsx",
-   "language": "typescript",
-   "sizeLines": 69,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/page.tsx",
-   "language": "typescript",
-   "sizeLines": 28,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/policies/[slug]/page.tsx",
-   "language": "typescript",
-   "sizeLines": 38,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/policies/policies.test.tsx",
-   "language": "typescript",
-   "sizeLines": 76,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/products/[slug]/page.module.css",
-   "language": "css",
-   "sizeLines": 75,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/products/[slug]/page.test.tsx",
-   "language": "typescript",
-   "sizeLines": 210,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/products/[slug]/page.tsx",
-   "language": "typescript",
-   "sizeLines": 102,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/robots.ts",
-   "language": "typescript",
-   "sizeLines": 17,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/search/page.module.css",
-   "language": "css",
-   "sizeLines": 82,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/app/search/page.test.tsx",
-   "language": "typescript",
-   "sizeLines": 60,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/search/page.tsx",
-   "language": "typescript",
-   "sizeLines": 77,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/sitemap.ts",
-   "language": "typescript",
-   "sizeLines": 41,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/app/theme-provider.tsx",
-   "language": "typescript",
-   "sizeLines": 2,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/cart/cart-context.test.tsx",
-   "language": "typescript",
-   "sizeLines": 266,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/cart/cart-context.tsx",
-   "language": "typescript",
-   "sizeLines": 202,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/cart/cart-drawer.module.css",
-   "language": "css",
-   "sizeLines": 217,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/cart/cart-drawer.test.tsx",
-   "language": "typescript",
-   "sizeLines": 51,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/cart/cart-drawer.tsx",
-   "language": "typescript",
-   "sizeLines": 105,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/catalog/filter-bar.module.css",
-   "language": "css",
-   "sizeLines": 96,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/catalog/filter-bar.test.tsx",
-   "language": "typescript",
-   "sizeLines": 137,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/catalog/filter-bar.tsx",
-   "language": "typescript",
-   "sizeLines": 132,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/home/collection-grid.module.css",
-   "language": "css",
-   "sizeLines": 78,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/home/collection-grid.tsx",
-   "language": "typescript",
-   "sizeLines": 32,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/home/heritage-section.module.css",
-   "language": "css",
-   "sizeLines": 47,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/home/heritage-section.tsx",
-   "language": "typescript",
-   "sizeLines": 37,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/home/promise-section.module.css",
-   "language": "css",
-   "sizeLines": 41,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/home/promise-section.tsx",
-   "language": "typescript",
-   "sizeLines": 38,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/layout/site-footer.module.css",
-   "language": "css",
-   "sizeLines": 127,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/layout/site-footer.test.tsx",
-   "language": "typescript",
-   "sizeLines": 72,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/layout/site-footer.tsx",
-   "language": "typescript",
-   "sizeLines": 127,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/layout/storefront-header.tsx",
-   "language": "typescript",
-   "sizeLines": 33,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/policy/policy-layout.module.css",
-   "language": "css",
-   "sizeLines": 52,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/policy/policy-layout.tsx",
-   "language": "typescript",
-   "sizeLines": 27,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/product/product-detail-client.module.css",
-   "language": "css",
-   "sizeLines": 54,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/product/product-detail-client.tsx",
-   "language": "typescript",
-   "sizeLines": 94,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/product/product-gallery.module.css",
-   "language": "css",
-   "sizeLines": 14,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/product/product-gallery.tsx",
-   "language": "typescript",
-   "sizeLines": 15,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/product/sticky-mobile-cta.module.css",
-   "language": "css",
-   "sizeLines": 24,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/product/sticky-mobile-cta.tsx",
-   "language": "typescript",
-   "sizeLines": 23,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/components/product/variant-selector.module.css",
-   "language": "css",
-   "sizeLines": 70,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "apps/web/src/components/product/variant-selector.tsx",
-   "language": "typescript",
-   "sizeLines": 75,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/instrumentation-node.ts",
-   "language": "typescript",
-   "sizeLines": 13,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/instrumentation.ts",
-   "language": "typescript",
-   "sizeLines": 5,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/catalog.test.ts",
-   "language": "typescript",
-   "sizeLines": 582,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/catalog.ts",
-   "language": "typescript",
-   "sizeLines": 369,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/collection-copy.ts",
-   "language": "typescript",
-   "sizeLines": 20,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/policies.test.ts",
-   "language": "typescript",
-   "sizeLines": 92,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/policies.ts",
-   "language": "typescript",
-   "sizeLines": 26,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/seo.test.ts",
-   "language": "typescript",
-   "sizeLines": 257,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/lib/seo.ts",
-   "language": "typescript",
-   "sizeLines": 119,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/security-headers.test.ts",
-   "language": "typescript",
-   "sizeLines": 18,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/security-headers.ts",
-   "language": "typescript",
-   "sizeLines": 8,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/server/db.ts",
-   "language": "typescript",
-   "sizeLines": 12,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/server/health.test.ts",
-   "language": "typescript",
-   "sizeLines": 34,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/src/server/health.ts",
-   "language": "typescript",
-   "sizeLines": 23,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/tsconfig.json",
-   "language": "json",
-   "sizeLines": 26,
-   "fileCategory": "config"
-  },
-  {
-   "path": "apps/web/vitest.config.ts",
-   "language": "typescript",
-   "sizeLines": 11,
-   "fileCategory": "code"
-  },
-  {
-   "path": "apps/web/vitest.setup.ts",
-   "language": "typescript",
-   "sizeLines": 12,
-   "fileCategory": "code"
-  },
-  {
-   "path": "docker-compose.yml",
-   "language": "yaml",
-   "sizeLines": 34,
-   "fileCategory": "infra"
-  },
-  {
-   "path": "docs/README.md",
-   "language": "markdown",
-   "sizeLines": 77,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0001-domain-registrar-dns.md",
-   "language": "markdown",
-   "sizeLines": 23,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0002-email.md",
-   "language": "markdown",
-   "sizeLines": 21,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0003-cloud-hosting.md",
-   "language": "markdown",
-   "sizeLines": 32,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0004-tech-stack.md",
-   "language": "markdown",
-   "sizeLines": 26,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0005-payments-currency.md",
-   "language": "markdown",
-   "sizeLines": 23,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0006-catalog-variant-model.md",
-   "language": "markdown",
-   "sizeLines": 25,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0007-pricing-modes-order-snapshot.md",
-   "language": "markdown",
-   "sizeLines": 24,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0008-admin-rbac-maker-checker.md",
-   "language": "markdown",
-   "sizeLines": 29,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0009-legal-policy-pages.md",
-   "language": "markdown",
-   "sizeLines": 32,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0010-design-tooling.md",
-   "language": "markdown",
-   "sizeLines": 25,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0011-design-direction-themes.md",
-   "language": "markdown",
-   "sizeLines": 29,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0012-config-driven.md",
-   "language": "markdown",
-   "sizeLines": 21,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0013-domain-core-architecture.md",
-   "language": "markdown",
-   "sizeLines": 25,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/0014-storefront-architecture.md",
-   "language": "markdown",
-   "sizeLines": 36,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/adr/README.md",
-   "language": "markdown",
-   "sizeLines": 20,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/audit/2026-11-25-project-audit.md",
-   "language": "markdown",
-   "sizeLines": 69,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/brand-content.md",
-   "language": "markdown",
-   "sizeLines": 270,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/decisions.md",
-   "language": "markdown",
-   "sizeLines": 26,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/design/imagery.md",
-   "language": "markdown",
-   "sizeLines": 33,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/plans/2026-10-31-phase-1-design-system.md",
-   "language": "markdown",
-   "sizeLines": 1750,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/plans/2026-10-31-phase-2-foundations.md",
-   "language": "markdown",
-   "sizeLines": 1281,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/plans/2026-11-02-phase-3-domain-core.md",
-   "language": "markdown",
-   "sizeLines": 231,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/plans/2026-11-12-phase-4-storefront.md",
-   "language": "markdown",
-   "sizeLines": 287,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/plans/README.md",
-   "language": "markdown",
-   "sizeLines": 72,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/runbook.md",
-   "language": "markdown",
-   "sizeLines": 368,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/setup.md",
-   "language": "markdown",
-   "sizeLines": 445,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md",
-   "language": "markdown",
-   "sizeLines": 93,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/superpowers/plans/2026-11-24-catalog-price-availability.md",
-   "language": "markdown",
-   "sizeLines": 86,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/superpowers/plans/2026-11-24-seed-and-policy-safety.md",
-   "language": "markdown",
-   "sizeLines": 64,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/superpowers/plans/2026-11-24-storefront-safe-states-and-docs.md",
-   "language": "markdown",
-   "sizeLines": 153,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/superpowers/specs/2026-11-12-storefront-design.md",
-   "language": "markdown",
-   "sizeLines": 73,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "docs/superpowers/specs/2026-11-24-phase-4-review-followup-design.md",
-   "language": "markdown",
-   "sizeLines": 85,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "eslint.config.mjs",
-   "language": "javascript",
-   "sizeLines": 52,
-   "fileCategory": "code"
-  },
-  {
-   "path": "package.json",
-   "language": "json",
-   "sizeLines": 38,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/config/README.md",
-   "language": "markdown",
-   "sizeLines": 79,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "packages/config/package.json",
-   "language": "json",
-   "sizeLines": 22,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/config/src/index.ts",
-   "language": "typescript",
-   "sizeLines": 3,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/config/src/load.test.ts",
-   "language": "typescript",
-   "sizeLines": 99,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/config/src/load.ts",
-   "language": "typescript",
-   "sizeLines": 61,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/config/src/schema.ts",
-   "language": "typescript",
-   "sizeLines": 39,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/config/tsconfig.json",
-   "language": "json",
-   "sizeLines": 12,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/config/vitest.config.ts",
-   "language": "typescript",
-   "sizeLines": 3,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/README.md",
-   "language": "markdown",
-   "sizeLines": 44,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "packages/db/drizzle.config.ts",
-   "language": "typescript",
-   "sizeLines": 10,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/drizzle/0000_sudden_hemingway.sql",
-   "language": "sql",
-   "sizeLines": 131,
-   "fileCategory": "data"
-  },
-  {
-   "path": "packages/db/drizzle/0001_wooden_invaders.sql",
-   "language": "sql",
-   "sizeLines": 8,
-   "fileCategory": "data"
-  },
-  {
-   "path": "packages/db/drizzle/meta/0000_snapshot.json",
-   "language": "json",
-   "sizeLines": 875,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/db/drizzle/meta/0001_snapshot.json",
-   "language": "json",
-   "sizeLines": 927,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/db/drizzle/meta/_journal.json",
-   "language": "json",
-   "sizeLines": 19,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/db/package.json",
-   "language": "json",
-   "sizeLines": 29,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/db/seed-runner.test.ts",
-   "language": "typescript",
-   "sizeLines": 40,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/seed-runner.ts",
-   "language": "typescript",
-   "sizeLines": 19,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/src/index.ts",
-   "language": "typescript",
-   "sizeLines": 45,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/src/schema.test.ts",
-   "language": "typescript",
-   "sizeLines": 61,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/src/schema.ts",
-   "language": "typescript",
-   "sizeLines": 216,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/src/seed.test.ts",
-   "language": "typescript",
-   "sizeLines": 71,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/src/seed.ts",
-   "language": "typescript",
-   "sizeLines": 447,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/db/tsconfig.json",
-   "language": "json",
-   "sizeLines": 9,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/db/vitest.config.ts",
-   "language": "typescript",
-   "sizeLines": 3,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/design-tokens/README.md",
-   "language": "markdown",
-   "sizeLines": 53,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "packages/design-tokens/package.json",
-   "language": "json",
-   "sizeLines": 28,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/scripts/build.mjs",
-   "language": "javascript",
-   "sizeLines": 214,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/design-tokens/scripts/lib.mjs",
-   "language": "javascript",
-   "sizeLines": 70,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/design-tokens/scripts/new-theme.mjs",
-   "language": "javascript",
-   "sizeLines": 43,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/design-tokens/scripts/validate.mjs",
-   "language": "javascript",
-   "sizeLines": 109,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/design-tokens/tokens/base/base.json",
-   "language": "json",
-   "sizeLines": 138,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/components/components.json",
-   "language": "json",
-   "sizeLines": 100,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/themes/modern-bold/theme.json",
-   "language": "json",
-   "sizeLines": 36,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/themes/modern-bold/tokens.json",
-   "language": "json",
-   "sizeLines": 258,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/themes/quiet-luxury/theme.json",
-   "language": "json",
-   "sizeLines": 33,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/themes/quiet-luxury/tokens.json",
-   "language": "json",
-   "sizeLines": 254,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/themes/warm-craft/theme.json",
-   "language": "json",
-   "sizeLines": 32,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/design-tokens/tokens/themes/warm-craft/tokens.json",
-   "language": "json",
-   "sizeLines": 254,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/domain/README.md",
-   "language": "markdown",
-   "sizeLines": 35,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "packages/domain/package.json",
-   "language": "json",
-   "sizeLines": 18,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/domain/src/composition.test.ts",
-   "language": "typescript",
-   "sizeLines": 114,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/src/composition.ts",
-   "language": "typescript",
-   "sizeLines": 55,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/src/index.ts",
-   "language": "typescript",
-   "sizeLines": 3,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/src/pricing.test.ts",
-   "language": "typescript",
-   "sizeLines": 166,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/src/pricing.ts",
-   "language": "typescript",
-   "sizeLines": 138,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/src/reservation.test.ts",
-   "language": "typescript",
-   "sizeLines": 120,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/src/reservation.ts",
-   "language": "typescript",
-   "sizeLines": 80,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/domain/tsconfig.json",
-   "language": "json",
-   "sizeLines": 9,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/domain/vitest.config.ts",
-   "language": "typescript",
-   "sizeLines": 3,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/README.md",
-   "language": "markdown",
-   "sizeLines": 77,
-   "fileCategory": "docs"
-  },
-  {
-   "path": "packages/ui/package.json",
-   "language": "json",
-   "sizeLines": 43,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/ui/src/components/Button/Button.module.css",
-   "language": "css",
-   "sizeLines": 62,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/Button/Button.test.tsx",
-   "language": "typescript",
-   "sizeLines": 26,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Button/Button.tsx",
-   "language": "typescript",
-   "sizeLines": 14,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Divider/Divider.module.css",
-   "language": "css",
-   "sizeLines": 31,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/Divider/Divider.test.tsx",
-   "language": "typescript",
-   "sizeLines": 29,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Divider/Divider.tsx",
-   "language": "typescript",
-   "sizeLines": 19,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Divider/Ghungroo.tsx",
-   "language": "typescript",
-   "sizeLines": 15,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Hero/Hero.module.css",
-   "language": "css",
-   "sizeLines": 107,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/Hero/Hero.test.tsx",
-   "language": "typescript",
-   "sizeLines": 31,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Hero/Hero.tsx",
-   "language": "typescript",
-   "sizeLines": 27,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Price/Price.module.css",
-   "language": "css",
-   "sizeLines": 13,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/Price/Price.test.tsx",
-   "language": "typescript",
-   "sizeLines": 10,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/Price/Price.tsx",
-   "language": "typescript",
-   "sizeLines": 10,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/ProductCard/ProductCard.module.css",
-   "language": "css",
-   "sizeLines": 84,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/ProductCard/ProductCard.test.tsx",
-   "language": "typescript",
-   "sizeLines": 48,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/ProductCard/ProductCard.tsx",
-   "language": "typescript",
-   "sizeLines": 46,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/ProductHeader/ProductHeader.module.css",
-   "language": "css",
-   "sizeLines": 108,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/ProductHeader/ProductHeader.test.tsx",
-   "language": "typescript",
-   "sizeLines": 48,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/ProductHeader/ProductHeader.tsx",
-   "language": "typescript",
-   "sizeLines": 56,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/PurityBadge/PurityBadge.module.css",
-   "language": "css",
-   "sizeLines": 26,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/PurityBadge/PurityBadge.test.tsx",
-   "language": "typescript",
-   "sizeLines": 26,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
-   "language": "typescript",
-   "sizeLines": 13,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/SiteHeader/SiteHeader.module.css",
-   "language": "css",
-   "sizeLines": 74,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/components/SiteHeader/SiteHeader.test.tsx",
-   "language": "typescript",
-   "sizeLines": 32,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/components/SiteHeader/SiteHeader.tsx",
-   "language": "typescript",
-   "sizeLines": 26,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/css-modules.d.ts",
-   "language": "typescript",
-   "sizeLines": 5,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/index.ts",
-   "language": "typescript",
-   "sizeLines": 13,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/lib/format.test.ts",
-   "language": "typescript",
-   "sizeLines": 14,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/lib/format.ts",
-   "language": "typescript",
-   "sizeLines": 13,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/lib/ornament-scope.test.ts",
-   "language": "typescript",
-   "sizeLines": 7,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/lib/ornament-scope.ts",
-   "language": "typescript",
-   "sizeLines": 10,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/smoke.test.tsx",
-   "language": "typescript",
-   "sizeLines": 8,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/styles/fonts.ts",
-   "language": "typescript",
-   "sizeLines": 12,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/styles/global.css",
-   "language": "css",
-   "sizeLines": 71,
-   "fileCategory": "markup"
-  },
-  {
-   "path": "packages/ui/src/test/axe.ts",
-   "language": "typescript",
-   "sizeLines": 13,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/test/setup.ts",
-   "language": "typescript",
-   "sizeLines": 5,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/theme/ThemeProvider.test.tsx",
-   "language": "typescript",
-   "sizeLines": 17,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/theme/ThemeProvider.tsx",
-   "language": "typescript",
-   "sizeLines": 14,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/src/types.ts",
-   "language": "typescript",
-   "sizeLines": 1,
-   "fileCategory": "code"
-  },
-  {
-   "path": "packages/ui/tsconfig.json",
-   "language": "json",
-   "sizeLines": 14,
-   "fileCategory": "config"
-  },
-  {
-   "path": "packages/ui/vitest.config.ts",
-   "language": "typescript",
-   "sizeLines": 12,
-   "fileCategory": "code"
-  },
-  {
-   "path": "pnpm-workspace.yaml",
-   "language": "yaml",
-   "sizeLines": 6,
-   "fileCategory": "config"
-  },
-  {
-   "path": "scripts/check-css-vars.mjs",
-   "language": "javascript",
-   "sizeLines": 48,
-   "fileCategory": "code"
-  },
-  {
-   "path": "scripts/check-css-vars.test.mjs",
-   "language": "javascript",
-   "sizeLines": 23,
-   "fileCategory": "code"
-  },
-  {
-   "path": "scripts/check-hardcoded.mjs",
-   "language": "javascript",
-   "sizeLines": 57,
-   "fileCategory": "code"
-  },
-  {
-   "path": "scripts/check-hardcoded.test.mjs",
-   "language": "javascript",
-   "sizeLines": 43,
-   "fileCategory": "code"
-  },
-  {
-   "path": "scripts/check-no-hex.mjs",
-   "language": "javascript",
-   "sizeLines": 38,
-   "fileCategory": "code"
-  },
-  {
-   "path": "scripts/check-no-hex.test.mjs",
-   "language": "javascript",
-   "sizeLines": 19,
-   "fileCategory": "code"
-  },
-  {
-   "path": "scripts/smoke.mjs",
-   "language": "javascript",
-   "sizeLines": 59,
-   "fileCategory": "code"
-  },
-  {
-   "path": "tsconfig.base.json",
-   "language": "json",
-   "sizeLines": 16,
-   "fileCategory": "config"
-  },
-  {
-   "path": "turbo.json",
-   "language": "json",
-   "sizeLines": 32,
-   "fileCategory": "config"
-  }
- ],
- "totalFiles": 243,
- "filteredByIgnore": 583,
- "estimatedComplexity": "large",
- "importMap": {
-  ".dockerignore": [],
-  ".env.example": [],
-  ".github/workflows/ci.yml": [],
-  ".github/workflows/deploy-production.yml": [],
-  ".github/workflows/deploy-staging.yml": [],
-  ".github/workflows/deploy.yml": [],
-  ".github/workflows/design-tokens.yml": [],
-  ".ua/config.json": [],
-  "DESIGN.md": [],
-  "Dockerfile": [],
-  "PRODUCT.md": [],
-  "README.md": [],
-  "apps/ui-preview/README.md": [],
-  "apps/ui-preview/index.html": [],
-  "apps/ui-preview/package.json": [],
-  "apps/ui-preview/src/App.module.css": [],
-  "apps/ui-preview/src/App.tsx": [
-   "apps/ui-preview/src/App.module.css",
-   "apps/ui-preview/src/fixtures.ts"
-  ],
-  "apps/ui-preview/src/fixtures.ts": [],
-  "apps/ui-preview/src/main.tsx": [
-   "apps/ui-preview/src/App.tsx"
-  ],
-  "apps/ui-preview/tsconfig.json": [],
-  "apps/ui-preview/vite.config.ts": [],
-  "apps/web/README.md": [],
-  "apps/web/next.config.ts": [
-   "apps/web/src/security-headers.ts"
-  ],
-  "apps/web/package.json": [],
-  "apps/web/public/.gitkeep": [],
-  "apps/web/src/app/api/health/route.ts": [
-   "apps/web/src/server/health.ts"
-  ],
-  "apps/web/src/app/api/ready/route.ts": [
-   "apps/web/src/server/db.ts",
-   "apps/web/src/server/health.ts"
-  ],
-  "apps/web/src/app/cart/page.module.css": [],
-  "apps/web/src/app/cart/page.test.tsx": [
-   "apps/web/src/app/cart/page.tsx",
-   "apps/web/src/components/cart/cart-context.tsx"
-  ],
-  "apps/web/src/app/cart/page.tsx": [
-   "apps/web/src/app/cart/page.module.css",
-   "apps/web/src/components/cart/cart-context.tsx"
-  ],
-  "apps/web/src/app/collections/[slug]/collection-results.module.css": [],
-  "apps/web/src/app/collections/[slug]/collection-results.tsx": [
-   "apps/web/src/app/collections/[slug]/collection-results.module.css",
-   "apps/web/src/components/catalog/filter-bar.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/collections/[slug]/page.module.css": [],
-  "apps/web/src/app/collections/[slug]/page.test.tsx": [
-   "apps/web/src/app/collections/[slug]/page.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/collections/[slug]/page.tsx": [
-   "apps/web/src/app/collections/[slug]/collection-results.tsx",
-   "apps/web/src/app/collections/[slug]/page.module.css",
-   "apps/web/src/lib/catalog.ts",
-   "apps/web/src/lib/collection-copy.ts"
-  ],
-  "apps/web/src/app/collections/page.module.css": [],
-  "apps/web/src/app/collections/page.test.tsx": [
-   "apps/web/src/app/collections/page.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/collections/page.tsx": [
-   "apps/web/src/app/collections/page.module.css",
-   "apps/web/src/lib/catalog.ts",
-   "apps/web/src/lib/collection-copy.ts"
-  ],
-  "apps/web/src/app/contact/page.module.css": [],
-  "apps/web/src/app/contact/page.tsx": [
-   "apps/web/src/app/contact/page.module.css"
-  ],
-  "apps/web/src/app/faq/page.module.css": [],
-  "apps/web/src/app/faq/page.tsx": [
-   "apps/web/src/app/faq/page.module.css"
-  ],
-  "apps/web/src/app/layout.tsx": [
-   "apps/web/src/app/theme-provider.tsx",
-   "apps/web/src/components/cart/cart-context.tsx",
-   "apps/web/src/components/cart/cart-drawer.tsx",
-   "apps/web/src/components/layout/site-footer.tsx",
-   "apps/web/src/components/layout/storefront-header.tsx",
-   "apps/web/src/lib/seo.ts"
-  ],
-  "apps/web/src/app/our-story/page.module.css": [],
-  "apps/web/src/app/our-story/page.tsx": [
-   "apps/web/src/app/our-story/page.module.css"
-  ],
-  "apps/web/src/app/page.module.css": [],
-  "apps/web/src/app/page.test.tsx": [
-   "apps/web/src/app/page.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/page.tsx": [
-   "apps/web/src/components/home/collection-grid.tsx",
-   "apps/web/src/components/home/heritage-section.tsx",
-   "apps/web/src/components/home/promise-section.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/policies/[slug]/page.tsx": [
-   "apps/web/src/components/policy/policy-layout.tsx",
-   "apps/web/src/lib/policies.ts"
-  ],
-  "apps/web/src/app/policies/policies.test.tsx": [
-   "apps/web/src/app/contact/page.tsx",
-   "apps/web/src/app/faq/page.tsx",
-   "apps/web/src/app/our-story/page.tsx",
-   "apps/web/src/app/policies/[slug]/page.tsx",
-   "apps/web/src/lib/policies.ts"
-  ],
-  "apps/web/src/app/products/[slug]/page.module.css": [],
-  "apps/web/src/app/products/[slug]/page.test.tsx": [
-   "apps/web/src/app/products/[slug]/page.tsx",
-   "apps/web/src/components/cart/cart-context.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/products/[slug]/page.tsx": [
-   "apps/web/src/app/products/[slug]/page.module.css",
-   "apps/web/src/components/product/product-detail-client.tsx",
-   "apps/web/src/components/product/product-gallery.tsx",
-   "apps/web/src/lib/catalog.ts",
-   "apps/web/src/lib/seo.ts"
-  ],
-  "apps/web/src/app/robots.ts": [],
-  "apps/web/src/app/search/page.module.css": [],
-  "apps/web/src/app/search/page.test.tsx": [
-   "apps/web/src/app/search/page.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/search/page.tsx": [
-   "apps/web/src/app/search/page.module.css",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/app/sitemap.ts": [
-   "apps/web/src/lib/catalog.ts",
-   "apps/web/src/lib/policies.ts"
-  ],
-  "apps/web/src/app/theme-provider.tsx": [],
-  "apps/web/src/components/cart/cart-context.test.tsx": [
-   "apps/web/src/components/cart/cart-context.tsx"
-  ],
-  "apps/web/src/components/cart/cart-context.tsx": [],
-  "apps/web/src/components/cart/cart-drawer.module.css": [],
-  "apps/web/src/components/cart/cart-drawer.test.tsx": [
-   "apps/web/src/components/cart/cart-context.tsx",
-   "apps/web/src/components/cart/cart-drawer.tsx"
-  ],
-  "apps/web/src/components/cart/cart-drawer.tsx": [
-   "apps/web/src/components/cart/cart-context.tsx",
-   "apps/web/src/components/cart/cart-drawer.module.css"
-  ],
-  "apps/web/src/components/catalog/filter-bar.module.css": [],
-  "apps/web/src/components/catalog/filter-bar.test.tsx": [
-   "apps/web/src/components/catalog/filter-bar.tsx"
-  ],
-  "apps/web/src/components/catalog/filter-bar.tsx": [
-   "apps/web/src/components/catalog/filter-bar.module.css",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/components/home/collection-grid.module.css": [],
-  "apps/web/src/components/home/collection-grid.tsx": [
-   "apps/web/src/components/home/collection-grid.module.css",
-   "apps/web/src/lib/catalog.ts",
-   "apps/web/src/lib/collection-copy.ts"
-  ],
-  "apps/web/src/components/home/heritage-section.module.css": [],
-  "apps/web/src/components/home/heritage-section.tsx": [
-   "apps/web/src/components/home/heritage-section.module.css"
-  ],
-  "apps/web/src/components/home/promise-section.module.css": [],
-  "apps/web/src/components/home/promise-section.tsx": [
-   "apps/web/src/components/home/promise-section.module.css"
-  ],
-  "apps/web/src/components/layout/site-footer.module.css": [],
-  "apps/web/src/components/layout/site-footer.test.tsx": [
-   "apps/web/src/components/layout/site-footer.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/components/layout/site-footer.tsx": [
-   "apps/web/src/components/layout/site-footer.module.css",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/components/layout/storefront-header.tsx": [
-   "apps/web/src/components/cart/cart-context.tsx"
-  ],
-  "apps/web/src/components/policy/policy-layout.module.css": [],
-  "apps/web/src/components/policy/policy-layout.tsx": [
-   "apps/web/src/components/policy/policy-layout.module.css"
-  ],
-  "apps/web/src/components/product/product-detail-client.module.css": [],
-  "apps/web/src/components/product/product-detail-client.tsx": [
-   "apps/web/src/components/cart/cart-context.tsx",
-   "apps/web/src/components/product/product-detail-client.module.css",
-   "apps/web/src/components/product/sticky-mobile-cta.tsx",
-   "apps/web/src/components/product/variant-selector.tsx",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/components/product/product-gallery.module.css": [],
-  "apps/web/src/components/product/product-gallery.tsx": [
-   "apps/web/src/components/product/product-gallery.module.css"
-  ],
-  "apps/web/src/components/product/sticky-mobile-cta.module.css": [],
-  "apps/web/src/components/product/sticky-mobile-cta.tsx": [
-   "apps/web/src/components/product/sticky-mobile-cta.module.css"
-  ],
-  "apps/web/src/components/product/variant-selector.module.css": [],
-  "apps/web/src/components/product/variant-selector.tsx": [
-   "apps/web/src/components/product/variant-selector.module.css",
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/instrumentation-node.ts": [],
-  "apps/web/src/instrumentation.ts": [],
-  "apps/web/src/lib/catalog.test.ts": [
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/lib/catalog.ts": [],
-  "apps/web/src/lib/collection-copy.ts": [
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/lib/policies.test.ts": [
-   "apps/web/src/lib/policies.ts"
-  ],
-  "apps/web/src/lib/policies.ts": [],
-  "apps/web/src/lib/seo.test.ts": [
-   "apps/web/src/app/robots.ts",
-   "apps/web/src/app/sitemap.ts",
-   "apps/web/src/lib/catalog.ts",
-   "apps/web/src/lib/seo.ts"
-  ],
-  "apps/web/src/lib/seo.ts": [
-   "apps/web/src/lib/catalog.ts"
-  ],
-  "apps/web/src/security-headers.test.ts": [
-   "apps/web/src/security-headers.ts"
-  ],
-  "apps/web/src/security-headers.ts": [],
-  "apps/web/src/server/db.ts": [],
-  "apps/web/src/server/health.test.ts": [
-   "apps/web/src/server/health.ts"
-  ],
-  "apps/web/src/server/health.ts": [],
-  "apps/web/tsconfig.json": [],
-  "apps/web/vitest.config.ts": [],
-  "apps/web/vitest.setup.ts": [],
-  "docker-compose.yml": [],
-  "docs/README.md": [],
-  "docs/adr/0001-domain-registrar-dns.md": [],
-  "docs/adr/0002-email.md": [],
-  "docs/adr/0003-cloud-hosting.md": [],
-  "docs/adr/0004-tech-stack.md": [],
-  "docs/adr/0005-payments-currency.md": [],
-  "docs/adr/0006-catalog-variant-model.md": [],
-  "docs/adr/0007-pricing-modes-order-snapshot.md": [],
-  "docs/adr/0008-admin-rbac-maker-checker.md": [],
-  "docs/adr/0009-legal-policy-pages.md": [],
-  "docs/adr/0010-design-tooling.md": [],
-  "docs/adr/0011-design-direction-themes.md": [],
-  "docs/adr/0012-config-driven.md": [],
-  "docs/adr/0013-domain-core-architecture.md": [],
-  "docs/adr/0014-storefront-architecture.md": [],
-  "docs/adr/README.md": [],
-  "docs/audit/2026-11-25-project-audit.md": [],
-  "docs/brand-content.md": [],
-  "docs/decisions.md": [],
-  "docs/design/imagery.md": [],
-  "docs/plans/2026-10-31-phase-1-design-system.md": [],
-  "docs/plans/2026-10-31-phase-2-foundations.md": [],
-  "docs/plans/2026-11-02-phase-3-domain-core.md": [],
-  "docs/plans/2026-11-12-phase-4-storefront.md": [],
-  "docs/plans/README.md": [],
-  "docs/runbook.md": [],
-  "docs/setup.md": [],
-  "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md": [],
-  "docs/superpowers/plans/2026-11-24-catalog-price-availability.md": [],
-  "docs/superpowers/plans/2026-11-24-seed-and-policy-safety.md": [],
-  "docs/superpowers/plans/2026-11-24-storefront-safe-states-and-docs.md": [],
-  "docs/superpowers/specs/2026-11-12-storefront-design.md": [],
-  "docs/superpowers/specs/2026-11-24-phase-4-review-followup-design.md": [],
-  "eslint.config.mjs": [],
-  "package.json": [],
-  "packages/config/README.md": [],
-  "packages/config/package.json": [],
-  "packages/config/src/index.ts": [],
-  "packages/config/src/load.test.ts": [
-   "packages/config/src/index.ts"
-  ],
-  "packages/config/src/load.ts": [
-   "packages/config/src/schema.ts"
-  ],
-  "packages/config/src/schema.ts": [],
-  "packages/config/tsconfig.json": [],
-  "packages/config/vitest.config.ts": [],
-  "packages/db/README.md": [],
-  "packages/db/drizzle.config.ts": [],
-  "packages/db/drizzle/0000_sudden_hemingway.sql": [],
-  "packages/db/drizzle/0001_wooden_invaders.sql": [],
-  "packages/db/drizzle/meta/0000_snapshot.json": [],
-  "packages/db/drizzle/meta/0001_snapshot.json": [],
-  "packages/db/drizzle/meta/_journal.json": [],
-  "packages/db/package.json": [],
-  "packages/db/seed-runner.test.ts": [],
-  "packages/db/seed-runner.ts": [
-   "packages/db/src/index.ts"
-  ],
-  "packages/db/src/index.ts": [
-   "packages/db/src/schema.ts"
-  ],
-  "packages/db/src/schema.test.ts": [
-   "packages/db/src/index.ts",
-   "packages/db/src/schema.ts"
-  ],
-  "packages/db/src/schema.ts": [],
-  "packages/db/src/seed.test.ts": [
-   "packages/db/src/seed.ts"
-  ],
-  "packages/db/src/seed.ts": [
-   "packages/db/src/schema.ts"
-  ],
-  "packages/db/tsconfig.json": [],
-  "packages/db/vitest.config.ts": [],
-  "packages/design-tokens/README.md": [],
-  "packages/design-tokens/package.json": [],
-  "packages/design-tokens/scripts/build.mjs": [
-   "packages/design-tokens/scripts/lib.mjs"
-  ],
-  "packages/design-tokens/scripts/lib.mjs": [],
-  "packages/design-tokens/scripts/new-theme.mjs": [
-   "packages/design-tokens/scripts/lib.mjs"
-  ],
-  "packages/design-tokens/scripts/validate.mjs": [
-   "packages/design-tokens/scripts/lib.mjs"
-  ],
-  "packages/design-tokens/tokens/base/base.json": [],
-  "packages/design-tokens/tokens/components/components.json": [],
-  "packages/design-tokens/tokens/themes/modern-bold/theme.json": [],
-  "packages/design-tokens/tokens/themes/modern-bold/tokens.json": [],
-  "packages/design-tokens/tokens/themes/quiet-luxury/theme.json": [],
-  "packages/design-tokens/tokens/themes/quiet-luxury/tokens.json": [],
-  "packages/design-tokens/tokens/themes/warm-craft/theme.json": [],
-  "packages/design-tokens/tokens/themes/warm-craft/tokens.json": [],
-  "packages/domain/README.md": [],
-  "packages/domain/package.json": [],
-  "packages/domain/src/composition.test.ts": [
-   "packages/domain/src/composition.ts"
-  ],
-  "packages/domain/src/composition.ts": [],
-  "packages/domain/src/index.ts": [],
-  "packages/domain/src/pricing.test.ts": [
-   "packages/domain/src/pricing.ts"
-  ],
-  "packages/domain/src/pricing.ts": [
-   "packages/domain/src/composition.ts"
-  ],
-  "packages/domain/src/reservation.test.ts": [
-   "packages/domain/src/reservation.ts"
-  ],
-  "packages/domain/src/reservation.ts": [],
-  "packages/domain/tsconfig.json": [],
-  "packages/domain/vitest.config.ts": [],
-  "packages/ui/README.md": [],
-  "packages/ui/package.json": [],
-  "packages/ui/src/components/Button/Button.module.css": [],
-  "packages/ui/src/components/Button/Button.test.tsx": [
-   "packages/ui/src/components/Button/Button.tsx",
-   "packages/ui/src/test/axe.ts"
-  ],
-  "packages/ui/src/components/Button/Button.tsx": [
-   "packages/ui/src/components/Button/Button.module.css"
-  ],
-  "packages/ui/src/components/Divider/Divider.module.css": [],
-  "packages/ui/src/components/Divider/Divider.test.tsx": [
-   "packages/ui/src/components/Divider/Divider.tsx",
-   "packages/ui/src/test/axe.ts",
-   "packages/ui/src/theme/ThemeProvider.tsx"
-  ],
-  "packages/ui/src/components/Divider/Divider.tsx": [
-   "packages/ui/src/components/Divider/Divider.module.css",
-   "packages/ui/src/components/Divider/Ghungroo.tsx",
-   "packages/ui/src/lib/ornament-scope.ts",
-   "packages/ui/src/theme/ThemeProvider.tsx"
-  ],
-  "packages/ui/src/components/Divider/Ghungroo.tsx": [],
-  "packages/ui/src/components/Hero/Hero.module.css": [],
-  "packages/ui/src/components/Hero/Hero.test.tsx": [
-   "packages/ui/src/components/Hero/Hero.tsx",
-   "packages/ui/src/test/axe.ts",
-   "packages/ui/src/theme/ThemeProvider.tsx"
-  ],
-  "packages/ui/src/components/Hero/Hero.tsx": [
-   "packages/ui/src/components/Button/Button.tsx",
-   "packages/ui/src/components/Hero/Hero.module.css",
-   "packages/ui/src/theme/ThemeProvider.tsx",
-   "packages/ui/src/types.ts"
-  ],
-  "packages/ui/src/components/Price/Price.module.css": [],
-  "packages/ui/src/components/Price/Price.test.tsx": [
-   "packages/ui/src/components/Price/Price.tsx"
-  ],
-  "packages/ui/src/components/Price/Price.tsx": [
-   "packages/ui/src/components/Price/Price.module.css",
-   "packages/ui/src/lib/format.ts"
-  ],
-  "packages/ui/src/components/ProductCard/ProductCard.module.css": [],
-  "packages/ui/src/components/ProductCard/ProductCard.test.tsx": [
-   "packages/ui/src/components/ProductCard/ProductCard.tsx",
-   "packages/ui/src/test/axe.ts"
-  ],
-  "packages/ui/src/components/ProductCard/ProductCard.tsx": [
-   "packages/ui/src/components/Price/Price.tsx",
-   "packages/ui/src/components/ProductCard/ProductCard.module.css",
-   "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
-   "packages/ui/src/lib/format.ts",
-   "packages/ui/src/types.ts"
-  ],
-  "packages/ui/src/components/ProductHeader/ProductHeader.module.css": [],
-  "packages/ui/src/components/ProductHeader/ProductHeader.test.tsx": [
-   "packages/ui/src/components/ProductHeader/ProductHeader.tsx",
-   "packages/ui/src/test/axe.ts"
-  ],
-  "packages/ui/src/components/ProductHeader/ProductHeader.tsx": [
-   "packages/ui/src/components/Button/Button.tsx",
-   "packages/ui/src/components/Price/Price.tsx",
-   "packages/ui/src/components/ProductHeader/ProductHeader.module.css",
-   "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
-   "packages/ui/src/lib/format.ts",
-   "packages/ui/src/types.ts"
-  ],
-  "packages/ui/src/components/PurityBadge/PurityBadge.module.css": [],
-  "packages/ui/src/components/PurityBadge/PurityBadge.test.tsx": [
-   "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
-   "packages/ui/src/test/axe.ts",
-   "packages/ui/src/theme/ThemeProvider.tsx"
-  ],
-  "packages/ui/src/components/PurityBadge/PurityBadge.tsx": [
-   "packages/ui/src/components/PurityBadge/PurityBadge.module.css",
-   "packages/ui/src/theme/ThemeProvider.tsx"
-  ],
-  "packages/ui/src/components/SiteHeader/SiteHeader.module.css": [],
-  "packages/ui/src/components/SiteHeader/SiteHeader.test.tsx": [
-   "packages/ui/src/components/SiteHeader/SiteHeader.tsx",
-   "packages/ui/src/test/axe.ts"
-  ],
-  "packages/ui/src/components/SiteHeader/SiteHeader.tsx": [
-   "packages/ui/src/components/SiteHeader/SiteHeader.module.css"
-  ],
-  "packages/ui/src/css-modules.d.ts": [],
-  "packages/ui/src/index.ts": [],
-  "packages/ui/src/lib/format.test.ts": [
-   "packages/ui/src/lib/format.ts"
-  ],
-  "packages/ui/src/lib/format.ts": [],
-  "packages/ui/src/lib/ornament-scope.test.ts": [
-   "packages/ui/src/lib/ornament-scope.ts"
-  ],
-  "packages/ui/src/lib/ornament-scope.ts": [],
-  "packages/ui/src/smoke.test.tsx": [
-   "packages/ui/src/test/axe.ts"
-  ],
-  "packages/ui/src/styles/fonts.ts": [],
-  "packages/ui/src/styles/global.css": [],
-  "packages/ui/src/test/axe.ts": [],
-  "packages/ui/src/test/setup.ts": [],
-  "packages/ui/src/theme/ThemeProvider.test.tsx": [
-   "packages/ui/src/theme/ThemeProvider.tsx"
-  ],
-  "packages/ui/src/theme/ThemeProvider.tsx": [],
-  "packages/ui/src/types.ts": [],
-  "packages/ui/tsconfig.json": [],
-  "packages/ui/vitest.config.ts": [],
-  "pnpm-workspace.yaml": [],
-  "scripts/check-css-vars.mjs": [],
-  "scripts/check-css-vars.test.mjs": [
-   "scripts/check-css-vars.mjs"
-  ],
-  "scripts/check-hardcoded.mjs": [],
-  "scripts/check-hardcoded.test.mjs": [
-   "scripts/check-hardcoded.mjs"
-  ],
-  "scripts/check-no-hex.mjs": [],
-  "scripts/check-no-hex.test.mjs": [
-   "scripts/check-no-hex.mjs"
-  ],
-  "scripts/smoke.mjs": [],
-  "tsconfig.base.json": [],
-  "turbo.json": []
- }
+  "name": "argiva",
+  "description": "Mobile-first e-commerce platform for ARGIVA Silvers, a family silver jewellery business, built as a TypeScript pnpm monorepo with a Next.js storefront and shared domain, database, config and design-system packages.",
+  "languages": [
+    "config",
+    "css",
+    "dockerfile",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "sql",
+    "typescript",
+    "unknown",
+    "yaml"
+  ],
+  "frameworks": [
+    "Docker",
+    "Docker Compose",
+    "GitHub Actions",
+    "Next.js",
+    "React",
+    "Vite",
+    "Vitest",
+    "Drizzle"
+  ],
+  "files": [
+    {
+      "path": ".dockerignore",
+      "language": "unknown",
+      "sizeLines": 11,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".env.example",
+      "language": "config",
+      "sizeLines": 23,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "sizeLines": 86,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy-production.yml",
+      "language": "yaml",
+      "sizeLines": 18,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy-staging.yml",
+      "language": "yaml",
+      "sizeLines": 20,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/deploy.yml",
+      "language": "yaml",
+      "sizeLines": 74,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/design-tokens.yml",
+      "language": "yaml",
+      "sizeLines": 33,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "DESIGN.md",
+      "language": "markdown",
+      "sizeLines": 240,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "Dockerfile",
+      "language": "dockerfile",
+      "sizeLines": 28,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "PRODUCT.md",
+      "language": "markdown",
+      "sizeLines": 70,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 148,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "apps/ui-preview/README.md",
+      "language": "markdown",
+      "sizeLines": 61,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "apps/ui-preview/index.html",
+      "language": "html",
+      "sizeLines": 15,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/ui-preview/package.json",
+      "language": "json",
+      "sizeLines": 24,
+      "fileCategory": "config"
+    },
+    {
+      "path": "apps/ui-preview/src/App.module.css",
+      "language": "css",
+      "sizeLines": 26,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/ui-preview/src/App.tsx",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/ui-preview/src/fixtures.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/ui-preview/src/main.tsx",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/ui-preview/tsconfig.json",
+      "language": "json",
+      "sizeLines": 12,
+      "fileCategory": "config"
+    },
+    {
+      "path": "apps/ui-preview/vite.config.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/README.md",
+      "language": "markdown",
+      "sizeLines": 140,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "apps/web/e2e/accessibility.spec.ts",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/cart.spec.ts",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/catalog.spec.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/database-guard.test.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/database-guard.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/databases.d.mts",
+      "language": "mts",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/databases.mjs",
+      "language": "javascript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/empty-shop.spec.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/page-health.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/pages.spec.ts",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/prepare-database.ts",
+      "language": "typescript",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/e2e/start-server.mjs",
+      "language": "javascript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/next.config.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/package.json",
+      "language": "json",
+      "sizeLines": 41,
+      "fileCategory": "config"
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/public/.gitkeep",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/api/health/route.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/api/ready/route.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/cart/page.module.css",
+      "language": "css",
+      "sizeLines": 231,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/cart/page.test.tsx",
+      "language": "typescript",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/cart/page.tsx",
+      "language": "typescript",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/collections/[slug]/collection-results.module.css",
+      "language": "css",
+      "sizeLines": 20,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/collections/[slug]/collection-results.tsx",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/collections/[slug]/page.module.css",
+      "language": "css",
+      "sizeLines": 50,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/collections/[slug]/page.test.tsx",
+      "language": "typescript",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/collections/[slug]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/collections/page.module.css",
+      "language": "css",
+      "sizeLines": 64,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/collections/page.test.tsx",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/collections/page.tsx",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/contact/page.module.css",
+      "language": "css",
+      "sizeLines": 82,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/contact/page.tsx",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/faq/page.module.css",
+      "language": "css",
+      "sizeLines": 48,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/faq/page.tsx",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/layout.tsx",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/our-story/page.module.css",
+      "language": "css",
+      "sizeLines": 76,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/our-story/page.tsx",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/page.module.css",
+      "language": "css",
+      "sizeLines": 24,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/page.test.tsx",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/page.tsx",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/policies/[slug]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/policies/policies.test.tsx",
+      "language": "typescript",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/products/[slug]/page.module.css",
+      "language": "css",
+      "sizeLines": 75,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/products/[slug]/page.test.tsx",
+      "language": "typescript",
+      "sizeLines": 224,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/products/[slug]/page.tsx",
+      "language": "typescript",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/robots.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/search/page.module.css",
+      "language": "css",
+      "sizeLines": 82,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/app/search/page.test.tsx",
+      "language": "typescript",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/search/page.tsx",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/sitemap.ts",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/app/theme-provider.tsx",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/cart/cart-context.test.tsx",
+      "language": "typescript",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/cart/cart-context.tsx",
+      "language": "typescript",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/cart/cart-drawer.module.css",
+      "language": "css",
+      "sizeLines": 222,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/cart/cart-drawer.test.tsx",
+      "language": "typescript",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/cart/cart-drawer.tsx",
+      "language": "typescript",
+      "sizeLines": 141,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/catalog/filter-bar.module.css",
+      "language": "css",
+      "sizeLines": 96,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/catalog/filter-bar.test.tsx",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/catalog/filter-bar.tsx",
+      "language": "typescript",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/home/collection-grid.module.css",
+      "language": "css",
+      "sizeLines": 78,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/home/collection-grid.tsx",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/home/heritage-section.module.css",
+      "language": "css",
+      "sizeLines": 47,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/home/heritage-section.tsx",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/home/promise-section.module.css",
+      "language": "css",
+      "sizeLines": 41,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/home/promise-section.tsx",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/layout/site-footer.module.css",
+      "language": "css",
+      "sizeLines": 127,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/layout/site-footer.test.tsx",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/layout/site-footer.tsx",
+      "language": "typescript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/layout/storefront-header.tsx",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/policy/policy-layout.module.css",
+      "language": "css",
+      "sizeLines": 52,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/policy/policy-layout.tsx",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/product/product-detail-client.module.css",
+      "language": "css",
+      "sizeLines": 54,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/product/product-detail-client.tsx",
+      "language": "typescript",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/product/product-gallery.module.css",
+      "language": "css",
+      "sizeLines": 14,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/product/product-gallery.tsx",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/product/sticky-mobile-cta.module.css",
+      "language": "css",
+      "sizeLines": 24,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/product/sticky-mobile-cta.tsx",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/components/product/variant-selector.module.css",
+      "language": "css",
+      "sizeLines": 70,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "apps/web/src/components/product/variant-selector.tsx",
+      "language": "typescript",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/instrumentation-node.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/instrumentation.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/catalog.test.ts",
+      "language": "typescript",
+      "sizeLines": 609,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/catalog.ts",
+      "language": "typescript",
+      "sizeLines": 377,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/collection-copy.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/placeholders.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/policies.test.ts",
+      "language": "typescript",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/policies.ts",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/seo.test.ts",
+      "language": "typescript",
+      "sizeLines": 257,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/lib/seo.ts",
+      "language": "typescript",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/security-headers.test.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/security-headers.ts",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/server/db.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/server/health.test.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/src/server/health.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "language": "json",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": "apps/web/vitest.config.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "apps/web/vitest.setup.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "docker-compose.yml",
+      "language": "yaml",
+      "sizeLines": 34,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "docs/README.md",
+      "language": "markdown",
+      "sizeLines": 80,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0001-domain-registrar-dns.md",
+      "language": "markdown",
+      "sizeLines": 23,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0002-email.md",
+      "language": "markdown",
+      "sizeLines": 21,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0003-cloud-hosting.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0004-tech-stack.md",
+      "language": "markdown",
+      "sizeLines": 26,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0005-payments-currency.md",
+      "language": "markdown",
+      "sizeLines": 23,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0006-catalog-variant-model.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0007-pricing-modes-order-snapshot.md",
+      "language": "markdown",
+      "sizeLines": 24,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0008-admin-rbac-maker-checker.md",
+      "language": "markdown",
+      "sizeLines": 29,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0009-legal-policy-pages.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0010-design-tooling.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0011-design-direction-themes.md",
+      "language": "markdown",
+      "sizeLines": 29,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0012-config-driven.md",
+      "language": "markdown",
+      "sizeLines": 21,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0013-domain-core-architecture.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0014-storefront-architecture.md",
+      "language": "markdown",
+      "sizeLines": 36,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/0015-migrations-and-browser-tests.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "language": "markdown",
+      "sizeLines": 20,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/audit/2026-11-25-project-audit.md",
+      "language": "markdown",
+      "sizeLines": 73,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/brand-content.md",
+      "language": "markdown",
+      "sizeLines": 270,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/decisions.md",
+      "language": "markdown",
+      "sizeLines": 27,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/design/imagery.md",
+      "language": "markdown",
+      "sizeLines": 33,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/plans/2026-10-31-phase-1-design-system.md",
+      "language": "markdown",
+      "sizeLines": 1750,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/plans/2026-10-31-phase-2-foundations.md",
+      "language": "markdown",
+      "sizeLines": 1281,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/plans/2026-11-02-phase-3-domain-core.md",
+      "language": "markdown",
+      "sizeLines": 231,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/plans/2026-11-12-phase-4-storefront.md",
+      "language": "markdown",
+      "sizeLines": 287,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/plans/README.md",
+      "language": "markdown",
+      "sizeLines": 72,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/runbook.md",
+      "language": "markdown",
+      "sizeLines": 417,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/setup.md",
+      "language": "markdown",
+      "sizeLines": 459,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md",
+      "language": "markdown",
+      "sizeLines": 93,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-24-catalog-price-availability.md",
+      "language": "markdown",
+      "sizeLines": 86,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-24-seed-and-policy-safety.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-24-storefront-safe-states-and-docs.md",
+      "language": "markdown",
+      "sizeLines": 153,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-26-stabilisation.md",
+      "language": "markdown",
+      "sizeLines": 214,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-12-storefront-design.md",
+      "language": "markdown",
+      "sizeLines": 73,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-24-phase-4-review-followup-design.md",
+      "language": "markdown",
+      "sizeLines": 85,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-26-stabilisation-design.md",
+      "language": "markdown",
+      "sizeLines": 115,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "language": "javascript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 39,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/config/README.md",
+      "language": "markdown",
+      "sizeLines": 79,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "packages/config/package.json",
+      "language": "json",
+      "sizeLines": 22,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/config/src/index.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/config/src/load.test.ts",
+      "language": "typescript",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/config/src/load.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/config/src/schema.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/config/tsconfig.json",
+      "language": "json",
+      "sizeLines": 12,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/config/vitest.config.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/README.md",
+      "language": "markdown",
+      "sizeLines": 48,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "packages/db/drizzle.config.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/drizzle/0000_sudden_hemingway.sql",
+      "language": "sql",
+      "sizeLines": 131,
+      "fileCategory": "data"
+    },
+    {
+      "path": "packages/db/drizzle/0001_wooden_invaders.sql",
+      "language": "sql",
+      "sizeLines": 8,
+      "fileCategory": "data"
+    },
+    {
+      "path": "packages/db/drizzle/meta/0000_snapshot.json",
+      "language": "json",
+      "sizeLines": 875,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/db/drizzle/meta/0001_snapshot.json",
+      "language": "json",
+      "sizeLines": 927,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/db/drizzle/meta/_journal.json",
+      "language": "json",
+      "sizeLines": 19,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/db/migrate-runner.test.ts",
+      "language": "typescript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/migrate-runner.ts",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/package.json",
+      "language": "json",
+      "sizeLines": 30,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/db/seed-runner.test.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/seed-runner.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/src/index.ts",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/src/schema.test.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/src/schema.ts",
+      "language": "typescript",
+      "sizeLines": 216,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/src/seed.test.ts",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/src/seed.ts",
+      "language": "typescript",
+      "sizeLines": 237,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/db/tsconfig.json",
+      "language": "json",
+      "sizeLines": 9,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/db/vitest.config.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/design-tokens/README.md",
+      "language": "markdown",
+      "sizeLines": 53,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "packages/design-tokens/package.json",
+      "language": "json",
+      "sizeLines": 28,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/scripts/build.mjs",
+      "language": "javascript",
+      "sizeLines": 214,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/design-tokens/scripts/lib.mjs",
+      "language": "javascript",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/design-tokens/scripts/new-theme.mjs",
+      "language": "javascript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/design-tokens/scripts/validate.mjs",
+      "language": "javascript",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/design-tokens/tokens/base/base.json",
+      "language": "json",
+      "sizeLines": 138,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/components/components.json",
+      "language": "json",
+      "sizeLines": 100,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/themes/modern-bold/theme.json",
+      "language": "json",
+      "sizeLines": 36,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/themes/modern-bold/tokens.json",
+      "language": "json",
+      "sizeLines": 258,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/themes/quiet-luxury/theme.json",
+      "language": "json",
+      "sizeLines": 33,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/themes/quiet-luxury/tokens.json",
+      "language": "json",
+      "sizeLines": 254,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/themes/warm-craft/theme.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/design-tokens/tokens/themes/warm-craft/tokens.json",
+      "language": "json",
+      "sizeLines": 254,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/domain/README.md",
+      "language": "markdown",
+      "sizeLines": 35,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "packages/domain/package.json",
+      "language": "json",
+      "sizeLines": 18,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/domain/src/composition.test.ts",
+      "language": "typescript",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/src/composition.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/src/index.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/src/pricing.test.ts",
+      "language": "typescript",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/src/pricing.ts",
+      "language": "typescript",
+      "sizeLines": 138,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/src/reservation.test.ts",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/src/reservation.ts",
+      "language": "typescript",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/domain/tsconfig.json",
+      "language": "json",
+      "sizeLines": 9,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/domain/vitest.config.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/README.md",
+      "language": "markdown",
+      "sizeLines": 78,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "packages/ui/package.json",
+      "language": "json",
+      "sizeLines": 43,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/ui/src/client-boundaries.test.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Button/Button.module.css",
+      "language": "css",
+      "sizeLines": 62,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/Button/Button.test.tsx",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Button/Button.tsx",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Divider/Divider.module.css",
+      "language": "css",
+      "sizeLines": 31,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/Divider/Divider.test.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Divider/Divider.tsx",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Divider/Ghungroo.tsx",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Hero/Hero.module.css",
+      "language": "css",
+      "sizeLines": 114,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/Hero/Hero.test.tsx",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Hero/Hero.tsx",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Price/Price.module.css",
+      "language": "css",
+      "sizeLines": 13,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/Price/Price.test.tsx",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/Price/Price.tsx",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/ProductCard/ProductCard.module.css",
+      "language": "css",
+      "sizeLines": 84,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/ProductCard/ProductCard.test.tsx",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/ProductCard/ProductCard.tsx",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/ProductHeader/ProductHeader.module.css",
+      "language": "css",
+      "sizeLines": 108,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/ProductHeader/ProductHeader.test.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/ProductHeader/ProductHeader.tsx",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/PurityBadge/PurityBadge.module.css",
+      "language": "css",
+      "sizeLines": 26,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/PurityBadge/PurityBadge.test.tsx",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/SiteHeader/SiteHeader.module.css",
+      "language": "css",
+      "sizeLines": 74,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/components/SiteHeader/SiteHeader.test.tsx",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/components/SiteHeader/SiteHeader.tsx",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/css-modules.d.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/index.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/lib/format.test.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/lib/format.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/lib/ornament-scope.test.ts",
+      "language": "typescript",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/lib/ornament-scope.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/smoke.test.tsx",
+      "language": "typescript",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/styles/fonts.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/styles/global.css",
+      "language": "css",
+      "sizeLines": 71,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "packages/ui/src/test/axe.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/test/setup.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/theme/ThemeProvider.test.tsx",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/theme/ThemeProvider.tsx",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/src/types.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/ui/tsconfig.json",
+      "language": "json",
+      "sizeLines": 14,
+      "fileCategory": "config"
+    },
+    {
+      "path": "packages/ui/vitest.config.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "language": "yaml",
+      "sizeLines": 6,
+      "fileCategory": "config"
+    },
+    {
+      "path": "scripts/check-css-vars.mjs",
+      "language": "javascript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/check-css-vars.test.mjs",
+      "language": "javascript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/check-hardcoded.mjs",
+      "language": "javascript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/check-hardcoded.test.mjs",
+      "language": "javascript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/check-no-hex.mjs",
+      "language": "javascript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/check-no-hex.test.mjs",
+      "language": "javascript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "language": "javascript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/smoke.test.mjs",
+      "language": "javascript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/workflows.test.mjs",
+      "language": "javascript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    },
+    {
+      "path": "turbo.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    }
+  ],
+  "totalFiles": 264,
+  "filteredByIgnore": 583,
+  "estimatedComplexity": "large",
+  "importMap": {
+    ".dockerignore": [],
+    ".env.example": [],
+    ".github/workflows/ci.yml": [],
+    ".github/workflows/deploy-production.yml": [],
+    ".github/workflows/deploy-staging.yml": [],
+    ".github/workflows/deploy.yml": [],
+    ".github/workflows/design-tokens.yml": [],
+    "DESIGN.md": [],
+    "Dockerfile": [],
+    "PRODUCT.md": [],
+    "README.md": [],
+    "apps/ui-preview/README.md": [],
+    "apps/ui-preview/index.html": [],
+    "apps/ui-preview/package.json": [],
+    "apps/ui-preview/src/App.module.css": [],
+    "apps/ui-preview/src/App.tsx": [
+      "apps/ui-preview/src/App.module.css",
+      "apps/ui-preview/src/fixtures.ts"
+    ],
+    "apps/ui-preview/src/fixtures.ts": [],
+    "apps/ui-preview/src/main.tsx": [
+      "apps/ui-preview/src/App.tsx"
+    ],
+    "apps/ui-preview/tsconfig.json": [],
+    "apps/ui-preview/vite.config.ts": [],
+    "apps/web/README.md": [],
+    "apps/web/e2e/accessibility.spec.ts": [],
+    "apps/web/e2e/cart.spec.ts": [],
+    "apps/web/e2e/catalog.spec.ts": [],
+    "apps/web/e2e/database-guard.test.ts": [
+      "apps/web/e2e/database-guard.ts"
+    ],
+    "apps/web/e2e/database-guard.ts": [],
+    "apps/web/e2e/databases.d.mts": [],
+    "apps/web/e2e/databases.mjs": [],
+    "apps/web/e2e/empty-shop.spec.ts": [
+      "apps/web/e2e/page-health.ts"
+    ],
+    "apps/web/e2e/page-health.ts": [],
+    "apps/web/e2e/pages.spec.ts": [
+      "apps/web/e2e/page-health.ts"
+    ],
+    "apps/web/e2e/prepare-database.ts": [
+      "apps/web/e2e/database-guard.ts",
+      "apps/web/e2e/databases.mjs"
+    ],
+    "apps/web/e2e/start-server.mjs": [
+      "apps/web/e2e/databases.mjs"
+    ],
+    "apps/web/next.config.ts": [
+      "apps/web/src/security-headers.ts"
+    ],
+    "apps/web/package.json": [],
+    "apps/web/playwright.config.ts": [
+      "apps/web/e2e/databases.mjs"
+    ],
+    "apps/web/public/.gitkeep": [],
+    "apps/web/src/app/api/health/route.ts": [
+      "apps/web/src/server/health.ts"
+    ],
+    "apps/web/src/app/api/ready/route.ts": [
+      "apps/web/src/server/db.ts",
+      "apps/web/src/server/health.ts"
+    ],
+    "apps/web/src/app/cart/page.module.css": [],
+    "apps/web/src/app/cart/page.test.tsx": [
+      "apps/web/src/app/cart/page.tsx",
+      "apps/web/src/components/cart/cart-context.tsx"
+    ],
+    "apps/web/src/app/cart/page.tsx": [
+      "apps/web/src/app/cart/page.module.css",
+      "apps/web/src/components/cart/cart-context.tsx"
+    ],
+    "apps/web/src/app/collections/[slug]/collection-results.module.css": [],
+    "apps/web/src/app/collections/[slug]/collection-results.tsx": [
+      "apps/web/src/app/collections/[slug]/collection-results.module.css",
+      "apps/web/src/components/catalog/filter-bar.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/collections/[slug]/page.module.css": [],
+    "apps/web/src/app/collections/[slug]/page.test.tsx": [
+      "apps/web/src/app/collections/[slug]/page.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/collections/[slug]/page.tsx": [
+      "apps/web/src/app/collections/[slug]/collection-results.tsx",
+      "apps/web/src/app/collections/[slug]/page.module.css",
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/collection-copy.ts"
+    ],
+    "apps/web/src/app/collections/page.module.css": [],
+    "apps/web/src/app/collections/page.test.tsx": [
+      "apps/web/src/app/collections/page.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/collections/page.tsx": [
+      "apps/web/src/app/collections/page.module.css",
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/collection-copy.ts"
+    ],
+    "apps/web/src/app/contact/page.module.css": [],
+    "apps/web/src/app/contact/page.tsx": [
+      "apps/web/src/app/contact/page.module.css",
+      "apps/web/src/lib/placeholders.ts"
+    ],
+    "apps/web/src/app/faq/page.module.css": [],
+    "apps/web/src/app/faq/page.tsx": [
+      "apps/web/src/app/faq/page.module.css"
+    ],
+    "apps/web/src/app/layout.tsx": [
+      "apps/web/src/app/theme-provider.tsx",
+      "apps/web/src/components/cart/cart-context.tsx",
+      "apps/web/src/components/cart/cart-drawer.tsx",
+      "apps/web/src/components/layout/site-footer.tsx",
+      "apps/web/src/components/layout/storefront-header.tsx",
+      "apps/web/src/lib/seo.ts"
+    ],
+    "apps/web/src/app/our-story/page.module.css": [],
+    "apps/web/src/app/our-story/page.tsx": [
+      "apps/web/src/app/our-story/page.module.css"
+    ],
+    "apps/web/src/app/page.module.css": [],
+    "apps/web/src/app/page.test.tsx": [
+      "apps/web/src/app/page.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/page.tsx": [
+      "apps/web/src/components/home/collection-grid.tsx",
+      "apps/web/src/components/home/heritage-section.tsx",
+      "apps/web/src/components/home/promise-section.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/policies/[slug]/page.tsx": [
+      "apps/web/src/components/policy/policy-layout.tsx",
+      "apps/web/src/lib/policies.ts"
+    ],
+    "apps/web/src/app/policies/policies.test.tsx": [
+      "apps/web/src/app/contact/page.tsx",
+      "apps/web/src/app/faq/page.tsx",
+      "apps/web/src/app/our-story/page.tsx",
+      "apps/web/src/app/policies/[slug]/page.tsx",
+      "apps/web/src/lib/policies.ts"
+    ],
+    "apps/web/src/app/products/[slug]/page.module.css": [],
+    "apps/web/src/app/products/[slug]/page.test.tsx": [
+      "apps/web/src/app/products/[slug]/page.tsx",
+      "apps/web/src/components/cart/cart-context.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/products/[slug]/page.tsx": [
+      "apps/web/src/app/products/[slug]/page.module.css",
+      "apps/web/src/components/product/product-detail-client.tsx",
+      "apps/web/src/components/product/product-gallery.tsx",
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/seo.ts"
+    ],
+    "apps/web/src/app/robots.ts": [],
+    "apps/web/src/app/search/page.module.css": [],
+    "apps/web/src/app/search/page.test.tsx": [
+      "apps/web/src/app/search/page.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/search/page.tsx": [
+      "apps/web/src/app/search/page.module.css",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/app/sitemap.ts": [
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/policies.ts"
+    ],
+    "apps/web/src/app/theme-provider.tsx": [],
+    "apps/web/src/components/cart/cart-context.test.tsx": [
+      "apps/web/src/components/cart/cart-context.tsx"
+    ],
+    "apps/web/src/components/cart/cart-context.tsx": [],
+    "apps/web/src/components/cart/cart-drawer.module.css": [],
+    "apps/web/src/components/cart/cart-drawer.test.tsx": [
+      "apps/web/src/components/cart/cart-context.tsx",
+      "apps/web/src/components/cart/cart-drawer.tsx"
+    ],
+    "apps/web/src/components/cart/cart-drawer.tsx": [
+      "apps/web/src/components/cart/cart-context.tsx",
+      "apps/web/src/components/cart/cart-drawer.module.css"
+    ],
+    "apps/web/src/components/catalog/filter-bar.module.css": [],
+    "apps/web/src/components/catalog/filter-bar.test.tsx": [
+      "apps/web/src/components/catalog/filter-bar.tsx"
+    ],
+    "apps/web/src/components/catalog/filter-bar.tsx": [
+      "apps/web/src/components/catalog/filter-bar.module.css",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/components/home/collection-grid.module.css": [],
+    "apps/web/src/components/home/collection-grid.tsx": [
+      "apps/web/src/components/home/collection-grid.module.css",
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/collection-copy.ts"
+    ],
+    "apps/web/src/components/home/heritage-section.module.css": [],
+    "apps/web/src/components/home/heritage-section.tsx": [
+      "apps/web/src/components/home/heritage-section.module.css"
+    ],
+    "apps/web/src/components/home/promise-section.module.css": [],
+    "apps/web/src/components/home/promise-section.tsx": [
+      "apps/web/src/components/home/promise-section.module.css"
+    ],
+    "apps/web/src/components/layout/site-footer.module.css": [],
+    "apps/web/src/components/layout/site-footer.test.tsx": [
+      "apps/web/src/components/layout/site-footer.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/components/layout/site-footer.tsx": [
+      "apps/web/src/components/layout/site-footer.module.css",
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/placeholders.ts"
+    ],
+    "apps/web/src/components/layout/storefront-header.tsx": [
+      "apps/web/src/components/cart/cart-context.tsx"
+    ],
+    "apps/web/src/components/policy/policy-layout.module.css": [],
+    "apps/web/src/components/policy/policy-layout.tsx": [
+      "apps/web/src/components/policy/policy-layout.module.css"
+    ],
+    "apps/web/src/components/product/product-detail-client.module.css": [],
+    "apps/web/src/components/product/product-detail-client.tsx": [
+      "apps/web/src/components/cart/cart-context.tsx",
+      "apps/web/src/components/product/product-detail-client.module.css",
+      "apps/web/src/components/product/sticky-mobile-cta.tsx",
+      "apps/web/src/components/product/variant-selector.tsx",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/components/product/product-gallery.module.css": [],
+    "apps/web/src/components/product/product-gallery.tsx": [
+      "apps/web/src/components/product/product-gallery.module.css"
+    ],
+    "apps/web/src/components/product/sticky-mobile-cta.module.css": [],
+    "apps/web/src/components/product/sticky-mobile-cta.tsx": [
+      "apps/web/src/components/product/sticky-mobile-cta.module.css"
+    ],
+    "apps/web/src/components/product/variant-selector.module.css": [],
+    "apps/web/src/components/product/variant-selector.tsx": [
+      "apps/web/src/components/product/variant-selector.module.css",
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/instrumentation-node.ts": [],
+    "apps/web/src/instrumentation.ts": [],
+    "apps/web/src/lib/catalog.test.ts": [
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/lib/catalog.ts": [],
+    "apps/web/src/lib/collection-copy.ts": [
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/lib/placeholders.ts": [],
+    "apps/web/src/lib/policies.test.ts": [
+      "apps/web/src/lib/policies.ts"
+    ],
+    "apps/web/src/lib/policies.ts": [],
+    "apps/web/src/lib/seo.test.ts": [
+      "apps/web/src/app/robots.ts",
+      "apps/web/src/app/sitemap.ts",
+      "apps/web/src/lib/catalog.ts",
+      "apps/web/src/lib/seo.ts"
+    ],
+    "apps/web/src/lib/seo.ts": [
+      "apps/web/src/lib/catalog.ts"
+    ],
+    "apps/web/src/security-headers.test.ts": [
+      "apps/web/src/security-headers.ts"
+    ],
+    "apps/web/src/security-headers.ts": [],
+    "apps/web/src/server/db.ts": [],
+    "apps/web/src/server/health.test.ts": [
+      "apps/web/src/server/health.ts"
+    ],
+    "apps/web/src/server/health.ts": [],
+    "apps/web/tsconfig.json": [],
+    "apps/web/vitest.config.ts": [],
+    "apps/web/vitest.setup.ts": [],
+    "docker-compose.yml": [],
+    "docs/README.md": [],
+    "docs/adr/0001-domain-registrar-dns.md": [],
+    "docs/adr/0002-email.md": [],
+    "docs/adr/0003-cloud-hosting.md": [],
+    "docs/adr/0004-tech-stack.md": [],
+    "docs/adr/0005-payments-currency.md": [],
+    "docs/adr/0006-catalog-variant-model.md": [],
+    "docs/adr/0007-pricing-modes-order-snapshot.md": [],
+    "docs/adr/0008-admin-rbac-maker-checker.md": [],
+    "docs/adr/0009-legal-policy-pages.md": [],
+    "docs/adr/0010-design-tooling.md": [],
+    "docs/adr/0011-design-direction-themes.md": [],
+    "docs/adr/0012-config-driven.md": [],
+    "docs/adr/0013-domain-core-architecture.md": [],
+    "docs/adr/0014-storefront-architecture.md": [],
+    "docs/adr/0015-migrations-and-browser-tests.md": [],
+    "docs/adr/README.md": [],
+    "docs/audit/2026-11-25-project-audit.md": [],
+    "docs/brand-content.md": [],
+    "docs/decisions.md": [],
+    "docs/design/imagery.md": [],
+    "docs/plans/2026-10-31-phase-1-design-system.md": [],
+    "docs/plans/2026-10-31-phase-2-foundations.md": [],
+    "docs/plans/2026-11-02-phase-3-domain-core.md": [],
+    "docs/plans/2026-11-12-phase-4-storefront.md": [],
+    "docs/plans/README.md": [],
+    "docs/runbook.md": [],
+    "docs/setup.md": [],
+    "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md": [],
+    "docs/superpowers/plans/2026-11-24-catalog-price-availability.md": [],
+    "docs/superpowers/plans/2026-11-24-seed-and-policy-safety.md": [],
+    "docs/superpowers/plans/2026-11-24-storefront-safe-states-and-docs.md": [],
+    "docs/superpowers/plans/2026-11-26-stabilisation.md": [],
+    "docs/superpowers/specs/2026-11-12-storefront-design.md": [],
+    "docs/superpowers/specs/2026-11-24-phase-4-review-followup-design.md": [],
+    "docs/superpowers/specs/2026-11-26-stabilisation-design.md": [],
+    "eslint.config.mjs": [],
+    "package.json": [],
+    "packages/config/README.md": [],
+    "packages/config/package.json": [],
+    "packages/config/src/index.ts": [],
+    "packages/config/src/load.test.ts": [
+      "packages/config/src/index.ts"
+    ],
+    "packages/config/src/load.ts": [
+      "packages/config/src/schema.ts"
+    ],
+    "packages/config/src/schema.ts": [],
+    "packages/config/tsconfig.json": [],
+    "packages/config/vitest.config.ts": [],
+    "packages/db/README.md": [],
+    "packages/db/drizzle.config.ts": [],
+    "packages/db/drizzle/0000_sudden_hemingway.sql": [],
+    "packages/db/drizzle/0001_wooden_invaders.sql": [],
+    "packages/db/drizzle/meta/0000_snapshot.json": [],
+    "packages/db/drizzle/meta/0001_snapshot.json": [],
+    "packages/db/drizzle/meta/_journal.json": [],
+    "packages/db/migrate-runner.test.ts": [],
+    "packages/db/migrate-runner.ts": [],
+    "packages/db/package.json": [],
+    "packages/db/seed-runner.test.ts": [],
+    "packages/db/seed-runner.ts": [
+      "packages/db/src/index.ts"
+    ],
+    "packages/db/src/index.ts": [
+      "packages/db/src/schema.ts"
+    ],
+    "packages/db/src/schema.test.ts": [
+      "packages/db/src/index.ts",
+      "packages/db/src/schema.ts"
+    ],
+    "packages/db/src/schema.ts": [],
+    "packages/db/src/seed.test.ts": [
+      "packages/db/src/seed.ts"
+    ],
+    "packages/db/src/seed.ts": [
+      "packages/db/src/schema.ts"
+    ],
+    "packages/db/tsconfig.json": [],
+    "packages/db/vitest.config.ts": [],
+    "packages/design-tokens/README.md": [],
+    "packages/design-tokens/package.json": [],
+    "packages/design-tokens/scripts/build.mjs": [
+      "packages/design-tokens/scripts/lib.mjs"
+    ],
+    "packages/design-tokens/scripts/lib.mjs": [],
+    "packages/design-tokens/scripts/new-theme.mjs": [
+      "packages/design-tokens/scripts/lib.mjs"
+    ],
+    "packages/design-tokens/scripts/validate.mjs": [
+      "packages/design-tokens/scripts/lib.mjs"
+    ],
+    "packages/design-tokens/tokens/base/base.json": [],
+    "packages/design-tokens/tokens/components/components.json": [],
+    "packages/design-tokens/tokens/themes/modern-bold/theme.json": [],
+    "packages/design-tokens/tokens/themes/modern-bold/tokens.json": [],
+    "packages/design-tokens/tokens/themes/quiet-luxury/theme.json": [],
+    "packages/design-tokens/tokens/themes/quiet-luxury/tokens.json": [],
+    "packages/design-tokens/tokens/themes/warm-craft/theme.json": [],
+    "packages/design-tokens/tokens/themes/warm-craft/tokens.json": [],
+    "packages/domain/README.md": [],
+    "packages/domain/package.json": [],
+    "packages/domain/src/composition.test.ts": [
+      "packages/domain/src/composition.ts"
+    ],
+    "packages/domain/src/composition.ts": [],
+    "packages/domain/src/index.ts": [],
+    "packages/domain/src/pricing.test.ts": [
+      "packages/domain/src/pricing.ts"
+    ],
+    "packages/domain/src/pricing.ts": [
+      "packages/domain/src/composition.ts"
+    ],
+    "packages/domain/src/reservation.test.ts": [
+      "packages/domain/src/reservation.ts"
+    ],
+    "packages/domain/src/reservation.ts": [],
+    "packages/domain/tsconfig.json": [],
+    "packages/domain/vitest.config.ts": [],
+    "packages/ui/README.md": [],
+    "packages/ui/package.json": [],
+    "packages/ui/src/client-boundaries.test.ts": [],
+    "packages/ui/src/components/Button/Button.module.css": [],
+    "packages/ui/src/components/Button/Button.test.tsx": [
+      "packages/ui/src/components/Button/Button.tsx",
+      "packages/ui/src/test/axe.ts"
+    ],
+    "packages/ui/src/components/Button/Button.tsx": [
+      "packages/ui/src/components/Button/Button.module.css"
+    ],
+    "packages/ui/src/components/Divider/Divider.module.css": [],
+    "packages/ui/src/components/Divider/Divider.test.tsx": [
+      "packages/ui/src/components/Divider/Divider.tsx",
+      "packages/ui/src/test/axe.ts",
+      "packages/ui/src/theme/ThemeProvider.tsx"
+    ],
+    "packages/ui/src/components/Divider/Divider.tsx": [
+      "packages/ui/src/components/Divider/Divider.module.css",
+      "packages/ui/src/components/Divider/Ghungroo.tsx",
+      "packages/ui/src/lib/ornament-scope.ts",
+      "packages/ui/src/theme/ThemeProvider.tsx"
+    ],
+    "packages/ui/src/components/Divider/Ghungroo.tsx": [],
+    "packages/ui/src/components/Hero/Hero.module.css": [],
+    "packages/ui/src/components/Hero/Hero.test.tsx": [
+      "packages/ui/src/components/Hero/Hero.tsx",
+      "packages/ui/src/test/axe.ts",
+      "packages/ui/src/theme/ThemeProvider.tsx"
+    ],
+    "packages/ui/src/components/Hero/Hero.tsx": [
+      "packages/ui/src/components/Button/Button.tsx",
+      "packages/ui/src/components/Hero/Hero.module.css",
+      "packages/ui/src/theme/ThemeProvider.tsx",
+      "packages/ui/src/types.ts"
+    ],
+    "packages/ui/src/components/Price/Price.module.css": [],
+    "packages/ui/src/components/Price/Price.test.tsx": [
+      "packages/ui/src/components/Price/Price.tsx"
+    ],
+    "packages/ui/src/components/Price/Price.tsx": [
+      "packages/ui/src/components/Price/Price.module.css",
+      "packages/ui/src/lib/format.ts"
+    ],
+    "packages/ui/src/components/ProductCard/ProductCard.module.css": [],
+    "packages/ui/src/components/ProductCard/ProductCard.test.tsx": [
+      "packages/ui/src/components/ProductCard/ProductCard.tsx",
+      "packages/ui/src/test/axe.ts"
+    ],
+    "packages/ui/src/components/ProductCard/ProductCard.tsx": [
+      "packages/ui/src/components/Price/Price.tsx",
+      "packages/ui/src/components/ProductCard/ProductCard.module.css",
+      "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
+      "packages/ui/src/lib/format.ts",
+      "packages/ui/src/types.ts"
+    ],
+    "packages/ui/src/components/ProductHeader/ProductHeader.module.css": [],
+    "packages/ui/src/components/ProductHeader/ProductHeader.test.tsx": [
+      "packages/ui/src/components/ProductHeader/ProductHeader.tsx",
+      "packages/ui/src/test/axe.ts"
+    ],
+    "packages/ui/src/components/ProductHeader/ProductHeader.tsx": [
+      "packages/ui/src/components/Button/Button.tsx",
+      "packages/ui/src/components/Price/Price.tsx",
+      "packages/ui/src/components/ProductHeader/ProductHeader.module.css",
+      "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
+      "packages/ui/src/lib/format.ts",
+      "packages/ui/src/types.ts"
+    ],
+    "packages/ui/src/components/PurityBadge/PurityBadge.module.css": [],
+    "packages/ui/src/components/PurityBadge/PurityBadge.test.tsx": [
+      "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
+      "packages/ui/src/test/axe.ts",
+      "packages/ui/src/theme/ThemeProvider.tsx"
+    ],
+    "packages/ui/src/components/PurityBadge/PurityBadge.tsx": [
+      "packages/ui/src/components/PurityBadge/PurityBadge.module.css",
+      "packages/ui/src/theme/ThemeProvider.tsx"
+    ],
+    "packages/ui/src/components/SiteHeader/SiteHeader.module.css": [],
+    "packages/ui/src/components/SiteHeader/SiteHeader.test.tsx": [
+      "packages/ui/src/components/SiteHeader/SiteHeader.tsx",
+      "packages/ui/src/test/axe.ts"
+    ],
+    "packages/ui/src/components/SiteHeader/SiteHeader.tsx": [
+      "packages/ui/src/components/SiteHeader/SiteHeader.module.css"
+    ],
+    "packages/ui/src/css-modules.d.ts": [],
+    "packages/ui/src/index.ts": [],
+    "packages/ui/src/lib/format.test.ts": [
+      "packages/ui/src/lib/format.ts"
+    ],
+    "packages/ui/src/lib/format.ts": [],
+    "packages/ui/src/lib/ornament-scope.test.ts": [
+      "packages/ui/src/lib/ornament-scope.ts"
+    ],
+    "packages/ui/src/lib/ornament-scope.ts": [],
+    "packages/ui/src/smoke.test.tsx": [
+      "packages/ui/src/test/axe.ts"
+    ],
+    "packages/ui/src/styles/fonts.ts": [],
+    "packages/ui/src/styles/global.css": [],
+    "packages/ui/src/test/axe.ts": [],
+    "packages/ui/src/test/setup.ts": [],
+    "packages/ui/src/theme/ThemeProvider.test.tsx": [
+      "packages/ui/src/theme/ThemeProvider.tsx"
+    ],
+    "packages/ui/src/theme/ThemeProvider.tsx": [],
+    "packages/ui/src/types.ts": [],
+    "packages/ui/tsconfig.json": [],
+    "packages/ui/vitest.config.ts": [],
+    "pnpm-workspace.yaml": [],
+    "scripts/check-css-vars.mjs": [],
+    "scripts/check-css-vars.test.mjs": [
+      "scripts/check-css-vars.mjs"
+    ],
+    "scripts/check-hardcoded.mjs": [],
+    "scripts/check-hardcoded.test.mjs": [
+      "scripts/check-hardcoded.mjs"
+    ],
+    "scripts/check-no-hex.mjs": [],
+    "scripts/check-no-hex.test.mjs": [
+      "scripts/check-no-hex.mjs"
+    ],
+    "scripts/smoke.mjs": [],
+    "scripts/smoke.test.mjs": [],
+    "scripts/workflows.test.mjs": [],
+    "tsconfig.base.json": [],
+    "turbo.json": []
+  },
+  "contentDigest": "abb327a8681399bcb279a502d685e6b14c9261ecd258f44dad9a8abfe4d78bb2"
 }

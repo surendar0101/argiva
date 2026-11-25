@@ -18,10 +18,9 @@
     "With every code change, update the docs and the Understand-Anything graph in .ua/ (owner, 2026-11-26)."
   ],
   "currentPhase": "phase-4-storefront",
-  "currentStep": "App running locally on http://localhost:3100 (temporary database, container argiva-demo-db). Codebase map update waits: the incremental tool refuses uncommitted changes. Stabilisation still uncommitted.",
+  "currentStep": "Owner committed and pushed stabilisation (3eb98dd). Codebase map updated to that commit (264 files, 398 nodes, 890 edges), uncommitted. App still running on http://localhost:3100.",
   "awaitingOwner": [
-    "Codebase map: commit first, then incremental update (recommended, cheaper), or a full rebuild now on the uncommitted code (about 7 agent runs).",
-    "Commit and push the stabilisation work on a branch (the agent never commits).",
+    "Commit and push the updated .ua/ and sdd/ files.",
     "Before merging to main: grant the deployer read access to both database secrets (docs/setup.md section 3.8).",
     "Open a pull request, merge when CI passes, then check staging."
   ],
@@ -222,7 +221,7 @@
     "[done] Final review: 1 critical (seed failed on fresh checkout) and 1 important (wrong price message) fixed; 4 minors deferred",
     "[todo] After staging is verified: brainstorm the data model and storefront function work",
     "[done] Started the app locally on port 3100 with a temporary database",
-    "[todo] Update .ua/ with /understand after the owner's choice"
+    "[done] 2026-11-26: targeted .ua/ map update for 3eb98dd (49 changed files re-read by 2 agents; layers and tour kept and patched)"
   ],
   "phases": [
     {

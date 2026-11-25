@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "gitCommitHash": "8f5caeedc3720ba9d0a03c87baadd76cb7446823",
-  "generatedAt": "2026-11-25T18:37:14.425Z",
+  "gitCommitHash": "3eb98ddb8cafcfcaebd7f5261de033c70fcb42d9",
+  "generatedAt": "2026-11-25T20:13:16.572Z",
   "files": {
     ".dockerignore": {
       "filePath": ".dockerignore",
@@ -25,12 +25,12 @@
     },
     ".github/workflows/ci.yml": {
       "filePath": ".github/workflows/ci.yml",
-      "contentHash": "741b088b8b69acfd5b963038459d46c4c708a34fb237f420196fe222fd4cb6d5",
+      "contentHash": "3c77b5406ee3d54307985fe5a4a19c60bca45308cad6db2a5f3e400f2bc49a98",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 40,
+      "totalLines": 87,
       "hasStructuralAnalysis": false
     },
     ".github/workflows/deploy-production.yml": {
@@ -55,12 +55,12 @@
     },
     ".github/workflows/deploy.yml": {
       "filePath": ".github/workflows/deploy.yml",
-      "contentHash": "70674f4b38763c20471ceee1feb45377a683925156227269e9f585d711ee5ea0",
+      "contentHash": "ca8f9094e07c7748ed04a3a0d454861db1a4753872a9bea066ccb3524f8703d5",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 56,
+      "totalLines": 75,
       "hasStructuralAnalysis": false
     },
     ".github/workflows/design-tokens.yml": {
@@ -71,16 +71,6 @@
       "imports": [],
       "exports": [],
       "totalLines": 34,
-      "hasStructuralAnalysis": false
-    },
-    ".ua/config.json": {
-      "filePath": ".ua/config.json",
-      "contentHash": "4b66f98f8a815dfeb2d3a29eeb73418e07c40ed020a1498c07e908b2254f0c8c",
-      "functions": [],
-      "classes": [],
-      "imports": [],
-      "exports": [],
-      "totalLines": 2,
       "hasStructuralAnalysis": false
     },
     "DESIGN.md": {
@@ -115,12 +105,12 @@
     },
     "README.md": {
       "filePath": "README.md",
-      "contentHash": "6fccc78daecc2af30ef0873fcebc55a56701590add914c931913e75cc470de00",
+      "contentHash": "9e8dd72b21a9985b341bd3d052a85630f7abb86cf7109ba4940ca7f52a9b8823",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 133,
+      "totalLines": 149,
       "hasStructuralAnalysis": false
     },
     "apps/ui-preview/README.md": {
@@ -231,7 +221,7 @@
     },
     "apps/ui-preview/src/fixtures.ts": {
       "filePath": "apps/ui-preview/src/fixtures.ts",
-      "contentHash": "67ac40d1660107bda9a857248b5a2ecbdb242b5dc42f82e5815997c4ba24e07e",
+      "contentHash": "8093f482d1018822d63da51c486bf9db038a798ef4326d6d5b557e3bd7ec346a",
       "functions": [
         {
           "name": "img",
@@ -330,13 +320,396 @@
     },
     "apps/web/README.md": {
       "filePath": "apps/web/README.md",
-      "contentHash": "8faa89d07fae5c8f05045fffc62edfcb22648f4a7130a7819fe530b390d50b72",
+      "contentHash": "550f6342b08814025647fc584bb79708562e32d66fae36d2725792d0d8b469bd",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 130,
+      "totalLines": 141,
       "hasStructuralAnalysis": false
+    },
+    "apps/web/e2e/accessibility.spec.ts": {
+      "filePath": "apps/web/e2e/accessibility.spec.ts",
+      "contentHash": "c6c9568f838f5595a4b0278688e5da908952fc1685d3ff4b4fb9fcabb503bf46",
+      "functions": [
+        {
+          "name": "expectNoSeriousViolations",
+          "params": [
+            "page"
+          ],
+          "exported": false,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@axe-core/playwright",
+          "specifiers": [
+            "AxeBuilder"
+          ]
+        },
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "expect",
+            "test",
+            "Page"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/cart.spec.ts": {
+      "filePath": "apps/web/e2e/cart.spec.ts",
+      "contentHash": "a7dc05904e0743f90143504a0a56840d5df84a22f28bd5443e0a12b0e7f7babc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "expect",
+            "test"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/catalog.spec.ts": {
+      "filePath": "apps/web/e2e/catalog.spec.ts",
+      "contentHash": "aa35a513b381717daa82ecbe1cce3e38c134fba6582412e5aa045a19adf44bbb",
+      "functions": [
+        {
+          "name": "product",
+          "params": [
+            "page",
+            "name"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "openChains",
+          "params": [
+            "page"
+          ],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "expect",
+            "test",
+            "Page"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/database-guard.test.ts": {
+      "filePath": "apps/web/e2e/database-guard.test.ts",
+      "contentHash": "8a2851576b2904902c412edd65b8a3f7d9c15319e73aa40c1e58f70eb22e723d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "test"
+          ]
+        },
+        {
+          "source": "./database-guard",
+          "specifiers": [
+            "assertTestDatabaseUrl"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/database-guard.ts": {
+      "filePath": "apps/web/e2e/database-guard.ts",
+      "contentHash": "a04f268b0ac6a3cbe3973828013a1cc8a4a13cbea669e7f9486d1fb645360d9b",
+      "functions": [
+        {
+          "name": "assertTestDatabaseUrl",
+          "params": [
+            "url"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 21
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "assertTestDatabaseUrl"
+      ],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/databases.d.mts": {
+      "filePath": "apps/web/e2e/databases.d.mts",
+      "contentHash": "1e3f843a0368fe67e0caea8e7e8e355bcbf2592f78f53b5b4be27c579dd6c4b8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": false
+    },
+    "apps/web/e2e/databases.mjs": {
+      "filePath": "apps/web/e2e/databases.mjs",
+      "contentHash": "8fe8a3850076ae830d0b081a48e6b2bad4ad87d632aa8ef849707b06cb435a2c",
+      "functions": [
+        {
+          "name": "databaseUrl",
+          "params": [
+            "name"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "POSTGRES_URL",
+        "FULL_DATABASE",
+        "EMPTY_DATABASE",
+        "databaseUrl"
+      ],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/empty-shop.spec.ts": {
+      "filePath": "apps/web/e2e/empty-shop.spec.ts",
+      "contentHash": "b10c772c3de12815f9df95beca126d87fee6e529d8f960915fc5ff4292bf4549",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "expect",
+            "test"
+          ]
+        },
+        {
+          "source": "./page-health",
+          "specifiers": [
+            "expectHealthyPage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/page-health.ts": {
+      "filePath": "apps/web/e2e/page-health.ts",
+      "contentHash": "791078ada7811bc80b10c228d1a786e5dff3f317d92bc544c413c8a7b506aac5",
+      "functions": [
+        {
+          "name": "watchForFaults",
+          "params": [
+            "page"
+          ],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "expectHealthyPage",
+          "params": [
+            "page",
+            "path"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "expect",
+            "Page"
+          ]
+        }
+      ],
+      "exports": [
+        "watchForFaults",
+        "expectHealthyPage"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/pages.spec.ts": {
+      "filePath": "apps/web/e2e/pages.spec.ts",
+      "contentHash": "bfb85f6adf24623cb0a287fda4e07fbce2e0e3dc38ea0d09b135de4f12cc2e40",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "expect",
+            "test"
+          ]
+        },
+        {
+          "source": "./page-health",
+          "specifiers": [
+            "expectHealthyPage"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/prepare-database.ts": {
+      "filePath": "apps/web/e2e/prepare-database.ts",
+      "contentHash": "59d728ad07e019c0457ab6e2da33e3d625d8d768cda85ffab5e4ff8df74ceeaa",
+      "functions": [
+        {
+          "name": "recreate",
+          "params": [
+            "name"
+          ],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "prepare",
+          "params": [
+            "name"
+          ],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "addTestProducts",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 32
+        },
+        {
+          "name": "copyStaticFiles",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "cpSync",
+            "existsSync"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        },
+        {
+          "source": "@argiva/db",
+          "specifiers": [
+            "categories",
+            "getDb",
+            "policies",
+            "products",
+            "productVariants",
+            "seedDatabase"
+          ]
+        },
+        {
+          "source": "@argiva/db/migrate",
+          "specifiers": [
+            "runMigrations"
+          ]
+        },
+        {
+          "source": "drizzle-orm",
+          "specifiers": [
+            "eq"
+          ]
+        },
+        {
+          "source": "postgres",
+          "specifiers": [
+            "postgres"
+          ]
+        },
+        {
+          "source": "./database-guard",
+          "specifiers": [
+            "assertTestDatabaseUrl"
+          ]
+        },
+        {
+          "source": "./databases.mjs",
+          "specifiers": [
+            "databaseUrl",
+            "EMPTY_DATABASE",
+            "FULL_DATABASE",
+            "POSTGRES_URL"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/e2e/start-server.mjs": {
+      "filePath": "apps/web/e2e/start-server.mjs",
+      "contentHash": "eb95d778252702eae6d06a4c8d2e4961fa8545ee94af724757074594c85043d4",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        },
+        {
+          "source": "./databases.mjs",
+          "specifiers": [
+            "databaseUrl"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
     },
     "apps/web/next.config.ts": {
       "filePath": "apps/web/next.config.ts",
@@ -369,13 +742,48 @@
     },
     "apps/web/package.json": {
       "filePath": "apps/web/package.json",
-      "contentHash": "b681975c76b363b1bdf1609f85673c25029c9da074224de0a31840daf11a8c09",
+      "contentHash": "9e5b944ddae4e72eefc874ba63f613fe6f68b7a614a755294f2ff8e7c5ffcedf",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 38,
+      "totalLines": 42,
       "hasStructuralAnalysis": false
+    },
+    "apps/web/playwright.config.ts": {
+      "filePath": "apps/web/playwright.config.ts",
+      "contentHash": "2a367c6d3b5bf4a98f16196a0254bb46d8eb222384443482f9064ca65c2c1af7",
+      "functions": [
+        {
+          "name": "server",
+          "params": [
+            "url",
+            "database"
+          ],
+          "exported": false,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@playwright/test",
+          "specifiers": [
+            "defineConfig",
+            "devices"
+          ]
+        },
+        {
+          "source": "./e2e/databases.mjs",
+          "specifiers": [
+            "EMPTY_DATABASE",
+            "FULL_DATABASE"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
     },
     "apps/web/public/.gitkeep": {
       "filePath": "apps/web/public/.gitkeep",
@@ -457,17 +865,17 @@
     },
     "apps/web/src/app/cart/page.module.css": {
       "filePath": "apps/web/src/app/cart/page.module.css",
-      "contentHash": "c5856b182920bd84b5da0a7decb823ad27d61a18e6bc6ad5e05837544acb975f",
+      "contentHash": "72a40b129f50177f4d4aee2ed8db8cec41119ce48903d1b7550508222c8b81be",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 231,
+      "totalLines": 232,
       "hasStructuralAnalysis": false
     },
     "apps/web/src/app/cart/page.test.tsx": {
       "filePath": "apps/web/src/app/cart/page.test.tsx",
-      "contentHash": "5ef908fe5dcd76a356c3ec1c3bfc6172f51cc006309afb0d1f28b9965b651bc5",
+      "contentHash": "a3033fd3f80b81925eace4d9f247d2114bacde02e66f9fc6466f40349e873352",
       "functions": [
         {
           "name": "renderCart",
@@ -519,18 +927,18 @@
         }
       ],
       "exports": [],
-      "totalLines": 64,
+      "totalLines": 71,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/cart/page.tsx": {
       "filePath": "apps/web/src/app/cart/page.tsx",
-      "contentHash": "0b456ed0e565e161e437b3c5e0b4c80994ca8c8ee7fcb92b7d002a66bb9bb6f0",
+      "contentHash": "3d661837791f627ccfb4cd5dc9500f950e4357d8b044153eb087505439f81273",
       "functions": [
         {
           "name": "CartPage",
           "params": [],
           "exported": true,
-          "lineCount": 101
+          "lineCount": 99
         }
       ],
       "classes": [],
@@ -564,7 +972,7 @@
       "exports": [
         "CartPage"
       ],
-      "totalLines": 109,
+      "totalLines": 107,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/collections/[slug]/collection-results.module.css": {
@@ -579,7 +987,7 @@
     },
     "apps/web/src/app/collections/[slug]/collection-results.tsx": {
       "filePath": "apps/web/src/app/collections/[slug]/collection-results.tsx",
-      "contentHash": "2069adaf677cbb225b4a210b5f1c897b427c50d225ce506ce68571d0e750e0f0",
+      "contentHash": "4edd61675eed29b6a0e05bc1424af142c73d6b269b4fb4fd91a342db7169495d",
       "functions": [
         {
           "name": "getFinishLabel",
@@ -657,7 +1065,7 @@
     },
     "apps/web/src/app/collections/[slug]/page.test.tsx": {
       "filePath": "apps/web/src/app/collections/[slug]/page.test.tsx",
-      "contentHash": "818ef3e65c6fb061f24b2c15703f0a3d6110825e21c53172d1a26ddac0342539",
+      "contentHash": "6d98fb5abe01a0a7b77b7235f0596fe3194f6f6e9cc941a76bfc4d5730ffdb9e",
       "functions": [],
       "classes": [],
       "imports": [
@@ -695,7 +1103,7 @@
         }
       ],
       "exports": [],
-      "totalLines": 95,
+      "totalLines": 116,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/collections/[slug]/page.tsx": {
@@ -864,7 +1272,7 @@
     },
     "apps/web/src/app/contact/page.tsx": {
       "filePath": "apps/web/src/app/contact/page.tsx",
-      "contentHash": "c876b405d04e128d4bad6e2b9ca0836fa31a99091b7b9ea4c42139467ec8296b",
+      "contentHash": "bde583ead206eeced4fdeab41fda6f1657c049eff2fdf51bda99bba839aaf08d",
       "functions": [
         {
           "name": "ContactPage",
@@ -888,6 +1296,12 @@
           ]
         },
         {
+          "source": "../../lib/placeholders",
+          "specifiers": [
+            "DETAILS_COMING_SOON"
+          ]
+        },
+        {
           "source": "./page.module.css",
           "specifiers": [
             "styles"
@@ -897,7 +1311,7 @@
       "exports": [
         "ContactPage"
       ],
-      "totalLines": 76,
+      "totalLines": 79,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/faq/page.module.css": {
@@ -1102,7 +1516,7 @@
     },
     "apps/web/src/app/page.test.tsx": {
       "filePath": "apps/web/src/app/page.test.tsx",
-      "contentHash": "8267ec2ec7540196c6b366d18e695cb0a2958303b277d299a4e578663190c576",
+      "contentHash": "5d4795b7221901524328cd8e2014312f912f8b72862cb05490451647f52b7c09",
       "functions": [],
       "classes": [],
       "imports": [
@@ -1139,18 +1553,18 @@
         }
       ],
       "exports": [],
-      "totalLines": 70,
+      "totalLines": 75,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/page.tsx": {
       "filePath": "apps/web/src/app/page.tsx",
-      "contentHash": "af0dbefa0ee2d67c4e7fd5317a91f644047b96c539bf9839c7d896036d894596",
+      "contentHash": "db6719b19467e9002f20a50278896cc5ba0aef5cc807b4e79ee14463e1b28b11",
       "functions": [
         {
           "name": "HomePage",
           "params": [],
           "exported": true,
-          "lineCount": 22
+          "lineCount": 16
         }
       ],
       "classes": [],
@@ -1189,7 +1603,7 @@
       "exports": [
         "HomePage"
       ],
-      "totalLines": 29,
+      "totalLines": 23,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/policies/[slug]/page.tsx": {
@@ -1249,7 +1663,7 @@
     },
     "apps/web/src/app/policies/policies.test.tsx": {
       "filePath": "apps/web/src/app/policies/policies.test.tsx",
-      "contentHash": "76711596e23e2a3f52d89684d090531bf0c0bd09477b8a834327c01d3269b467",
+      "contentHash": "3fe2fbdfa42ab9b84fbe9c9274b9481748db06447dad1c1f6455ceab343f0194",
       "functions": [],
       "classes": [],
       "imports": [
@@ -1309,7 +1723,7 @@
         }
       ],
       "exports": [],
-      "totalLines": 77,
+      "totalLines": 84,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/products/[slug]/page.module.css": {
@@ -1324,7 +1738,7 @@
     },
     "apps/web/src/app/products/[slug]/page.test.tsx": {
       "filePath": "apps/web/src/app/products/[slug]/page.test.tsx",
-      "contentHash": "6c45183d409244211d276a760a2cc373cc3ba95f195992cf866652b519b75762",
+      "contentHash": "9904631c169633f64ddf47f2c4418871aa7457b0d35db816789c2a7e48a689f4",
       "functions": [
         {
           "name": "CartCount",
@@ -1405,7 +1819,7 @@
         }
       ],
       "exports": [],
-      "totalLines": 211,
+      "totalLines": 225,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/products/[slug]/page.tsx": {
@@ -1543,7 +1957,7 @@
     },
     "apps/web/src/app/search/page.test.tsx": {
       "filePath": "apps/web/src/app/search/page.test.tsx",
-      "contentHash": "a633219e48cf62685eba24d4f12f6f1ed2be53ffa261fc995c2379a10f1330ae",
+      "contentHash": "bb90c1c4d550bc87ad30c27189f7f21e65ce77f1378fe88010f8b8bb63b777f9",
       "functions": [
         {
           "name": "renderSearch",
@@ -1594,7 +2008,7 @@
         }
       ],
       "exports": [],
-      "totalLines": 61,
+      "totalLines": 69,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/app/search/page.tsx": {
@@ -1726,7 +2140,7 @@
     },
     "apps/web/src/components/cart/cart-context.test.tsx": {
       "filePath": "apps/web/src/components/cart/cart-context.test.tsx",
-      "contentHash": "f8ffb396c7da05fe3029bf81c7bebc2849b266ffc3f5b01da7e38258f3069372",
+      "contentHash": "e25c2bda44a443b2331438ff526f4f9bd19b6cd9cffcbfa53b803cfffbf4f6d3",
       "functions": [],
       "classes": [],
       "imports": [
@@ -1757,12 +2171,12 @@
         }
       ],
       "exports": [],
-      "totalLines": 267,
+      "totalLines": 292,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/cart/cart-context.tsx": {
       "filePath": "apps/web/src/components/cart/cart-context.tsx",
-      "contentHash": "bf349af0367bccc1d1e95b9f55abfc20884d180285f6751b3442769851e38f0d",
+      "contentHash": "281a14f37d8de0c1bb87bf4e7f965d3fd2763d3e2dbd2d67f48b8218fc548225",
       "functions": [
         {
           "name": "isCartItem",
@@ -1770,7 +2184,7 @@
             "value"
           ],
           "exported": false,
-          "lineCount": 24
+          "lineCount": 25
         },
         {
           "name": "parseCart",
@@ -1869,22 +2283,22 @@
         "CartProvider",
         "useCart"
       ],
-      "totalLines": 203,
+      "totalLines": 204,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/cart/cart-drawer.module.css": {
       "filePath": "apps/web/src/components/cart/cart-drawer.module.css",
-      "contentHash": "d26e7a94502dd103e70955c1a1916f05fba79daeab8b207d3f30c439545e8ebf",
+      "contentHash": "2b7520430848e14fe9d2308ffbebc48c93e9bca669066c7bf4b42f29f6bdea69",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 218,
+      "totalLines": 223,
       "hasStructuralAnalysis": false
     },
     "apps/web/src/components/cart/cart-drawer.test.tsx": {
       "filePath": "apps/web/src/components/cart/cart-drawer.test.tsx",
-      "contentHash": "ad32b1c3fd39a50f0908acc7bf4abeec633ff1814a580e461b29722626cab3f0",
+      "contentHash": "5ad51771a25add9e36defab6b88dcd5a07d10e6c09b5b0cd46c9bc084c86f355",
       "functions": [
         {
           "name": "CartDrawerHarness",
@@ -1899,6 +2313,7 @@
           "source": "@testing-library/react",
           "specifiers": [
             "cleanup",
+            "fireEvent",
             "render",
             "screen"
           ]
@@ -1916,7 +2331,8 @@
             "beforeEach",
             "describe",
             "expect",
-            "test"
+            "test",
+            "vi"
           ]
         },
         {
@@ -1934,18 +2350,18 @@
         }
       ],
       "exports": [],
-      "totalLines": 52,
+      "totalLines": 119,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/cart/cart-drawer.tsx": {
       "filePath": "apps/web/src/components/cart/cart-drawer.tsx",
-      "contentHash": "7a1378c573db35e95875fc521321353db2c67844e5777dcb7a2162e8f5debce0",
+      "contentHash": "17232251f2b14a9a39245297fabe9414aa1e59373358cbcbbed4839e9b1d5006",
       "functions": [
         {
           "name": "CartDrawer",
           "params": [],
           "exported": true,
-          "lineCount": 97
+          "lineCount": 132
         }
       ],
       "classes": [],
@@ -1969,6 +2385,14 @@
           ]
         },
         {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useId",
+            "useRef"
+          ]
+        },
+        {
           "source": "./cart-context",
           "specifiers": [
             "useCart"
@@ -1984,7 +2408,7 @@
       "exports": [
         "CartDrawer"
       ],
-      "totalLines": 106,
+      "totalLines": 142,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/catalog/filter-bar.module.css": {
@@ -2213,7 +2637,7 @@
     },
     "apps/web/src/components/layout/site-footer.test.tsx": {
       "filePath": "apps/web/src/components/layout/site-footer.test.tsx",
-      "contentHash": "ca39859a233ca2d1dbf4ec4b513b6a627395a6cdbf472eb0e8deaeeffb465c84",
+      "contentHash": "754b43c157c79a7fda4a9574b1ba392db2793830ec607dbbc44a6287e22ec168",
       "functions": [],
       "classes": [],
       "imports": [
@@ -2250,18 +2674,18 @@
         }
       ],
       "exports": [],
-      "totalLines": 73,
+      "totalLines": 74,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/layout/site-footer.tsx": {
       "filePath": "apps/web/src/components/layout/site-footer.tsx",
-      "contentHash": "9f1e60f57f43c9b812039c550192c10c329bb628fe19bb27eeaa35243c9bc97a",
+      "contentHash": "cb67c89598e9d08d995d2940771fd0d5fc864e0fc8275b44394a2f71a3831621",
       "functions": [
         {
           "name": "SiteFooter",
           "params": [],
           "exported": true,
-          "lineCount": 111
+          "lineCount": 109
         }
       ],
       "classes": [],
@@ -2285,6 +2709,12 @@
           ]
         },
         {
+          "source": "../../lib/placeholders",
+          "specifiers": [
+            "DETAILS_COMING_SOON"
+          ]
+        },
+        {
           "source": "./site-footer.module.css",
           "specifiers": [
             "styles"
@@ -2294,7 +2724,7 @@
       "exports": [
         "SiteFooter"
       ],
-      "totalLines": 128,
+      "totalLines": 127,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/layout/storefront-header.tsx": {
@@ -2398,7 +2828,7 @@
     },
     "apps/web/src/components/product/product-detail-client.tsx": {
       "filePath": "apps/web/src/components/product/product-detail-client.tsx",
-      "contentHash": "634e08a6142ed4b387554e155eefc8a9c95324be38fbda174a6c91b015fd8707",
+      "contentHash": "4ddab7e16ff022bce20d648d671d0a14b22395610bc3e104343481238ddaba1b",
       "functions": [
         {
           "name": "ProductDetailClient",
@@ -2406,7 +2836,7 @@
             "{ product }"
           ],
           "exported": true,
-          "lineCount": 83
+          "lineCount": 85
         }
       ],
       "classes": [],
@@ -2465,7 +2895,7 @@
       "exports": [
         "ProductDetailClient"
       ],
-      "totalLines": 95,
+      "totalLines": 97,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/components/product/product-gallery.module.css": {
@@ -2667,7 +3097,7 @@
     },
     "apps/web/src/lib/catalog.test.ts": {
       "filePath": "apps/web/src/lib/catalog.test.ts",
-      "contentHash": "d6bb4a941684523460ef2d325ad1b4c3b434c5bf0db5a1bb71bc2ee8cc55c794",
+      "contentHash": "845112eb6275b0a6b7dc43a79d68bb41872fe1f3f8ff516f15d9b53572ac6d01",
       "functions": [
         {
           "name": "matches",
@@ -2705,13 +3135,23 @@
         }
       ],
       "exports": [],
-      "totalLines": 583,
+      "totalLines": 610,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/lib/catalog.ts": {
       "filePath": "apps/web/src/lib/catalog.ts",
-      "contentHash": "989ec2955e80c3f880813851838f6c76f2d1833eb40a346d4d2eabfd85b26b6b",
+      "contentHash": "00ea5306d6fc9d7c29cdee2afcc0309bf99b1c6e4732b1881da588280537a64e",
       "functions": [
+        {
+          "name": "priceOrNull",
+          "params": [
+            "variant",
+            "currentRatePaise"
+          ],
+          "returnType": "number | null",
+          "exported": false,
+          "lineCount": 26
+        },
         {
           "name": "toCatalogProducts",
           "params": [
@@ -2721,7 +3161,7 @@
           ],
           "returnType": "CatalogProduct[]",
           "exported": false,
-          "lineCount": 48
+          "lineCount": 41
         },
         {
           "name": "makeSearchPattern",
@@ -2755,7 +3195,7 @@
           ],
           "returnType": "Promise<ProductDetail | null>",
           "exported": true,
-          "lineCount": 105
+          "lineCount": 92
         },
         {
           "name": "getPublishedProductSlugs",
@@ -2823,7 +3263,7 @@
         "getProductsByCategory",
         "getSearchProducts"
       ],
-      "totalLines": 370,
+      "totalLines": 378,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/lib/collection-copy.ts": {
@@ -2853,6 +3293,18 @@
         "getCollectionDescription"
       ],
       "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "apps/web/src/lib/placeholders.ts": {
+      "filePath": "apps/web/src/lib/placeholders.ts",
+      "contentHash": "14faefc186e59939bb9dbb3a79b8855825bb3e8d7bc7cedc0be6b4a665eb2397",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "DETAILS_COMING_SOON"
+      ],
+      "totalLines": 3,
       "hasStructuralAnalysis": true
     },
     "apps/web/src/lib/policies.test.ts": {
@@ -3252,17 +3704,17 @@
     },
     "apps/web/tsconfig.json": {
       "filePath": "apps/web/tsconfig.json",
-      "contentHash": "2afa38741be4ae01c6b4046fed152dfb5eaa72a09ae6405f10b1915efbb9d60e",
+      "contentHash": "844769a0dda834ace161a8a90d945d63630d00f572062bb92972e3f1f5dd64eb",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 27,
+      "totalLines": 29,
       "hasStructuralAnalysis": false
     },
     "apps/web/vitest.config.ts": {
       "filePath": "apps/web/vitest.config.ts",
-      "contentHash": "d96433881674ca5b0cfef57bb1ac06abdc0872fac04aff51b6b013702a6a4d88",
+      "contentHash": "c8aaf7c98c6224a81d309a154f0bb31520c2662b7484521339d5526b67265681",
       "functions": [],
       "classes": [],
       "imports": [
@@ -3285,7 +3737,7 @@
     },
     "apps/web/vitest.setup.ts": {
       "filePath": "apps/web/vitest.setup.ts",
-      "contentHash": "e38ba3cf65e7f1969794227eee5b647f797c01355ed43c06f828cf07c6850bb7",
+      "contentHash": "bea7f3bd36d0231007eb322aba4036d898119f8cb8bfd032db51d62f4ef9c118",
       "functions": [],
       "classes": [],
       "imports": [
@@ -3295,7 +3747,7 @@
         }
       ],
       "exports": [],
-      "totalLines": 13,
+      "totalLines": 24,
       "hasStructuralAnalysis": true
     },
     "docker-compose.yml": {
@@ -3310,12 +3762,12 @@
     },
     "docs/README.md": {
       "filePath": "docs/README.md",
-      "contentHash": "fc06b805599409c9584cf94a5eb90a2f4835d6acbd848c037cdaebf858fbab00",
+      "contentHash": "b669996998a211ba1af8990a404bcee7aac6f3a8ae5e1e544eac3d64caa40c0d",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 78,
+      "totalLines": 81,
       "hasStructuralAnalysis": false
     },
     "docs/adr/0001-domain-registrar-dns.md": {
@@ -3450,12 +3902,22 @@
     },
     "docs/adr/0014-storefront-architecture.md": {
       "filePath": "docs/adr/0014-storefront-architecture.md",
-      "contentHash": "a39ea548819337f3510e7ae5bbe5714e0fdb4a816c965e3cecbecaad4d03d96e",
+      "contentHash": "752ad496eb8992ac898fc4176733f82e00d24c70e131c9a38bcb9d2014845a31",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
       "totalLines": 37,
+      "hasStructuralAnalysis": false
+    },
+    "docs/adr/0015-migrations-and-browser-tests.md": {
+      "filePath": "docs/adr/0015-migrations-and-browser-tests.md",
+      "contentHash": "8293fe6b02aae00c93654bbbe9993c8944bc87057bf3d796746bb9ac0904cefd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
       "hasStructuralAnalysis": false
     },
     "docs/adr/README.md": {
@@ -3470,12 +3932,12 @@
     },
     "docs/audit/2026-11-25-project-audit.md": {
       "filePath": "docs/audit/2026-11-25-project-audit.md",
-      "contentHash": "fbab2a077e03b37aae89c7a6c37514de32abcb44ff95669323a211e0d78231f1",
+      "contentHash": "597be1b958e025681384910e9dc9254804f8941a3bc8ea5c542a6cc7d9009bf2",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 70,
+      "totalLines": 74,
       "hasStructuralAnalysis": false
     },
     "docs/brand-content.md": {
@@ -3490,12 +3952,12 @@
     },
     "docs/decisions.md": {
       "filePath": "docs/decisions.md",
-      "contentHash": "5df3c5a55526d484d97a17526b95bfa15cccfd5ce1d06be16dd4b028779fe74c",
+      "contentHash": "81162daa03a166fb47082088d6065cdd84545aa109b8e47774534416b7b22c43",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 27,
+      "totalLines": 28,
       "hasStructuralAnalysis": false
     },
     "docs/design/imagery.md": {
@@ -3560,22 +4022,22 @@
     },
     "docs/runbook.md": {
       "filePath": "docs/runbook.md",
-      "contentHash": "5aefcdf89c508012b1df7a5d64eb52bc40c65628bc5bf766574ab85f674f3deb",
+      "contentHash": "47363bd52763994c94fa104edd35fd17c83660d5f8b46043a24391678ffb74f9",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 369,
+      "totalLines": 418,
       "hasStructuralAnalysis": false
     },
     "docs/setup.md": {
       "filePath": "docs/setup.md",
-      "contentHash": "e2a4cefd4686a16d420fbc83df9ed2918f30030f0292b45a40ad7f9a8c5d9d9e",
+      "contentHash": "c5dcd97f0d28d16bfb7c10fa2f299a61b67e396992f81f42ea198101526a96a3",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 446,
+      "totalLines": 460,
       "hasStructuralAnalysis": false
     },
     "docs/superpowers/plans/2026-11-24-cart-safety-accessibility.md": {
@@ -3618,6 +4080,16 @@
       "totalLines": 154,
       "hasStructuralAnalysis": false
     },
+    "docs/superpowers/plans/2026-11-26-stabilisation.md": {
+      "filePath": "docs/superpowers/plans/2026-11-26-stabilisation.md",
+      "contentHash": "97049b49ba85d652ff3dfa5d0272215b59f9805faac4b16f06bf2d5358b3db45",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 215,
+      "hasStructuralAnalysis": false
+    },
     "docs/superpowers/specs/2026-11-12-storefront-design.md": {
       "filePath": "docs/superpowers/specs/2026-11-12-storefront-design.md",
       "contentHash": "75ee487d8637638be920ec852f4fa75799dd6960a66cd5c1a170213591fb8af7",
@@ -3638,9 +4110,19 @@
       "totalLines": 86,
       "hasStructuralAnalysis": false
     },
+    "docs/superpowers/specs/2026-11-26-stabilisation-design.md": {
+      "filePath": "docs/superpowers/specs/2026-11-26-stabilisation-design.md",
+      "contentHash": "0886e6aaf5b5c21a4b402931c2dd20cfa5f7ebb1082fdbf4de6220394750de42",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 116,
+      "hasStructuralAnalysis": false
+    },
     "eslint.config.mjs": {
       "filePath": "eslint.config.mjs",
-      "contentHash": "e41136296b5a4c864f5a9cc79aef99ffd6d9e8a6af39456acaa057d1022959cf",
+      "contentHash": "96429c7a500d6fe5ab5a0c54fb4b6861de447e44a9504e0c43a22536596c21ab",
       "functions": [],
       "classes": [],
       "imports": [
@@ -3694,12 +4176,12 @@
     },
     "package.json": {
       "filePath": "package.json",
-      "contentHash": "b93530702b03d2033cc7b246d263282e121810d01035d86cd60634be813e6a94",
+      "contentHash": "7c2c2a968c69d99fc5dca0590bf1bf876cb678701b37f64fd76f747bf564b968",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 39,
+      "totalLines": 40,
       "hasStructuralAnalysis": false
     },
     "packages/config/README.md": {
@@ -3898,12 +4380,12 @@
     },
     "packages/db/README.md": {
       "filePath": "packages/db/README.md",
-      "contentHash": "7910a16eec4bfe256b84fc3829c88bb650cc4f44f7eba1386adb69fea16364c3",
+      "contentHash": "d34e8a1f722c49497b747e3f7560da5c1b8a499e1c852a69ded59619e95ad7de",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 45,
+      "totalLines": 49,
       "hasStructuralAnalysis": false
     },
     "packages/db/drizzle.config.ts": {
@@ -3973,14 +4455,108 @@
       "totalLines": 20,
       "hasStructuralAnalysis": false
     },
+    "packages/db/migrate-runner.test.ts": {
+      "filePath": "packages/db/migrate-runner.test.ts",
+      "contentHash": "f543b95533d3b6daed4d642f5a89d754e94786e100a034b9aadd85a0faec4fa4",
+      "functions": [
+        {
+          "name": "runMigrationRunner",
+          "params": [
+            "env"
+          ],
+          "exported": false,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawnSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "test"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 43,
+      "hasStructuralAnalysis": true
+    },
+    "packages/db/migrate-runner.ts": {
+      "filePath": "packages/db/migrate-runner.ts",
+      "contentHash": "1b8299813ff4947cd2f9cccbe4ad28364bc42acc1ba4a42b5945934feac64d77",
+      "functions": [
+        {
+          "name": "runMigrations",
+          "params": [
+            "connectionString"
+          ],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath",
+            "pathToFileURL"
+          ]
+        },
+        {
+          "source": "drizzle-orm/postgres-js",
+          "specifiers": [
+            "drizzle"
+          ]
+        },
+        {
+          "source": "drizzle-orm/postgres-js/migrator",
+          "specifiers": [
+            "migrate"
+          ]
+        },
+        {
+          "source": "postgres",
+          "specifiers": [
+            "postgres"
+          ]
+        }
+      ],
+      "exports": [
+        "runMigrations"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
     "packages/db/package.json": {
       "filePath": "packages/db/package.json",
-      "contentHash": "dacad98f13e19438b19ef0cf0d56c0f2a64a81c43d68d3840cbbdeefa0868459",
+      "contentHash": "21cefe0012b5e3fc423c78985ffce2c47ca947d0bb1d471e02901df2c63045e0",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 30,
+      "totalLines": 31,
       "hasStructuralAnalysis": false
     },
     "packages/db/seed-runner.test.ts": {
@@ -4197,7 +4773,7 @@
     },
     "packages/db/src/seed.test.ts": {
       "filePath": "packages/db/src/seed.test.ts",
-      "contentHash": "a7b299de81c6de49a940ad15fd81e5ff2b456918e8f660e7af7946fe4addd016",
+      "contentHash": "ad563ac6281bfe4c919b2a7fbf122b9a8f5070a2bc746abcbd82369176ef41e0",
       "functions": [],
       "classes": [],
       "imports": [
@@ -4215,23 +4791,23 @@
             "initialSeedData",
             "seedDatabase"
           ]
-        },
-        {
-          "source": "@argiva/domain",
-          "specifiers": [
-            "generateCompositionLabel",
-            "calculateVariantPrice"
-          ]
         }
       ],
       "exports": [],
-      "totalLines": 72,
+      "totalLines": 49,
       "hasStructuralAnalysis": true
     },
     "packages/db/src/seed.ts": {
       "filePath": "packages/db/src/seed.ts",
-      "contentHash": "55da05ed9843d47b9df474d607366d4dfd770356f6c1d63d01f33ec17cf51bd7",
+      "contentHash": "021ca0b3201b1abc587dbb2ee9fec89f11007b894309ffa0588ad40dfb6bf898",
       "functions": [
+        {
+          "name": "comingSoon",
+          "params": [],
+          "returnType": "NewPolicy['content']",
+          "exported": false,
+          "lineCount": 3
+        },
         {
           "name": "seedDatabase",
           "params": [
@@ -4239,7 +4815,7 @@
           ],
           "returnType": "Promise<void>",
           "exported": true,
-          "lineCount": 28
+          "lineCount": 9
         }
       ],
       "classes": [],
@@ -4261,30 +4837,21 @@
           "specifiers": [
             "categories",
             "policies",
-            "products",
-            "productVariants",
-            "silverRates",
-            "users",
             "NewCategory",
-            "NewPolicy",
-            "NewProduct",
-            "NewProductVariant",
-            "NewSilverRate",
-            "NewUser"
+            "NewPolicy"
           ]
         }
       ],
       "exports": [
-        "OWNER_USER_ID",
         "initialSeedData",
         "seedDatabase"
       ],
-      "totalLines": 448,
+      "totalLines": 238,
       "hasStructuralAnalysis": true
     },
     "packages/db/tsconfig.json": {
       "filePath": "packages/db/tsconfig.json",
-      "contentHash": "84fa144304f637ea215c3d3d3cf05834d3c805b4229c494bc1abd1f4ddfd9a0b",
+      "contentHash": "b27709bf8b4be847e724712e973624bc85169276f08eba4e4f4b2ecee24a8ccc",
       "functions": [],
       "classes": [],
       "imports": [],
@@ -4914,12 +5481,12 @@
     },
     "packages/ui/README.md": {
       "filePath": "packages/ui/README.md",
-      "contentHash": "d57f0f1bd4b023bf8c3e51514183e353676684228976152042758eef8358f37a",
+      "contentHash": "2a624eef701632237c2a732ee06585db0c519e667c6609ca965bcee052ebf18f",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 78,
+      "totalLines": 79,
       "hasStructuralAnalysis": false
     },
     "packages/ui/package.json": {
@@ -4931,6 +5498,16 @@
       "exports": [],
       "totalLines": 44,
       "hasStructuralAnalysis": false
+    },
+    "packages/ui/src/client-boundaries.test.ts": {
+      "filePath": "packages/ui/src/client-boundaries.test.ts",
+      "contentHash": "00cd90ae95ef261a2e1d32e2cc4d7b02bc0eae5b3d7ea63178e916b2c7f54d1f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": true
     },
     "packages/ui/src/components/Button/Button.module.css": {
       "filePath": "packages/ui/src/components/Button/Button.module.css",
@@ -5146,17 +5723,17 @@
     },
     "packages/ui/src/components/Hero/Hero.module.css": {
       "filePath": "packages/ui/src/components/Hero/Hero.module.css",
-      "contentHash": "fa2e37f10c588eec785cfd88befbe7734d2563263d8251b1b4970b230c5f3a75",
+      "contentHash": "e24cf59d097106aae0f7c07176202d36e856c2f9477123b37cd2a2148ada0b76",
       "functions": [],
       "classes": [],
       "imports": [],
       "exports": [],
-      "totalLines": 108,
+      "totalLines": 115,
       "hasStructuralAnalysis": false
     },
     "packages/ui/src/components/Hero/Hero.test.tsx": {
       "filePath": "packages/ui/src/components/Hero/Hero.test.tsx",
-      "contentHash": "f3b8f88fb496f07d7df1ea9122c5e24463ed7d9212e295d01f9db45f852b17fc",
+      "contentHash": "576a8851b6ec990d32a5879f8badc624805805f1c8b72725e8bd6cb1ca81393d",
       "functions": [],
       "classes": [],
       "imports": [
@@ -5187,12 +5764,12 @@
         }
       ],
       "exports": [],
-      "totalLines": 32,
+      "totalLines": 40,
       "hasStructuralAnalysis": true
     },
     "packages/ui/src/components/Hero/Hero.tsx": {
       "filePath": "packages/ui/src/components/Hero/Hero.tsx",
-      "contentHash": "b0b70375144b22e2cefa4446735b75d3203ed75750c1741c380e0c203627341f",
+      "contentHash": "9fa9f2248498828b81560bc4de5ccf4c1733cfc37c0470aa0a49746fd624e2ce",
       "functions": [
         {
           "name": "Hero",
@@ -5200,7 +5777,7 @@
             "{ eyebrow, title, body, action, image }"
           ],
           "exported": true,
-          "lineCount": 18
+          "lineCount": 22
         }
       ],
       "classes": [],
@@ -5233,7 +5810,7 @@
       "exports": [
         "Hero"
       ],
-      "totalLines": 28,
+      "totalLines": 32,
       "hasStructuralAnalysis": true
     },
     "packages/ui/src/components/Price/Price.module.css": {
@@ -5316,7 +5893,7 @@
     },
     "packages/ui/src/components/ProductCard/ProductCard.test.tsx": {
       "filePath": "packages/ui/src/components/ProductCard/ProductCard.test.tsx",
-      "contentHash": "98fe75351a73097471326160fa86812c950c0fb1aa9bb632268e07f69bac3d85",
+      "contentHash": "b5e930fe1f71df94e2d3978ddc31799feca6c3369b4dbe9663ca8b5ea710f16a",
       "functions": [],
       "classes": [],
       "imports": [
@@ -5342,12 +5919,12 @@
         }
       ],
       "exports": [],
-      "totalLines": 49,
+      "totalLines": 56,
       "hasStructuralAnalysis": true
     },
     "packages/ui/src/components/ProductCard/ProductCard.tsx": {
       "filePath": "packages/ui/src/components/ProductCard/ProductCard.tsx",
-      "contentHash": "0fd2dd9ab14e00797829316eabea5a2cb2a7ed7924b87d7e5b07729fccde35b5",
+      "contentHash": "5f2df543ca55142b80451ec03826d0d00f1e06b272e65cbd508d41351fb34ef4",
       "functions": [
         {
           "name": "ProductCard",
@@ -5395,7 +5972,7 @@
       "exports": [
         "ProductCard"
       ],
-      "totalLines": 47,
+      "totalLines": 48,
       "hasStructuralAnalysis": true
     },
     "packages/ui/src/components/ProductHeader/ProductHeader.module.css": {
@@ -5558,7 +6135,7 @@
     },
     "packages/ui/src/components/PurityBadge/PurityBadge.tsx": {
       "filePath": "packages/ui/src/components/PurityBadge/PurityBadge.tsx",
-      "contentHash": "b479b45d0dd179b53ea654408e6c9738e648d74911bc36fa950d81ca973712ff",
+      "contentHash": "2bc1c0aaf49b6b916d782d60969b66b5106bbf733793c0c501ed5545fd3a0c06",
       "functions": [
         {
           "name": "PurityBadge",
@@ -5587,7 +6164,7 @@
       "exports": [
         "PurityBadge"
       ],
-      "totalLines": 14,
+      "totalLines": 16,
       "hasStructuralAnalysis": true
     },
     "packages/ui/src/components/SiteHeader/SiteHeader.module.css": {
@@ -6326,7 +6903,7 @@
     },
     "scripts/smoke.mjs": {
       "filePath": "scripts/smoke.mjs",
-      "contentHash": "356b2de206a315fde4ca335823a75151e4d6c2f09b6e5afc174c711a289d6b2f",
+      "contentHash": "26f83e267ea70b617120b874e812c50a64365dc5b87723ce4efc571996ca14a1",
       "functions": [
         {
           "name": "url",
@@ -6365,6 +6942,103 @@
       ],
       "classes": [],
       "imports": [],
+      "exports": [],
+      "totalLines": 74,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/smoke.test.mjs": {
+      "filePath": "scripts/smoke.test.mjs",
+      "contentHash": "fb711246e592ed4f998c54ad2caa6a62df135f8ad18d62c483937c1906d49d61",
+      "functions": [
+        {
+          "name": "runSmoke",
+          "params": [
+            "missing"
+          ],
+          "exported": false,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "node:http",
+          "specifiers": [
+            "createServer"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/workflows.test.mjs": {
+      "filePath": "scripts/workflows.test.mjs",
+      "contentHash": "0c418d004f3a45c3009ceba1ab694d69d7d43d3be7b18771d972a90852ed86ae",
+      "functions": [
+        {
+          "name": "read",
+          "params": [
+            "name"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "assertInOrder",
+          "params": [
+            "text",
+            "markers"
+          ],
+          "exported": false,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        }
+      ],
       "exports": [],
       "totalLines": 60,
       "hasStructuralAnalysis": true
