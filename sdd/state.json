@@ -1,7 +1,7 @@
 {
   "$comment": "Single source of truth for resuming ARGIVA work in any agentic editor. Update after every decision or completed task.",
   "project": "ARGIVA Silvers e-commerce platform",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "sources": {
     "prompt": ".github/prompts/scaffold-argiva.prompt.md",
     "brandContent": "docs/brand-content.md",
@@ -18,11 +18,11 @@
     "With every code change, update the docs and the Understand-Anything graph in .ua/ (owner, 2026-11-26)."
   ],
   "currentPhase": "phase-4-storefront",
-  "currentStep": "Owner committed and pushed stabilisation (3eb98dd). Codebase map updated to that commit (264 files, 398 nodes, 890 edges), uncommitted. App still running on http://localhost:3100.",
+  "currentStep": "Stage 1 plan written: docs/superpowers/plans/2026-11-27-stage1-pricing-signin.md (13 tasks). Waiting for owner review, execution choice and the stabilisation release. No product code changed.",
   "awaitingOwner": [
-    "Commit and push the updated .ua/ and sdd/ files.",
-    "Before merging to main: grant the deployer read access to both database secrets (docs/setup.md section 3.8).",
-    "Open a pull request, merge when CI passes, then check staging."
+    "Review the stage 1 plan and choose execution (Native recommended, or subagent-driven).",
+    "Before building: release stabilisation (deployer secret-access command, pull request, merge when CI passes, check staging) and say whether stage 1 should start on a new branch from main.",
+    "Commit and push the documents and sdd updates."
   ],
   "phase1": {
     "plan": "docs/plans/2026-10-31-phase-1-design-system.md",
@@ -152,15 +152,23 @@
     ],
     "stabilisationPlan": "docs/superpowers/plans/2026-11-26-stabilisation.md",
     "stabilisation": {
-      "status": "implemented, uncommitted; CI and staging unverified",
-      "verification": "clean copy: build, lint, typecheck, unit 217, script 24, browser 94 pass",
+      "status": "committed and pushed (3eb98dd; map 6bbe903); no pull request; CI and staging unverified; deployer secret access unconfirmed",
+      "verification": "clean copy before commit: build, lint, typecheck, unit 217, script 24, browser 94 pass",
       "deferredMinors": [
         "cart quantity has no upper bound",
         "Safari drawer focus return unverified",
         "fixed price missing is not logged",
         "no cleanup step for sample data in cloud databases if ever seeded"
       ]
-    }
+    },
+    "remaining": [
+      "Data model: product images, shipping weight, occasion, style; offers, damage claims, re-polishing requests, permission matrix tables",
+      "Pricing: formula undecided; wastage, margin, tax, other metals and finishing absent; 50% factor for 'other' purity is unapproved",
+      "Stock reservation exists only in memory, not in the database",
+      "Filters: 3 of 7 built (price, composition, finish)",
+      "Homepage: three brand sections and the 'Discover Our Story' button missing",
+      "No product photography; no real product data and no way to enter it before Phase 6 admin"
+    ]
   },
   "nextActions": [
     "[done] Phase 2 complete: CI green on GitHub, staging deployed from main, owner setup actions verified",
@@ -209,7 +217,6 @@
     "[done] 2026-11-26: confirmed checkpoint commit and baseline checks; re-checked open audit faults in source",
     "[done] 2026-11-26: stabilisation design written and self-checked (no subagent)",
     "[done] 2026-11-26: stabilisation plan written and self-reviewed",
-    "[todo] Execute stabilisation tasks 1-7 after owner review: seed/facts, hero/checkout, prices, cart, migrations/deploy, browser tests, docs/verification",
     "[done] Stabilisation Task 1 (reference-only seed, 'Details coming soon.')",
     "[done] Stabilisation Task 2 (hero placeholder, checkout boundary)",
     "[done] Stabilisation Task 3 (unavailable prices)",
@@ -217,11 +224,14 @@
     "[done] Stabilisation Task 5 (migrations, deploy, CI, smoke)",
     "[done] Stabilisation Task 6 (browser tests: 94 pass; confirmed they fail on two re-introduced bugs)",
     "[done] Stabilisation Task 7 documentation and verification (tests 216 + 21 script, 94 browser, image smoke on empty database)",
-    "[done] Stabilisation Task 7 (documentation, verification, documented-commands run)",
     "[done] Final review: 1 critical (seed failed on fresh checkout) and 1 important (wrong price message) fixed; 4 minors deferred",
-    "[todo] After staging is verified: brainstorm the data model and storefront function work",
     "[done] Started the app locally on port 3100 with a temporary database",
-    "[done] 2026-11-26: targeted .ua/ map update for 3eb98dd (49 changed files re-read by 2 agents; layers and tour kept and patched)"
+    "[done] 2026-11-26: targeted .ua/ map update for 3eb98dd (49 changed files re-read by 2 agents; layers and tour kept and patched)",
+    "[done] 2026-11-26: owner committed and pushed the map update (6bbe903); state refreshed",
+    "[todo] Owner releases stabilisation: setup command, pull request, CI, merge, staging check",
+    "[done] 2026-11-27: brainstorm complete; requirements overview and stage 1 design written and self-checked",
+    "[done] 2026-11-27: stage 1 plan written and self-reviewed",
+    "[todo] Execute stage 1 after owner review and stabilisation release"
   ],
   "phases": [
     {
@@ -606,7 +616,121 @@
     },
     "stabilisationOrder": "Owner chose option A on 2026-11-26: stabilise the current storefront and deploy path first, then complete the data model.",
     "stabilisationDesign": "Approved 2026-11-26 as written: hide proprietorship/grievance/jurisdiction behind 'Details coming soon.', keep Phase 0 cancellation terms as draft; deploy runs migrations and insert-only reference data on staging and production; deploy account may read the database secrets; invented seed products/rates removed; Playwright browser tests.",
-    "stabilisationExecution": "Owner approved the plan and chose Native on 2026-11-26: implement in this session, then one fresh reviewer for the whole change. No commits."
+    "stabilisationExecution": "Owner approved the plan and chose Native on 2026-11-26: implement in this session, then one fresh reviewer for the whole change. No commits.",
+    "nextScope": "Owner chose option A on 2026-11-26: finish Phase 4 (data model, then storefront gaps) before checkout.",
+    "pricingRequirements": {
+      "date": "2026-11-26",
+      "statedByOwner": [
+        "No built-in silver-price formula; the owner/seller controls and specifies rates",
+        "Pricing differs by product; small items (small necklaces, finger rings, toe rings) are piece rate",
+        "Making charges, wastage, other metals, margin and tax may be considered for heavier items (about 20 g or more, or price of Rs 3000 or more)",
+        "Flexible, admin/owner-controlled pricing strategy; price layout driven by the product",
+        "Customer prices stay static and change only when the owner/admin changes them",
+        "Owner dashboard to manage pricing, inventory and admin access",
+        "Brainstorm thoroughly and ask as many questions as possible before finalising the design or writing code"
+      ],
+      "affects": "ADR 0007 (pricing modes), possibly ADR 0008 (maker-checker); Phase 6 admin may move earlier"
+    },
+    "pricingRound1": {
+      "date": "2026-11-26",
+      "heavyItems": "Piece rate stays available; an optional calculator (weight, owner's silver rate, chosen charges) suggests a price that the owner confirms or overwrites",
+      "rateChange": "Review then publish: list old and new prices, owner ticks and publishes; nothing changes for customers by itself",
+      "method": "Chosen by the owner per product; default piece rate; dashboard hints above 20 g or Rs 3000",
+      "approval": "Owner changes go live at once with history; Manager changes wait for Owner approval (replaces ADR 0008 maker-checker for prices)"
+    },
+    "pricingRound2": {
+      "date": "2026-11-26",
+      "charges": "Owner-defined charge lines (fixed rupees, rupees per gram or percent), reusable templates; nothing built in",
+      "silverCategories": "Owner creates named silver categories (e.g. hand-made 92.5, rose-gold polished machine-made, 80%, 60%), each with a per-gram rate; a product gives its grams and selects a category; one rate change flows to all linked products",
+      "shownPrice": "Chosen per product: single price by default; optionally weight, per pair, or ticked breakdown lines (revises ADR 0006 one price, no breakdown)",
+      "sizes": "Price per size/finish, with copy to all",
+      "taxNote": "Owner: government imposes 3% GST (CGST and SGST). Web check 2026-11-26 (secondary sources): 3% total for HSN 7113, 1.5% CGST + 1.5% SGST intra-state, 3% IGST inter-state; separately billed making charges may be 5%. TODO(owner): confirm with an accountant. Rate must be owner-configurable."
+    },
+    "pricingRound3": {
+      "date": "2026-11-26",
+      "gstStatus": "Not registered yet: no GST charged or mentioned; tax setting off until the owner has a GST number",
+      "gstInPrice": "Superseded by pricingCorrection.gst (2026-11-27)",
+      "silverCategory": "Rate per gram, purity and finish (product label) and default charge lines; products inherit and may change any line",
+      "rounding": "Owner-set rule (nearest 1/10/50, nearest or up); default nearest rupee; suggested price can be overwritten"
+    },
+    "pricingRound4": {
+      "date": "2026-11-26",
+      "overrides": "On a rate change, hand-set prices are flagged and unticked in the review list",
+      "bulkPieceRate": "Filter and select; adjust by rupees or percent or type in a table; review then publish",
+      "discounts": "Offer price per item with optional start and end dates; old price struck through; coupons later",
+      "savedCarts": "Cart updates to the current price with a notice; placed orders never change"
+    },
+    "pricingApproved": {
+      "date": "2026-11-26",
+      "confirmed": "Owner accepted the pricing summary, including the four agent proposals (percent base per line; breakdown hidden when hand-set or on offer; missing rate or weight keeps the last published price; offer dates apply automatically)",
+      "moduleRequirement": "Pricing must be a separate, configurable, maintainable and well-documented module",
+      "agentPlan": "Own workspace package for pure pricing logic with no database or UI dependency; owner settings stored as data; README and an ADR superseding ADR 0007 pricing modes and the price part of ADR 0008"
+    },
+    "productsRound1": {
+      "date": "2026-11-26",
+      "sizes": "Owner-managed size lists per type; tick the sizes a product comes in",
+      "tags": "Owner-managed occasion and style values; a filter shows only when used",
+      "photos": "Upload from the dashboard (phone friendly), reorder up to 5, automatic resizing, stored in Cloudflare R2 (owner creates the account before go-live); video not chosen",
+      "publishing": "Draft until name, SKU, category, photo, price, stock, silver composition, description and care instructions are filled"
+    },
+    "inventoryRound1": {
+      "date": "2026-11-26",
+      "pieces": "Each physical piece has its own weight, price and code (changes the earlier price-per-size model; follow-up asked)",
+      "shopStock": "Online stock is set aside and separate from the offline shop",
+      "soldOut": "Sold-out sizes stay visible, marked Out of stock, with a WhatsApp or contact enquiry",
+      "lowStock": "Dashboard warning with a default limit and per-product changes; not shown to customers"
+    },
+    "inventoryRound2": {
+      "date": "2026-11-27",
+      "tracking": "Each product is 'by piece' (heavy items) or 'by count' (small identical items)",
+      "customerChoice": "By-piece products list available pieces with weight and price; the customer picks one",
+      "piecePrice": "Piece-rate: price set per size, new pieces copy it and can be changed; calculator: computed from each piece's weight and confirmed",
+      "photos": "Photos belong to the design and are shared; extra photos per piece optional"
+    },
+    "ownerExample": {
+      "date": "2026-11-27",
+      "statement": "Partly agrees with the products summary. Kada take is correct: bangles and bigger items are priced from weight, silver rate, design and so on. Small items (toe rings, finger rings, about 5-10 g) are flat piece rate plus GST; silver rate does not apply to them.",
+      "toClarify": "'piece rate + GST' versus the earlier 'published price includes GST'; how design cost is entered"
+    },
+    "pricingCorrection": {
+      "date": "2026-11-27",
+      "gst": "Typed and calculated prices are before tax; GST is added on top for all items once enabled; the customer sees the final price. Supersedes pricingRound3.gstInPrice",
+      "designCost": "A 'Design' calculator charge line set per product (rupees, per gram or percent), changeable on a piece",
+      "smallItemWeight": "Optional for piece-rate items; shown only on products where ticked",
+      "silverRate": "Never applies to piece-rate items"
+    },
+    "correctedPricingConfirmed": "2026-11-27: owner said the corrected pricing is fine, including the three GST proposals and, as understood, the products and stock points and proposals",
+    "adminLearningRequirement": {
+      "date": "2026-11-27",
+      "statement": "First-time tutorial for the admin, a pricing playground to practise setting prices, and a dashboard designed so users understand the tool: how to create categories and how everything is used"
+    },
+    "tutorialRound1": {
+      "date": "2026-11-27",
+      "playground": "Practice samples with made-up rates, plus copies of real products for what-if tests; nothing reaches customers",
+      "guidance": "Getting-started checklist, on-screen steps, field explanations and a Help page; skippable and replayable",
+      "audience": "Every role gets guidance limited to its allowed tasks",
+      "language": "Plain English"
+    },
+    "signInRound1": {
+      "date": "2026-11-27",
+      "methods": "Owner wants all three supported: password plus authenticator code, Google sign-in, email sign-up",
+      "roles": "Owner, Manager, Catalog Editor in the first version",
+      "stock": "Editors add products, pieces and stock but not prices; items stay draft until the Owner sets the price or approves a Manager's proposal",
+      "domainEmail": "Domain not bought; email not set up"
+    },
+    "signInRound2": {
+      "date": "2026-11-27",
+      "joining": "Invited emails only",
+      "firstVersion": "Password and Google sign-in; email sign-up and reset emails switched on when domain and email are ready; until then the Owner resets passwords",
+      "secondStep": "Authenticator code for Owner and Manager on every sign-in method, with backup codes"
+    },
+    "dashboardHome": "2026-11-27: option A, side menu on computer and bottom bar on phone; home shows getting-started checklist, approvals, low stock and drafts",
+    "dashboardRateChange": "2026-11-27: option A, guided three steps (change rate, check old and new prices, publish) with a 'why?' breakdown per item",
+    "dashboardAddProduct": "2026-11-27: option A, step by step (details, photos, sizes and pieces, price, check and publish), saved as draft; price step shows method, charge lines, suggestion, own and offer price, customer preview, pieces and a playground button",
+    "dashboardPlayground": "2026-11-27: option A, a separate clearly marked practice area with sample items, copies of real products and before/after results in words; five-step first-time guide (size list, silver category, product, price, publish), skippable and replayable, per role",
+    "mockups": ".superpowers/brainstorm/5529-1795720678/content/ (local, not committed)",
+    "buildOrder": "2026-11-27: option B, pricing and playground first, four stages (docs/superpowers/specs/2026-11-27-admin-pricing-overview.md)",
+    "stage1Design": "2026-11-27: owner replied 'okay' to the stage 1 design; treated as approval"
   },
   "openItems": [
     "Legal name, address, grievance officer contact, flat shipping fee amount",

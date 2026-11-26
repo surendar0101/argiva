@@ -184,3 +184,32 @@ Decisions and review outcomes:
 - Final: Ruling: reviewer's declined items (showing unpriced items, hidden legal claims, page scroll behind the drawer, concurrent migrations, rollback rule, browser-held cart prices, dev-server build, preview fixtures, reviewer model) stand: spec-requested, covered, or checkout-phase concerns — cost if wrong: revisit at checkout.
 - 2026-11-26: app started locally on port 3100 (production build, temporary database `argiva-demo-db` on 55432); smoke test passes. New owner rule: update docs and the `.ua/` graph with every code change. The incremental graph update refused the uncommitted changes; `.ua/` unchanged, awaiting the owner's choice.
 - 2026-11-26: owner committed `3eb98dd`. The map tool recommended a full rebuild (49 changed files); ruling: re-read only those 49 with two analyzer agents, keep the rest, patch 23 stale summaries and two tour steps, place new files into the existing 8 layers. Validation: 0 issues, 264 files, 398 nodes, 890 links, 7 unlinked. Layers and tour were not regenerated.
+
+## 2026-11-26: state refresh before the next plan
+
+- Checked: `3eb98dd` and `6bbe903` are pushed to `phase-3-4-storefront`, three commits ahead of `main`. GitHub shows no pull request for this branch and no CI run on it; the last staging deploy was from `main` on 1 November. Whether the deployer secret-access command has been run was not checked.
+- Remaining Phase 4 gaps are listed in `state.json` under `phase4.remaining`.
+- Asked the owner to confirm the next planning scope. Planning not started.
+- 2026-11-26: owner chose option A and set pricing requirements (no built-in formula; piece rate for small items; optional charge-based pricing for heavier items; prices change only when owner/admin changes them; owner dashboard for pricing, inventory and access; thorough brainstorm first). Recorded in `state.json`. Asked pricing round 1.
+- 2026-11-26: pricing round 1 answered (optional calculator; review then publish; method chosen per product; Owner direct, Manager needs approval). Asked round 2.
+- 2026-11-26: pricing round 2 answered (own charge lines; named silver categories with rates; price display chosen per product; price per size). Checked the GST rate on the web (secondary sources; accountant to confirm). Asked round 3.
+- 2026-11-26: pricing round 3 answered (not GST-registered; prices include GST once enabled; category holds rate, purity, finish and default charges; owner-set rounding). Asked round 4.
+- 2026-11-26: pricing round 4 answered (hand-set prices flagged and unticked; bulk select-and-adjust; offer price with dates; carts update with notice). Played back the pricing summary; awaiting corrections.
+- 2026-11-26: owner approved the pricing summary; requires a separate, configurable, documented pricing module. Moved to products, sizes and photos; asked round 1.
+- 2026-11-26: products round 1 answered (managed size lists; managed occasion and style; dashboard photo upload to R2; all required fields before publishing). Asked inventory round 1.
+- 2026-11-26: inventory round 1 answered (each piece tracked separately; separate online stock; sold out stays visible with enquiry; dashboard low-stock warning). Piece tracking changes the pricing model; asked round 2.
+- 2026-11-27: inventory round 2 answered (by piece or by count per product; customer picks the exact piece; size price copied to pieces, calculator per piece weight; design photos shared). Played back products and stock; awaiting corrections.
+- 2026-11-27: owner partly agreed; example: big items priced from weight, silver rate and design; small items flat piece rate plus GST, no silver rate. Asked to clarify GST, design cost and small-item weight.
+- 2026-11-27: GST now added on top for all items (replaces included-in-price); design is a per-product charge line; small-item weight optional and shown when ticked. Played back the correction; awaiting confirmation.
+- 2026-11-27: owner confirmed the corrected pricing and asked for a first-time tutorial, a pricing playground and a self-explaining admin dashboard. Asked tutorial round 1.
+- 2026-11-27: tutorial round 1 answered (sample and copied-product playground; checklist and guide; per role; plain English). Asked sign-in and roles round 1.
+- 2026-11-27: sign-in round 1: all three methods wanted; Owner, Manager and Catalog Editor first; editors add stock, prices wait for approval; no domain or email yet. Asked round 2.
+- 2026-11-27: sign-in settled (invited only; password and Google first, email later; authenticator code on every method for Owner and Manager). Offered visual mockups for the dashboard screens.
+- 2026-11-27: owner accepted visual mockups. Screen 1: three dashboard home layouts; awaiting choice.
+- 2026-11-27: dashboard home option A chosen. Showed screen 2: rate change and publish flow.
+- 2026-11-27: rate-change option A chosen. Showed screen 3: add a product.
+- 2026-11-27: add-product option A chosen. Showed screen 4: playground and first-time guide.
+- 2026-11-27: playground option A chosen; screens complete. Asked the owner to pick the build approach (A foundations first, B pricing and playground first, C all at once).
+- 2026-11-27: owner chose build order B. Verified Better Auth docs: authenticator challenge does not cover Google sign-in by default and there is no idle-timeout option. Wrote [requirements overview](../docs/superpowers/specs/2026-11-27-admin-pricing-overview.md) and [stage 1 design](../docs/superpowers/specs/2026-11-27-stage1-pricing-signin-design.md); builder check done inline. Awaiting approval. Stabilisation still has no pull request.
+- 2026-11-27: owner approved the stage 1 design. Writing the plan.
+- 2026-11-27: wrote [the stage 1 plan](../docs/superpowers/plans/2026-11-27-stage1-pricing-signin.md). No pull request exists for stabilisation yet. Awaiting review and execution choice.
